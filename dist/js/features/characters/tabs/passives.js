@@ -1,6 +1,7 @@
+import { formatCharacterText } from "../text.js?v=20261020-element-highlights";
 
-import { esc } from "../../../core/dom.js?v=20261020-skill-descriptions";
-import { sourceLinks } from "../sources.js?v=20261020-skill-descriptions";
+import { esc } from "../../../core/dom.js?v=20261020-element-highlights";
+import { sourceLinks } from "../sources.js?v=20261020-element-highlights";
 
 export function renderOverview(p, options = {}) {
   const {
@@ -12,7 +13,7 @@ export function renderOverview(p, options = {}) {
     .map(
       (item) =>
         '<article class="profile-skill-row"><div class="profile-skill-heading"><strong>' +
-        esc(item.nameKo) +
+        formatCharacterText(item.nameKo, p.roster.element) +
         '</strong>' +
         (String(item.unlock || "").trim()
           ? '<span class="profile-skill-tag">돌파 ' +
@@ -20,7 +21,7 @@ export function renderOverview(p, options = {}) {
             "</span>"
           : "") +
         "</div><p>" +
-        esc(item.effectKo) +
+        formatCharacterText(item.effectKo, p.roster.element) +
         "</p></article>"
     )
     .join("");
@@ -42,14 +43,14 @@ export function renderOverview(p, options = {}) {
           "</strong><p" +
           (effect ? "" : ' aria-label="자료 없음"') +
           ">" +
-          esc(effect) +
+          formatCharacterText(effect, p.roster.element) +
           "</p></div>"
         );
       }).join("");
       return (
         '<article class="profile-skill-row city-skill-row"><div ' +
         'class="profile-skill-heading city-skill-heading"><strong>' +
-        esc(item.nameKo) +
+        formatCharacterText(item.nameKo, p.roster.element) +
         '</strong><div class="city-skill-meta"><span class="profile-skill-tag">적용 분야 · ' +
         esc(item.categoryKo || "미분류") +
         '</span><span class="profile-skill-tag">최대 Lv. ' +

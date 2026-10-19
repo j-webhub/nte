@@ -1,6 +1,7 @@
-import { state } from "../../../core/state.js?v=20261020-skill-descriptions";
-import { esc } from "../../../core/dom.js?v=20261020-skill-descriptions";
-import { sourceLinks } from "../sources.js?v=20261020-skill-descriptions";
+import { formatCharacterText } from "../text.js?v=20261020-element-highlights";
+import { state } from "../../../core/state.js?v=20261020-element-highlights";
+import { esc } from "../../../core/dom.js?v=20261020-element-highlights";
+import { sourceLinks } from "../sources.js?v=20261020-element-highlights";
 
 export function renderConsole(p) {
   const build = p.console;
@@ -37,21 +38,21 @@ export function renderConsole(p) {
     esc(s.nameKo) +
     "</h3>" +
     '<div class="set-bonus"><b>2세트</b><p>' +
-    esc(s.twoPieceKo) +
+    formatCharacterText(s.twoPieceKo, p.roster.element) +
     '</p></div><div class="set-bonus"><b>4세트</b><p>' +
-    esc(s.fourPieceKo) +
+    formatCharacterText(s.fourPieceKo, p.roster.element) +
     "</p></div></article>";
 
   const priority = (list) =>
     '<ul class="priority-list">' +
     (list || [])
-      .map((x) => "<li>" + esc(x) + "</li>")
+      .map((x) => "<li>" + formatCharacterText(x, p.roster.element) + "</li>")
       .join("") +
     "</ul>";
 
   let html =
     '<div class="two-column"><article class="content-card"><div class="section-head"><div><h2>콘솔 설정</h2><p>' +
-    esc(build.console.perDriveBonusKo) +
+    formatCharacterText(build.console.perDriveBonusKo, p.roster.element) +
     "</p></div></div>" +
     '<div class="drive-layout" aria-label="권장 드라이브 배치">' +
     layout +
@@ -86,7 +87,7 @@ export function renderConsole(p) {
   if (build.conflictNoteKo || build.buildNoteKo)
     html +=
       '<p class="notice" style="margin-top:13px">' +
-      esc(build.conflictNoteKo || build.buildNoteKo) +
+      formatCharacterText(build.conflictNoteKo || build.buildNoteKo, p.roster.element) +
       "</p>";
 
   return (

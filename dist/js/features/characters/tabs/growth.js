@@ -1,5 +1,5 @@
-import { state } from "../../../core/state.js?v=20261020-skill-descriptions";
-import { esc, fmt } from "../../../core/dom.js?v=20261020-skill-descriptions";
+import { state } from "../../../core/state.js?v=20261020-element-highlights";
+import { esc, fmt } from "../../../core/dom.js?v=20261020-element-highlights";
 
 export function renderGrowth(p) {
   const data = state.db.growth;

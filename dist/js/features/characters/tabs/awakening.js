@@ -1,6 +1,7 @@
+import { formatCharacterText } from "../text.js?v=20261020-element-highlights";
 
-import { esc } from "../../../core/dom.js?v=20261020-skill-descriptions";
-import { sourceLinks } from "../sources.js?v=20261020-skill-descriptions";
+import { esc } from "../../../core/dom.js?v=20261020-element-highlights";
+import { sourceLinks } from "../sources.js?v=20261020-element-highlights";
 
 export function renderAwakening(p, includeSources = true) {
   const m = p.mechanics;
@@ -22,9 +23,9 @@ export function renderAwakening(p, includeSources = true) {
 
       return (
         '<li class="awakening-item"><strong>' +
-        esc(label) +
+        formatCharacterText(label, p.roster.element) +
         "</strong><p>" +
-        esc(match ? text.slice(match[0].length) : text) +
+        formatCharacterText(match ? text.slice(match[0].length) : text, p.roster.element) +
         "</p></li>"
       );
     })
@@ -36,7 +37,7 @@ export function renderAwakening(p, includeSources = true) {
         '<article class="resonance-card"><span>공명 ' +
         esc(level) +
         "단계</span><p>" +
-        esc(text) +
+        formatCharacterText(text, p.roster.element) +
         "</p></article>"
     )
     .join("");

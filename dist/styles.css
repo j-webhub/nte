@@ -1,13 +1,13 @@
 /* 순서가 뒤인 파일의 규칙이 우선합니다. 화면별 스타일은 css/에서 편집합니다. */
-@import "./css/base.css?v=20261020-skill-descriptions";
-@import "./css/characters.css?v=20261020-skill-descriptions";
-@import "./css/notices-detail.css?v=20261020-skill-descriptions";
-@import "./css/characters-mobile.css?v=20261020-skill-descriptions";
-@import "./css/layout.css?v=20261020-skill-descriptions";
-@import "./css/home.css?v=20261020-skill-descriptions";
-@import "./css/portal.css?v=20261020-skill-descriptions";
-@import "./css/notices.css?v=20261020-skill-descriptions";
-@import "./css/arcs.css?v=20261020-skill-descriptions";
-@import "./css/guides.css?v=20261020-skill-descriptions";
-@import "./css/wallpapers.css?v=20261020-skill-descriptions";
-@import "./css/responsive.css?v=20261020-skill-descriptions";
+@import "./css/base.css?v=20261020-element-highlights";
+@import "./css/characters.css?v=20261020-element-highlights";
+@import "./css/notices-detail.css?v=20261020-element-highlights";
+@import "./css/characters-mobile.css?v=20261020-element-highlights";
+@import "./css/layout.css?v=20261020-element-highlights";
+@import "./css/home.css?v=20261020-element-highlights";
+@import "./css/portal.css?v=20261020-element-highlights";
+@import "./css/notices.css?v=20261020-element-highlights";
+@import "./css/arcs.css?v=20261020-element-highlights";
+@import "./css/guides.css?v=20261020-element-highlights";
+@import "./css/wallpapers.css?v=20261020-element-highlights";
+@import "./css/responsive.css?v=20261020-element-highlights";

@@ -1,7 +1,8 @@
-import { state } from "../../../core/state.js?v=20261020-skill-descriptions";
-import { esc } from "../../../core/dom.js?v=20261020-skill-descriptions";
-import { sourceLinks } from "../sources.js?v=20261020-skill-descriptions";
-import { interpolateArcRankEffect } from "../../../shared/arc-ranks.js?v=20261020-skill-descriptions";
+import { formatCharacterText } from "../text.js?v=20261020-element-highlights";
+import { state } from "../../../core/state.js?v=20261020-element-highlights";
+import { esc } from "../../../core/dom.js?v=20261020-element-highlights";
+import { sourceLinks } from "../sources.js?v=20261020-element-highlights";
+import { interpolateArcRankEffect } from "../../../shared/arc-ranks.js?v=20261020-element-highlights";
 
 export function renderArcs(p) {
   const character = state.db.arcs.characters.find(
@@ -42,7 +43,7 @@ export function renderArcs(p) {
           ? '<div class="arc-effect"><strong>' +
             state.arcRank +
             "단계 효과</strong><p>" +
-            esc(effectText) +
+            formatCharacterText(effectText, p.roster.element) +
             "</p></div>"
           : '<div class="arc-effect arc-effect-missing"><strong>' +
             state.arcRank +

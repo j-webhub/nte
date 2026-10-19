@@ -52,6 +52,8 @@
 | `coefficients.tables` | 기술별·레벨별 수치 |
 | `console` | 콘솔·카트리지 추천 |
 
+스킬·패시브·각성·공명·전용 아크·카트리지 효과의 `「문구」`와 `상속성 이능력 피해`, `령속성 공격` 같은 속성 표현은 `roster.element`의 색상으로 자동 표시됩니다. JSON에는 HTML이나 색상 코드를 넣지 않아도 됩니다. 처리 코드는 `dist/js/features/characters/text.js`, 속성별 색상은 `catalog.js`의 `ELEMENTS`에서 편집합니다.
+
 패시브 한 항목의 형식입니다. `unlock`은 확인된 경우에만 입력합니다.
 
 ```json

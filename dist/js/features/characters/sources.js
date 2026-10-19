@@ -1,5 +1,5 @@
-import { state } from "../../core/state.js?v=20261020-skill-descriptions";
-import { esc } from "../../core/dom.js?v=20261020-skill-descriptions";
+import { state } from "../../core/state.js?v=20261020-element-highlights";
+import { esc } from "../../core/dom.js?v=20261020-element-highlights";
 
 export function sourceLinks(p, domesticOnly = false) {
   const urls = new Set();

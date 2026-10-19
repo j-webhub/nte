@@ -1,8 +1,9 @@
-import { state } from "../../../core/state.js?v=20261020-skill-descriptions";
-import { $, esc, fmt } from "../../../core/dom.js?v=20261020-skill-descriptions";
-import { SKILLS } from "../catalog.js?v=20261020-skill-descriptions";
-import { getProfile } from "../model.js?v=20261020-skill-descriptions";
-import { sourceLinks, coefficientSourceLinks } from "../sources.js?v=20261020-skill-descriptions";
+import { formatCharacterText } from "../text.js?v=20261020-element-highlights";
+import { state } from "../../../core/state.js?v=20261020-element-highlights";
+import { $, esc, fmt } from "../../../core/dom.js?v=20261020-element-highlights";
+import { SKILLS } from "../catalog.js?v=20261020-element-highlights";
+import { getProfile } from "../model.js?v=20261020-element-highlights";
+import { sourceLinks, coefficientSourceLinks } from "../sources.js?v=20261020-element-highlights";
 
 export function formatPercent(value) {
   const percent = Math.round(Number(value) * 1000) / 10;
@@ -174,16 +175,16 @@ export function renderSkills(p) {
     '</span><div><span class="skill-feature-kicker">' +
     category +
     "</span><h2>" +
-    esc(skillName) +
+    formatCharacterText(skillName, p.roster.element) +
     '</h2></div></div><span class="skill-feature-badge">레벨별 계수</span></header>' +
     '<div class="skill-feature-body"><article ' +
     'class="skill-description-panel"><div class="skill-description-label">스킬 ' +
     "상세 설명</div><h3>" +
     category +
     " · " +
-    esc(skillName) +
+    formatCharacterText(skillName, p.roster.element) +
     "</h3><p>" +
-    esc(description) +
+    formatCharacterText(description, p.roster.element) +
     "</p></article>" +
     '<section class="skill-coefficient-panel" aria-label="레벨별 스킬 계수">' +
     levelControl +

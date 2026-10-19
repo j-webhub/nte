@@ -1,10 +1,10 @@
-import { state } from "../../core/state.js?v=20261020-skill-descriptions";
-import { $ } from "../../core/dom.js?v=20261020-skill-descriptions";
-import { setView } from "../../core/router.js?v=20261020-skill-descriptions";
-import { ELEMENT_ORDER, ELEMENTS } from "./catalog.js?v=20261020-skill-descriptions";
-import { renderRoster } from "./roster.js?v=20261020-skill-descriptions";
-import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-skill-descriptions";
-import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-skill-descriptions";
+import { state } from "../../core/state.js?v=20261020-element-highlights";
+import { $ } from "../../core/dom.js?v=20261020-element-highlights";
+import { setView } from "../../core/router.js?v=20261020-element-highlights";
+import { ELEMENT_ORDER, ELEMENTS } from "./catalog.js?v=20261020-element-highlights";
+import { renderRoster } from "./roster.js?v=20261020-element-highlights";
+import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-element-highlights";
+import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-element-highlights";
 
 export { renderRoster, renderProfile };
 

@@ -1128,6 +1128,11 @@
   margin-top: 8px;
 }
 
+.character-term[style] {
+  color: var(--term-color);
+  font-size: inherit;
+}
+
 .awakening-list {
   display: grid;
   gap: 8px;

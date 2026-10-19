@@ -1,6 +1,6 @@
-import { state } from "../../core/state.js?v=20261020-skill-descriptions";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-skill-descriptions";
-import { NOTICE_PAGE_SIZE } from "../../config/site.js?v=20261020-skill-descriptions";
+import { state } from "../../core/state.js?v=20261020-element-highlights";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-element-highlights";
+import { NOTICE_PAGE_SIZE } from "../../config/site.js?v=20261020-element-highlights";
 
 export function renderNoticeCard(item) {
   return (

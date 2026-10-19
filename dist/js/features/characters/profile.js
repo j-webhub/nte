@@ -1,8 +1,8 @@
-import { state } from "../../core/state.js?v=20261020-skill-descriptions";
-import { $, esc, fmt } from "../../core/dom.js?v=20261020-skill-descriptions";
-import { elem, assetUrl, elementIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-skill-descriptions";
-import { getProfile } from "./model.js?v=20261020-skill-descriptions";
-import { renderTab } from "./tabs/index.js?v=20261020-skill-descriptions";
+import { state } from "../../core/state.js?v=20261020-element-highlights";
+import { $, esc, fmt } from "../../core/dom.js?v=20261020-element-highlights";
+import { elem, assetUrl, elementIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-element-highlights";
+import { getProfile } from "./model.js?v=20261020-element-highlights";
+import { renderTab } from "./tabs/index.js?v=20261020-element-highlights";
 
 export function bindCharacterIllustration() {
   const visual = $("#main-content .hero-visual");

@@ -1,5 +1,5 @@
-import { DATA_FILES, OPTIONAL_PORTAL_DATA } from "../config/data-files.js?v=20261020-skill-descriptions";
-import { ASSET_VERSION } from "../config/site.js?v=20261020-skill-descriptions";
+import { DATA_FILES, OPTIONAL_PORTAL_DATA } from "../config/data-files.js?v=20261020-element-highlights";
+import { ASSET_VERSION } from "../config/site.js?v=20261020-element-highlights";
 
 export async function loadDatabase() {
   const pairs = await Promise.all(

@@ -1,6 +1,6 @@
-import { state } from "../../core/state.js?v=20261020-skill-descriptions";
-import { $, esc } from "../../core/dom.js?v=20261020-skill-descriptions";
-import { elem, elementIconUrl } from "./catalog.js?v=20261020-skill-descriptions";
+import { state } from "../../core/state.js?v=20261020-element-highlights";
+import { $, esc } from "../../core/dom.js?v=20261020-element-highlights";
+import { elem, elementIconUrl } from "./catalog.js?v=20261020-element-highlights";
 
 export function renderRoster() {
   const CHARACTER_DISPLAY_ORDER = state.db.index.displayCharacterIds || state.db.index.releasedCharacterIds;

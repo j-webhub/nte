@@ -1,7 +1,7 @@
-import { formatCharacterText } from "../text.js?v=20261020-city-skills";
+import { formatCharacterText } from "../text.js?v=20261020-hathor-delivery";
 
-import { esc } from "../../../core/dom.js?v=20261020-city-skills";
-import { sourceLinks } from "../sources.js?v=20261020-city-skills";
+import { esc } from "../../../core/dom.js?v=20261020-hathor-delivery";
+import { sourceLinks } from "../sources.js?v=20261020-hathor-delivery";
 
 export function renderAwakening(p, includeSources = true) {
   const m = p.mechanics;

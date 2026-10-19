@@ -1,6 +1,6 @@
-import { state } from "./state.js?v=20261020-city-skills";
-import { $, esc, fmt } from "./dom.js?v=20261020-city-skills";
-import { loadDatabase } from "./data.js?v=20261020-city-skills";
+import { state } from "./state.js?v=20261020-hathor-delivery";
+import { $, esc, fmt } from "./dom.js?v=20261020-hathor-delivery";
+import { loadDatabase } from "./data.js?v=20261020-hathor-delivery";
 
 const VALID_VIEWS = new Set([
   "home",

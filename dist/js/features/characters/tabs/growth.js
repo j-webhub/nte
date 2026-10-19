@@ -1,6 +1,6 @@
-import { state } from "../../../core/state.js?v=20261020-city-skills";
-import { esc, fmt } from "../../../core/dom.js?v=20261020-city-skills";
-import { renderSkillGrowth } from "./skill-growth.js?v=20261020-city-skills";
+import { state } from "../../../core/state.js?v=20261020-hathor-delivery";
+import { esc, fmt } from "../../../core/dom.js?v=20261020-hathor-delivery";
+import { renderSkillGrowth } from "./skill-growth.js?v=20261020-hathor-delivery";
 
 export function renderGrowth(p) {
   const data = state.db.growth;

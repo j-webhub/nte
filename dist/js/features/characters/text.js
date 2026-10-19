@@ -1,5 +1,5 @@
-import { esc } from "../../core/dom.js?v=20261020-city-skills";
-import { elem } from "./catalog.js?v=20261020-city-skills";
+import { esc } from "../../core/dom.js?v=20261020-hathor-delivery";
+import { elem } from "./catalog.js?v=20261020-hathor-delivery";
 
 // Match source text before escaping so user-entered descriptions stay plain text.
 export function formatCharacterText(value, element) {

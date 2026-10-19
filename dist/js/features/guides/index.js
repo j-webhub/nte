@@ -1,9 +1,9 @@
-import { state } from "../../core/state.js?v=20261020-city-skills";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-city-skills";
-import { repository } from "./repository.js?v=20261020-city-skills";
-import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES } from "./config.js?v=20261020-city-skills";
-import { createId, bytesOf, safeVideoLinks, sanitizeHtml } from "./content.js?v=20261020-city-skills";
-import { exportBackup, importBackup } from "./backup.js?v=20261020-city-skills";
+import { state } from "../../core/state.js?v=20261020-hathor-delivery";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-hathor-delivery";
+import { repository } from "./repository.js?v=20261020-hathor-delivery";
+import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES } from "./config.js?v=20261020-hathor-delivery";
+import { createId, bytesOf, safeVideoLinks, sanitizeHtml } from "./content.js?v=20261020-hathor-delivery";
+import { exportBackup, importBackup } from "./backup.js?v=20261020-hathor-delivery";
 
 let currentPostId = null;
 let currentPost = null;

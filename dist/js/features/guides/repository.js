@@ -1,4 +1,4 @@
-import { DATABASE_NAME, DATABASE_VERSION, STORE_NAME } from "./config.js?v=20261020-city-skills";
+import { DATABASE_NAME, DATABASE_VERSION, STORE_NAME } from "./config.js?v=20261020-hathor-delivery";
 
 class IndexedDbGuideRepository {
   constructor() {

@@ -47,9 +47,13 @@
       "support": "강습"
     }
   },
-  "setting": null,
+  "setting": {
+    "summary": "E.T.D 6팀 현직 대원이자 가장 정직하고 믿음직한 친구",
+    "birthday": "1월 1일",
+    "ability": "「태초에 천지를 분간할 수 있는 자는 아무도 없었다」"
+  },
   "introduction": {
-    "introKo": "ETD-6 소속 카오스는 주인공에게 가장 정의롭고 믿음직한 친구다.",
+    "introKo": "E.T.D 6팀 현직 대원이자 가장 정직하고 믿음직한 친구",
     "sourceUrl": "https://nte.hq1.pro/en/characters/chaos-1071"
   },
   "mechanics": {

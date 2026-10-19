@@ -1,9 +1,9 @@
-import { state } from "../../core/state.js?v=20261020-control-align";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-control-align";
-import { repository } from "./repository.js?v=20261020-control-align";
-import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES } from "./config.js?v=20261020-control-align";
-import { createId, bytesOf, safeVideoLinks, sanitizeHtml } from "./content.js?v=20261020-control-align";
-import { exportBackup, importBackup } from "./backup.js?v=20261020-control-align";
+import { state } from "../../core/state.js?v=20261020-chaos-profile";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-chaos-profile";
+import { repository } from "./repository.js?v=20261020-chaos-profile";
+import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES } from "./config.js?v=20261020-chaos-profile";
+import { createId, bytesOf, safeVideoLinks, sanitizeHtml } from "./content.js?v=20261020-chaos-profile";
+import { exportBackup, importBackup } from "./backup.js?v=20261020-chaos-profile";
 
 let currentPostId = null;
 let currentPost = null;

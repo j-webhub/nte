@@ -1,6 +1,6 @@
-import { state } from "./state.js?v=20261020-control-align";
-import { $, esc, fmt } from "./dom.js?v=20261020-control-align";
-import { loadDatabase } from "./data.js?v=20261020-control-align";
+import { state } from "./state.js?v=20261020-chaos-profile";
+import { $, esc, fmt } from "./dom.js?v=20261020-chaos-profile";
+import { loadDatabase } from "./data.js?v=20261020-chaos-profile";
 
 const VALID_VIEWS = new Set([
   "home",

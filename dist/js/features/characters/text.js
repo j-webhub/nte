@@ -1,5 +1,5 @@
-import { esc } from "../../core/dom.js?v=20261020-control-align";
-import { elem } from "./catalog.js?v=20261020-control-align";
+import { esc } from "../../core/dom.js?v=20261020-chaos-profile";
+import { elem } from "./catalog.js?v=20261020-chaos-profile";
 
 // Match source text before escaping so user-entered descriptions stay plain text.
 export function formatCharacterText(value, element) {

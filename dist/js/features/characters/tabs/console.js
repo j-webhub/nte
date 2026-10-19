@@ -1,7 +1,7 @@
-import { formatCharacterText } from "../text.js?v=20261020-control-align";
-import { state } from "../../../core/state.js?v=20261020-control-align";
-import { esc } from "../../../core/dom.js?v=20261020-control-align";
-import { sourceLinks } from "../sources.js?v=20261020-control-align";
+import { formatCharacterText } from "../text.js?v=20261020-chaos-profile";
+import { state } from "../../../core/state.js?v=20261020-chaos-profile";
+import { esc } from "../../../core/dom.js?v=20261020-chaos-profile";
+import { sourceLinks } from "../sources.js?v=20261020-chaos-profile";
 
 export function renderConsole(p) {
   const build = p.console;

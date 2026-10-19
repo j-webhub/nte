@@ -1,7 +1,7 @@
-import { state } from "../../core/state.js?v=20261020-control-align";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-control-align";
-import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261020-control-align";
-import { renderArcTypeIcon, renderRarityBadge } from "../characters/badges.js?v=20261020-control-align";
+import { state } from "../../core/state.js?v=20261020-chaos-profile";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-chaos-profile";
+import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261020-chaos-profile";
+import { renderArcTypeIcon, renderRarityBadge } from "../characters/badges.js?v=20261020-chaos-profile";
 
 function renderArcEffect(arc) {
   const text = interpolateArcRankEffect(arc, 1) || "자료 없음";

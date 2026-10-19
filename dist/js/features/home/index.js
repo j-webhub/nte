@@ -1,5 +1,5 @@
-import { state } from "../../core/state.js?v=20261020-control-align";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-control-align";
+import { state } from "../../core/state.js?v=20261020-chaos-profile";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-chaos-profile";
 
 const PORTAL_MODULES = [
   {

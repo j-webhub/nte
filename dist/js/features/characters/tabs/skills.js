@@ -1,9 +1,9 @@
-import { formatCharacterText } from "../text.js?v=20261020-home-menu-images";
-import { state } from "../../../core/state.js?v=20261020-home-menu-images";
-import { $, esc, fmt } from "../../../core/dom.js?v=20261020-home-menu-images";
-import { SKILLS } from "../catalog.js?v=20261020-home-menu-images";
-import { getProfile } from "../model.js?v=20261020-home-menu-images";
-import { sourceLinks, coefficientSourceLinks } from "../sources.js?v=20261020-home-menu-images";
+import { formatCharacterText } from "../text.js?v=20261020-home-shuffle-button";
+import { state } from "../../../core/state.js?v=20261020-home-shuffle-button";
+import { $, esc, fmt } from "../../../core/dom.js?v=20261020-home-shuffle-button";
+import { SKILLS } from "../catalog.js?v=20261020-home-shuffle-button";
+import { getProfile } from "../model.js?v=20261020-home-shuffle-button";
+import { sourceLinks, coefficientSourceLinks } from "../sources.js?v=20261020-home-shuffle-button";
 
 export function formatPercent(value) {
   const percent = Math.round(Number(value) * 1000) / 10;

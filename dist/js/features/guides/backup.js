@@ -1,8 +1,8 @@
-import { $ } from "../../core/dom.js?v=20261020-home-menu-images";
-import { repository } from "./repository.js?v=20261020-home-menu-images";
-import { createId, sanitizeHtml, safeVideoLinks } from "./content.js?v=20261020-home-menu-images";
-import { createZip, readZip, safeArchivePath } from "./archive.js?v=20261020-home-menu-images";
-import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES, MAX_BACKUP_BYTES, MAX_MANIFEST_BYTES } from "./config.js?v=20261020-home-menu-images";
+import { $ } from "../../core/dom.js?v=20261020-home-shuffle-button";
+import { repository } from "./repository.js?v=20261020-home-shuffle-button";
+import { createId, sanitizeHtml, safeVideoLinks } from "./content.js?v=20261020-home-shuffle-button";
+import { createZip, readZip, safeArchivePath } from "./archive.js?v=20261020-home-shuffle-button";
+import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES, MAX_BACKUP_BYTES, MAX_MANIFEST_BYTES } from "./config.js?v=20261020-home-shuffle-button";
 const encoder = new TextEncoder();
 
 export async function exportBackup({ setStatus }) {

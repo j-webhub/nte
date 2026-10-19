@@ -1,5 +1,5 @@
-import { DATA_FILES, OPTIONAL_PORTAL_DATA } from "../config/data-files.js?v=20261020-home-menu-images";
-import { ASSET_VERSION } from "../config/site.js?v=20261020-home-menu-images";
+import { DATA_FILES, OPTIONAL_PORTAL_DATA } from "../config/data-files.js?v=20261020-home-shuffle-button";
+import { ASSET_VERSION } from "../config/site.js?v=20261020-home-shuffle-button";
 
 export async function loadDatabase() {
   const pairs = await Promise.all(

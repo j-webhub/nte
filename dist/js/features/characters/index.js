@@ -1,11 +1,11 @@
-import { state } from "../../core/state.js?v=20261020-home-menu-images";
-import { $ } from "../../core/dom.js?v=20261020-home-menu-images";
-import { openCharacter } from "../../core/router.js?v=20261020-home-menu-images";
-import { ELEMENT_ORDER, elem, elementIconUrl } from "./catalog.js?v=20261020-home-menu-images";
-import { renderRoster } from "./roster.js?v=20261020-home-menu-images";
-import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-home-menu-images";
-import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-home-menu-images";
-import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261020-home-menu-images";
+import { state } from "../../core/state.js?v=20261020-home-shuffle-button";
+import { $ } from "../../core/dom.js?v=20261020-home-shuffle-button";
+import { openCharacter } from "../../core/router.js?v=20261020-home-shuffle-button";
+import { ELEMENT_ORDER, elem, elementIconUrl } from "./catalog.js?v=20261020-home-shuffle-button";
+import { renderRoster } from "./roster.js?v=20261020-home-shuffle-button";
+import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-home-shuffle-button";
+import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-home-shuffle-button";
+import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261020-home-shuffle-button";
 
 export { renderRoster, renderProfile };
 

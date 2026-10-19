@@ -1,6 +1,6 @@
-import { state } from "./state.js?v=20261020-home-menu-images";
-import { $, esc, fmt } from "./dom.js?v=20261020-home-menu-images";
-import { loadDatabase } from "./data.js?v=20261020-home-menu-images";
+import { state } from "./state.js?v=20261020-home-shuffle-button";
+import { $, esc, fmt } from "./dom.js?v=20261020-home-shuffle-button";
+import { loadDatabase } from "./data.js?v=20261020-home-shuffle-button";
 
 const VALID_VIEWS = new Set([
   "home",

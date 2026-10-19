@@ -1,6 +1,6 @@
-import { state } from "../../core/state.js?v=20261020-home-menu-images";
-import { $, esc } from "../../core/dom.js?v=20261020-home-menu-images";
-import { elem, elementIconUrl } from "./catalog.js?v=20261020-home-menu-images";
+import { state } from "../../core/state.js?v=20261020-home-shuffle-button";
+import { $, esc } from "../../core/dom.js?v=20261020-home-shuffle-button";
+import { elem, elementIconUrl } from "./catalog.js?v=20261020-home-shuffle-button";
 
 export function renderRoster() {
   const CHARACTER_DISPLAY_ORDER = state.db.index.displayCharacterIds || state.db.index.releasedCharacterIds;

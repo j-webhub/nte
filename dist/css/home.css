@@ -87,16 +87,24 @@
   bottom: 20px;
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  min-height: 34px;
-  padding: 8px 12px;
-  border: 1px solid #2c3e4c;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid rgb(44 62 76 / 10%);
   border-radius: 7px;
-  background: #101922;
+  background: rgb(16 25 34 / 10%);
   color: #f0f4f7;
   font: inherit;
-  font-size: 11px;
+  font-size: 23px;
+  line-height: 1;
   cursor: pointer;
+}
+
+.portal-hero-random:hover,
+.portal-hero-random:focus-visible {
+  border-color: #2c3e4c;
+  background: #101922;
 }
 
 .portal-section {
@@ -178,26 +186,6 @@
   width: 100%;
   padding: 62px 16px 14px;
   background: linear-gradient(transparent,rgb(8 15 23 / 78%));
-}
-.portal-menu-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;
-}
-.portal-menu-random {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 34px;
-  padding: 8px 10px;
-  border: 1px solid #2c3e4c;
-  border-radius: 7px;
-  background: #101922;
-  color: #f0f4f7;
-  font: inherit;
-  font-size: 11px;
-  cursor: pointer;
 }
 
 .portal-card:hover {

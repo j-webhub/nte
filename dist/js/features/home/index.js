@@ -1,5 +1,5 @@
-import { state } from "../../core/state.js?v=20261020-home-menu-images";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-home-menu-images";
+import { state } from "../../core/state.js?v=20261020-home-shuffle-button";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-home-shuffle-button";
 
 let lastWallpaperUrl = "";
 const lastMenuImages = new Map();
@@ -123,11 +123,11 @@ export function renderHome() {
     '월페이퍼까지 원하는 자료를 선택해 확인할 수 있습니다.</p></div>' +
     (wallpaper ? '<div class="portal-hero-art" aria-hidden="true"><img class="portal-hero-wallpaper" src="' +
       esc(wallpaper.imageUrl) + '" alt="" fetchpriority="high" decoding="async"></div>' +
-      '<button type="button" class="portal-hero-random" data-home-wallpaper-random><span aria-hidden="true">⤨</span>다른 랜덤 이미지</button>' : '') +
+      '<button type="button" class="portal-hero-random" data-home-wallpaper-random aria-label="랜덤 월페이퍼 변경" title="랜덤 월페이퍼 변경"><span aria-hidden="true">⤨</span></button>' : '') +
     '</section>' +
     '<section class="portal-section"><div class="section-head"><div><h2>아카이브 ' +
-    '메뉴</h2><p>확인할 정보를 선택하세요.</p></div><div class="portal-menu-actions"><span class="portal-version">GLOBAL · ' +
-    '1.4</span><button type="button" class="portal-menu-random" data-home-menu-random>랜덤 이미지 다시 보기</button></div></div><div class="portal-grid">' +
+    '메뉴</h2><p>확인할 정보를 선택하세요.</p></div><span class="portal-version">GLOBAL · ' +
+    '1.4</span></div><div class="portal-grid">' +
     cards +
     "</div></section>" +
     '<section class="portal-latest"><div><p class="eyebrow">OFFICIAL ' +
@@ -141,12 +141,5 @@ export function renderHome() {
     const next = randomWallpaper();
     const image = $(".portal-hero-wallpaper");
     if (next && image) image.src = next.imageUrl;
-  });
-  $("[data-home-menu-random]")?.addEventListener("click", () => {
-    ["characters", "arcs", "wallpapers"].forEach(view => {
-      const image = $('[data-home-menu-image="' + view + '"]');
-      const next = menuImage(view);
-      if (image && next) image.src = next;
-    });
   });
 }

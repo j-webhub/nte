@@ -1,9 +1,9 @@
-import { state } from "../../core/state.js?v=20261020-home-menu-images";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-home-menu-images";
-import { repository } from "./repository.js?v=20261020-home-menu-images";
-import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES } from "./config.js?v=20261020-home-menu-images";
-import { createId, bytesOf, safeVideoLinks, sanitizeHtml } from "./content.js?v=20261020-home-menu-images";
-import { exportBackup, importBackup } from "./backup.js?v=20261020-home-menu-images";
+import { state } from "../../core/state.js?v=20261020-home-shuffle-button";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-home-shuffle-button";
+import { repository } from "./repository.js?v=20261020-home-shuffle-button";
+import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES } from "./config.js?v=20261020-home-shuffle-button";
+import { createId, bytesOf, safeVideoLinks, sanitizeHtml } from "./content.js?v=20261020-home-shuffle-button";
+import { exportBackup, importBackup } from "./backup.js?v=20261020-home-shuffle-button";
 
 let currentPostId = null;
 let currentPost = null;

@@ -1,6 +1,6 @@
-import { state } from "../../../core/state.js?v=20261020-home-menu-images";
-import { esc, fmt } from "../../../core/dom.js?v=20261020-home-menu-images";
-import { renderSkillGrowth } from "./skill-growth.js?v=20261020-home-menu-images";
+import { state } from "../../../core/state.js?v=20261020-home-shuffle-button";
+import { esc, fmt } from "../../../core/dom.js?v=20261020-home-shuffle-button";
+import { renderSkillGrowth } from "./skill-growth.js?v=20261020-home-shuffle-button";
 
 export function renderGrowth(p) {
   const data = state.db.growth;

@@ -1,11 +1,11 @@
-import { state } from "../../core/state.js?v=20261020-chaos-profile";
-import { $ } from "../../core/dom.js?v=20261020-chaos-profile";
-import { openCharacter } from "../../core/router.js?v=20261020-chaos-profile";
-import { ELEMENT_ORDER, elem, elementIconUrl } from "./catalog.js?v=20261020-chaos-profile";
-import { renderRoster } from "./roster.js?v=20261020-chaos-profile";
-import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-chaos-profile";
-import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-chaos-profile";
-import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261020-chaos-profile";
+import { state } from "../../core/state.js?v=20261020-arc-images-rarity";
+import { $ } from "../../core/dom.js?v=20261020-arc-images-rarity";
+import { openCharacter } from "../../core/router.js?v=20261020-arc-images-rarity";
+import { ELEMENT_ORDER, elem, elementIconUrl } from "./catalog.js?v=20261020-arc-images-rarity";
+import { renderRoster } from "./roster.js?v=20261020-arc-images-rarity";
+import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-arc-images-rarity";
+import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-arc-images-rarity";
+import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261020-arc-images-rarity";
 
 export { renderRoster, renderProfile };
 
@@ -40,6 +40,15 @@ export function initializeCharacters() {
       if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button !== 0) return;
       event.preventDefault();
       openCharacter(galleryCard.dataset.characterCard);
+      return;
+    }
+    const rarityButton = event.target.closest("[data-gallery-rarity]");
+    if (rarityButton) {
+      const rarity = rarityButton.dataset.galleryRarity;
+      const selected = state.characterGalleryRarities;
+      state.characterGalleryRarities = selected.includes(rarity)
+        ? selected.filter(value => value !== rarity) : [...selected, rarity];
+      refreshCharacterGallery();
       return;
     }
     const elementButton = event.target.closest("[data-gallery-element]");

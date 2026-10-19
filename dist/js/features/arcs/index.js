@@ -1,7 +1,7 @@
-import { state } from "../../core/state.js?v=20261020-chaos-profile";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-chaos-profile";
-import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261020-chaos-profile";
-import { renderArcTypeIcon, renderRarityBadge } from "../characters/badges.js?v=20261020-chaos-profile";
+import { state } from "../../core/state.js?v=20261020-arc-images-rarity";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-arc-images-rarity";
+import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261020-arc-images-rarity";
+import { renderArcTypeIcon, renderRarityBadge } from "../characters/badges.js?v=20261020-arc-images-rarity";
 
 function renderArcEffect(arc) {
   const text = interpolateArcRankEffect(arc, 1) || "자료 없음";
@@ -49,7 +49,9 @@ export function arcDatabaseCards(query = "") {
         '<span class="arc-db-owner">' +
         '<span>' + esc(owner?.names.ko || "캐릭터 미분류") + '</span>' +
         renderArcTypeIcon(arc.arcType || owner?.arcType) +
-        "</span></div><h2>" +
+        "</span></div>" +
+        (arc.imageFile ? '<div class="arc-db-art"><img src="./img/arcs/' + esc(arc.imageFile) + '" alt="' + esc(arc.nameKo) + '" width="256" height="256" loading="lazy" decoding="async"></div>' : '') +
+        '<h2>' +
         esc(arc.nameKo || "이름 미확인") +
         '</h2><p class="arc-db-en">' +
         esc(arc.nameEn || "") +

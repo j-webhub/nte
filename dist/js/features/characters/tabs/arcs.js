@@ -1,8 +1,8 @@
-import { formatCharacterText } from "../text.js?v=20261020-chaos-profile";
-import { state } from "../../../core/state.js?v=20261020-chaos-profile";
-import { esc } from "../../../core/dom.js?v=20261020-chaos-profile";
-import { sourceLinks } from "../sources.js?v=20261020-chaos-profile";
-import { interpolateArcRankEffect } from "../../../shared/arc-ranks.js?v=20261020-chaos-profile";
+import { formatCharacterText } from "../text.js?v=20261020-arc-images-rarity";
+import { state } from "../../../core/state.js?v=20261020-arc-images-rarity";
+import { esc } from "../../../core/dom.js?v=20261020-arc-images-rarity";
+import { sourceLinks } from "../sources.js?v=20261020-arc-images-rarity";
+import { interpolateArcRankEffect } from "../../../shared/arc-ranks.js?v=20261020-arc-images-rarity";
 
 export function renderArcs(p) {
   const character = state.db.arcs.characters.find(
@@ -65,6 +65,7 @@ export function renderArcs(p) {
         '</h3><p>80레벨 능력치</p></div><span class="arc-rarity">' +
         esc(a.rarity ? a.rarity + "급" : "—") +
         "</span></div>" +
+        (a.imageFile ? '<div class="arc-db-art"><img src="./img/arcs/' + esc(a.imageFile) + '" alt="' + esc(a.nameKo) + '" width="256" height="256" loading="lazy" decoding="async"></div>' : '') +
         '<div class="arc-stats"><span class="arc-stat">공격력 ' +
         esc(s.attack ?? "—") +
         '</span><span class="arc-stat">' +

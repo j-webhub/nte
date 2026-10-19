@@ -1,7 +1,7 @@
-import { formatCharacterText } from "../text.js?v=20261020-chaos-profile";
+import { formatCharacterText } from "../text.js?v=20261020-arc-images-rarity";
 
-import { esc } from "../../../core/dom.js?v=20261020-chaos-profile";
-import { sourceLinks } from "../sources.js?v=20261020-chaos-profile";
+import { esc } from "../../../core/dom.js?v=20261020-arc-images-rarity";
+import { sourceLinks } from "../sources.js?v=20261020-arc-images-rarity";
 
 export function renderOverview(p, options = {}) {
   const {

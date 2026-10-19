@@ -1,8 +1,8 @@
-import { $ } from "../../core/dom.js?v=20261020-chaos-profile";
-import { repository } from "./repository.js?v=20261020-chaos-profile";
-import { createId, sanitizeHtml, safeVideoLinks } from "./content.js?v=20261020-chaos-profile";
-import { createZip, readZip, safeArchivePath } from "./archive.js?v=20261020-chaos-profile";
-import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES, MAX_BACKUP_BYTES, MAX_MANIFEST_BYTES } from "./config.js?v=20261020-chaos-profile";
+import { $ } from "../../core/dom.js?v=20261020-arc-images-rarity";
+import { repository } from "./repository.js?v=20261020-arc-images-rarity";
+import { createId, sanitizeHtml, safeVideoLinks } from "./content.js?v=20261020-arc-images-rarity";
+import { createZip, readZip, safeArchivePath } from "./archive.js?v=20261020-arc-images-rarity";
+import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES, MAX_BACKUP_BYTES, MAX_MANIFEST_BYTES } from "./config.js?v=20261020-arc-images-rarity";
 const encoder = new TextEncoder();
 
 export async function exportBackup({ setStatus }) {

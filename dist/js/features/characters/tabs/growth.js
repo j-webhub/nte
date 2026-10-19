@@ -1,6 +1,6 @@
-import { state } from "../../../core/state.js?v=20261020-chaos-profile";
-import { esc, fmt } from "../../../core/dom.js?v=20261020-chaos-profile";
-import { renderSkillGrowth } from "./skill-growth.js?v=20261020-chaos-profile";
+import { state } from "../../../core/state.js?v=20261020-arc-images-rarity";
+import { esc, fmt } from "../../../core/dom.js?v=20261020-arc-images-rarity";
+import { renderSkillGrowth } from "./skill-growth.js?v=20261020-arc-images-rarity";
 
 export function renderGrowth(p) {
   const data = state.db.growth;

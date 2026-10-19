@@ -1,4 +1,4 @@
-import { state } from "../../core/state.js?v=20261020-chaos-profile";
+import { state } from "../../core/state.js?v=20261020-arc-images-rarity";
 
 export function getProfile(id) {
   const character = state.db.characters[id];

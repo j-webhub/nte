@@ -254,7 +254,8 @@
           2,
           2
         ]
-      ]
+      ],
+      "imageFile": "stellar-veil.webp"
     },
     {
       "id": "camellia-society",
@@ -293,7 +294,8 @@
           7,
           7
         ]
-      ]
+      ],
+      "imageFile": "camellia-society.webp"
     },
     {
       "id": "crime-and-punishment",
@@ -338,7 +340,8 @@
           4,
           4
         ]
-      ]
+      ],
+      "imageFile": "crime-and-punishment.webp"
     },
     {
       "id": "whats-desired",
@@ -372,7 +375,8 @@
           1,
           1
         ]
-      ]
+      ],
+      "imageFile": "whats-desired.webp"
     },
     {
       "id": "contemplative-cat",
@@ -402,7 +406,8 @@
           1,
           1
         ]
-      ]
+      ],
+      "imageFile": "contemplative-cat.webp"
     },
     {
       "id": "youthful-fantasy",
@@ -437,7 +442,8 @@
           1,
           4
         ]
-      ]
+      ],
+      "imageFile": "youthful-fantasy.webp"
     },
     {
       "id": "call-of-the-twisted-city",
@@ -468,7 +474,8 @@
           1,
           1
         ]
-      ]
+      ],
+      "imageFile": "call-of-the-twisted-city.webp"
     },
     {
       "id": "eternal-waltz",
@@ -502,7 +509,8 @@
           2,
           2
         ]
-      ]
+      ],
+      "imageFile": "eternal-waltz.webp"
     },
     {
       "id": "blow-up-the-crowd",
@@ -545,7 +553,8 @@
           6,
           6
         ]
-      ]
+      ],
+      "imageFile": "blow-up-the-crowd.webp"
     },
     {
       "id": "raging-flames",
@@ -593,7 +602,8 @@
           2,
           2
         ]
-      ]
+      ],
+      "imageFile": "raging-flames.webp"
     },
     {
       "id": "marching-beyond-time",
@@ -632,7 +642,8 @@
           6,
           6
         ]
-      ]
+      ],
+      "imageFile": "marching-beyond-time.webp"
     },
     {
       "id": "the-wrong-gate",
@@ -670,7 +681,8 @@
           3,
           3
         ]
-      ]
+      ],
+      "imageFile": "the-wrong-gate.webp"
     },
     {
       "id": "reality-refuge",
@@ -708,7 +720,8 @@
           3,
           3
         ]
-      ]
+      ],
+      "imageFile": "reality-refuge.webp"
     },
     {
       "id": "the-last-rose",
@@ -742,7 +755,8 @@
           1,
           1
         ]
-      ]
+      ],
+      "imageFile": "the-last-rose.webp"
     },
     {
       "id": "voice-of-the-voyager",
@@ -780,7 +794,8 @@
           2,
           2
         ]
-      ]
+      ],
+      "imageFile": "voice-of-the-voyager.webp"
     },
     {
       "id": "ready-ready",
@@ -819,7 +834,8 @@
           3,
           2
         ]
-      ]
+      ],
+      "imageFile": "ready-ready.webp"
     },
     {
       "id": "good-boys-grand-adventure",
@@ -857,7 +873,8 @@
           3,
           2
         ]
-      ]
+      ],
+      "imageFile": "good-boys-grand-adventure.webp"
     },
     {
       "id": "blushing-mirage",
@@ -897,7 +914,8 @@
           3,
           3
         ]
-      ]
+      ],
+      "imageFile": "blushing-mirage.webp"
     },
     {
       "id": "tears-beneath-the-mask",
@@ -928,7 +946,8 @@
           1,
           1
         ]
-      ]
+      ],
+      "imageFile": "tears-beneath-the-mask.webp"
     },
     {
       "id": "ravenous-blade",
@@ -964,7 +983,8 @@
           1,
           1
         ]
-      ]
+      ],
+      "imageFile": "ravenous-blade.webp"
     },
     {
       "id": "day-off",
@@ -998,7 +1018,8 @@
           2,
           2
         ]
-      ]
+      ],
+      "imageFile": "day-off.webp"
     },
     {
       "id": "the-rain-that-shook-the-world",
@@ -1032,7 +1053,8 @@
           2,
           2
         ]
-      ]
+      ],
+      "imageFile": "the-rain-that-shook-the-world.webp"
     }
   ]
 }

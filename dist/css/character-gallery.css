@@ -243,10 +243,12 @@
   line-height: 1;
 }
 .arc-db-filter-group .db-grade-letter {
-  width: 100%;
-  padding: 0;
+  width: auto;
+  padding: 0 4px;
   text-align: center;
-  transform: none;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+  transform: translateX(-1px);
 }
 @media (prefers-reduced-motion: reduce) {
   .db-type-icon::after {

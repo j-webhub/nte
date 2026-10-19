@@ -91,6 +91,10 @@
 
 ## 디자인 수정하기
 
+아크 이미지는 `dist/img/arcs/`에 256×256 투명 WebP로 저장하고, `nte-character-signature-arcs-v1.4.json`의 해당 아크에 `imageFile` 파일명을 지정합니다. 아크 DB와 캐릭터 상세의 아크 탭이 같은 이미지를 사용합니다.
+
+캐릭터 DB의 속성·희귀도 필터는 중복 선택할 수 있으며, 선택한 버튼을 다시 누르면 해제됩니다. 버튼 내부 정렬은 `control-alignment.css`, 등급 글자와 원형 필터는 `character-gallery.css`에서 조정합니다.
+
 `dist/styles.css`에는 불러오는 순서만 있습니다. 실제 규칙은 `dist/css/`에 속성별로 줄을 나눠 정리했습니다.
 
 | 파일 | 담당 영역 |

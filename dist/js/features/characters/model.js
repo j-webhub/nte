@@ -1,4 +1,4 @@
-import { state } from "../../core/state.js?v=20261020-awakening-layout";
+import { state } from "../../core/state.js?v=20261020-skill-descriptions";
 
 export function getProfile(id) {
   const character = state.db.characters[id];

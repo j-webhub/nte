@@ -1,8 +1,8 @@
-import { state } from "../../../core/state.js?v=20261020-awakening-layout";
-import { $, esc, fmt } from "../../../core/dom.js?v=20261020-awakening-layout";
-import { SKILLS } from "../catalog.js?v=20261020-awakening-layout";
-import { getProfile } from "../model.js?v=20261020-awakening-layout";
-import { sourceLinks, coefficientSourceLinks } from "../sources.js?v=20261020-awakening-layout";
+import { state } from "../../../core/state.js?v=20261020-skill-descriptions";
+import { $, esc, fmt } from "../../../core/dom.js?v=20261020-skill-descriptions";
+import { SKILLS } from "../catalog.js?v=20261020-skill-descriptions";
+import { getProfile } from "../model.js?v=20261020-skill-descriptions";
+import { sourceLinks, coefficientSourceLinks } from "../sources.js?v=20261020-skill-descriptions";
 
 export function formatPercent(value) {
   const percent = Math.round(Number(value) * 1000) / 10;

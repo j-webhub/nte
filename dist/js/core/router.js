@@ -1,6 +1,6 @@
-import { state } from "./state.js?v=20261020-awakening-layout";
-import { $, esc, fmt } from "./dom.js?v=20261020-awakening-layout";
-import { loadDatabase } from "./data.js?v=20261020-awakening-layout";
+import { state } from "./state.js?v=20261020-skill-descriptions";
+import { $, esc, fmt } from "./dom.js?v=20261020-skill-descriptions";
+import { loadDatabase } from "./data.js?v=20261020-skill-descriptions";
 
 const VALID_VIEWS = new Set([
   "home",

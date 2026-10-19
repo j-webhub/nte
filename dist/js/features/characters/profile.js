@@ -1,8 +1,8 @@
-import { state } from "../../core/state.js?v=20261020-awakening-layout";
-import { $, esc, fmt } from "../../core/dom.js?v=20261020-awakening-layout";
-import { elem, assetUrl, elementIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-awakening-layout";
-import { getProfile } from "./model.js?v=20261020-awakening-layout";
-import { renderTab } from "./tabs/index.js?v=20261020-awakening-layout";
+import { state } from "../../core/state.js?v=20261020-skill-descriptions";
+import { $, esc, fmt } from "../../core/dom.js?v=20261020-skill-descriptions";
+import { elem, assetUrl, elementIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-skill-descriptions";
+import { getProfile } from "./model.js?v=20261020-skill-descriptions";
+import { renderTab } from "./tabs/index.js?v=20261020-skill-descriptions";
 
 export function bindCharacterIllustration() {
   const visual = $("#main-content .hero-visual");

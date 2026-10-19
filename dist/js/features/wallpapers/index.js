@@ -1,5 +1,5 @@
-import { state } from "../../core/state.js?v=20261020-awakening-layout";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-awakening-layout";
+import { state } from "../../core/state.js?v=20261020-skill-descriptions";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-skill-descriptions";
 
 export function wallpaperFileName(item) {
   return String(item.imageUrl || "")

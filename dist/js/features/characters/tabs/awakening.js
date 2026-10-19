@@ -1,6 +1,6 @@
 
-import { esc } from "../../../core/dom.js?v=20261020-awakening-layout";
-import { sourceLinks } from "../sources.js?v=20261020-awakening-layout";
+import { esc } from "../../../core/dom.js?v=20261020-skill-descriptions";
+import { sourceLinks } from "../sources.js?v=20261020-skill-descriptions";
 
 export function renderAwakening(p, includeSources = true) {
   const m = p.mechanics;

@@ -1,6 +1,6 @@
-import { state } from "../../../core/state.js?v=20261020-akane-bio";
-import { esc } from "../../../core/dom.js?v=20261020-akane-bio";
-import { sourceLinks } from "../sources.js?v=20261020-akane-bio";
+import { state } from "../../../core/state.js?v=20261020-awakening-layout";
+import { esc } from "../../../core/dom.js?v=20261020-awakening-layout";
+import { sourceLinks } from "../sources.js?v=20261020-awakening-layout";
 
 export function renderConsole(p) {
   const build = p.console;

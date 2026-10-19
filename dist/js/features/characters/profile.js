@@ -1,8 +1,8 @@
-import { state } from "../../core/state.js?v=20261020-akane-bio";
-import { $, esc, fmt } from "../../core/dom.js?v=20261020-akane-bio";
-import { elem, assetUrl, elementIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-akane-bio";
-import { getProfile } from "./model.js?v=20261020-akane-bio";
-import { renderTab } from "./tabs/index.js?v=20261020-akane-bio";
+import { state } from "../../core/state.js?v=20261020-awakening-layout";
+import { $, esc, fmt } from "../../core/dom.js?v=20261020-awakening-layout";
+import { elem, assetUrl, elementIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-awakening-layout";
+import { getProfile } from "./model.js?v=20261020-awakening-layout";
+import { renderTab } from "./tabs/index.js?v=20261020-awakening-layout";
 
 export function bindCharacterIllustration() {
   const visual = $("#main-content .hero-visual");

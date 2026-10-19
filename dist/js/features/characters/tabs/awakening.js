@@ -1,6 +1,6 @@
 
-import { esc } from "../../../core/dom.js?v=20261020-akane-bio";
-import { sourceLinks } from "../sources.js?v=20261020-akane-bio";
+import { esc } from "../../../core/dom.js?v=20261020-awakening-layout";
+import { sourceLinks } from "../sources.js?v=20261020-awakening-layout";
 
 export function renderAwakening(p, includeSources = true) {
   const m = p.mechanics;

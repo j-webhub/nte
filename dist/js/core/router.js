@@ -1,6 +1,6 @@
-import { state } from "./state.js?v=20261020-akane-bio";
-import { $, esc, fmt } from "./dom.js?v=20261020-akane-bio";
-import { loadDatabase } from "./data.js?v=20261020-akane-bio";
+import { state } from "./state.js?v=20261020-awakening-layout";
+import { $, esc, fmt } from "./dom.js?v=20261020-awakening-layout";
+import { loadDatabase } from "./data.js?v=20261020-awakening-layout";
 
 const VALID_VIEWS = new Set([
   "home",

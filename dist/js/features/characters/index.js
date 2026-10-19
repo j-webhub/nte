@@ -1,10 +1,10 @@
-import { state } from "../../core/state.js?v=20261020-akane-bio";
-import { $ } from "../../core/dom.js?v=20261020-akane-bio";
-import { setView } from "../../core/router.js?v=20261020-akane-bio";
-import { ELEMENT_ORDER, ELEMENTS } from "./catalog.js?v=20261020-akane-bio";
-import { renderRoster } from "./roster.js?v=20261020-akane-bio";
-import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-akane-bio";
-import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-akane-bio";
+import { state } from "../../core/state.js?v=20261020-awakening-layout";
+import { $ } from "../../core/dom.js?v=20261020-awakening-layout";
+import { setView } from "../../core/router.js?v=20261020-awakening-layout";
+import { ELEMENT_ORDER, ELEMENTS } from "./catalog.js?v=20261020-awakening-layout";
+import { renderRoster } from "./roster.js?v=20261020-awakening-layout";
+import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-awakening-layout";
+import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-awakening-layout";
 
 export { renderRoster, renderProfile };
 

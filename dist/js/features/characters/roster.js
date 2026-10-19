@@ -1,6 +1,6 @@
-import { state } from "../../core/state.js?v=20261020-akane-bio";
-import { $, esc } from "../../core/dom.js?v=20261020-akane-bio";
-import { elem, elementIconUrl } from "./catalog.js?v=20261020-akane-bio";
+import { state } from "../../core/state.js?v=20261020-awakening-layout";
+import { $, esc } from "../../core/dom.js?v=20261020-awakening-layout";
+import { elem, elementIconUrl } from "./catalog.js?v=20261020-awakening-layout";
 
 export function renderRoster() {
   const CHARACTER_DISPLAY_ORDER = state.db.index.displayCharacterIds || state.db.index.releasedCharacterIds;

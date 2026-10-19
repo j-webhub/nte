@@ -1,9 +1,9 @@
-import { state } from "../../core/state.js?v=20261020-akane-bio";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-akane-bio";
-import { repository } from "./repository.js?v=20261020-akane-bio";
-import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES } from "./config.js?v=20261020-akane-bio";
-import { createId, bytesOf, safeVideoLinks, sanitizeHtml } from "./content.js?v=20261020-akane-bio";
-import { exportBackup, importBackup } from "./backup.js?v=20261020-akane-bio";
+import { state } from "../../core/state.js?v=20261020-awakening-layout";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-awakening-layout";
+import { repository } from "./repository.js?v=20261020-awakening-layout";
+import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES } from "./config.js?v=20261020-awakening-layout";
+import { createId, bytesOf, safeVideoLinks, sanitizeHtml } from "./content.js?v=20261020-awakening-layout";
+import { exportBackup, importBackup } from "./backup.js?v=20261020-awakening-layout";
 
 let currentPostId = null;
 let currentPost = null;

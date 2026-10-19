@@ -1,5 +1,5 @@
-import { state } from "../../core/state.js?v=20261020-akane-bio";
-import { esc } from "../../core/dom.js?v=20261020-akane-bio";
+import { state } from "../../core/state.js?v=20261020-awakening-layout";
+import { esc } from "../../core/dom.js?v=20261020-awakening-layout";
 
 export function sourceLinks(p, domesticOnly = false) {
   const urls = new Set();

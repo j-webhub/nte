@@ -1,13 +1,13 @@
 /* 순서가 뒤인 파일의 규칙이 우선합니다. 화면별 스타일은 css/에서 편집합니다. */
-@import "./css/base.css?v=20261020-akane-bio";
-@import "./css/characters.css?v=20261020-akane-bio";
-@import "./css/notices-detail.css?v=20261020-akane-bio";
-@import "./css/characters-mobile.css?v=20261020-akane-bio";
-@import "./css/layout.css?v=20261020-akane-bio";
-@import "./css/home.css?v=20261020-akane-bio";
-@import "./css/portal.css?v=20261020-akane-bio";
-@import "./css/notices.css?v=20261020-akane-bio";
-@import "./css/arcs.css?v=20261020-akane-bio";
-@import "./css/guides.css?v=20261020-akane-bio";
-@import "./css/wallpapers.css?v=20261020-akane-bio";
-@import "./css/responsive.css?v=20261020-akane-bio";
+@import "./css/base.css?v=20261020-awakening-layout";
+@import "./css/characters.css?v=20261020-awakening-layout";
+@import "./css/notices-detail.css?v=20261020-awakening-layout";
+@import "./css/characters-mobile.css?v=20261020-awakening-layout";
+@import "./css/layout.css?v=20261020-awakening-layout";
+@import "./css/home.css?v=20261020-awakening-layout";
+@import "./css/portal.css?v=20261020-awakening-layout";
+@import "./css/notices.css?v=20261020-awakening-layout";
+@import "./css/arcs.css?v=20261020-awakening-layout";
+@import "./css/guides.css?v=20261020-awakening-layout";
+@import "./css/wallpapers.css?v=20261020-awakening-layout";
+@import "./css/responsive.css?v=20261020-awakening-layout";

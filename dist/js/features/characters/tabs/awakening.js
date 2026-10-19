@@ -1,7 +1,7 @@
-import { formatCharacterText } from "../text.js?v=20261020-character-gallery";
+import { formatCharacterText } from "../text.js?v=20261020-db-layout-fixes";
 
-import { esc } from "../../../core/dom.js?v=20261020-character-gallery";
-import { sourceLinks } from "../sources.js?v=20261020-character-gallery";
+import { esc } from "../../../core/dom.js?v=20261020-db-layout-fixes";
+import { sourceLinks } from "../sources.js?v=20261020-db-layout-fixes";
 
 export function renderAwakening(p, includeSources = true) {
   const m = p.mechanics;

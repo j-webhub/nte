@@ -1,7 +1,7 @@
-import { state } from "../../core/state.js?v=20261020-character-gallery";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-character-gallery";
-import { ELEMENT_ORDER, elem, elementIconUrl, assetUrl } from "./catalog.js?v=20261020-character-gallery";
-import { renderElementIcon, renderArcTypeIcon, renderRarityBadge } from "./badges.js?v=20261020-character-gallery";
+import { state } from "../../core/state.js?v=20261020-db-layout-fixes";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-db-layout-fixes";
+import { ELEMENT_ORDER, elem, elementIconUrl, assetUrl } from "./catalog.js?v=20261020-db-layout-fixes";
+import { renderElementIcon, renderArcTypeIcon, renderRarityBadge } from "./badges.js?v=20261020-db-layout-fixes";
 
 function galleryCharacters() {
   const term = state.characterGalleryQuery.trim().toLocaleLowerCase("ko");

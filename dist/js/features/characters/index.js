@@ -1,11 +1,11 @@
-import { state } from "../../core/state.js?v=20261020-character-gallery";
-import { $ } from "../../core/dom.js?v=20261020-character-gallery";
-import { openCharacter } from "../../core/router.js?v=20261020-character-gallery";
-import { ELEMENT_ORDER, ELEMENTS } from "./catalog.js?v=20261020-character-gallery";
-import { renderRoster } from "./roster.js?v=20261020-character-gallery";
-import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-character-gallery";
-import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-character-gallery";
-import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261020-character-gallery";
+import { state } from "../../core/state.js?v=20261020-db-layout-fixes";
+import { $ } from "../../core/dom.js?v=20261020-db-layout-fixes";
+import { openCharacter } from "../../core/router.js?v=20261020-db-layout-fixes";
+import { ELEMENT_ORDER, ELEMENTS } from "./catalog.js?v=20261020-db-layout-fixes";
+import { renderRoster } from "./roster.js?v=20261020-db-layout-fixes";
+import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-db-layout-fixes";
+import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-db-layout-fixes";
+import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261020-db-layout-fixes";
 
 export { renderRoster, renderProfile };
 

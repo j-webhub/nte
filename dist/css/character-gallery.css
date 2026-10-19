@@ -19,7 +19,36 @@
   object-fit: contain;
 }
 .db-arc-icon {
-  filter: drop-shadow(.3px 0 0 #fff) drop-shadow(-.3px 0 0 #fff) drop-shadow(0 .3px 0 #fff) drop-shadow(0 -.3px 0 #fff);
+  width: 22px;
+  height: 22px;
+  filter: none;
+}
+.db-type-icon {
+  position: relative;
+}
+.db-type-icon::after {
+  content: attr(data-icon-label);
+  position: absolute;
+  z-index: 10;
+  bottom: calc(100% + 7px);
+  left: 50%;
+  padding: 5px 8px;
+  border: 1px solid #40515e;
+  border-radius: 6px;
+  background: #17232d;
+  color: #e8eef2;
+  font: 11px/1.4 "Malgun Gothic", system-ui, sans-serif;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, 3px);
+  transition: opacity .12s ease, transform .12s ease;
+}
+.db-type-icon:hover::after,
+.arc-db-filter-group button:focus-visible .db-type-icon::after,
+.character-poster:focus-visible .db-type-icon::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
 }
 .db-grade {
   display: inline-grid;
@@ -195,6 +224,11 @@
 .arc-db-filter-group .db-grade {
   font-size: 26px;
   min-height: 30px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .db-type-icon::after {
+    transition: none;
+  }
 }
 @media (max-width: 600px) {
   .character-gallery-grid {

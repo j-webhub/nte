@@ -1,8 +1,8 @@
-import { state } from "../../core/state.js?v=20261020-character-gallery";
-import { $, esc, fmt } from "../../core/dom.js?v=20261020-character-gallery";
-import { elem, assetUrl, elementIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-character-gallery";
-import { getProfile } from "./model.js?v=20261020-character-gallery";
-import { renderTab } from "./tabs/index.js?v=20261020-character-gallery";
+import { state } from "../../core/state.js?v=20261020-db-layout-fixes";
+import { $, esc, fmt } from "../../core/dom.js?v=20261020-db-layout-fixes";
+import { elem, assetUrl, elementIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-db-layout-fixes";
+import { getProfile } from "./model.js?v=20261020-db-layout-fixes";
+import { renderTab } from "./tabs/index.js?v=20261020-db-layout-fixes";
 
 export function bindCharacterIllustration() {
   const visual = $("#main-content .hero-visual");

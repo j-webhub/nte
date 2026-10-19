@@ -47,6 +47,16 @@ html, body {
   background: var(--bg);
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
+@supports not (scrollbar-gutter: stable) {
+  html {
+    overflow-y: scroll;
+  }
+}
+
 button, input, select {
   font: inherit;
   color: inherit;

@@ -83,6 +83,8 @@
 }
 
 .arc-db-card {
+  display: flex;
+  flex-direction: column;
   min-width: 0;
   padding: 16px;
   border: 1px solid var(--line);
@@ -138,8 +140,9 @@
 }
 
 .arc-db-character-link {
-  margin-top: 12px;
-  padding: 0;
+  align-self: flex-end;
+  margin-top: auto;
+  padding: 16px 0 0;
   border: 0;
   color: #94aabc;
   background: transparent;

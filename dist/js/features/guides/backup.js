@@ -1,8 +1,8 @@
-import { $ } from "../../core/dom.js?v=20261020-character-gallery";
-import { repository } from "./repository.js?v=20261020-character-gallery";
-import { createId, sanitizeHtml, safeVideoLinks } from "./content.js?v=20261020-character-gallery";
-import { createZip, readZip, safeArchivePath } from "./archive.js?v=20261020-character-gallery";
-import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES, MAX_BACKUP_BYTES, MAX_MANIFEST_BYTES } from "./config.js?v=20261020-character-gallery";
+import { $ } from "../../core/dom.js?v=20261020-db-layout-fixes";
+import { repository } from "./repository.js?v=20261020-db-layout-fixes";
+import { createId, sanitizeHtml, safeVideoLinks } from "./content.js?v=20261020-db-layout-fixes";
+import { createZip, readZip, safeArchivePath } from "./archive.js?v=20261020-db-layout-fixes";
+import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES, MAX_BACKUP_BYTES, MAX_MANIFEST_BYTES } from "./config.js?v=20261020-db-layout-fixes";
 const encoder = new TextEncoder();
 
 export async function exportBackup({ setStatus }) {

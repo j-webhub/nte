@@ -1,9 +1,9 @@
-import { state } from "../../core/state.js?v=20261020-character-gallery";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-character-gallery";
-import { repository } from "./repository.js?v=20261020-character-gallery";
-import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES } from "./config.js?v=20261020-character-gallery";
-import { createId, bytesOf, safeVideoLinks, sanitizeHtml } from "./content.js?v=20261020-character-gallery";
-import { exportBackup, importBackup } from "./backup.js?v=20261020-character-gallery";
+import { state } from "../../core/state.js?v=20261020-db-layout-fixes";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-db-layout-fixes";
+import { repository } from "./repository.js?v=20261020-db-layout-fixes";
+import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES } from "./config.js?v=20261020-db-layout-fixes";
+import { createId, bytesOf, safeVideoLinks, sanitizeHtml } from "./content.js?v=20261020-db-layout-fixes";
+import { exportBackup, importBackup } from "./backup.js?v=20261020-db-layout-fixes";
 
 let currentPostId = null;
 let currentPost = null;

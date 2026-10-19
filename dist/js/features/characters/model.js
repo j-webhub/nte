@@ -1,4 +1,4 @@
-import { state } from "../../core/state.js?v=20261020-character-gallery";
+import { state } from "../../core/state.js?v=20261020-db-layout-fixes";
 
 export function getProfile(id) {
   const character = state.db.characters[id];

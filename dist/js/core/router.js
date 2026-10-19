@@ -1,6 +1,6 @@
-import { state } from "./state.js?v=20261020-character-gallery";
-import { $, esc, fmt } from "./dom.js?v=20261020-character-gallery";
-import { loadDatabase } from "./data.js?v=20261020-character-gallery";
+import { state } from "./state.js?v=20261020-db-layout-fixes";
+import { $, esc, fmt } from "./dom.js?v=20261020-db-layout-fixes";
+import { loadDatabase } from "./data.js?v=20261020-db-layout-fixes";
 
 const VALID_VIEWS = new Set([
   "home",

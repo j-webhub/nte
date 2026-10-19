@@ -1,6 +1,6 @@
-import { state } from "../../../core/state.js?v=20261020-character-gallery";
-import { esc, fmt } from "../../../core/dom.js?v=20261020-character-gallery";
-import { renderSkillGrowth } from "./skill-growth.js?v=20261020-character-gallery";
+import { state } from "../../../core/state.js?v=20261020-db-layout-fixes";
+import { esc, fmt } from "../../../core/dom.js?v=20261020-db-layout-fixes";
+import { renderSkillGrowth } from "./skill-growth.js?v=20261020-db-layout-fixes";
 
 export function renderGrowth(p) {
   const data = state.db.growth;

@@ -1,9 +1,9 @@
-import { registerPageModules, start } from "./common.js?v=20261012-personal-board";
-import { renderHome } from "./home.js?v=20261012-personal-board";
+import { registerPageModules, start } from "./common.js?v=20261020-akane-update";
+import { renderHome } from "./home.js?v=20261020-akane-update";
 import {
   initializeGuides,
   renderGuides
-} from "./guide-board.js?v=20261012-personal-board";
+} from "./guide-board.js?v=20261020-akane-update";
 import {
   initializePages,
   renderNotices,
@@ -13,7 +13,7 @@ import {
   renderRoster,
   renderProfile,
   closeWallpaperLightbox
-} from "./pages.js?v=20261012-personal-board";
+} from "./pages.js?v=20261020-akane-update";
 
 registerPageModules({
   initialize: () => {

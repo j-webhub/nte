@@ -1,4 +1,4 @@
-import { state, $, esc, siteFooter } from "./common.js?v=20261012-personal-board";
+import { state, $, esc, siteFooter } from "./common.js?v=20261020-akane-update";
 
 const PORTAL_MODULES = [
   {
@@ -12,8 +12,13 @@ const PORTAL_MODULES = [
     view: "characters",
     title: "캐릭터 DB",
     description: "캐릭터 정보와 기술·각성 데이터",
-    count: () =>
-      state.db.roster.characters.filter((c) => c.released).length + "명",
+    count: () => {
+      const released = state.db.roster.characters.filter((c) => c.released).length;
+      const upcoming = (state.db.roster.confirmedUpcoming || []).length;
+      return upcoming
+        ? released + "명 · " + upcoming + "명 예정"
+        : released + "명";
+    },
     icon: "◈"
   },
   {

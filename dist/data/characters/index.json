@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "rosterMetadata": {
     "dataset": "Neverness to Everness character roster",
-    "snapshotDate": "2026-10-02",
+    "snapshotDate": "2026-10-20",
     "gameVersion": "1.4",
     "scope": "Unique playable characters released by the snapshot date; gender-selectable Esper Zero is one character record.",
     "coverage": {
@@ -64,6 +64,7 @@
     },
     "sources": {
       "officialKoreanPatchNotes": "https://nte.perfectworld.com/kr/article/news/gamenews/20260929/264413.html",
+      "officialSecondHalfAnnouncement": "https://www.gamespress.com/nl/NTE-Neverness-to-Everness-Takes-the-Stage-on-October-21-with-Akane-Rin",
       "officialChineseSite": "https://yh.wanmei.com/main.html",
       "englishRosterAndGuides": "https://www.prydwen.gg/neverness-to-everness/characters",
       "koreanCommunityDatabase": "https://ntegame.net/ko/characters/",

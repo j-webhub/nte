@@ -6,7 +6,7 @@ import {
   NOTICE_PAGE_SIZE,
   siteFooter,
   setView
-} from "./common.js?v=20261012-personal-board";
+} from "./common.js?v=20261020-akane-update";
 const elem = (id) => ELEMENTS[id] || { name: id || "—", color: "#aab5bf" };
 
 const ELEMENTS = {
@@ -759,17 +759,17 @@ function refreshArcDatabaseList() {
 function renderRoster() {
   const term = $("#character-search").value.trim().toLowerCase(),
     filter = $("#element-filter").value;
+  const matches = (c) => {
+    const searchable = [c.names.ko, c.names.en, c.names.zhHans]
+      .join(" ")
+      .toLowerCase();
+    return (
+      (!term || searchable.includes(term)) &&
+      (!filter || c.element === filter)
+    );
+  };
   const characters = state.db.roster.characters
-    .filter((c) => {
-      const searchable = [c.names.ko, c.names.en, c.names.zhHans]
-        .join(" ")
-        .toLowerCase();
-      return (
-        c.released &&
-        (!term || searchable.includes(term)) &&
-        (!filter || c.element === filter)
-      );
-    })
+    .filter((c) => c.released && matches(c))
     .sort((a, b) => {
       const aIsA = a.rarity === "A",
         bIsA = b.rarity === "A";
@@ -783,30 +783,59 @@ function renderRoster() {
         return a.names.ko.localeCompare(b.names.ko, "ko");
       return aOrder - bOrder;
     });
-  $("#roster-list").innerHTML = characters.length
-    ? characters
-        .map((c) => {
-          const e = elem(c.element);
-          return (
-            '<button class="character-row rarity-' +
-            esc(c.rarity) +
-            '" role="option" aria-selected="' +
-            (c.id === state.selectedId) +
-            '" data-id="' +
-            esc(c.id) +
-            '" style="--row-color:' +
-            e.color +
-            '"><span class="row-mark"><img class="element-icon element-icon-row" src="' +
-            esc(elementIconUrl(c.element)) +
-            '" alt=""></span>' +
-            '<span class="row-copy"><strong>' +
-            esc(c.names.ko) +
-            '</strong></span><span class="rarity-mark">' +
-            esc(c.rarity) +
-            "급</span></button>"
-          );
-        })
-        .join("")
+  const upcoming = (state.db.roster.confirmedUpcoming || [])
+    .filter(matches)
+    .sort((a, b) =>
+      String(a.plannedGlobalAvailability || "").localeCompare(
+        String(b.plannedGlobalAvailability || "")
+      )
+    );
+  const renderCharacterRow = (c, isUpcoming = false) => {
+    const e = elem(c.element);
+    const dateLabel = String(c.plannedGlobalAvailability || "")
+      .slice(5)
+      .replace("-", ".");
+    return (
+      '<button class="character-row rarity-' +
+      esc(c.rarity) +
+      (isUpcoming ? " is-upcoming" : "") +
+      '" role="option" aria-selected="' +
+      (c.id === state.selectedId) +
+      '" data-id="' +
+      esc(c.id) +
+      '"' +
+      (isUpcoming
+        ? ' aria-label="' +
+          esc(c.names.ko + " · " + dateLabel + " 출시 예정") +
+          '"'
+        : "") +
+      ' style="--row-color:' +
+      e.color +
+      '"><span class="row-mark"><img class="element-icon element-icon-row" src="' +
+      esc(elementIconUrl(c.element)) +
+      '" alt=""></span>' +
+      '<span class="row-copy"><strong>' +
+      esc(c.names.ko) +
+      "</strong>" +
+      (isUpcoming ? "<small>출시 예정</small>" : "") +
+      '</span><span class="rarity-mark">' +
+      (isUpcoming ? esc(dateLabel) : esc(c.rarity) + "급") +
+      "</span></button>"
+    );
+  };
+  const sections = [];
+  if (upcoming.length)
+    sections.push(
+      '<p class="roster-section-label">출시 예정</p>' +
+        upcoming.map((c) => renderCharacterRow(c, true)).join("")
+    );
+  if (characters.length)
+    sections.push(
+      '<p class="roster-section-label">출시 완료</p>' +
+        characters.map((c) => renderCharacterRow(c)).join("")
+    );
+  $("#roster-list").innerHTML = sections.length
+    ? sections.join("")
     : '<div class="roster-empty">조건에 맞는 캐릭터가 없습니다.<br>검색어나 속성 필터를 바꿔 보세요.</div>';
 }
 
@@ -908,7 +937,8 @@ function renderCharacterIntroDetails(setting) {
     ["생일", setting.birthday],
     ["소속", setting.faction],
     ["이능력", setting.ability]
-  ];
+  ].filter(([, value]) => typeof value === "string" && value.trim());
+  if (!fields.length) return "";
   return (
     '<dl class="hero-intro-details">' +
     fields
@@ -922,26 +952,67 @@ function renderCharacterIntroDetails(setting) {
 }
 function renderProfile() {
   const p = getProfile(state.selectedId);
-  if (!p.roster) return;
+  if (!p?.roster) return;
+  const isUpcoming = !p.roster.released;
   const e = elem(p.roster.element);
 
-  const illustration = CHARACTER_IMAGE_FILES[p.roster.id] || p.roster.names.ko;
+  const illustration = CHARACTER_IMAGE_FILES[p.roster.id] || "";
   document.documentElement.style.setProperty("--accent", e.color);
+  const releasedIndex = state.db.roster.characters.findIndex(
+    (x) => x.id === state.selectedId
+  );
+  const upcomingIndex = (state.db.roster.confirmedUpcoming || []).findIndex(
+    (x) => x.id === state.selectedId
+  );
   const order = String(
-    state.db.roster.characters.findIndex((x) => x.id === state.selectedId) + 1
+    releasedIndex >= 0
+      ? releasedIndex + 1
+      : state.db.roster.characters.length + upcomingIndex + 1
   ).padStart(2, "0");
+  const releaseDate = String(p.roster.plannedGlobalAvailability || "")
+    .replaceAll("-", ".");
+  const imageMarkup = illustration
+    ? '<img class="character-illustration" src="' +
+      esc(assetUrl(illustration)) +
+      '" alt="">'
+    : "";
+  const profileContent = isUpcoming
+    ? renderUpcomingProfile(p)
+    : renderStats(p.mechanics) +
+      '<nav class="tabs" role="tablist" aria-label="캐릭터 데이터">' +
+      TABS.map(
+        ([id, label]) =>
+          '<button class="tab-button" role="tab" aria-selected="' +
+          (state.activeTab === id) +
+          '" aria-controls="tab-panel" data-tab="' +
+          id +
+          '">' +
+          label +
+          "</button>"
+      ).join("") +
+      '</nav><section id="tab-panel" class="tab-content" role="tabpanel">' +
+      renderTab(p) +
+      "</section>";
   $("#main-content").innerHTML =
     '<div class="profile-topline"><span>캐릭터 데이터 / ' +
     esc(p.roster.names.ko) +
-    "</span><span>수집 기준 · 글로벌 1.4 · 2026.10.02</span></div>" +
+    "</span><span>" +
+    (isUpcoming
+      ? "공식 발표 기준 · 글로벌 1.4 · " + releaseDate + " 출시 예정"
+      : "수집 기준 · 글로벌 1.4 · 2026.10.02") +
+    "</span></div>" +
     '<section class="profile-hero" style="--element-color:' +
     e.color +
     '"><div class="hero-copy"><div class="hero-heading">' +
     '<div class="hero-titleline"><h1>' +
     esc(p.roster.names.ko) +
-    "</h1></div>" +
+    "</h1>" +
+    (isUpcoming
+      ? '<span class="tag upcoming-status">' + releaseDate + " 출시 예정</span>"
+      : "") +
+    "</div>" +
     '<p class="hero-role">' +
-    esc(p.roster.communityRoleKo || "역할 미분류") +
+    esc(p.roster.communityRoleKo || (isUpcoming ? "출시 예정" : "역할 미분류")) +
     "</p>" +
     '<div class="hero-tags"><span class="tag element"><img class="element-icon" src="' +
     esc(elementIconUrl(p.roster.element)) +
@@ -959,38 +1030,41 @@ function renderProfile() {
     renderCharacterIntroDetails(p.setting) +
     "</div></div>" +
     '<div class="hero-visual" aria-hidden="true"><div class="hero-index">' +
-    order +
-    "<small>현장 기록</small></div>" +
-    '<img class="character-illustration" src="' +
-    esc(assetUrl(illustration)) +
-    '" alt=""></div></section>' +
-    renderStats(p.mechanics) +
-    '<nav class="tabs" role="tablist" aria-label="캐릭터 데이터">' +
-    TABS.map(
-      ([id, label]) =>
-        '<button class="tab-button" role="tab" aria-selected="' +
-        (state.activeTab === id) +
-        '" aria-controls="tab-panel" data-tab="' +
-        id +
-        '">' +
-        label +
-        "</button>"
-    ).join("") +
-    '</nav><section id="tab-panel" class="tab-content" role="tabpanel">' +
-    renderTab(p) +
-    "</section>" +
-    '<footer class="main-footer"><span>커뮤니티 자료 기반 캐릭터 도감</span><a ' +
+    (isUpcoming ? "♫" : order) +
+    "<small>" +
+    (isUpcoming ? "LIVEHOUSE STARSIGN" : "현장 기록") +
+    "</small></div>" +
+    imageMarkup +
+    "</div></section>" +
+    profileContent +
+    '<footer class="main-footer"><span>' +
+    (isUpcoming ? "공식 발표 기반 · 출시 전 정보" : "커뮤니티 자료 기반 캐릭터 도감") +
+    '</span><a ' +
     'href="./data/nte-character-sources.md" target="_blank" rel="noopener ' +
     'noreferrer">출처</a></footer>';
-  $("#main-content")
-    .querySelectorAll("[data-tab]")
-    .forEach((button) => {
-      button.addEventListener("click", () => {
-        state.activeTab = button.dataset.tab;
-        refreshActiveTab();
+  if (!isUpcoming)
+    $("#main-content")
+      .querySelectorAll("[data-tab]")
+      .forEach((button) => {
+        button.addEventListener("click", () => {
+          state.activeTab = button.dataset.tab;
+          refreshActiveTab();
+        });
       });
-    });
-  bindCharacterIllustration();
+  if (imageMarkup) bindCharacterIllustration();
+}
+
+function renderUpcomingProfile(p) {
+  const date = String(p.roster.plannedGlobalAvailability || "")
+    .replaceAll("-", ".");
+  return (
+    '<div class="panel-grid upcoming-character-grid"><article class="content-card"><h3>글로벌 출시 일정</h3><p class="mechanic-copy">글로벌 1.4 후반 업데이트와 함께 ' +
+    esc(date) +
+    ' (KST) 출시 예정입니다.</p></article><article class="content-card"><h3>공식 소개</h3><p class="mechanic-copy">' +
+    esc(p.detail?.officialBioKo || "공식 소개를 확인 중입니다.") +
+    '</p></article><article class="content-card"><h3>공식 보상 안내</h3><p class="mechanic-copy">후반 업데이트 점검 완료 후 아카네 코스튬 「바텐더 스페셜」과 200만 폰즈가 지급될 예정입니다.</p></article><article class="content-card"><h3>전투 데이터</h3><p class="mechanic-copy">스킬, 각성, 능력치와 성장 재료는 글로벌 업데이트 후 확인해 추가합니다.</p></article></div>' +
+    sourceLinks(p)
+  );
 }
 function renderStats(m) {
   const s = m?.level80BaseStats;
@@ -1057,6 +1131,7 @@ function sourceLinks(p, domesticOnly = false) {
   [p.roster.englishProfile, p.detail?.source, p.mechanics?.sourceUrl].forEach(
     (x) => x && urls.add(x)
   );
+  if (p.roster.officialSource) urls.add(p.roster.officialSource);
   (p.console?.sourceUrls || []).forEach((x) => urls.add(x));
   const arc = state.db.arcs.arcs.find((a) => a.characterId === p.roster.id);
   Object.values(arc?.sources || {}).forEach(

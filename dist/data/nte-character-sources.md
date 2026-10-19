@@ -3,6 +3,7 @@
 ## 공식 자료
 
 - [공식 한국어 사이트](https://nte.perfectworld.com/kr/article/news/gamenews/20260929/264413.html)
+- [아카네 글로벌 1.4 후반 업데이트 발표](https://www.gamespress.com/nl/NTE-Neverness-to-Everness-Takes-the-Stage-on-October-21-with-Akane-Rin)
 - [공식 중국어 사이트](https://yh.wanmei.com/main.html)
 
 ## 국내 자료

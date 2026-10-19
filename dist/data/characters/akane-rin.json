@@ -4,7 +4,7 @@
   "roster": {
     "id": "akane-rin",
     "names": {
-      "ko": "아카네 린",
+      "ko": "아카네",
       "en": "Akane Rin",
       "zhHans": "明音凛"
     },
@@ -13,35 +13,43 @@
     "arcType": "Liquid",
     "releaseStatusAsOfSnapshot": "announced_not_yet_released_globally",
     "plannedGlobalAvailability": "2026-10-21",
-    "source": "https://ntegame.net/ko/guides/upcoming-characters/",
-    "detailsSourceStatus": "pre-release previews only; excluded from released roster until global phase 2",
-    "communityRoleKo": "공격 담당(출시 전)"
+    "released": false,
+    "source": "https://nte.perfectworld.com/kr/article/news/gamenews/20260929/264413.html",
+    "officialSource": "https://nte.perfectworld.com/kr/article/news/gamenews/20260929/264413.html",
+    "detailsSourceStatus": "official introduction confirmed; global release scheduled for 2026-10-21; combat details pending live verification",
+    "communityRoleKo": "기타리스트 · 전직 이상 헌터"
   },
   "detail": {
     "id": "akane-rin",
     "globalStatus": "announced_phase_2_not_yet_released_globally",
-    "coreMechanicKo": "기타와 음검을 번갈아 사용하는 상·액체형 주력 딜러로 사전 공개됐다. 현악 에너지를 모아 단일 표식형 또는 범위형 강화 공명을 쓰며, 울티메이트는 2단 공격으로 소개됐다.",
+    "officialBioKo": "라이브하우스 스타사인의 파트타임 기타리스트다. 과거 이상 헌터로 활동했으며, 헤테로를 탐험할 때 기타를 꺼내 연주할 수 있다.",
+    "coreMechanicKo": "전투 스킬과 계수는 글로벌 출시 후 확인 예정입니다.",
     "keySkillNamesEn": {
       "basic": "Stringblade",
       "skill": "Rhythm Wave / Synced Resonance",
       "ultimate": "Sonic Boom",
       "support": null
     },
-    "sourceReviewPatch": "pre-release preview; last updated 2026-09-16",
+    "sourceReviewPatch": "official Version 1.4 second-half announcement, 2026-10-16",
     "voiceActors": {
       "en": "Cristina Vee",
       "ja": "長谷川育美 (Korean community preview)",
       "zhHans": "陳怡萱 (Korean community preview)",
       "ko": "김하루 (Korean community preview)"
     },
-    "source": "https://www.icy-veins.com/neverness-to-everness/akane-rin-profile-skills",
+    "source": "https://www.gamespress.com/nl/NTE-Neverness-to-Everness-Takes-the-Stage-on-October-21-with-Akane-Rin",
     "comparisonSources": [
       "https://ntegame.net/ko/guides/upcoming-characters/",
       "https://www.mone.gg/tw/blog/nte/akane-rin-guide.html"
     ],
-    "comparisonNote": "글로벌은 10월 21일 예정. Icy Veins는 공개 방송·데이터마이닝 기반이며 정식 출시 전 변경 가능성을 명시하고, 기술명·각성·성우 일부가 미정이다. Mone에는 더 많은 상세 정보가 있으나 사전 공략이라 수치와 세부 효과는 확정값으로 채택하지 않았다."
+    "comparisonNote": "글로벌 1.4 후반은 공식 발표 기준 2026-10-21(KST) 출시 예정이다. 현재 공개 화면에는 공식 소개와 일정만 반영하며, 전투 상세는 업데이트 후 인게임 자료로 갱신한다."
   },
-  "setting": null,
+  "setting": {
+    "summary": "라이브하우스 스타사인의 파트타임 기타리스트. 과거 이상 헌터였으며, 헤테로를 탐험할 때 기타를 꺼내 연주할 수 있다.",
+    "birthday": "",
+    "faction": "라이브하우스 스타사인",
+    "ability": ""
+  },
   "introduction": null,
   "mechanics": null,
   "r3": null,

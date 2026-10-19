@@ -1,4 +1,4 @@
-import { $, esc, siteFooter, state } from "./common.js?v=20261012-personal-board";
+import { $, esc, siteFooter, state } from "./common.js?v=20261020-akane-update";
 
 const DATABASE_NAME = "nte-archive-guide-board";
 const DATABASE_VERSION = 1;

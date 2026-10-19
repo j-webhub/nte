@@ -3,7 +3,7 @@
   "datasets": {
     "roster": {
       "dataset": "Neverness to Everness character roster",
-      "snapshotDate": "2026-10-02",
+      "snapshotDate": "2026-10-20",
       "gameVersion": "1.4",
       "scope": "Unique playable characters released by the snapshot date; gender-selectable Esper Zero is one character record.",
       "coverage": {

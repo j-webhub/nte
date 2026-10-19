@@ -672,25 +672,30 @@ function closeWallpaperLightbox() {
 }
 
 function renderWallpapers() {
-  const dates = new Map();
+  const groups = new Map();
   for (const item of state.db.wallpapers.items || []) {
     const date = item.date || "undated";
-    if (!dates.has(date)) dates.set(date, new Map());
-    const cards = dates.get(date);
     const groupKey = wallpaperSetKey(item);
-    const key = (item.postUrl || date) + "|" + groupKey;
-    if (!cards.has(key))
-      cards.set(key, {
+    const postUrl = item.postUrl || "";
+    const key = JSON.stringify([date, postUrl, groupKey]);
+    if (!groups.has(key))
+      groups.set(key, {
         date,
-        postUrl: item.postUrl || "",
+        postUrl,
         groupKey,
         items: []
       });
-    cards.get(key).items.push(item);
+    groups.get(key).items.push(item);
   }
-  const orderedDates = [...dates.entries()].sort(([dateA], [dateB]) =>
-    dateB.localeCompare(dateA)
-  );
+  const orderedGroups = [...groups.values()].sort((a, b) => {
+    if (a.date === "undated") return b.date === "undated" ? 0 : 1;
+    if (b.date === "undated") return -1;
+    return (
+      b.date.localeCompare(a.date) ||
+      a.groupKey.localeCompare(b.groupKey) ||
+      a.postUrl.localeCompare(b.postUrl)
+    );
+  });
   const renderWallpaperCard = (group) => {
     const { date, postUrl, groupKey, items } = group;
     items.sort((a, b) => {
@@ -712,7 +717,7 @@ function renderWallpapers() {
       '" data-wallpaper-group="' +
       esc(groupKey) +
       '" aria-label="' +
-      esc(date + " " + groupKey + " 월페이퍼 크게 보기") +
+      esc(groupKey + " 월페이퍼 크게 보기") +
       '">' +
       '<img src="' +
       esc(cover.imageUrl) +
@@ -728,21 +733,10 @@ function renderWallpapers() {
       "</div></article>"
     );
   };
-  const content = orderedDates.length
-    ? orderedDates
-        .map(([date, cards]) => {
-          const dateLabel =
-            date === "undated" ? "게시일 미확인" : date.replaceAll("-", ".");
-          return (
-            '<section class="wallpaper-date-group"><header ' +
-            'class="wallpaper-date-heading"><div><p class="eyebrow">X 게시일</p><h2>' +
-            esc(dateLabel) +
-            '</h2></div></header><div class="wallpaper-grid">' +
-            [...cards.values()].map(renderWallpaperCard).join("") +
-            "</div></section>"
-          );
-        })
-        .join("")
+  const content = orderedGroups.length
+    ? '<div class="wallpaper-grid">' +
+      orderedGroups.map(renderWallpaperCard).join("") +
+      "</div>"
     : '<div class="portal-empty"><span class="portal-empty-mark">W</span>' +
       "<h2>월페이퍼를 준비 중입니다</h2><p>공식 X에서 확인한 게시물을 직접 등록하면 이곳에 표시됩니다.</p><a " +
       'class="portal-source-button" href="' +
@@ -750,8 +744,8 @@ function renderWallpapers() {
       '" target="_blank" rel="noopener noreferrer">공식 X 월페이퍼 검색 ↗</a></div>';
   $("#main-content").innerHTML =
     '<div class="portal-page-heading"><p class="eyebrow">OFFICIAL X / ' +
-    "WALLPAPER</p><h1>월페이퍼</h1><p>게시일별로 묶고, 같은 알파벳의 PC·모바일 파일은 한 카드에서 좌우로 " +
-    "넘겨볼 수 있습니다.</p></div>" +
+    "WALLPAPER</p><h1>월페이퍼</h1><p>최신 게시일 순으로 정렬됩니다. 게시일은 이미지를 크게 열면 확인할 수 있고, " +
+    "같은 알파벳의 PC·모바일 파일은 한 카드에서 좌우로 넘겨볼 수 있습니다.</p></div>" +
     content +
     '<div id="wallpaper-lightbox-root"></div>' +
     siteFooter();

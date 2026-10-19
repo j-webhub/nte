@@ -1,5 +1,5 @@
-import { state } from "../../core/state.js?v=20261020-copyright-footer";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-copyright-footer";
+import { state } from "../../core/state.js?v=20261020-notice-image-fill";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-notice-image-fill";
 
 export function wallpaperFileName(item) {
   return String(item.imageUrl || "")

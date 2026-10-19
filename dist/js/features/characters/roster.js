@@ -1,6 +1,6 @@
-import { state } from "../../core/state.js?v=20261020-copyright-footer";
-import { $, esc } from "../../core/dom.js?v=20261020-copyright-footer";
-import { elem, elementIconUrl } from "./catalog.js?v=20261020-copyright-footer";
+import { state } from "../../core/state.js?v=20261020-notice-image-fill";
+import { $, esc } from "../../core/dom.js?v=20261020-notice-image-fill";
+import { elem, elementIconUrl } from "./catalog.js?v=20261020-notice-image-fill";
 
 export function renderRoster() {
   const CHARACTER_DISPLAY_ORDER = state.db.index.displayCharacterIds || state.db.index.releasedCharacterIds;

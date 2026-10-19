@@ -1,9 +1,9 @@
-import { state } from "../../core/state.js?v=20261020-copyright-footer";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-copyright-footer";
-import { repository } from "./repository.js?v=20261020-copyright-footer";
-import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES } from "./config.js?v=20261020-copyright-footer";
-import { createId, bytesOf, safeVideoLinks, sanitizeHtml } from "./content.js?v=20261020-copyright-footer";
-import { exportBackup, importBackup } from "./backup.js?v=20261020-copyright-footer";
+import { state } from "../../core/state.js?v=20261020-notice-image-fill";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-notice-image-fill";
+import { repository } from "./repository.js?v=20261020-notice-image-fill";
+import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES } from "./config.js?v=20261020-notice-image-fill";
+import { createId, bytesOf, safeVideoLinks, sanitizeHtml } from "./content.js?v=20261020-notice-image-fill";
+import { exportBackup, importBackup } from "./backup.js?v=20261020-notice-image-fill";
 
 let currentPostId = null;
 let currentPost = null;

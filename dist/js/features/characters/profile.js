@@ -1,8 +1,8 @@
-import { state } from "../../core/state.js?v=20261020-copyright-footer";
-import { $, esc, fmt, siteFooter } from "../../core/dom.js?v=20261020-copyright-footer";
-import { elem, assetUrl, elementIconUrl, arcTypeIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-copyright-footer";
-import { getProfile } from "./model.js?v=20261020-copyright-footer";
-import { renderTab } from "./tabs/index.js?v=20261020-copyright-footer";
+import { state } from "../../core/state.js?v=20261020-notice-image-fill";
+import { $, esc, fmt, siteFooter } from "../../core/dom.js?v=20261020-notice-image-fill";
+import { elem, assetUrl, elementIconUrl, arcTypeIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-notice-image-fill";
+import { getProfile } from "./model.js?v=20261020-notice-image-fill";
+import { renderTab } from "./tabs/index.js?v=20261020-notice-image-fill";
 
 export function bindCharacterIllustration() {
   const visual = $("#main-content .hero-visual");

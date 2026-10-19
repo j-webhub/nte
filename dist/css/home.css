@@ -176,10 +176,10 @@
   object-position: center;
 }
 .portal-card-notices .portal-card-art {
-  padding-bottom: 85px;
+  padding: 0;
 }
 .portal-card-notices .portal-card-art img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
 }
 .portal-card-guides .portal-card-art img,

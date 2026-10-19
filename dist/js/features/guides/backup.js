@@ -1,8 +1,8 @@
-import { $ } from "../../core/dom.js?v=20261020-copyright-footer";
-import { repository } from "./repository.js?v=20261020-copyright-footer";
-import { createId, sanitizeHtml, safeVideoLinks } from "./content.js?v=20261020-copyright-footer";
-import { createZip, readZip, safeArchivePath } from "./archive.js?v=20261020-copyright-footer";
-import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES, MAX_BACKUP_BYTES, MAX_MANIFEST_BYTES } from "./config.js?v=20261020-copyright-footer";
+import { $ } from "../../core/dom.js?v=20261020-notice-image-fill";
+import { repository } from "./repository.js?v=20261020-notice-image-fill";
+import { createId, sanitizeHtml, safeVideoLinks } from "./content.js?v=20261020-notice-image-fill";
+import { createZip, readZip, safeArchivePath } from "./archive.js?v=20261020-notice-image-fill";
+import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES, MAX_BACKUP_BYTES, MAX_MANIFEST_BYTES } from "./config.js?v=20261020-notice-image-fill";
 const encoder = new TextEncoder();
 
 export async function exportBackup({ setStatus }) {

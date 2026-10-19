@@ -1,6 +1,6 @@
-import { state } from "../../core/state.js?v=20261020-copyright-footer";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-copyright-footer";
-import { NOTICE_PAGE_SIZE } from "../../config/site.js?v=20261020-copyright-footer";
+import { state } from "../../core/state.js?v=20261020-notice-image-fill";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-notice-image-fill";
+import { NOTICE_PAGE_SIZE } from "../../config/site.js?v=20261020-notice-image-fill";
 
 export function renderNoticeCard(item) {
   return (

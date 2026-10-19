@@ -1,6 +1,6 @@
-import { state } from "./state.js?v=20261020-copyright-footer";
-import { $, esc, fmt } from "./dom.js?v=20261020-copyright-footer";
-import { loadDatabase } from "./data.js?v=20261020-copyright-footer";
+import { state } from "./state.js?v=20261020-notice-image-fill";
+import { $, esc, fmt } from "./dom.js?v=20261020-notice-image-fill";
+import { loadDatabase } from "./data.js?v=20261020-notice-image-fill";
 
 const VALID_VIEWS = new Set([
   "home",

@@ -1,11 +1,11 @@
-import { state } from "../../core/state.js?v=20261020-copyright-footer";
-import { $ } from "../../core/dom.js?v=20261020-copyright-footer";
-import { openCharacter } from "../../core/router.js?v=20261020-copyright-footer";
-import { ELEMENT_ORDER, elem, elementIconUrl } from "./catalog.js?v=20261020-copyright-footer";
-import { renderRoster } from "./roster.js?v=20261020-copyright-footer";
-import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-copyright-footer";
-import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-copyright-footer";
-import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261020-copyright-footer";
+import { state } from "../../core/state.js?v=20261020-notice-image-fill";
+import { $ } from "../../core/dom.js?v=20261020-notice-image-fill";
+import { openCharacter } from "../../core/router.js?v=20261020-notice-image-fill";
+import { ELEMENT_ORDER, elem, elementIconUrl } from "./catalog.js?v=20261020-notice-image-fill";
+import { renderRoster } from "./roster.js?v=20261020-notice-image-fill";
+import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-notice-image-fill";
+import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-notice-image-fill";
+import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261020-notice-image-fill";
 
 export { renderRoster, renderProfile };
 

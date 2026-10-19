@@ -1,10 +1,10 @@
-import { state } from "../../../core/state.js?v=20261020-copyright-footer";
-import { renderOverview } from "./passives.js?v=20261020-copyright-footer";
-import { renderSkills } from "./skills.js?v=20261020-copyright-footer";
-import { renderAwakening } from "./awakening.js?v=20261020-copyright-footer";
-import { renderArcs } from "./arcs.js?v=20261020-copyright-footer";
-import { renderConsole } from "./console.js?v=20261020-copyright-footer";
-import { renderGrowth } from "./growth.js?v=20261020-copyright-footer";
+import { state } from "../../../core/state.js?v=20261020-notice-image-fill";
+import { renderOverview } from "./passives.js?v=20261020-notice-image-fill";
+import { renderSkills } from "./skills.js?v=20261020-notice-image-fill";
+import { renderAwakening } from "./awakening.js?v=20261020-notice-image-fill";
+import { renderArcs } from "./arcs.js?v=20261020-notice-image-fill";
+import { renderConsole } from "./console.js?v=20261020-notice-image-fill";
+import { renderGrowth } from "./growth.js?v=20261020-notice-image-fill";
 
 export function renderTab(p) {
   if (state.activeTab === "skills") return renderSkills(p);

@@ -1,6 +1,8 @@
-import { state } from "./state.js?v=20261020-notice-image-fill";
-import { $, esc, fmt } from "./dom.js?v=20261020-notice-image-fill";
-import { loadDatabase } from "./data.js?v=20261020-notice-image-fill";
+import { state } from "./state.js?v=20261020-searchable-pages";
+import { $, esc, fmt } from "./dom.js?v=20261020-searchable-pages";
+import { loadDatabase } from "./data.js?v=20261020-searchable-pages";
+import { pagePath, readRoute, isPlainClick } from "./urls.js?v=20261020-searchable-pages";
+import { updatePageMetadata } from "./metadata.js?v=20261020-searchable-pages";
 
 const VALID_VIEWS = new Set([
   "home",
@@ -33,17 +35,28 @@ function init() {
   $("#roster-count").textContent = String(released.length).padStart(2, "0");
   pageModules.initialize();
   $("#primary-nav")
-    .querySelectorAll("button[data-view]")
+    .querySelectorAll("[data-view]")
     .forEach((button) => {
-      button.addEventListener("click", () => setView(button.dataset.view));
+      button.addEventListener("click", event => {
+        if (!isPlainClick(event)) return;
+        event.preventDefault();
+        setView(button.dataset.view);
+      });
     });
   $("#brand-home").addEventListener("click", (event) => {
+    if (!isPlainClick(event)) return;
     event.preventDefault();
     setView("home");
+  });
+  $(".roster-all-characters").addEventListener("click", event => {
+    if (!isPlainClick(event)) return;
+    event.preventDefault();
+    setView("characters");
   });
   $("#main-content").addEventListener("click", (event) => {
     const noticeLink = event.target.closest("[data-notice-id]");
     if (noticeLink) {
+      if (!isPlainClick(event)) return;
       event.preventDefault();
       openNotice(noticeLink.dataset.noticeId);
       return;
@@ -52,9 +65,11 @@ function init() {
       setView("notices");
       return;
     }
-    const viewButton = event.target.closest("button[data-view]");
-    if (viewButton && event.currentTarget.contains(viewButton))
+    const viewButton = event.target.closest("[data-view]");
+    if (viewButton && event.currentTarget.contains(viewButton) && isPlainClick(event)) {
+      event.preventDefault();
       setView(viewButton.dataset.view);
+    }
   });
   window.addEventListener("popstate", syncViewFromAddress);
   window.addEventListener("hashchange", syncViewFromAddress);
@@ -63,19 +78,21 @@ function init() {
 }
 
 function syncViewFromAddress() {
-  const [view, encodedNoticeId] = location.hash.slice(1).split("/");
+  const route = readRoute(location);
+  const {view, id: encodedNoticeId} = route;
+  if (route.legacy) history.replaceState(null,"",pagePath(VALID_VIEWS.has(view)?view:"home",encodedNoticeId,route.tab));
   if (view === "characters" && encodedNoticeId) {
     try {
-      const id = decodeURIComponent(encodedNoticeId);
+      const id = encodedNoticeId;
       if (state.db.characters[id]) {
-        openCharacter(id, { push: false });
+        openCharacter(id, { push: false, tab: route.tab });
         return;
       }
     } catch {}
   }
   if (view === "notices" && encodedNoticeId) {
     try {
-      const noticeId = decodeURIComponent(encodedNoticeId);
+      const noticeId = encodedNoticeId;
       if ((state.db.notices.items || []).some((item) => item.id === noticeId)) {
         openNotice(noticeId, { push: false });
         return;
@@ -99,8 +116,9 @@ function setView(view, options = {}) {
   state.activeView = view;
   state.activeNoticeId = null;
   if (view === "characters") state.characterScreen = "gallery";
-  if (options.push !== false && location.hash !== "#" + view)
-    history.pushState({ view }, "", "#" + view);
+  if (options.push !== false && location.pathname !== pagePath(view))
+    history.pushState({ view }, "", pagePath(view));
+  updatePageMetadata(state.db,view);
   syncViewChrome();
   renderActiveView();
 }
@@ -116,9 +134,10 @@ function openCharacter(id, options = {}) {
   state.arcRank = 1;
   state.skillLevel = 1;
   state.activeSkillGroup = "basic";
-  const hash = "#characters/" + encodeURIComponent(id);
-  if (options.push !== false && location.hash !== hash)
-    history.pushState({ view: "characters", characterId: id }, "", hash);
+  const path = pagePath("characters",id,state.activeTab);
+  if (options.push !== false && location.pathname !== path)
+    history.pushState({ view: "characters", characterId: id }, "", path);
+  updatePageMetadata(state.db,"characters",id,state.activeTab);
   syncViewChrome();
   pageModules.renderRoster();
   pageModules.renderProfile();
@@ -131,9 +150,10 @@ function openNotice(noticeId, options = {}) {
   if (!notice) return;
   state.activeView = "notices";
   state.activeNoticeId = noticeId;
-  const hash = "#notices/" + encodeURIComponent(noticeId);
-  if (options.push !== false && location.hash !== hash)
-    history.pushState({ view: "notices", noticeId }, "", hash);
+  const path = pagePath("notices",noticeId);
+  if (options.push !== false && location.pathname !== path)
+    history.pushState({ view: "notices", noticeId }, "", path);
+  updatePageMetadata(state.db,"notices",noticeId);
   syncViewChrome();
   pageModules.renderNoticeDetail(notice);
 }
@@ -142,7 +162,7 @@ function syncViewChrome() {
   $("#workspace").dataset.view = state.activeView;
   $("#workspace").dataset.characterScreen = state.characterScreen;
   $("#primary-nav")
-    .querySelectorAll("button[data-view]")
+    .querySelectorAll("[data-view]")
     .forEach((button) => {
       if (button.dataset.view === state.activeView)
         button.setAttribute("aria-current", "page");

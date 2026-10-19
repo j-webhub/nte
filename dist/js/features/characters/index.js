@@ -1,11 +1,12 @@
-import { state } from "../../core/state.js?v=20261020-notice-image-fill";
-import { $ } from "../../core/dom.js?v=20261020-notice-image-fill";
-import { openCharacter } from "../../core/router.js?v=20261020-notice-image-fill";
-import { ELEMENT_ORDER, elem, elementIconUrl } from "./catalog.js?v=20261020-notice-image-fill";
-import { renderRoster } from "./roster.js?v=20261020-notice-image-fill";
-import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-notice-image-fill";
-import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-notice-image-fill";
-import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261020-notice-image-fill";
+import { state } from "../../core/state.js?v=20261020-searchable-pages";
+import { $ } from "../../core/dom.js?v=20261020-searchable-pages";
+import { openCharacter } from "../../core/router.js?v=20261020-searchable-pages";
+import { ELEMENT_ORDER, elem, elementIconUrl } from "./catalog.js?v=20261020-searchable-pages";
+import { renderRoster } from "./roster.js?v=20261020-searchable-pages";
+import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-searchable-pages";
+import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-searchable-pages";
+import { isPlainClick } from "../../core/urls.js?v=20261020-searchable-pages";
+import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261020-searchable-pages";
 
 export { renderRoster, renderProfile };
 
@@ -32,6 +33,8 @@ export function initializeCharacters() {
   $("#roster-list").addEventListener("click", (event) => {
     const row = event.target.closest("[data-id]");
     if (!row) return;
+    if (!isPlainClick(event)) return;
+    event.preventDefault();
     openCharacter(row.dataset.id);
   });
   $("#main-content").addEventListener("click", event => {

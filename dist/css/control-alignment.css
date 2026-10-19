@@ -1,5 +1,16 @@
 /* Shared control alignment. Keep icon dimensions inside the button content box. */
-.primary-nav button,
+.primary-nav a[data-view],
+.character-row,
+.tab-button,
+.portal-card {
+  text-decoration: none;
+}
+.primary-nav a[data-view] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.primary-nav :is(button, a[data-view]),
 .tab-button,
 .portal-filter-button,
 .notice-pagination button,
@@ -23,7 +34,7 @@
   line-height: 1.35;
 }
 
-.primary-nav button,
+.primary-nav :is(button, a[data-view]),
 .tab-button,
 .portal-filter-button,
 .notice-pagination button,

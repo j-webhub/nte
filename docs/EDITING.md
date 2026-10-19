@@ -91,6 +91,8 @@
 
 ## 디자인 수정하기
 
+검색용 HTML은 `scripts/build-pages.mjs`가 생성합니다. 공통 문서 틀은 `templates/shell.html`에서 편집하고, 데이터·화면 변경 후 `node scripts/update-version.mjs 버전명`을 실행합니다. 주소 구조와 검색엔진 등록은 `docs/SEARCH.md`를 참고하세요.
+
 홈 메뉴 순서는 `dist/js/features/home/index.js`의 `PORTAL_MODULES`에서 수정합니다. 캐릭터·아크·월페이퍼 카드 이미지는 `menuImage()`에서 각 DB를 참조하며, 공지·공략의 고정 이미지는 `dist/img/home/`에 있습니다. 3열 배치에서 월페이퍼가 두 칸을 차지하고, 카드의 하단 텍스트 그라데이션은 `home.css`의 `.portal-card-copy`에서 조절합니다.
 
 아크 이미지는 `dist/img/arcs/`에 256×256 투명 WebP로 저장하고, `nte-character-signature-arcs-v1.4.json`의 해당 아크에 `imageFile` 파일명을 지정합니다. 아크 DB와 캐릭터 상세의 아크 탭이 같은 이미지를 사용합니다.
@@ -123,5 +125,5 @@ node scripts/check.mjs
 node --test tests/*.test.mjs
 ```
 
-검사를 통과하면 GitHub Desktop에서 커밋하고 푸시합니다. `dist/`를 그대로 배포하므로 복사·빌드 단계는 없습니다.
+작업 내용을 GitHub Desktop에서 커밋하고 푸시하면 GitHub Actions가 검색용 HTML과 사이트맵을 생성한 뒤 `dist/`를 배포합니다.
 공략 게시판에서 직접 쓴 글과 첨부파일은 현재 브라우저의 IndexedDB에 저장됩니다. JSON과 별개이며 브라우저를 바꾸기 전 게시판에서 백업합니다.

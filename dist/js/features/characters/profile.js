@@ -1,8 +1,10 @@
-import { state } from "../../core/state.js?v=20261020-notice-image-fill";
-import { $, esc, fmt, siteFooter } from "../../core/dom.js?v=20261020-notice-image-fill";
-import { elem, assetUrl, elementIconUrl, arcTypeIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-notice-image-fill";
-import { getProfile } from "./model.js?v=20261020-notice-image-fill";
-import { renderTab } from "./tabs/index.js?v=20261020-notice-image-fill";
+import { state } from "../../core/state.js?v=20261020-searchable-pages";
+import { $, esc, fmt, siteFooter } from "../../core/dom.js?v=20261020-searchable-pages";
+import { elem, assetUrl, elementIconUrl, arcTypeIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-searchable-pages";
+import { getProfile } from "./model.js?v=20261020-searchable-pages";
+import { renderTab } from "./tabs/index.js?v=20261020-searchable-pages";
+import { pagePath, isPlainClick } from "../../core/urls.js?v=20261020-searchable-pages";
+import { updatePageMetadata } from "../../core/metadata.js?v=20261020-searchable-pages";
 
 export function bindCharacterIllustration() {
   const visual = $("#main-content .hero-visual");
@@ -138,13 +140,13 @@ export function renderProfile() {
     : "";
   const tabButtons = TABS.map(([id, label]) => {
     return (
-      '<button class="tab-button" role="tab" aria-selected="' +
+      '<a href="' + pagePath("characters",p.roster.id,id) + '" class="tab-button" role="tab" aria-selected="' +
       (state.activeTab === id) +
       '" aria-controls="tab-panel" data-tab="' +
       id +
       '">' +
       label +
-      "</button>"
+      "</a>"
     );
   }).join("");
   const profileContent =
@@ -204,8 +206,13 @@ export function renderProfile() {
   $("#main-content")
     .querySelectorAll("[data-tab]")
     .forEach((button) => {
-      button.addEventListener("click", () => {
+      button.addEventListener("click", event => {
+        if (!isPlainClick(event)) return;
+        event.preventDefault();
         state.activeTab = button.dataset.tab;
+        const path = pagePath("characters",state.selectedId,state.activeTab);
+        if (location.pathname !== path) history.pushState(null,"",path);
+        updatePageMetadata(state.db,"characters",state.selectedId,state.activeTab);
         refreshActiveTab();
       });
     });

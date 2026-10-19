@@ -1,6 +1,7 @@
-import { state } from "../../core/state.js?v=20261020-notice-image-fill";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-notice-image-fill";
-import { NOTICE_PAGE_SIZE } from "../../config/site.js?v=20261020-notice-image-fill";
+import { state } from "../../core/state.js?v=20261020-searchable-pages";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-searchable-pages";
+import { pagePath } from "../../core/urls.js?v=20261020-searchable-pages";
+import { NOTICE_PAGE_SIZE } from "../../config/site.js?v=20261020-searchable-pages";
 
 export function renderNoticeCard(item) {
   return (
@@ -12,8 +13,8 @@ export function renderNoticeCard(item) {
     esc(item.date) +
     '">' +
     esc(item.date.replaceAll("-", ".")) +
-    '</time></div><h3><a class="notice-card-title" href="#notices/' +
-    encodeURIComponent(item.id) +
+    '</time></div><h3><a class="notice-card-title" href="' +
+    pagePath("notices",item.id) +
     '" data-notice-id="' +
     esc(item.id) +
     '">' +

@@ -1,6 +1,7 @@
-import { state } from "../../core/state.js?v=20261020-notice-image-fill";
-import { $, esc } from "../../core/dom.js?v=20261020-notice-image-fill";
-import { elem, elementIconUrl } from "./catalog.js?v=20261020-notice-image-fill";
+import { state } from "../../core/state.js?v=20261020-searchable-pages";
+import { $, esc } from "../../core/dom.js?v=20261020-searchable-pages";
+import { elem, elementIconUrl } from "./catalog.js?v=20261020-searchable-pages";
+import { pagePath } from "../../core/urls.js?v=20261020-searchable-pages";
 
 export function renderRoster() {
   const CHARACTER_DISPLAY_ORDER = state.db.index.displayCharacterIds || state.db.index.releasedCharacterIds;
@@ -46,7 +47,7 @@ export function renderRoster() {
       .slice(5)
       .replace("-", ".");
     return (
-      '<button class="character-row rarity-' +
+      '<a href="' + pagePath("characters",c.id) + '" class="character-row rarity-' +
       esc(c.rarity) +
       (isUpcoming ? " is-upcoming" : "") +
       '" role="option" aria-selected="' +
@@ -70,7 +71,7 @@ export function renderRoster() {
       (isUpcoming ? "<small>출시 예정</small>" : "") +
       '</span><span class="rarity-mark">' +
       (isUpcoming ? esc(dateLabel) : esc(c.rarity) + "급") +
-      "</span></button>"
+      "</span></a>"
     );
   };
   const sections = [];

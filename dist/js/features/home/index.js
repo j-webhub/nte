@@ -1,5 +1,6 @@
-import { state } from "../../core/state.js?v=20261020-notice-image-fill";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-notice-image-fill";
+import { state } from "../../core/state.js?v=20261020-searchable-pages";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-searchable-pages";
+import { pagePath } from "../../core/urls.js?v=20261020-searchable-pages";
 
 let lastWallpaperUrl = "";
 const lastMenuImages = new Map();
@@ -85,7 +86,7 @@ export function renderHome() {
     .slice(0, 2);
   const cards = PORTAL_MODULES.map((module) => {
     const image = menuImage(module.view);
-    return '<button type="button" class="portal-card portal-card-' + module.view + '" data-view="' +
+    return '<a href="' + pagePath(module.view) + '" class="portal-card portal-card-' + module.view + '" data-view="' +
       module.view +
       '">' + (image ? '<span class="portal-card-art" aria-hidden="true"><img data-home-menu-image="' + module.view +
       '" src="' + esc(image) + '" alt="" loading="lazy" decoding="async"></span>' : '') +
@@ -95,14 +96,14 @@ export function renderHome() {
       esc(module.description) +
       '</span><span class="portal-card-bottom"><span>' +
       esc(module.count()) +
-      '</span><span class="portal-card-arrow" aria-hidden="true">↗</span></span></span></button>';
+      '</span><span class="portal-card-arrow" aria-hidden="true">↗</span></span></span></a>';
   }).join("");
   const notices = latest.length
     ? latest
         .map(
           (item) =>
-            '<a class="home-notice-link" href="#notices/' +
-            encodeURIComponent(item.id) +
+            '<a class="home-notice-link" href="' +
+            pagePath("notices",item.id) +
             '" data-notice-id="' +
             esc(item.id) +
             '"><span>' +

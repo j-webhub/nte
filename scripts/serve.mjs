@@ -19,13 +19,14 @@ const mime = {
 const server = http.createServer(async (request, response) => {
   try {
     const url = new URL(request.url, "http://localhost");
-    const pathname = decodeURIComponent(url.pathname);
-    const file = path.resolve(root, "." + (pathname === "/" ? "/index.html" : pathname));
+    const pathname = decodeURIComponent(url.pathname).replace(/^\/nte(?=\/|$)/,"") || "/";
+    let file = path.resolve(root, "." + pathname);
     const relative = path.relative(root, file);
     if (relative.startsWith("..") || path.isAbsolute(relative)) {
       response.writeHead(403).end("Forbidden");
       return;
     }
+    if ((await fs.stat(file)).isDirectory()) file=path.join(file,"index.html");
     const contents = await fs.readFile(file);
     response.writeHead(200, {
       "Content-Type": mime[path.extname(file)] || "application/octet-stream",
@@ -40,5 +41,5 @@ server.on("error", error => {
   console.error(error.message);
   process.exitCode = 1;
 });
-server.listen(port, "127.0.0.1", () => console.log(`Local: http://127.0.0.1:${port}/`));
+server.listen(port, "127.0.0.1", () => console.log(`Local: http://127.0.0.1:${port}/nte/`));
 process.on("SIGINT", () => server.close(() => process.exit(0)));

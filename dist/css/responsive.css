@@ -112,13 +112,13 @@
     display: none;
   }
 
-  .primary-nav button {
+  .primary-nav :is(button, a[data-view]) {
     min-height: 42px;
     padding: 0 10px;
     font-size: 11px;
   }
 
-  .primary-nav button[aria-current="page"]::after {
+  .primary-nav :is(button, a[data-view])[aria-current="page"]::after {
     right: 9px;
     left: 9px;
   }

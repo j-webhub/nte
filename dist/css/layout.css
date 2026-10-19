@@ -14,7 +14,7 @@
   margin: 0 auto;
 }
 
-.primary-nav button {
+.primary-nav :is(button, a[data-view]) {
   position: relative;
   flex: 0 0 auto;
   min-height: 42px;
@@ -27,11 +27,11 @@
   cursor: pointer;
 }
 
-.primary-nav button:hover,.primary-nav button[aria-current="page"] {
+.primary-nav :is(button, a[data-view]):hover,.primary-nav :is(button, a[data-view])[aria-current="page"] {
   color: #edf1f4;
 }
 
-.primary-nav button[aria-current="page"]::after {
+.primary-nav :is(button, a[data-view])[aria-current="page"]::after {
   position: absolute;
   right: 10px;
   bottom: 2px;

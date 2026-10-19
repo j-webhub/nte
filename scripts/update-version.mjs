@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { execFileSync } from "node:child_process";
 
 const root = path.resolve(import.meta.dirname, "..");
 const configPath = path.join(root, "dist/js/config/site.js");
@@ -18,7 +19,8 @@ function walk(directory) {
 const files = [
   ...walk(path.join(root, "dist/js")),
   path.join(root, "dist/styles.css"),
-  path.join(root, "dist/index.html")
+  path.join(root, "dist/index.html"),
+  path.join(root, "templates/shell.html")
 ];
 for (const file of files) {
   let text = fs.readFileSync(file, "utf8");
@@ -38,3 +40,4 @@ for (const file of files) {
   fs.writeFileSync(file, text);
 }
 console.log(`자산·데이터 캐시 버전을 ${version}(으)로 갱신했습니다.`);
+execFileSync(process.execPath,[path.join(root,"scripts/build-pages.mjs")],{stdio:"inherit"});

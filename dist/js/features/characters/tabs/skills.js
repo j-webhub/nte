@@ -1,9 +1,9 @@
-import { formatCharacterText } from "../text.js?v=20261020-notice-image-fill";
-import { state } from "../../../core/state.js?v=20261020-notice-image-fill";
-import { $, esc, fmt } from "../../../core/dom.js?v=20261020-notice-image-fill";
-import { SKILLS } from "../catalog.js?v=20261020-notice-image-fill";
-import { getProfile } from "../model.js?v=20261020-notice-image-fill";
-import { sourceLinks, coefficientSourceLinks } from "../sources.js?v=20261020-notice-image-fill";
+import { formatCharacterText } from "../text.js?v=20261020-searchable-pages";
+import { state } from "../../../core/state.js?v=20261020-searchable-pages";
+import { $, esc, fmt } from "../../../core/dom.js?v=20261020-searchable-pages";
+import { SKILLS } from "../catalog.js?v=20261020-searchable-pages";
+import { getProfile } from "../model.js?v=20261020-searchable-pages";
+import { sourceLinks, coefficientSourceLinks } from "../sources.js?v=20261020-searchable-pages";
 
 export function formatPercent(value) {
   const percent = Math.round(Number(value) * 1000) / 10;

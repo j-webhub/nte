@@ -1,9 +1,9 @@
-import { state } from "../../core/state.js?v=20261020-notice-image-fill";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-notice-image-fill";
-import { repository } from "./repository.js?v=20261020-notice-image-fill";
-import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES } from "./config.js?v=20261020-notice-image-fill";
-import { createId, bytesOf, safeVideoLinks, sanitizeHtml } from "./content.js?v=20261020-notice-image-fill";
-import { exportBackup, importBackup } from "./backup.js?v=20261020-notice-image-fill";
+import { state } from "../../core/state.js?v=20261020-searchable-pages";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-searchable-pages";
+import { repository } from "./repository.js?v=20261020-searchable-pages";
+import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES } from "./config.js?v=20261020-searchable-pages";
+import { createId, bytesOf, safeVideoLinks, sanitizeHtml } from "./content.js?v=20261020-searchable-pages";
+import { exportBackup, importBackup } from "./backup.js?v=20261020-searchable-pages";
 
 let currentPostId = null;
 let currentPost = null;

@@ -1,7 +1,8 @@
-import { state } from "../../core/state.js?v=20261020-notice-image-fill";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-notice-image-fill";
-import { ELEMENT_ORDER, elem, elementIconUrl, assetUrl } from "./catalog.js?v=20261020-notice-image-fill";
-import { renderElementIcon, renderArcTypeIcon, renderRarityBadge } from "./badges.js?v=20261020-notice-image-fill";
+import { state } from "../../core/state.js?v=20261020-searchable-pages";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-searchable-pages";
+import { ELEMENT_ORDER, elem, elementIconUrl, assetUrl } from "./catalog.js?v=20261020-searchable-pages";
+import { renderElementIcon, renderArcTypeIcon, renderRarityBadge } from "./badges.js?v=20261020-searchable-pages";
+import { pagePath } from "../../core/urls.js?v=20261020-searchable-pages";
 
 function galleryCharacters() {
   const term = state.characterGalleryQuery.trim().toLocaleLowerCase("ko");
@@ -29,7 +30,7 @@ export function refreshCharacterGallery() {
     const image = character.portraitFile
       ? '<img class="character-poster-image" src="' + esc(assetUrl(character.portraitFile)) + '" alt="" loading="' +
         (index < 4 ? "eager" : "lazy") + '" decoding="async">' : "";
-    return '<a class="character-poster" href="#characters/' + encodeURIComponent(character.id) + '" data-character-card="' +
+    return '<a class="character-poster" href="' + pagePath("characters",character.id) + '" data-character-card="' +
       esc(character.id) + '" style="--character-color:' + elem(character.element).color + '" aria-label="' +
       esc(character.names.ko + " 캐릭터 정보 보기") + '"><span class="character-poster-art">' + image + '</span>' +
       '<span class="character-poster-rarity">' + renderRarityBadge(character.rarity) + '</span>' +

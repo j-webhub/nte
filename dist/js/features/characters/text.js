@@ -1,5 +1,5 @@
-import { esc } from "../../core/dom.js?v=20261020-notice-image-fill";
-import { elem } from "./catalog.js?v=20261020-notice-image-fill";
+import { esc } from "../../core/dom.js?v=20261020-searchable-pages";
+import { elem } from "./catalog.js?v=20261020-searchable-pages";
 
 // Match source text before escaping so user-entered descriptions stay plain text.
 export function formatCharacterText(value, element) {

@@ -1,7 +1,7 @@
-import { formatCharacterText } from "../text.js?v=20261020-notice-image-fill";
+import { formatCharacterText } from "../text.js?v=20261020-searchable-pages";
 
-import { esc } from "../../../core/dom.js?v=20261020-notice-image-fill";
-import { sourceLinks } from "../sources.js?v=20261020-notice-image-fill";
+import { esc } from "../../../core/dom.js?v=20261020-searchable-pages";
+import { sourceLinks } from "../sources.js?v=20261020-searchable-pages";
 
 export function renderAwakening(p, includeSources = true) {
   const m = p.mechanics;

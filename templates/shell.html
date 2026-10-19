@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <base href="/nte/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d12">
+  <meta name="description" content="이환 공지사항, 캐릭터와 아크 데이터베이스, 공략, 월페이퍼를 모아 보는 아카이브입니다.">
+  <title>이환 아카이브</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css?v=20261020-searchable-pages">
+  <script type="module" src="./js/app.js?v=20261020-searchable-pages"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" id="brand-home" href="/nte/" aria-label="이환 아카이브 홈">
+        <span class="brand-mark">N</span>
+        <span class="brand-copy"><span class="brand-kicker">헤테로 시티 / 필드 아카이브</span><strong>이환 아카이브</strong></span>
+      </a>
+      <nav class="primary-nav" id="primary-nav" aria-label="주요 메뉴">
+        <a href="/nte/" data-view="home" aria-current="page">홈</a>
+        <a href="/nte/notices/" data-view="notices">공지사항</a>
+        <a href="/nte/characters/" data-view="characters">캐릭터 DB</a>
+        <a href="/nte/arcs/" data-view="arcs">아크 DB</a>
+        <a href="/nte/guides/" data-view="guides">공략 게시판</a>
+        <a href="/nte/wallpapers/" data-view="wallpapers">월페이퍼</a>
+      </nav>
+      <div class="topbar-meta">
+        <span class="snapshot"><span class="snapshot-mark"></span>글로벌 버전 <b>1.4</b></span>
+        <span class="topbar-divider"></span><span class="records-count"><b id="header-count">—</b> 캐릭터</span>
+      </div>
+    </header>
+    <div class="workspace" id="workspace" data-view="home">
+      <aside class="roster-panel" id="roster-panel" aria-label="캐릭터 목록">
+        <div class="roster-heading"><div><p class="eyebrow">캐릭터 도감</p><h2>캐릭터</h2></div><span class="roster-count" id="roster-count">—</span></div>
+        <label class="search-box"><span class="search-icon" aria-hidden="true">⌕</span><span class="sr-only">캐릭터 검색</span><input id="character-search" type="search" placeholder="이름 검색" autocomplete="off"><kbd>/</kbd></label>
+        <p class="filter-label" id="roster-element-label">속성으로 찾기</p>
+        <div id="roster-element-filters" class="character-gallery-elements roster-element-filters" role="group" aria-labelledby="roster-element-label"></div>
+        <a class="roster-all-characters" href="/nte/characters/">← 전체 캐릭터 보기</a>
+        <div class="roster-list" id="roster-list" role="listbox" aria-label="출시 캐릭터"></div>
+        <div class="roster-foot"><span class="foot-rule"></span><span>출시 캐릭터 기준 · 제로는 단일 항목</span></div>
+      </aside>
+      <main id="main-content" class="main-panel" aria-live="polite">
+        <div class="loading-state"><span class="loader"></span><p>아카이브를 불러오는 중</p></div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

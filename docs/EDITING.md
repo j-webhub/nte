@@ -54,6 +54,8 @@
 
 스킬·패시브·각성·공명·전용 아크·카트리지 효과의 `「문구」`와 `상속성 이능력 피해`, `령속성 공격` 같은 속성 표현은 `roster.element`의 색상으로 자동 표시됩니다. JSON에는 HTML이나 색상 코드를 넣지 않아도 됩니다. 처리 코드는 `dist/js/features/characters/text.js`, 속성별 색상은 `catalog.js`의 `ELEMENTS`에서 편집합니다.
 
+스킬 레벨업 재료는 `dist/data/nte-character-growth-v1.4.json`의 `skillUpgrades`에서 편집합니다. `levels`는 단계별 수량·코인·돌파 조건, `materials`는 재료명, `characters`는 각 캐릭터의 재료 계열과 출처입니다. 화면 코드는 `dist/js/features/characters/tabs/skill-growth.js`입니다. 자세한 수집 기준은 `docs/research/SKILL-MATERIALS.md`에 정리했습니다.
+
 패시브 한 항목의 형식입니다. `unlock`은 확인된 경우에만 입력합니다.
 
 ```json

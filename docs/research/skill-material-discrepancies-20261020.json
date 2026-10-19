@@ -1,0 +1,973 @@
+{
+  "adoptedSource": "Kaiden: level rows agree with per-skill source totals",
+  "discrepancies": [
+    {
+      "id": "adler",
+      "level": 4,
+      "adopted": [
+        {
+          "nameKo": "첫 번째 기대",
+          "count": 5
+        },
+        {
+          "nameKo": "흐릿한 숫자 부호",
+          "count": 5
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 10000
+        }
+      ],
+      "comparison": [
+        {
+          "nameKo": "익숙한 권태",
+          "count": 5
+        },
+        {
+          "nameKo": "미해독 숫자 부호",
+          "count": 5
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 10000
+        }
+      ]
+    },
+    {
+      "id": "adler",
+      "level": 8,
+      "adopted": [
+        {
+          "nameKo": "검은 모자",
+          "count": 3
+        },
+        {
+          "nameKo": "뒤틀린 숫자 부호",
+          "count": 3
+        },
+        {
+          "nameKo": "휘날리는 드레스 자락",
+          "count": 1
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 80000
+        }
+      ],
+      "comparison": [
+        {
+          "nameKo": "검은 모자",
+          "count": 3
+        },
+        {
+          "nameKo": "뒤틀린 숫자 부호",
+          "count": 3
+        },
+        {
+          "nameKo": "휘날리는 드레스 자락",
+          "count": 1
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 100000
+        }
+      ]
+    },
+    {
+      "id": "adler",
+      "level": 9,
+      "adopted": [
+        {
+          "nameKo": "검은 모자",
+          "count": 5
+        },
+        {
+          "nameKo": "뒤틀린 숫자 부호",
+          "count": 5
+        },
+        {
+          "nameKo": "휘날리는 드레스 자락",
+          "count": 2
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 100000
+        }
+      ],
+      "comparison": [
+        {
+          "nameKo": "검은 모자",
+          "count": 5
+        },
+        {
+          "nameKo": "뒤틀린 숫자 부호",
+          "count": 5
+        },
+        {
+          "nameKo": "휘날리는 드레스 자락",
+          "count": 2
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 125000
+        }
+      ]
+    },
+    {
+      "id": "adler",
+      "level": 10,
+      "adopted": [
+        {
+          "nameKo": "검은 모자",
+          "count": 8
+        },
+        {
+          "nameKo": "뒤틀린 숫자 부호",
+          "count": 8
+        },
+        {
+          "nameKo": "휘날리는 드레스 자락",
+          "count": 4
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 120000
+        }
+      ],
+      "comparison": [
+        {
+          "nameKo": "검은 모자",
+          "count": 8
+        },
+        {
+          "nameKo": "뒤틀린 숫자 부호",
+          "count": 8
+        },
+        {
+          "nameKo": "휘날리는 드레스 자락",
+          "count": 4
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 150000
+        }
+      ]
+    },
+    {
+      "id": "aurelia",
+      "level": 8,
+      "adopted": [
+        {
+          "nameKo": "백장미",
+          "count": 3
+        },
+        {
+          "nameKo": "초월적 망상",
+          "count": 3
+        },
+        {
+          "nameKo": "착한 강아지 도장",
+          "count": 1
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 80000
+        }
+      ],
+      "comparison": [
+        {
+          "nameKo": "백장미",
+          "count": 3
+        },
+        {
+          "nameKo": "초월적 망상",
+          "count": 3
+        },
+        {
+          "nameKo": "착한 강아지 도장",
+          "count": 1
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 100000
+        }
+      ]
+    },
+    {
+      "id": "aurelia",
+      "level": 9,
+      "adopted": [
+        {
+          "nameKo": "백장미",
+          "count": 5
+        },
+        {
+          "nameKo": "초월적 망상",
+          "count": 5
+        },
+        {
+          "nameKo": "착한 강아지 도장",
+          "count": 2
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 100000
+        }
+      ],
+      "comparison": [
+        {
+          "nameKo": "백장미",
+          "count": 5
+        },
+        {
+          "nameKo": "초월적 망상",
+          "count": 5
+        },
+        {
+          "nameKo": "착한 강아지 도장",
+          "count": 2
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 125000
+        }
+      ]
+    },
+    {
+      "id": "aurelia",
+      "level": 10,
+      "adopted": [
+        {
+          "nameKo": "백장미",
+          "count": 8
+        },
+        {
+          "nameKo": "초월적 망상",
+          "count": 8
+        },
+        {
+          "nameKo": "착한 강아지 도장",
+          "count": 4
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 120000
+        }
+      ],
+      "comparison": [
+        {
+          "nameKo": "백장미",
+          "count": 8
+        },
+        {
+          "nameKo": "초월적 망상",
+          "count": 8
+        },
+        {
+          "nameKo": "착한 강아지 도장",
+          "count": 4
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 150000
+        }
+      ]
+    },
+    {
+      "id": "baicang",
+      "level": 4,
+      "adopted": [
+        {
+          "nameKo": "첫 번째 기대",
+          "count": 5
+        },
+        {
+          "nameKo": "흐릿한 숫자 부호",
+          "count": 5
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 10000
+        }
+      ],
+      "comparison": [
+        {
+          "nameKo": "익숙한 권태",
+          "count": 5
+        },
+        {
+          "nameKo": "미해독 숫자 부호",
+          "count": 5
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 10000
+        }
+      ]
+    },
+    {
+      "id": "chiz",
+      "level": 7,
+      "adopted": [
+        {
+          "nameKo": "비둘기의 날갯짓",
+          "count": 5
+        },
+        {
+          "nameKo": "모호한 속삭임",
+          "count": 5
+        },
+        {
+          "nameKo": "착한 강아지 도장",
+          "count": 1
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 60000
+        }
+      ],
+      "comparison": [
+        {
+          "nameKo": "비둘기의 날갯짓",
+          "count": 5
+        },
+        {
+          "nameKo": "모호한 속삭임",
+          "count": 5
+        },
+        {
+          "nameKo": "알록달록 티켓 조각",
+          "count": 1
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 60000
+        }
+      ]
+    },
+    {
+      "id": "edgar",
+      "level": 7,
+      "adopted": [
+        {
+          "nameKo": "비둘기의 날갯짓",
+          "count": 5
+        },
+        {
+          "nameKo": "모호한 속삭임",
+          "count": 5
+        },
+        {
+          "nameKo": "착한 강아지 도장",
+          "count": 1
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 60000
+        }
+      ],
+      "comparison": [
+        {
+          "nameKo": "비둘기의 날갯짓",
+          "count": 5
+        },
+        {
+          "nameKo": "모호한 속삭임",
+          "count": 5
+        },
+        {
+          "nameKo": "알록달록 티켓 조각",
+          "count": 1
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 60000
+        }
+      ]
+    },
+    {
+      "id": "edgar",
+      "level": 8,
+      "adopted": [
+        {
+          "nameKo": "올리브 가지",
+          "count": 3
+        },
+        {
+          "nameKo": "모순된 속삭임",
+          "count": 3
+        },
+        {
+          "nameKo": "착한 강아지 도장",
+          "count": 1
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 80000
+        }
+      ],
+      "comparison": [
+        {
+          "nameKo": "올리브 가지",
+          "count": 3
+        },
+        {
+          "nameKo": "모순된 속삭임",
+          "count": 3
+        },
+        {
+          "nameKo": "착한 강아지 도장",
+          "count": 1
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 100000
+        }
+      ]
+    },
+    {
+      "id": "edgar",
+      "level": 9,
+      "adopted": [
+        {
+          "nameKo": "올리브 가지",
+          "count": 5
+        },
+        {
+          "nameKo": "모순된 속삭임",
+          "count": 5
+        },
+        {
+          "nameKo": "착한 강아지 도장",
+          "count": 2
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 100000
+        }
+      ],
+      "comparison": [
+        {
+          "nameKo": "올리브 가지",
+          "count": 5
+        },
+        {
+          "nameKo": "모순된 속삭임",
+          "count": 5
+        },
+        {
+          "nameKo": "착한 강아지 도장",
+          "count": 2
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 125000
+        }
+      ]
+    },
+    {
+      "id": "edgar",
+      "level": 10,
+      "adopted": [
+        {
+          "nameKo": "올리브 가지",
+          "count": 8
+        },
+        {
+          "nameKo": "모순된 속삭임",
+          "count": 8
+        },
+        {
+          "nameKo": "착한 강아지 도장",
+          "count": 4
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 120000
+        }
+      ],
+      "comparison": [
+        {
+          "nameKo": "올리브 가지",
+          "count": 8
+        },
+        {
+          "nameKo": "모순된 속삭임",
+          "count": 8
+        },
+        {
+          "nameKo": "착한 강아지 도장",
+          "count": 4
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 150000
+        }
+      ]
+    },
+    {
+      "id": "haniel",
+      "level": 8,
+      "adopted": [
+        {
+          "nameKo": "제2의 자아",
+          "count": 3
+        },
+        {
+          "nameKo": "뒤틀린 숫자 부호",
+          "count": 3
+        },
+        {
+          "nameKo": "휘날리는 드레스 자락",
+          "count": 1
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 80000
+        }
+      ],
+      "comparison": [
+        {
+          "nameKo": "제2의 자아",
+          "count": 3
+        },
+        {
+          "nameKo": "뒤틀린 숫자 부호",
+          "count": 3
+        },
+        {
+          "nameKo": "휘날리는 드레스 자락",
+          "count": 1
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 100000
+        }
+      ]
+    },
+    {
+      "id": "haniel",
+      "level": 9,
+      "adopted": [
+        {
+          "nameKo": "제2의 자아",
+          "count": 5
+        },
+        {
+          "nameKo": "뒤틀린 숫자 부호",
+          "count": 5
+        },
+        {
+          "nameKo": "휘날리는 드레스 자락",
+          "count": 2
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 100000
+        }
+      ],
+      "comparison": [
+        {
+          "nameKo": "제2의 자아",
+          "count": 5
+        },
+        {
+          "nameKo": "뒤틀린 숫자 부호",
+          "count": 5
+        },
+        {
+          "nameKo": "휘날리는 드레스 자락",
+          "count": 2
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 125000
+        }
+      ]
+    },
+    {
+      "id": "haniel",
+      "level": 10,
+      "adopted": [
+        {
+          "nameKo": "제2의 자아",
+          "count": 8
+        },
+        {
+          "nameKo": "뒤틀린 숫자 부호",
+          "count": 8
+        },
+        {
+          "nameKo": "휘날리는 드레스 자락",
+          "count": 4
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 120000
+        }
+      ],
+      "comparison": [
+        {
+          "nameKo": "제2의 자아",
+          "count": 8
+        },
+        {
+          "nameKo": "뒤틀린 숫자 부호",
+          "count": 8
+        },
+        {
+          "nameKo": "휘날리는 드레스 자락",
+          "count": 4
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 150000
+        }
+      ]
+    },
+    {
+      "id": "lacrimosa",
+      "level": 4,
+      "adopted": [
+        {
+          "nameKo": "물결의 망설임",
+          "count": 5
+        },
+        {
+          "nameKo": "잃어버린 속삭임",
+          "count": 5
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 10000
+        }
+      ],
+      "comparison": [
+        {
+          "nameKo": "물결의 망설임",
+          "count": 5
+        },
+        {
+          "nameKo": "허황된 망상",
+          "count": 5
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 10000
+        }
+      ]
+    },
+    {
+      "id": "lacrimosa",
+      "level": 7,
+      "adopted": [
+        {
+          "nameKo": "떠도는 속삭임",
+          "count": 5
+        },
+        {
+          "nameKo": "모호한 속삭임",
+          "count": 5
+        },
+        {
+          "nameKo": "휘날리는 드레스 자락",
+          "count": 1
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 60000
+        }
+      ],
+      "comparison": [
+        {
+          "nameKo": "떠도는 속삭임",
+          "count": 5
+        },
+        {
+          "nameKo": "모순된 속삭임",
+          "count": 5
+        },
+        {
+          "nameKo": "휘날리는 드레스 자락",
+          "count": 1
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 60000
+        }
+      ]
+    },
+    {
+      "id": "mint",
+      "level": 8,
+      "adopted": [
+        {
+          "nameKo": "백장미",
+          "count": 3
+        },
+        {
+          "nameKo": "어두운 실루엣",
+          "count": 3
+        },
+        {
+          "nameKo": "착한 강아지 도장",
+          "count": 1
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 80000
+        }
+      ],
+      "comparison": [
+        {
+          "nameKo": "백장미",
+          "count": 3
+        },
+        {
+          "nameKo": "어두운 실루엣",
+          "count": 3
+        },
+        {
+          "nameKo": "착한 강아지 도장",
+          "count": 1
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 100000
+        }
+      ]
+    },
+    {
+      "id": "mint",
+      "level": 10,
+      "adopted": [
+        {
+          "nameKo": "백장미",
+          "count": 8
+        },
+        {
+          "nameKo": "어두운 실루엣",
+          "count": 8
+        },
+        {
+          "nameKo": "착한 강아지 도장",
+          "count": 4
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 120000
+        }
+      ],
+      "comparison": [
+        {
+          "nameKo": "백장미",
+          "count": 8
+        },
+        {
+          "nameKo": "어두운 실루엣",
+          "count": 8
+        },
+        {
+          "nameKo": "착한 강아지 도장",
+          "count": 4
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 150000
+        }
+      ]
+    },
+    {
+      "id": "nanally",
+      "level": 9,
+      "adopted": [
+        {
+          "nameKo": "백장미",
+          "count": 5
+        },
+        {
+          "nameKo": "어두운 실루엣",
+          "count": 5
+        },
+        {
+          "nameKo": "착한 강아지 도장",
+          "count": 2
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 100000
+        }
+      ],
+      "comparison": [
+        {
+          "nameKo": "백장미",
+          "count": 5
+        },
+        {
+          "nameKo": "어두운 실루엣",
+          "count": 5
+        },
+        {
+          "nameKo": "착한 강아지 도장",
+          "count": 2
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 125000
+        }
+      ]
+    },
+    {
+      "id": "sakiri",
+      "level": 4,
+      "adopted": [
+        {
+          "nameKo": "첫 번째 기대",
+          "count": 5
+        },
+        {
+          "nameKo": "흐릿한 숫자 부호",
+          "count": 5
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 10000
+        }
+      ],
+      "comparison": [
+        {
+          "nameKo": "익숙한 권태",
+          "count": 5
+        },
+        {
+          "nameKo": "미해독 숫자 부호",
+          "count": 5
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 10000
+        }
+      ]
+    },
+    {
+      "id": "skia",
+      "level": 8,
+      "adopted": [
+        {
+          "nameKo": "두근대는 밤",
+          "count": 3
+        },
+        {
+          "nameKo": "초월적 망상",
+          "count": 3
+        },
+        {
+          "nameKo": "휘날리는 드레스 자락",
+          "count": 1
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 80000
+        }
+      ],
+      "comparison": [
+        {
+          "nameKo": "두근대는 밤",
+          "count": 3
+        },
+        {
+          "nameKo": "초월적 망상",
+          "count": 3
+        },
+        {
+          "nameKo": "휘날리는 드레스 자락",
+          "count": 1
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 100000
+        }
+      ]
+    },
+    {
+      "id": "skia",
+      "level": 9,
+      "adopted": [
+        {
+          "nameKo": "두근대는 밤",
+          "count": 5
+        },
+        {
+          "nameKo": "초월적 망상",
+          "count": 5
+        },
+        {
+          "nameKo": "휘날리는 드레스 자락",
+          "count": 2
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 100000
+        }
+      ],
+      "comparison": [
+        {
+          "nameKo": "두근대는 밤",
+          "count": 5
+        },
+        {
+          "nameKo": "초월적 망상",
+          "count": 5
+        },
+        {
+          "nameKo": "휘날리는 드레스 자락",
+          "count": 2
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 125000
+        }
+      ]
+    },
+    {
+      "id": "skia",
+      "level": 10,
+      "adopted": [
+        {
+          "nameKo": "두근대는 밤",
+          "count": 8
+        },
+        {
+          "nameKo": "초월적 망상",
+          "count": 8
+        },
+        {
+          "nameKo": "휘날리는 드레스 자락",
+          "count": 4
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 120000
+        }
+      ],
+      "comparison": [
+        {
+          "nameKo": "두근대는 밤",
+          "count": 8
+        },
+        {
+          "nameKo": "초월적 망상",
+          "count": 8
+        },
+        {
+          "nameKo": "휘날리는 드레스 자락",
+          "count": 4
+        },
+        {
+          "nameKo": "비틀 코인",
+          "count": 150000
+        }
+      ]
+    }
+  ]
+}

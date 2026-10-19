@@ -1,5 +1,6 @@
-import { state } from "../../../core/state.js?v=20261020-element-highlights";
-import { esc, fmt } from "../../../core/dom.js?v=20261020-element-highlights";
+import { state } from "../../../core/state.js?v=20261020-skill-growth";
+import { esc, fmt } from "../../../core/dom.js?v=20261020-skill-growth";
+import { renderSkillGrowth } from "./skill-growth.js?v=20261020-skill-growth";
 
 export function renderGrowth(p) {
   const data = state.db.growth;
@@ -185,6 +186,7 @@ export function renderGrowth(p) {
     '<details class="source-block"><summary>자료 출처와 계산 기준</summary><div class="source-links">' +
     sourceLinks +
     "</div>" +
-    "</details>"
+    "</details>" +
+    renderSkillGrowth(p)
   );
 }

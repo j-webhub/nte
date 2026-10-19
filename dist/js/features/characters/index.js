@@ -1,10 +1,10 @@
-import { state } from "../../core/state.js?v=20261020-element-highlights";
-import { $ } from "../../core/dom.js?v=20261020-element-highlights";
-import { setView } from "../../core/router.js?v=20261020-element-highlights";
-import { ELEMENT_ORDER, ELEMENTS } from "./catalog.js?v=20261020-element-highlights";
-import { renderRoster } from "./roster.js?v=20261020-element-highlights";
-import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-element-highlights";
-import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-element-highlights";
+import { state } from "../../core/state.js?v=20261020-skill-growth";
+import { $ } from "../../core/dom.js?v=20261020-skill-growth";
+import { setView } from "../../core/router.js?v=20261020-skill-growth";
+import { ELEMENT_ORDER, ELEMENTS } from "./catalog.js?v=20261020-skill-growth";
+import { renderRoster } from "./roster.js?v=20261020-skill-growth";
+import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-skill-growth";
+import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-skill-growth";
 
 export { renderRoster, renderProfile };
 
@@ -66,6 +66,21 @@ export function initializeCharacters() {
     }
   });
   $("#main-content").addEventListener("change", (event) => {
+    const skillGrowthControl = event.target.closest("[data-growth-skill-current], [data-growth-skill-target], [data-growth-skill-count]");
+    if (skillGrowthControl) {
+      const value = Number(skillGrowthControl.value) || 1;
+      if (skillGrowthControl.hasAttribute("data-growth-skill-count")) {
+        state.growthSkillCount = Math.max(1, Math.min(4, value));
+      } else if (skillGrowthControl.hasAttribute("data-growth-skill-current")) {
+        state.growthSkillCurrentLevel = Math.max(1, Math.min(10, value));
+        state.growthSkillTargetLevel = Math.max(state.growthSkillCurrentLevel, state.growthSkillTargetLevel);
+      } else {
+        state.growthSkillTargetLevel = Math.max(1, Math.min(10, value));
+        state.growthSkillCurrentLevel = Math.min(state.growthSkillCurrentLevel, state.growthSkillTargetLevel);
+      }
+      refreshActiveTab();
+      return;
+    }
     const growthTarget = event.target.closest("[data-growth-target]");
     if (growthTarget) {
       state.growthTargetLevel = Math.max(

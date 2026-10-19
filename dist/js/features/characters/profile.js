@@ -1,8 +1,8 @@
-import { state } from "../../core/state.js?v=20261020-element-highlights";
-import { $, esc, fmt } from "../../core/dom.js?v=20261020-element-highlights";
-import { elem, assetUrl, elementIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-element-highlights";
-import { getProfile } from "./model.js?v=20261020-element-highlights";
-import { renderTab } from "./tabs/index.js?v=20261020-element-highlights";
+import { state } from "../../core/state.js?v=20261020-skill-growth";
+import { $, esc, fmt } from "../../core/dom.js?v=20261020-skill-growth";
+import { elem, assetUrl, elementIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-skill-growth";
+import { getProfile } from "./model.js?v=20261020-skill-growth";
+import { renderTab } from "./tabs/index.js?v=20261020-skill-growth";
 
 export function bindCharacterIllustration() {
   const visual = $("#main-content .hero-visual");
@@ -40,6 +40,12 @@ export function refreshActiveTab() {
     focusSelector = "[data-arc-rank]";
   else if (focused?.hasAttribute("data-growth-target"))
     focusSelector = "[data-growth-target]";
+  else if (focused?.hasAttribute("data-growth-skill-current"))
+    focusSelector = "[data-growth-skill-current]";
+  else if (focused?.hasAttribute("data-growth-skill-target"))
+    focusSelector = "[data-growth-skill-target]";
+  else if (focused?.hasAttribute("data-growth-skill-count"))
+    focusSelector = "[data-growth-skill-count]";
   panel.innerHTML = renderTab(getProfile(state.selectedId));
   $("#main-content")
     .querySelectorAll(".tab-button")

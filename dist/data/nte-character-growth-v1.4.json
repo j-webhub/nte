@@ -194,5 +194,607 @@
     "https://gigle.kr/nte/materials",
     "https://www.ntebuild.com/planner?add=jiuyuan",
     "https://alkapa.gg/en/neverness-to-everness/characters/cang"
-  ]
+  ],
+  "skillUpgrades": {
+    "snapshot": "2026-10-20",
+    "maxLevel": 10,
+    "noteKo": "일반 공격·바이레일·울티메이트·서포트 스킬의 직접 강화 비용입니다. 고유 패시브 해금·도시 스킬·각성/공명으로 추가되는 레벨은 포함하지 않습니다.",
+    "sourceNoteKo": "커뮤니티 데이터베이스의 캐릭터별 4종 스킬 표를 수집했습니다. 레벨 9 코인은 단계별 합계가 총액과 일치하는 Kaiden의 100,000을 사용했습니다.",
+    "levels": [
+      {
+        "toLevel": 2,
+        "requiredAscension": 2,
+        "coins": 2000,
+        "tier": 0,
+        "bookCount": 2,
+        "fieldCount": 2,
+        "weeklyCount": 0
+      },
+      {
+        "toLevel": 3,
+        "requiredAscension": 3,
+        "coins": 5000,
+        "tier": 0,
+        "bookCount": 3,
+        "fieldCount": 3,
+        "weeklyCount": 0
+      },
+      {
+        "toLevel": 4,
+        "requiredAscension": 3,
+        "coins": 10000,
+        "tier": 0,
+        "bookCount": 5,
+        "fieldCount": 5,
+        "weeklyCount": 0
+      },
+      {
+        "toLevel": 5,
+        "requiredAscension": 4,
+        "coins": 20000,
+        "tier": 1,
+        "bookCount": 2,
+        "fieldCount": 2,
+        "weeklyCount": 0
+      },
+      {
+        "toLevel": 6,
+        "requiredAscension": 4,
+        "coins": 40000,
+        "tier": 1,
+        "bookCount": 3,
+        "fieldCount": 3,
+        "weeklyCount": 0
+      },
+      {
+        "toLevel": 7,
+        "requiredAscension": 5,
+        "coins": 60000,
+        "tier": 1,
+        "bookCount": 5,
+        "fieldCount": 5,
+        "weeklyCount": 1
+      },
+      {
+        "toLevel": 8,
+        "requiredAscension": 5,
+        "coins": 80000,
+        "tier": 2,
+        "bookCount": 3,
+        "fieldCount": 3,
+        "weeklyCount": 1
+      },
+      {
+        "toLevel": 9,
+        "requiredAscension": 6,
+        "coins": 100000,
+        "tier": 2,
+        "bookCount": 5,
+        "fieldCount": 5,
+        "weeklyCount": 2
+      },
+      {
+        "toLevel": 10,
+        "requiredAscension": 6,
+        "coins": 120000,
+        "tier": 2,
+        "bookCount": 8,
+        "fieldCount": 8,
+        "weeklyCount": 4
+      }
+    ],
+    "materials": {
+      "SkillUpMaterial_03_lv1": {
+        "nameKo": "첫 번째 기대",
+        "nameEn": "First Expectations"
+      },
+      "material_mohushufu": {
+        "nameKo": "흐릿한 숫자 부호",
+        "nameEn": "Blurred Numeral"
+      },
+      "SkillUpMaterial_03_lv2": {
+        "nameKo": "익숙한 권태",
+        "nameEn": "Known Weariness"
+      },
+      "material_bianxingshufu": {
+        "nameKo": "미해독 숫자 부호",
+        "nameEn": "Unsolved Numeral"
+      },
+      "weeklycloneboss_a02_01": {
+        "nameKo": "휘날리는 드레스 자락",
+        "nameEn": "Dress Hem of Vanity"
+      },
+      "SkillUpMaterial_03_lv3": {
+        "nameKo": "검은 모자",
+        "nameEn": "Black Hat"
+      },
+      "material_niuqushufu": {
+        "nameKo": "뒤틀린 숫자 부호",
+        "nameEn": "Distorted Numeral"
+      },
+      "SkillUpMaterial_02_lv1": {
+        "nameKo": "신병의 두려움",
+        "nameEn": "FNG"
+      },
+      "material_xuannianwangning": {
+        "nameKo": "허황된 망상",
+        "nameEn": "Suspended Delusions"
+      },
+      "SkillUpMaterial_02_lv2": {
+        "nameKo": "장교의 신중함",
+        "nameEn": "CO"
+      },
+      "material_kewangwangning": {
+        "nameKo": "간절한 망상",
+        "nameEn": "Yearning Delusions"
+      },
+      "mofeikesi_yinzhang": {
+        "nameKo": "착한 강아지 도장",
+        "nameEn": "Good Boy Stamp"
+      },
+      "SkillUpMaterial_02_lv3": {
+        "nameKo": "백장미",
+        "nameEn": "White Rose"
+      },
+      "material_chaoyanwangning": {
+        "nameKo": "초월적 망상",
+        "nameEn": "Transcendent Delusions"
+      },
+      "SkillUpMaterial_05_lv1": {
+        "nameKo": "물결의 망설임",
+        "nameEn": "Hesitation of the Waves"
+      },
+      "SkillUpMaterial_05_lv2": {
+        "nameKo": "떠도는 속삭임",
+        "nameEn": "Suspended Whispers"
+      },
+      "weeklycloneboss_a03_01": {
+        "nameKo": "기억의 영속성",
+        "nameEn": "Eternal Memory"
+      },
+      "SkillUpMaterial_05_lv3": {
+        "nameKo": "제2의 자아",
+        "nameEn": "The Second Self"
+      },
+      "SkillUpMaterial_04_lv1": {
+        "nameKo": "사유의 동기화",
+        "nameEn": "Synchronicity of Thought"
+      },
+      "SkillUpMaterial_04_lv2": {
+        "nameKo": "믿음의 공명",
+        "nameEn": "Resonance of Faith"
+      },
+      "SkillUpMaterial_04_lv3": {
+        "nameKo": "두근대는 밤",
+        "nameEn": "Heart-Racing Night"
+      },
+      "characterskill_01_lv1_x100": {
+        "nameKo": "어린 새의 희망",
+        "nameEn": "Nestling's Longing"
+      },
+      "OrdinaryMonMaterial_01_lv1": {
+        "nameKo": "잃어버린 속삭임",
+        "nameEn": "Lost Whispers"
+      },
+      "characterskill_01_lv2_x100": {
+        "nameKo": "비둘기의 날갯짓",
+        "nameEn": "Dove's Flutter"
+      },
+      "OrdinaryMonMaterial_01_lv2": {
+        "nameKo": "모호한 속삭임",
+        "nameEn": "Obscure Whispers"
+      },
+      "characterskill_01_lv3_x100": {
+        "nameKo": "올리브 가지",
+        "nameEn": "The Olive Branch"
+      },
+      "OrdinaryMonMaterial_01_lv3": {
+        "nameKo": "모순된 속삭임",
+        "nameEn": "Paradoxical Whispers"
+      },
+      "material_tuiselveying": {
+        "nameKo": "빛바랜 실루엣",
+        "nameEn": "Fading Silhouette"
+      },
+      "material_shijiaolveying": {
+        "nameKo": "초점 잃은 실루엣",
+        "nameEn": "Blurred Silhouette"
+      },
+      "material_huianlveying": {
+        "nameKo": "어두운 실루엣",
+        "nameEn": "Chaos Silhouette"
+      }
+    },
+    "characters": {
+      "adler": {
+        "bookMaterials": [
+          "SkillUpMaterial_03_lv1",
+          "SkillUpMaterial_03_lv2",
+          "SkillUpMaterial_03_lv3"
+        ],
+        "fieldMaterials": [
+          "material_mohushufu",
+          "material_bianxingshufu",
+          "material_niuqushufu"
+        ],
+        "weeklyMaterial": "weeklycloneboss_a02_01",
+        "sourceUrls": [
+          "https://www.kaiden.gg/nte/characters/adler/",
+          "https://gamewith.ai/nte/ko/character/adler"
+        ]
+      },
+      "aurelia": {
+        "bookMaterials": [
+          "SkillUpMaterial_02_lv1",
+          "SkillUpMaterial_02_lv2",
+          "SkillUpMaterial_02_lv3"
+        ],
+        "fieldMaterials": [
+          "material_xuannianwangning",
+          "material_kewangwangning",
+          "material_chaoyanwangning"
+        ],
+        "weeklyMaterial": "mofeikesi_yinzhang",
+        "sourceUrls": [
+          "https://www.kaiden.gg/nte/characters/aurelia/",
+          "https://gamewith.ai/nte/ko/character/aurelia"
+        ]
+      },
+      "baicang": {
+        "bookMaterials": [
+          "SkillUpMaterial_03_lv1",
+          "SkillUpMaterial_03_lv2",
+          "SkillUpMaterial_03_lv3"
+        ],
+        "fieldMaterials": [
+          "material_mohushufu",
+          "material_bianxingshufu",
+          "material_niuqushufu"
+        ],
+        "weeklyMaterial": "mofeikesi_yinzhang",
+        "sourceUrls": [
+          "https://www.kaiden.gg/nte/characters/baicang/",
+          "https://gamewith.ai/nte/ko/character/baicang"
+        ]
+      },
+      "blackbird": {
+        "bookMaterials": [
+          "SkillUpMaterial_05_lv1",
+          "SkillUpMaterial_05_lv2",
+          "SkillUpMaterial_05_lv3"
+        ],
+        "fieldMaterials": [
+          "material_mohushufu",
+          "material_bianxingshufu",
+          "material_niuqushufu"
+        ],
+        "weeklyMaterial": "weeklycloneboss_a03_01",
+        "sourceUrls": [
+          "https://www.kaiden.gg/nte/characters/blackbird/"
+        ]
+      },
+      "chaos": {
+        "bookMaterials": [
+          "SkillUpMaterial_04_lv1",
+          "SkillUpMaterial_04_lv2",
+          "SkillUpMaterial_04_lv3"
+        ],
+        "fieldMaterials": [
+          "material_xuannianwangning",
+          "material_kewangwangning",
+          "material_chaoyanwangning"
+        ],
+        "weeklyMaterial": "weeklycloneboss_a03_01",
+        "sourceUrls": [
+          "https://www.kaiden.gg/nte/characters/chaos/"
+        ]
+      },
+      "chiz": {
+        "bookMaterials": [
+          "characterskill_01_lv1_x100",
+          "characterskill_01_lv2_x100",
+          "characterskill_01_lv3_x100"
+        ],
+        "fieldMaterials": [
+          "OrdinaryMonMaterial_01_lv1",
+          "OrdinaryMonMaterial_01_lv2",
+          "OrdinaryMonMaterial_01_lv3"
+        ],
+        "weeklyMaterial": "mofeikesi_yinzhang",
+        "sourceUrls": [
+          "https://www.kaiden.gg/nte/characters/chiz/",
+          "https://gamewith.ai/nte/ko/character/chiz"
+        ]
+      },
+      "daffodill": {
+        "bookMaterials": [
+          "SkillUpMaterial_05_lv1",
+          "SkillUpMaterial_05_lv2",
+          "SkillUpMaterial_05_lv3"
+        ],
+        "fieldMaterials": [
+          "material_xuannianwangning",
+          "material_kewangwangning",
+          "material_chaoyanwangning"
+        ],
+        "weeklyMaterial": "weeklycloneboss_a02_01",
+        "sourceUrls": [
+          "https://www.kaiden.gg/nte/characters/daffodill/",
+          "https://gamewith.ai/nte/ko/character/daffodill"
+        ]
+      },
+      "edgar": {
+        "bookMaterials": [
+          "characterskill_01_lv1_x100",
+          "characterskill_01_lv2_x100",
+          "characterskill_01_lv3_x100"
+        ],
+        "fieldMaterials": [
+          "OrdinaryMonMaterial_01_lv1",
+          "OrdinaryMonMaterial_01_lv2",
+          "OrdinaryMonMaterial_01_lv3"
+        ],
+        "weeklyMaterial": "mofeikesi_yinzhang",
+        "sourceUrls": [
+          "https://www.kaiden.gg/nte/characters/edgar/",
+          "https://gamewith.ai/nte/ko/character/edgar"
+        ]
+      },
+      "fadia": {
+        "bookMaterials": [
+          "SkillUpMaterial_04_lv1",
+          "SkillUpMaterial_04_lv2",
+          "SkillUpMaterial_04_lv3"
+        ],
+        "fieldMaterials": [
+          "material_tuiselveying",
+          "material_shijiaolveying",
+          "material_huianlveying"
+        ],
+        "weeklyMaterial": "weeklycloneboss_a02_01",
+        "sourceUrls": [
+          "https://www.kaiden.gg/nte/characters/fadia/",
+          "https://gamewith.ai/nte/ko/character/fadia"
+        ]
+      },
+      "haniel": {
+        "bookMaterials": [
+          "SkillUpMaterial_05_lv1",
+          "SkillUpMaterial_05_lv2",
+          "SkillUpMaterial_05_lv3"
+        ],
+        "fieldMaterials": [
+          "material_mohushufu",
+          "material_bianxingshufu",
+          "material_niuqushufu"
+        ],
+        "weeklyMaterial": "weeklycloneboss_a02_01",
+        "sourceUrls": [
+          "https://www.kaiden.gg/nte/characters/haniel/",
+          "https://gamewith.ai/nte/ko/character/haniel"
+        ]
+      },
+      "hathor": {
+        "bookMaterials": [
+          "SkillUpMaterial_04_lv1",
+          "SkillUpMaterial_04_lv2",
+          "SkillUpMaterial_04_lv3"
+        ],
+        "fieldMaterials": [
+          "material_xuannianwangning",
+          "material_kewangwangning",
+          "material_chaoyanwangning"
+        ],
+        "weeklyMaterial": "mofeikesi_yinzhang",
+        "sourceUrls": [
+          "https://www.kaiden.gg/nte/characters/hathor/",
+          "https://gamewith.ai/nte/ko/character/hathor"
+        ]
+      },
+      "hotori": {
+        "bookMaterials": [
+          "characterskill_01_lv1_x100",
+          "characterskill_01_lv2_x100",
+          "characterskill_01_lv3_x100"
+        ],
+        "fieldMaterials": [
+          "OrdinaryMonMaterial_01_lv1",
+          "OrdinaryMonMaterial_01_lv2",
+          "OrdinaryMonMaterial_01_lv3"
+        ],
+        "weeklyMaterial": "weeklycloneboss_a02_01",
+        "sourceUrls": [
+          "https://www.kaiden.gg/nte/characters/hotori/",
+          "https://gamewith.ai/nte/ko/character/hotori"
+        ]
+      },
+      "iroi": {
+        "bookMaterials": [
+          "SkillUpMaterial_02_lv1",
+          "SkillUpMaterial_02_lv2",
+          "SkillUpMaterial_02_lv3"
+        ],
+        "fieldMaterials": [
+          "material_tuiselveying",
+          "material_shijiaolveying",
+          "material_huianlveying"
+        ],
+        "weeklyMaterial": "mofeikesi_yinzhang",
+        "sourceUrls": [
+          "https://www.kaiden.gg/nte/characters/iroi/"
+        ]
+      },
+      "jiuyuan": {
+        "bookMaterials": [
+          "SkillUpMaterial_02_lv1",
+          "SkillUpMaterial_02_lv2",
+          "SkillUpMaterial_02_lv3"
+        ],
+        "fieldMaterials": [
+          "material_tuiselveying",
+          "material_shijiaolveying",
+          "material_huianlveying"
+        ],
+        "weeklyMaterial": "weeklycloneboss_a02_01",
+        "sourceUrls": [
+          "https://www.kaiden.gg/nte/characters/jiuyuan/",
+          "https://gamewith.ai/nte/ko/character/jiuyuan"
+        ]
+      },
+      "lacrimosa": {
+        "bookMaterials": [
+          "SkillUpMaterial_05_lv1",
+          "SkillUpMaterial_05_lv2",
+          "SkillUpMaterial_05_lv3"
+        ],
+        "fieldMaterials": [
+          "OrdinaryMonMaterial_01_lv1",
+          "OrdinaryMonMaterial_01_lv2",
+          "OrdinaryMonMaterial_01_lv3"
+        ],
+        "weeklyMaterial": "weeklycloneboss_a02_01",
+        "sourceUrls": [
+          "https://www.kaiden.gg/nte/characters/lacrimosa/",
+          "https://gamewith.ai/nte/ko/character/lacrimosa"
+        ]
+      },
+      "linko": {
+        "bookMaterials": [
+          "SkillUpMaterial_02_lv1",
+          "SkillUpMaterial_02_lv2",
+          "SkillUpMaterial_02_lv3"
+        ],
+        "fieldMaterials": [
+          "OrdinaryMonMaterial_01_lv1",
+          "OrdinaryMonMaterial_01_lv2",
+          "OrdinaryMonMaterial_01_lv3"
+        ],
+        "weeklyMaterial": "weeklycloneboss_a02_01",
+        "sourceUrls": [
+          "https://www.kaiden.gg/nte/characters/linko/"
+        ]
+      },
+      "mint": {
+        "bookMaterials": [
+          "SkillUpMaterial_02_lv1",
+          "SkillUpMaterial_02_lv2",
+          "SkillUpMaterial_02_lv3"
+        ],
+        "fieldMaterials": [
+          "material_tuiselveying",
+          "material_shijiaolveying",
+          "material_huianlveying"
+        ],
+        "weeklyMaterial": "mofeikesi_yinzhang",
+        "sourceUrls": [
+          "https://www.kaiden.gg/nte/characters/mint/",
+          "https://gamewith.ai/nte/ko/character/mint"
+        ]
+      },
+      "nanally": {
+        "bookMaterials": [
+          "SkillUpMaterial_02_lv1",
+          "SkillUpMaterial_02_lv2",
+          "SkillUpMaterial_02_lv3"
+        ],
+        "fieldMaterials": [
+          "material_tuiselveying",
+          "material_shijiaolveying",
+          "material_huianlveying"
+        ],
+        "weeklyMaterial": "mofeikesi_yinzhang",
+        "sourceUrls": [
+          "https://www.kaiden.gg/nte/characters/nanally/",
+          "https://gamewith.ai/nte/ko/character/nanally"
+        ]
+      },
+      "sakiri": {
+        "bookMaterials": [
+          "SkillUpMaterial_03_lv1",
+          "SkillUpMaterial_03_lv2",
+          "SkillUpMaterial_03_lv3"
+        ],
+        "fieldMaterials": [
+          "material_mohushufu",
+          "material_bianxingshufu",
+          "material_niuqushufu"
+        ],
+        "weeklyMaterial": "mofeikesi_yinzhang",
+        "sourceUrls": [
+          "https://www.kaiden.gg/nte/characters/sakiri/",
+          "https://gamewith.ai/nte/ko/character/sakiri"
+        ]
+      },
+      "shinku": {
+        "bookMaterials": [
+          "characterskill_01_lv1_x100",
+          "characterskill_01_lv2_x100",
+          "characterskill_01_lv3_x100"
+        ],
+        "fieldMaterials": [
+          "OrdinaryMonMaterial_01_lv1",
+          "OrdinaryMonMaterial_01_lv2",
+          "OrdinaryMonMaterial_01_lv3"
+        ],
+        "weeklyMaterial": "weeklycloneboss_a02_01",
+        "sourceUrls": [
+          "https://www.kaiden.gg/nte/characters/shinku/"
+        ]
+      },
+      "skia": {
+        "bookMaterials": [
+          "SkillUpMaterial_04_lv1",
+          "SkillUpMaterial_04_lv2",
+          "SkillUpMaterial_04_lv3"
+        ],
+        "fieldMaterials": [
+          "material_xuannianwangning",
+          "material_kewangwangning",
+          "material_chaoyanwangning"
+        ],
+        "weeklyMaterial": "weeklycloneboss_a02_01",
+        "sourceUrls": [
+          "https://www.kaiden.gg/nte/characters/skia/",
+          "https://gamewith.ai/nte/ko/character/skia"
+        ]
+      },
+      "zankou": {
+        "bookMaterials": [
+          "SkillUpMaterial_03_lv1",
+          "SkillUpMaterial_03_lv2",
+          "SkillUpMaterial_03_lv3"
+        ],
+        "fieldMaterials": [
+          "material_mohushufu",
+          "material_bianxingshufu",
+          "material_niuqushufu"
+        ],
+        "weeklyMaterial": "weeklycloneboss_a03_01",
+        "sourceUrls": [
+          "https://www.kaiden.gg/nte/characters/zankou/"
+        ]
+      },
+      "zero": {
+        "bookMaterials": [
+          "characterskill_01_lv1_x100",
+          "characterskill_01_lv2_x100",
+          "characterskill_01_lv3_x100"
+        ],
+        "fieldMaterials": [
+          "OrdinaryMonMaterial_01_lv1",
+          "OrdinaryMonMaterial_01_lv2",
+          "OrdinaryMonMaterial_01_lv3"
+        ],
+        "weeklyMaterial": "mofeikesi_yinzhang",
+        "sourceUrls": [
+          "https://www.kaiden.gg/nte/characters/zero/",
+          "https://gamewith.ai/nte/ko/character/zero"
+        ]
+      }
+    },
+    "nameSourceUrls": [
+      "https://gamewith.ai/nte/ko/item",
+      "https://www.inven.co.kr/board/nte/6518/334?iskin=nte"
+    ]
+  }
 }

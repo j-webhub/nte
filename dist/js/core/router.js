@@ -1,6 +1,6 @@
-import { state } from "./state.js?v=20261020-element-highlights";
-import { $, esc, fmt } from "./dom.js?v=20261020-element-highlights";
-import { loadDatabase } from "./data.js?v=20261020-element-highlights";
+import { state } from "./state.js?v=20261020-skill-growth";
+import { $, esc, fmt } from "./dom.js?v=20261020-skill-growth";
+import { loadDatabase } from "./data.js?v=20261020-skill-growth";
 
 const VALID_VIEWS = new Set([
   "home",

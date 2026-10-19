@@ -1,4 +1,4 @@
-import { state } from "../../core/state.js?v=20261020-element-highlights";
+import { state } from "../../core/state.js?v=20261020-skill-growth";
 
 export function getProfile(id) {
   const character = state.db.characters[id];

@@ -1,7 +1,7 @@
-import { formatCharacterText } from "../text.js?v=20261020-element-highlights";
-import { state } from "../../../core/state.js?v=20261020-element-highlights";
-import { esc } from "../../../core/dom.js?v=20261020-element-highlights";
-import { sourceLinks } from "../sources.js?v=20261020-element-highlights";
+import { formatCharacterText } from "../text.js?v=20261020-skill-growth";
+import { state } from "../../../core/state.js?v=20261020-skill-growth";
+import { esc } from "../../../core/dom.js?v=20261020-skill-growth";
+import { sourceLinks } from "../sources.js?v=20261020-skill-growth";
 
 export function renderConsole(p) {
   const build = p.console;

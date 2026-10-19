@@ -1128,6 +1128,23 @@
   margin-top: 8px;
 }
 
+.skill-growth-section {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.skill-growth-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin-bottom: 18px;
+}
+
+.skill-growth-total {
+  margin-bottom: 20px;
+}
+
 .character-term[style] {
   color: var(--term-color);
   font-size: inherit;

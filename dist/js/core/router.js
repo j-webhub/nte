@@ -1,6 +1,6 @@
-import { state } from "./state.js?v=20261020-filter-opacity";
-import { $, esc, fmt } from "./dom.js?v=20261020-filter-opacity";
-import { loadDatabase } from "./data.js?v=20261020-filter-opacity";
+import { state } from "./state.js?v=20261020-home-wallpaper";
+import { $, esc, fmt } from "./dom.js?v=20261020-home-wallpaper";
+import { loadDatabase } from "./data.js?v=20261020-home-wallpaper";
 
 const VALID_VIEWS = new Set([
   "home",

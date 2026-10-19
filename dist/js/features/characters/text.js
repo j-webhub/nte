@@ -1,5 +1,5 @@
-import { esc } from "../../core/dom.js?v=20261020-filter-opacity";
-import { elem } from "./catalog.js?v=20261020-filter-opacity";
+import { esc } from "../../core/dom.js?v=20261020-home-wallpaper";
+import { elem } from "./catalog.js?v=20261020-home-wallpaper";
 
 // Match source text before escaping so user-entered descriptions stay plain text.
 export function formatCharacterText(value, element) {

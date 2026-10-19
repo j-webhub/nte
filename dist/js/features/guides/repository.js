@@ -1,4 +1,4 @@
-import { DATABASE_NAME, DATABASE_VERSION, STORE_NAME } from "./config.js?v=20261020-filter-opacity";
+import { DATABASE_NAME, DATABASE_VERSION, STORE_NAME } from "./config.js?v=20261020-home-wallpaper";
 
 class IndexedDbGuideRepository {
   constructor() {

@@ -1,5 +1,5 @@
-import { state } from "../../core/state.js?v=20261020-filter-opacity";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-filter-opacity";
+import { state } from "../../core/state.js?v=20261020-home-wallpaper";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-home-wallpaper";
 
 export function wallpaperFileName(item) {
   return String(item.imageUrl || "")

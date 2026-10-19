@@ -1,5 +1,5 @@
-import { DATA_FILES, OPTIONAL_PORTAL_DATA } from "../config/data-files.js?v=20261020-filter-opacity";
-import { ASSET_VERSION } from "../config/site.js?v=20261020-filter-opacity";
+import { DATA_FILES, OPTIONAL_PORTAL_DATA } from "../config/data-files.js?v=20261020-home-wallpaper";
+import { ASSET_VERSION } from "../config/site.js?v=20261020-home-wallpaper";
 
 export async function loadDatabase() {
   const pairs = await Promise.all(

@@ -1,11 +1,11 @@
-import { state } from "../../core/state.js?v=20261020-filter-opacity";
-import { $ } from "../../core/dom.js?v=20261020-filter-opacity";
-import { openCharacter } from "../../core/router.js?v=20261020-filter-opacity";
-import { ELEMENT_ORDER, elem, elementIconUrl } from "./catalog.js?v=20261020-filter-opacity";
-import { renderRoster } from "./roster.js?v=20261020-filter-opacity";
-import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-filter-opacity";
-import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-filter-opacity";
-import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261020-filter-opacity";
+import { state } from "../../core/state.js?v=20261020-home-wallpaper";
+import { $ } from "../../core/dom.js?v=20261020-home-wallpaper";
+import { openCharacter } from "../../core/router.js?v=20261020-home-wallpaper";
+import { ELEMENT_ORDER, elem, elementIconUrl } from "./catalog.js?v=20261020-home-wallpaper";
+import { renderRoster } from "./roster.js?v=20261020-home-wallpaper";
+import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-home-wallpaper";
+import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-home-wallpaper";
+import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261020-home-wallpaper";
 
 export { renderRoster, renderProfile };
 

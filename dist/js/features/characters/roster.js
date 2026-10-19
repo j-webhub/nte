@@ -1,6 +1,6 @@
-import { state } from "../../core/state.js?v=20261020-filter-opacity";
-import { $, esc } from "../../core/dom.js?v=20261020-filter-opacity";
-import { elem, elementIconUrl } from "./catalog.js?v=20261020-filter-opacity";
+import { state } from "../../core/state.js?v=20261020-home-wallpaper";
+import { $, esc } from "../../core/dom.js?v=20261020-home-wallpaper";
+import { elem, elementIconUrl } from "./catalog.js?v=20261020-home-wallpaper";
 
 export function renderRoster() {
   const CHARACTER_DISPLAY_ORDER = state.db.index.displayCharacterIds || state.db.index.releasedCharacterIds;

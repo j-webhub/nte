@@ -1,5 +1,20 @@
-import { state } from "../../core/state.js?v=20261020-filter-opacity";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-filter-opacity";
+import { state } from "../../core/state.js?v=20261020-home-wallpaper";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-home-wallpaper";
+
+let lastWallpaperUrl = "";
+
+function bannerWallpapers() {
+  return (state.db.wallpapers.items || []).filter(item => item.imageUrl && !/-mobile\.[^/]+$/i.test(item.imageUrl));
+}
+
+function randomWallpaper() {
+  const wallpapers = bannerWallpapers();
+  const alternatives = wallpapers.filter(item => item.imageUrl !== lastWallpaperUrl);
+  const pool = alternatives.length ? alternatives : wallpapers;
+  const item = pool[Math.floor(Math.random() * pool.length)];
+  if (item) lastWallpaperUrl = item.imageUrl;
+  return item;
+}
 
 const PORTAL_MODULES = [
   {
@@ -46,6 +61,7 @@ const PORTAL_MODULES = [
 ];
 
 export function renderHome() {
+  const wallpaper = randomWallpaper();
   const latest = [...(state.db.notices.items || [])]
     .sort((a, b) => b.date.localeCompare(a.date))
     .slice(0, 2);
@@ -85,12 +101,12 @@ export function renderHome() {
     '<section class="portal-hero"><div class="portal-hero-copy"><p ' +
     'class="eyebrow">HETERO CITY / FIELD ARCHIVE</p><p ' +
     'class="portal-index">ARCHIVE <span>01</span></p><h1>이환의 정보를<br>한곳에서 ' +
-    '찾아보세요</h1><p class="portal-hero-description">공식 소식부터 캐릭터와 아크 데이터' +
-    '월페이퍼까지 원하는 자료를 선택해 확인할 수 있습니다.</p></div><div class="portal-hero-art" ' +
-    'aria-hidden="true"><span class="portal-orbit portal-orbit-one"></span>' +
-    '<span class="portal-orbit portal-orbit-two"></span><span ' +
-    'class="portal-orbit portal-orbit-three"></span><span ' +
-    'class="portal-hero-glyph">N</span></div></section>' +
+    '찾아보세요</h1><p class="portal-hero-description">공식 소식부터 캐릭터와 아크 데이터, ' +
+    '월페이퍼까지 원하는 자료를 선택해 확인할 수 있습니다.</p></div>' +
+    (wallpaper ? '<div class="portal-hero-art" aria-hidden="true"><img class="portal-hero-wallpaper" src="' +
+      esc(wallpaper.imageUrl) + '" alt="" fetchpriority="high" decoding="async"></div>' +
+      '<button type="button" class="portal-hero-random" data-home-wallpaper-random><span aria-hidden="true">⤨</span>다른 랜덤 이미지</button>' : '') +
+    '</section>' +
     '<section class="portal-section"><div class="section-head"><div><h2>아카이브 ' +
     '메뉴</h2><p>확인할 정보를 선택하세요.</p></div><span class="portal-version">GLOBAL · ' +
     '1.4</span></div><div class="portal-grid">' +
@@ -103,4 +119,9 @@ export function renderHome() {
     '</div><button type="button" class="text-link-button" ' +
     'data-view="notices">공지 전체 보기 <span aria-hidden="true">↗</span></button></section>' +
     siteFooter();
+  $("[data-home-wallpaper-random]")?.addEventListener("click", () => {
+    const next = randomWallpaper();
+    const image = $(".portal-hero-wallpaper");
+    if (next && image) image.src = next.imageUrl;
+  });
 }

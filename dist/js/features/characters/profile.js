@@ -1,8 +1,8 @@
-import { state } from "../../core/state.js?v=20261020-mulmangsan";
-import { $, esc, fmt } from "../../core/dom.js?v=20261020-mulmangsan";
-import { elem, assetUrl, elementIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-mulmangsan";
-import { getProfile } from "./model.js?v=20261020-mulmangsan";
-import { renderTab } from "./tabs/index.js?v=20261020-mulmangsan";
+import { state } from "../../core/state.js?v=20261020-filter-layout-fix";
+import { $, esc, fmt } from "../../core/dom.js?v=20261020-filter-layout-fix";
+import { elem, assetUrl, elementIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-filter-layout-fix";
+import { getProfile } from "./model.js?v=20261020-filter-layout-fix";
+import { renderTab } from "./tabs/index.js?v=20261020-filter-layout-fix";
 
 export function bindCharacterIllustration() {
   const visual = $("#main-content .hero-visual");

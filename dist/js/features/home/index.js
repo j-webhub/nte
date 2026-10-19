@@ -1,5 +1,5 @@
-import { state } from "../../core/state.js?v=20261020-mulmangsan";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-mulmangsan";
+import { state } from "../../core/state.js?v=20261020-filter-layout-fix";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-filter-layout-fix";
 
 const PORTAL_MODULES = [
   {

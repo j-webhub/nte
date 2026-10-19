@@ -1,7 +1,7 @@
-import { formatCharacterText } from "../text.js?v=20261020-mulmangsan";
+import { formatCharacterText } from "../text.js?v=20261020-filter-layout-fix";
 
-import { esc } from "../../../core/dom.js?v=20261020-mulmangsan";
-import { sourceLinks } from "../sources.js?v=20261020-mulmangsan";
+import { esc } from "../../../core/dom.js?v=20261020-filter-layout-fix";
+import { sourceLinks } from "../sources.js?v=20261020-filter-layout-fix";
 
 export function renderOverview(p, options = {}) {
   const {

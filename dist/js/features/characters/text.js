@@ -1,5 +1,5 @@
-import { esc } from "../../core/dom.js?v=20261020-mulmangsan";
-import { elem } from "./catalog.js?v=20261020-mulmangsan";
+import { esc } from "../../core/dom.js?v=20261020-filter-layout-fix";
+import { elem } from "./catalog.js?v=20261020-filter-layout-fix";
 
 // Match source text before escaping so user-entered descriptions stay plain text.
 export function formatCharacterText(value, element) {

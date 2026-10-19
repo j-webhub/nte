@@ -1,10 +1,10 @@
-import { registerPageModules, start } from "./core/router.js?v=20261020-mulmangsan";
-import { renderHome } from "./features/home/index.js?v=20261020-mulmangsan";
-import { initializeCharacters, renderRoster, renderProfile, renderCharacters } from "./features/characters/index.js?v=20261020-mulmangsan";
-import { renderNotices, renderNoticeDetail } from "./features/notices/index.js?v=20261020-mulmangsan";
-import { initializeArcs, renderArcDatabase } from "./features/arcs/index.js?v=20261020-mulmangsan";
-import { initializeGuides, renderGuides } from "./features/guides/index.js?v=20261020-mulmangsan";
-import { initializeWallpapers, renderWallpapers, closeWallpaperLightbox } from "./features/wallpapers/index.js?v=20261020-mulmangsan";
+import { registerPageModules, start } from "./core/router.js?v=20261020-filter-layout-fix";
+import { renderHome } from "./features/home/index.js?v=20261020-filter-layout-fix";
+import { initializeCharacters, renderRoster, renderProfile, renderCharacters } from "./features/characters/index.js?v=20261020-filter-layout-fix";
+import { renderNotices, renderNoticeDetail } from "./features/notices/index.js?v=20261020-filter-layout-fix";
+import { initializeArcs, renderArcDatabase } from "./features/arcs/index.js?v=20261020-filter-layout-fix";
+import { initializeGuides, renderGuides } from "./features/guides/index.js?v=20261020-filter-layout-fix";
+import { initializeWallpapers, renderWallpapers, closeWallpaperLightbox } from "./features/wallpapers/index.js?v=20261020-filter-layout-fix";
 
 registerPageModules({
   initialize() {

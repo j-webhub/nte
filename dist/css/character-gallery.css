@@ -62,7 +62,7 @@
 }
 .db-grade-letter {
   display: block;
-  padding: 0 4px;
+  padding: 2px 4px;
   background: linear-gradient(155deg, #fff176 0%, #ffcf2e 28%, #ff9c22 53%, #ff5d76 78%, #ef488f 100%);
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -240,15 +240,13 @@
   height: 100%;
   min-height: 0;
   font-size: 26px;
-  line-height: 1;
+  line-height: 1.2;
 }
 .arc-db-filter-group .db-grade-letter {
   width: auto;
-  padding: 0 4px;
+  padding: 2px 4px;
   text-align: center;
-  text-box-trim: trim-both;
-  text-box-edge: cap alphabetic;
-  transform: translateX(-1px);
+  transform: translate(-1px, -1px);
 }
 @media (prefers-reduced-motion: reduce) {
   .db-type-icon::after {

@@ -1,9 +1,9 @@
-import { formatCharacterText } from "../text.js?v=20261020-skill-growth";
-import { state } from "../../../core/state.js?v=20261020-skill-growth";
-import { $, esc, fmt } from "../../../core/dom.js?v=20261020-skill-growth";
-import { SKILLS } from "../catalog.js?v=20261020-skill-growth";
-import { getProfile } from "../model.js?v=20261020-skill-growth";
-import { sourceLinks, coefficientSourceLinks } from "../sources.js?v=20261020-skill-growth";
+import { formatCharacterText } from "../text.js?v=20261020-akane-intro-cleanup";
+import { state } from "../../../core/state.js?v=20261020-akane-intro-cleanup";
+import { $, esc, fmt } from "../../../core/dom.js?v=20261020-akane-intro-cleanup";
+import { SKILLS } from "../catalog.js?v=20261020-akane-intro-cleanup";
+import { getProfile } from "../model.js?v=20261020-akane-intro-cleanup";
+import { sourceLinks, coefficientSourceLinks } from "../sources.js?v=20261020-akane-intro-cleanup";
 
 export function formatPercent(value) {
   const percent = Math.round(Number(value) * 1000) / 10;

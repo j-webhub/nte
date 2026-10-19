@@ -1,5 +1,5 @@
-import { esc } from "../../core/dom.js?v=20261020-skill-growth";
-import { elem } from "./catalog.js?v=20261020-skill-growth";
+import { esc } from "../../core/dom.js?v=20261020-akane-intro-cleanup";
+import { elem } from "./catalog.js?v=20261020-akane-intro-cleanup";
 
 // Match source text before escaping so user-entered descriptions stay plain text.
 export function formatCharacterText(value, element) {

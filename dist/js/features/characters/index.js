@@ -1,10 +1,10 @@
-import { state } from "../../core/state.js?v=20261020-skill-growth";
-import { $ } from "../../core/dom.js?v=20261020-skill-growth";
-import { setView } from "../../core/router.js?v=20261020-skill-growth";
-import { ELEMENT_ORDER, ELEMENTS } from "./catalog.js?v=20261020-skill-growth";
-import { renderRoster } from "./roster.js?v=20261020-skill-growth";
-import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-skill-growth";
-import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-skill-growth";
+import { state } from "../../core/state.js?v=20261020-akane-intro-cleanup";
+import { $ } from "../../core/dom.js?v=20261020-akane-intro-cleanup";
+import { setView } from "../../core/router.js?v=20261020-akane-intro-cleanup";
+import { ELEMENT_ORDER, ELEMENTS } from "./catalog.js?v=20261020-akane-intro-cleanup";
+import { renderRoster } from "./roster.js?v=20261020-akane-intro-cleanup";
+import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-akane-intro-cleanup";
+import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-akane-intro-cleanup";
 
 export { renderRoster, renderProfile };
 

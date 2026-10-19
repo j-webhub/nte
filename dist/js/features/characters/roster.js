@@ -1,6 +1,6 @@
-import { state } from "../../core/state.js?v=20261020-skill-growth";
-import { $, esc } from "../../core/dom.js?v=20261020-skill-growth";
-import { elem, elementIconUrl } from "./catalog.js?v=20261020-skill-growth";
+import { state } from "../../core/state.js?v=20261020-akane-intro-cleanup";
+import { $, esc } from "../../core/dom.js?v=20261020-akane-intro-cleanup";
+import { elem, elementIconUrl } from "./catalog.js?v=20261020-akane-intro-cleanup";
 
 export function renderRoster() {
   const CHARACTER_DISPLAY_ORDER = state.db.index.displayCharacterIds || state.db.index.releasedCharacterIds;

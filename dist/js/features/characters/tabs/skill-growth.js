@@ -1,5 +1,5 @@
-import { state } from "../../../core/state.js?v=20261020-skill-growth";
-import { esc, fmt } from "../../../core/dom.js?v=20261020-skill-growth";
+import { state } from "../../../core/state.js?v=20261020-akane-intro-cleanup";
+import { esc, fmt } from "../../../core/dom.js?v=20261020-akane-intro-cleanup";
 
 export function renderSkillGrowth(p) {
   const data = state.db.growth.skillUpgrades;

@@ -1,6 +1,6 @@
-import { state } from "../../core/state.js?v=20261020-skill-growth";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-skill-growth";
-import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261020-skill-growth";
+import { state } from "../../core/state.js?v=20261020-akane-intro-cleanup";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-akane-intro-cleanup";
+import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261020-akane-intro-cleanup";
 
 export function arcDatabaseCards(query = "") {
   const term = query.trim().toLocaleLowerCase("ko");

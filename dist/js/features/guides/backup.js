@@ -1,8 +1,8 @@
-import { $ } from "../../core/dom.js?v=20261020-skill-growth";
-import { repository } from "./repository.js?v=20261020-skill-growth";
-import { createId, sanitizeHtml, safeVideoLinks } from "./content.js?v=20261020-skill-growth";
-import { createZip, readZip, safeArchivePath } from "./archive.js?v=20261020-skill-growth";
-import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES, MAX_BACKUP_BYTES, MAX_MANIFEST_BYTES } from "./config.js?v=20261020-skill-growth";
+import { $ } from "../../core/dom.js?v=20261020-akane-intro-cleanup";
+import { repository } from "./repository.js?v=20261020-akane-intro-cleanup";
+import { createId, sanitizeHtml, safeVideoLinks } from "./content.js?v=20261020-akane-intro-cleanup";
+import { createZip, readZip, safeArchivePath } from "./archive.js?v=20261020-akane-intro-cleanup";
+import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES, MAX_BACKUP_BYTES, MAX_MANIFEST_BYTES } from "./config.js?v=20261020-akane-intro-cleanup";
 const encoder = new TextEncoder();
 
 export async function exportBackup({ setStatus }) {

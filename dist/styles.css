@@ -1,13 +1,13 @@
 /* 순서가 뒤인 파일의 규칙이 우선합니다. 화면별 스타일은 css/에서 편집합니다. */
-@import "./css/base.css?v=20261020-skill-growth";
-@import "./css/characters.css?v=20261020-skill-growth";
-@import "./css/notices-detail.css?v=20261020-skill-growth";
-@import "./css/characters-mobile.css?v=20261020-skill-growth";
-@import "./css/layout.css?v=20261020-skill-growth";
-@import "./css/home.css?v=20261020-skill-growth";
-@import "./css/portal.css?v=20261020-skill-growth";
-@import "./css/notices.css?v=20261020-skill-growth";
-@import "./css/arcs.css?v=20261020-skill-growth";
-@import "./css/guides.css?v=20261020-skill-growth";
-@import "./css/wallpapers.css?v=20261020-skill-growth";
-@import "./css/responsive.css?v=20261020-skill-growth";
+@import "./css/base.css?v=20261020-akane-intro-cleanup";
+@import "./css/characters.css?v=20261020-akane-intro-cleanup";
+@import "./css/notices-detail.css?v=20261020-akane-intro-cleanup";
+@import "./css/characters-mobile.css?v=20261020-akane-intro-cleanup";
+@import "./css/layout.css?v=20261020-akane-intro-cleanup";
+@import "./css/home.css?v=20261020-akane-intro-cleanup";
+@import "./css/portal.css?v=20261020-akane-intro-cleanup";
+@import "./css/notices.css?v=20261020-akane-intro-cleanup";
+@import "./css/arcs.css?v=20261020-akane-intro-cleanup";
+@import "./css/guides.css?v=20261020-akane-intro-cleanup";
+@import "./css/wallpapers.css?v=20261020-akane-intro-cleanup";
+@import "./css/responsive.css?v=20261020-akane-intro-cleanup";

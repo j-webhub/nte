@@ -1,8 +1,8 @@
-import { state } from "../../core/state.js?v=20261020-skill-growth";
-import { $, esc, fmt } from "../../core/dom.js?v=20261020-skill-growth";
-import { elem, assetUrl, elementIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-skill-growth";
-import { getProfile } from "./model.js?v=20261020-skill-growth";
-import { renderTab } from "./tabs/index.js?v=20261020-skill-growth";
+import { state } from "../../core/state.js?v=20261020-akane-intro-cleanup";
+import { $, esc, fmt } from "../../core/dom.js?v=20261020-akane-intro-cleanup";
+import { elem, assetUrl, elementIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-akane-intro-cleanup";
+import { getProfile } from "./model.js?v=20261020-akane-intro-cleanup";
+import { renderTab } from "./tabs/index.js?v=20261020-akane-intro-cleanup";
 
 export function bindCharacterIllustration() {
   const visual = $("#main-content .hero-visual");
@@ -220,9 +220,7 @@ export function renderUpcomingProfile(p) {
   const info = p.detail?.releaseInfoKo || {};
   const cards = [
     ["글로벌 출시 일정", info.schedule || date + " (KST) 출시 예정입니다."],
-    ["공식 소개", p.detail?.officialBioKo || "공식 소개를 확인 중입니다."],
-    ["공식 보상 안내", info.reward],
-    ["추가 확인이 필요한 데이터", info.pending]
+    ["공식 보상 안내", info.reward]
   ].filter(([, text]) => text);
   return '<div class="panel-grid upcoming-character-grid">' +
     cards.map(([title, text]) => '<article class="content-card"><h3>' +

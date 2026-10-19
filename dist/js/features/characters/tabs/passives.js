@@ -1,7 +1,7 @@
-import { formatCharacterText } from "../text.js?v=20261020-home-shuffle-button";
+import { formatCharacterText } from "../text.js?v=20261020-shuffle-center";
 
-import { esc } from "../../../core/dom.js?v=20261020-home-shuffle-button";
-import { sourceLinks } from "../sources.js?v=20261020-home-shuffle-button";
+import { esc } from "../../../core/dom.js?v=20261020-shuffle-center";
+import { sourceLinks } from "../sources.js?v=20261020-shuffle-center";
 
 export function renderOverview(p, options = {}) {
   const {

@@ -1,7 +1,7 @@
-import { state } from "../../core/state.js?v=20261020-home-shuffle-button";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-home-shuffle-button";
-import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261020-home-shuffle-button";
-import { renderArcTypeIcon, renderRarityBadge } from "../characters/badges.js?v=20261020-home-shuffle-button";
+import { state } from "../../core/state.js?v=20261020-shuffle-center";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-shuffle-center";
+import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261020-shuffle-center";
+import { renderArcTypeIcon, renderRarityBadge } from "../characters/badges.js?v=20261020-shuffle-center";
 
 function renderArcEffect(arc) {
   const text = interpolateArcRankEffect(arc, 1) || "자료 없음";

@@ -107,6 +107,14 @@
   background: #101922;
 }
 
+.portal-hero-random img {
+  display: block;
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+
 .portal-section {
   margin-top: 38px;
 }

@@ -1,5 +1,5 @@
-import { state } from "../../core/state.js?v=20261020-home-shuffle-button";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-home-shuffle-button";
+import { state } from "../../core/state.js?v=20261020-shuffle-center";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-shuffle-center";
 
 let lastWallpaperUrl = "";
 const lastMenuImages = new Map();
@@ -123,7 +123,7 @@ export function renderHome() {
     '월페이퍼까지 원하는 자료를 선택해 확인할 수 있습니다.</p></div>' +
     (wallpaper ? '<div class="portal-hero-art" aria-hidden="true"><img class="portal-hero-wallpaper" src="' +
       esc(wallpaper.imageUrl) + '" alt="" fetchpriority="high" decoding="async"></div>' +
-      '<button type="button" class="portal-hero-random" data-home-wallpaper-random aria-label="랜덤 월페이퍼 변경" title="랜덤 월페이퍼 변경"><span aria-hidden="true">⤨</span></button>' : '') +
+      '<button type="button" class="portal-hero-random" data-home-wallpaper-random aria-label="랜덤 월페이퍼 변경" title="랜덤 월페이퍼 변경"><img src="./img/home/shuffle.svg" alt="" aria-hidden="true" width="18" height="18"></button>' : '') +
     '</section>' +
     '<section class="portal-section"><div class="section-head"><div><h2>아카이브 ' +
     '메뉴</h2><p>확인할 정보를 선택하세요.</p></div><span class="portal-version">GLOBAL · ' +

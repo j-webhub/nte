@@ -1,5 +1,5 @@
-import { esc } from "../../core/dom.js?v=20261020-home-shuffle-button";
-import { elem } from "./catalog.js?v=20261020-home-shuffle-button";
+import { esc } from "../../core/dom.js?v=20261020-shuffle-center";
+import { elem } from "./catalog.js?v=20261020-shuffle-center";
 
 // Match source text before escaping so user-entered descriptions stay plain text.
 export function formatCharacterText(value, element) {

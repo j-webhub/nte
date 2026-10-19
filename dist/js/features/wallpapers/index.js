@@ -1,5 +1,5 @@
-import { state } from "../../core/state.js?v=20261020-home-shuffle-button";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-home-shuffle-button";
+import { state } from "../../core/state.js?v=20261020-shuffle-center";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-shuffle-center";
 
 export function wallpaperFileName(item) {
   return String(item.imageUrl || "")

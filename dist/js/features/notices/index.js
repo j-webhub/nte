@@ -1,6 +1,6 @@
-import { state } from "../../core/state.js?v=20261020-home-shuffle-button";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-home-shuffle-button";
-import { NOTICE_PAGE_SIZE } from "../../config/site.js?v=20261020-home-shuffle-button";
+import { state } from "../../core/state.js?v=20261020-shuffle-center";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-shuffle-center";
+import { NOTICE_PAGE_SIZE } from "../../config/site.js?v=20261020-shuffle-center";
 
 export function renderNoticeCard(item) {
   return (

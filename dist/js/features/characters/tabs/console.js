@@ -1,7 +1,7 @@
-import { formatCharacterText } from "../text.js?v=20261020-home-shuffle-button";
-import { state } from "../../../core/state.js?v=20261020-home-shuffle-button";
-import { esc } from "../../../core/dom.js?v=20261020-home-shuffle-button";
-import { sourceLinks } from "../sources.js?v=20261020-home-shuffle-button";
+import { formatCharacterText } from "../text.js?v=20261020-shuffle-center";
+import { state } from "../../../core/state.js?v=20261020-shuffle-center";
+import { esc } from "../../../core/dom.js?v=20261020-shuffle-center";
+import { sourceLinks } from "../sources.js?v=20261020-shuffle-center";
 
 export function renderConsole(p) {
   const build = p.console;

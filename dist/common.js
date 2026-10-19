@@ -66,7 +66,7 @@ export async function start() {
     const pairs = await Promise.all(
       Object.entries(FILES).map(async ([key, file]) => {
         try {
-          const response = await fetch("./data/" + file + "?v=20261020-akane-update");
+          const response = await fetch("./data/" + file + "?v=20261020-akane-voice-actors");
           if (!response.ok) {
             if (OPTIONAL_PORTAL_DATA[key])
               return [key, OPTIONAL_PORTAL_DATA[key]];
@@ -88,7 +88,7 @@ export async function start() {
     const characterEntries = await Promise.all(
       ids.map(async (id) => {
         const response = await fetch(
-          "./data/characters/" + encodeURIComponent(id) + ".json?v=20261020-akane-update"
+          "./data/characters/" + encodeURIComponent(id) + ".json?v=20261020-akane-voice-actors"
         );
         if (!response.ok)
           throw new Error("캐릭터 자료를 불러오지 못했습니다: " + id);

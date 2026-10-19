@@ -6,7 +6,7 @@ import {
   NOTICE_PAGE_SIZE,
   siteFooter,
   setView
-} from "./common.js?v=20261020-akane-update";
+} from "./common.js?v=20261020-akane-voice-actors";
 const elem = (id) => ELEMENTS[id] || { name: id || "—", color: "#aab5bf" };
 
 const ELEMENTS = {
@@ -931,24 +931,55 @@ function refreshActiveTab() {
     panel.querySelector(focusSelector)?.focus({ preventScroll: true });
 }
 
-function renderCharacterIntroDetails(setting) {
-  if (!setting) return "";
+function renderCharacterIntroDetails(setting, voiceActors, isUpcoming = false) {
   const fields = [
-    ["생일", setting.birthday],
-    ["소속", setting.faction],
-    ["이능력", setting.ability]
+    ["생일", setting?.birthday],
+    ["소속", setting?.faction],
+    ["이능력", setting?.ability]
   ].filter(([, value]) => typeof value === "string" && value.trim());
-  if (!fields.length) return "";
-  return (
-    '<dl class="hero-intro-details">' +
-    fields
-      .map(
-        ([label, value]) =>
-          "<div><dt>" + esc(label) + "</dt><dd>" + esc(value) + "</dd></div>"
-      )
+  const settingMarkup = fields.length
+    ? '<dl class="hero-intro-details">' +
+      fields
+        .map(
+          ([label, value]) =>
+            "<div><dt>" + esc(label) + "</dt><dd>" + esc(value) + "</dd></div>"
+        )
+        .join("") +
+      "</dl>"
+    : "";
+  if (!voiceActors || typeof voiceActors !== "object") return settingMarkup;
+  const locales = [
+    ["ko", "한국어"],
+    ["ja", "일본어"],
+    ["zhHans", "중국어"],
+    ["en", "영어"]
+  ];
+  const actorNames = (value) =>
+    String(value || "")
+      .split(";")
+      .map((name) => name.trim())
+      .filter(Boolean);
+  const hasAnyNames = locales.some(([key]) => actorNames(voiceActors[key]).length);
+  const voiceActorMarkup =
+    '<section class="hero-voice-actors" aria-label="국가별 성우"><h3>성우</h3><dl class="voice-actor-grid">' +
+    locales
+      .map(([key, label]) => {
+        const names = actorNames(voiceActors[key]);
+        return (
+          "<div><dt>" +
+          esc(label) +
+          "</dt><dd>" +
+          esc(names.length ? names.join(" · ") : "자료 확인 중") +
+          "</dd></div>"
+        );
+      })
       .join("") +
-    "</dl>"
-  );
+    "</dl>" +
+    (isUpcoming && hasAnyNames
+      ? '<p class="voice-actor-note">출시 전 공개 자료 기준이며, 글로벌 클라이언트의 크레딧은 확인 전입니다.</p>'
+      : "") +
+    "</section>";
+  return settingMarkup + voiceActorMarkup;
 }
 function renderProfile() {
   const p = getProfile(state.selectedId);
@@ -1027,7 +1058,7 @@ function renderProfile() {
     '<p class="hero-intro">' +
     esc(p.setting?.summary || "캐릭터 소개를 준비 중입니다.") +
     "</p>" +
-    renderCharacterIntroDetails(p.setting) +
+    renderCharacterIntroDetails(p.setting, p.detail?.voiceActors, isUpcoming) +
     "</div></div>" +
     '<div class="hero-visual" aria-hidden="true"><div class="hero-index">' +
     (isUpcoming ? "♫" : order) +
@@ -1131,6 +1162,7 @@ function sourceLinks(p, domesticOnly = false) {
   [p.roster.englishProfile, p.detail?.source, p.mechanics?.sourceUrl].forEach(
     (x) => x && urls.add(x)
   );
+  if (p.detail?.voiceActorsSource) urls.add(p.detail.voiceActorsSource);
   if (p.roster.officialSource) urls.add(p.roster.officialSource);
   (p.console?.sourceUrls || []).forEach((x) => urls.add(x));
   const arc = state.db.arcs.arcs.find((a) => a.characterId === p.roster.id);

@@ -30,14 +30,21 @@
       "ultimate": "Sonic Boom",
       "support": null
     },
+    "skillDescriptionsKo": {
+      "basic": "",
+      "skill": "",
+      "ultimate": "",
+      "support": ""
+    },
     "sourceReviewPatch": "official Version 1.4 second-half announcement, 2026-10-16",
     "voiceActors": {
       "en": "Cristina Vee",
-      "ja": "長谷川育美 (Korean community preview)",
-      "zhHans": "陳怡萱 (Korean community preview)",
-      "ko": "김하루 (Korean community preview)"
+      "ja": "長谷川育美",
+      "zhHans": "陳怡萱",
+      "ko": "김하루"
     },
     "source": "https://www.gamespress.com/nl/NTE-Neverness-to-Everness-Takes-the-Stage-on-October-21-with-Akane-Rin",
+    "voiceActorsSource": "https://ntegame.net/ko/guides/upcoming-characters/",
     "comparisonSources": [
       "https://ntegame.net/ko/guides/upcoming-characters/",
       "https://www.mone.gg/tw/blog/nte/akane-rin-guide.html"
@@ -50,15 +57,67 @@
     "faction": "라이브하우스 스타사인",
     "ability": ""
   },
-  "introduction": null,
-  "mechanics": null,
-  "r3": null,
-  "coefficients": null,
-  "crosscheck": {
-    "progression": null,
-    "isolatedLevelChecks": [],
-    "additionalRegionalChecks": []
+  "introduction": {
+    "introKo": "라이브하우스 스타사인의 파트타임 기타리스트. 과거 이상 헌터로 활동했으며, 헤테로를 탐험할 때 기타를 연주한다.",
+    "sourceUrl": "https://www.gamespress.com/nl/NTE-Neverness-to-Everness-Takes-the-Stage-on-October-21-with-Akane-Rin",
+    "additionalSourceUrl": "https://nte.perfectworld.com/kr/article/news/gamenews/20260929/264413.html"
   },
-  "console": null,
-  "fieldSkills": null
+  "mechanics": {
+    "id": "akane-rin",
+    "nameKo": "아카네",
+    "level80BaseStats": null,
+    "awakeningEffectsKo": [],
+    "resonanceKo": {},
+    "sourceUrl": "",
+    "notes": "글로벌 클라이언트에서 확인 후 입력 예정입니다.",
+    "awakeningNamesKo": {
+      "A1": "",
+      "A2": "",
+      "A3": "",
+      "A4": "",
+      "A5": "",
+      "A6": ""
+    }
+  },
+  "console": {
+    "characterId": "akane-rin",
+    "nameKo": "아카네",
+    "nameEn": "Akane Rin",
+    "console": {
+      "preferredModuleShape": "",
+      "perDriveBonusKo": "",
+      "recommendedLayout": []
+    },
+    "cartridge": {
+      "recommendedSetId": "",
+      "alternativeSetIds": []
+    },
+    "mainStatPriorityKo": [],
+    "substatPriorityKo": [],
+    "sourceUrls": []
+  },
+  "fieldSkills": {
+    "passives": [],
+    "citySkills": [],
+    "sourceUrl": ""
+  },
+  "domesticSourcesKo": [],
+  "coefficients": {
+    "url": "",
+    "tables": []
+  },
+  "r3": {
+    "nameKo": "아카네",
+    "sourceUrl": "",
+    "r3Raises": [],
+    "tables": {}
+  },
+  "crosscheck": {
+    "nameKo": "아카네",
+    "nameJa": "",
+    "sourceUrl": "",
+    "coverage": "",
+    "records": [],
+    "crossSourceConflict": null
+  }
 }

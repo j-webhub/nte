@@ -85,7 +85,7 @@ export function renderHome() {
     '<section class="portal-hero"><div class="portal-hero-copy"><p ' +
     'class="eyebrow">HETERO CITY / FIELD ARCHIVE</p><p ' +
     'class="portal-index">ARCHIVE <span>01</span></p><h1>이환의 정보를<br>한곳에서 ' +
-    '찾아보세요</h1><p class="portal-hero-description">공식 소식부터 캐릭터와 아크 데이터, 공략과 ' +
+    '찾아보세요</h1><p class="portal-hero-description">공식 소식부터 캐릭터와 아크 데이터' +
     '월페이퍼까지 원하는 자료를 선택해 확인할 수 있습니다.</p></div><div class="portal-hero-art" ' +
     'aria-hidden="true"><span class="portal-orbit portal-orbit-one"></span>' +
     '<span class="portal-orbit portal-orbit-two"></span><span ' +

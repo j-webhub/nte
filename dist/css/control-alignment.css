@@ -1,0 +1,83 @@
+/* Shared control alignment. Keep icon dimensions inside the button content box. */
+.primary-nav button,
+.tab-button,
+.portal-filter-button,
+.notice-pagination button,
+.guide-editor-toolbar > button,
+.guide-post-actions button,
+.portal-source-button,
+.roster-all-characters,
+.source-link,
+.tag,
+.arc-rarity,
+.arc-stat,
+.roster-count,
+.notice-type,
+.skill-feature-badge,
+.skill-description-label,
+.alt-chip,
+.growth-material-chip,
+.character-poster-upcoming {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1.35;
+}
+
+.primary-nav button,
+.tab-button,
+.portal-filter-button,
+.notice-pagination button,
+.guide-editor-toolbar > button,
+.guide-post-actions button,
+.portal-source-button {
+  justify-content: center;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.search-box input,
+.portal-search input {
+  align-self: stretch;
+  padding-block: 0;
+  line-height: normal;
+}
+
+.guide-field input:not([type="file"]):not([type="color"]),
+.guide-field select {
+  height: 38px;
+  padding-block: 0;
+  line-height: normal;
+}
+
+.character-gallery-element,
+.arc-db-filter-group button,
+.guide-editor-close,
+.wallpaper-lightbox-close,
+.skill-level-stepper button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+}
+
+.character-gallery-element img,
+.db-icon-circle img,
+.tag .element-icon {
+  display: block;
+  flex-shrink: 0;
+  margin: 0;
+  object-fit: contain;
+  object-position: center;
+}
+
+.arc-db-filter-group button .db-icon-circle {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}

@@ -1,4 +1,4 @@
-import { state } from "../../core/state.js?v=20261020-arc-fold";
+import { state } from "../../core/state.js?v=20261020-control-align";
 
 export function getProfile(id) {
   const character = state.db.characters[id];

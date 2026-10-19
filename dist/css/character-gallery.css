@@ -124,7 +124,7 @@
   flex: 0 0 38px;
   width: 38px;
   height: 38px;
-  padding: 6px;
+  padding: 0;
   border: 1px solid transparent;
   border-radius: 50%;
   background: rgb(0 0 0 / 30%);
@@ -148,7 +148,7 @@
   flex-basis: 30px;
   width: 30px;
   height: 30px;
-  padding: 3px;
+  padding: 0;
 }
 .roster-element-filters .character-gallery-element img {
   width: 24px;
@@ -246,7 +246,7 @@
   width: 100%;
   padding: 0;
   text-align: center;
-  transform: translate(-1px, -1px);
+  transform: none;
 }
 @media (prefers-reduced-motion: reduce) {
   .db-type-icon::after {

@@ -1,5 +1,5 @@
-import { esc } from "../../core/dom.js?v=20261020-arc-fold";
-import { elem, elementIconUrl, arcTypeIconUrl, ARC_TYPES } from "./catalog.js?v=20261020-arc-fold";
+import { esc } from "../../core/dom.js?v=20261020-control-align";
+import { elem, elementIconUrl, arcTypeIconUrl, ARC_TYPES } from "./catalog.js?v=20261020-control-align";
 
 export function renderElementIcon(element) {
   return '<span class="db-icon-circle" role="img" aria-label="' + esc(elem(element).name + "속성") + '"><img class="db-element-icon" src="' +

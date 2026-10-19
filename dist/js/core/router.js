@@ -1,6 +1,6 @@
-import { state } from "./state.js?v=20261020-arc-fold";
-import { $, esc, fmt } from "./dom.js?v=20261020-arc-fold";
-import { loadDatabase } from "./data.js?v=20261020-arc-fold";
+import { state } from "./state.js?v=20261020-control-align";
+import { $, esc, fmt } from "./dom.js?v=20261020-control-align";
+import { loadDatabase } from "./data.js?v=20261020-control-align";
 
 const VALID_VIEWS = new Set([
   "home",

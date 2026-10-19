@@ -1,5 +1,5 @@
-import { state } from "../../core/state.js?v=20261020-arc-fold";
-import { esc } from "../../core/dom.js?v=20261020-arc-fold";
+import { state } from "../../core/state.js?v=20261020-control-align";
+import { esc } from "../../core/dom.js?v=20261020-control-align";
 
 export function sourceLinks(p, domesticOnly = false) {
   const urls = new Set();

@@ -1,11 +1,11 @@
-import { state } from "../../core/state.js?v=20261020-arc-fold";
-import { $ } from "../../core/dom.js?v=20261020-arc-fold";
-import { openCharacter } from "../../core/router.js?v=20261020-arc-fold";
-import { ELEMENT_ORDER, elem, elementIconUrl } from "./catalog.js?v=20261020-arc-fold";
-import { renderRoster } from "./roster.js?v=20261020-arc-fold";
-import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-arc-fold";
-import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-arc-fold";
-import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261020-arc-fold";
+import { state } from "../../core/state.js?v=20261020-control-align";
+import { $ } from "../../core/dom.js?v=20261020-control-align";
+import { openCharacter } from "../../core/router.js?v=20261020-control-align";
+import { ELEMENT_ORDER, elem, elementIconUrl } from "./catalog.js?v=20261020-control-align";
+import { renderRoster } from "./roster.js?v=20261020-control-align";
+import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-control-align";
+import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-control-align";
+import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261020-control-align";
 
 export { renderRoster, renderProfile };
 

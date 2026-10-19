@@ -1,5 +1,5 @@
-import { DATA_FILES, OPTIONAL_PORTAL_DATA } from "../config/data-files.js?v=20261020-arc-fold";
-import { ASSET_VERSION } from "../config/site.js?v=20261020-arc-fold";
+import { DATA_FILES, OPTIONAL_PORTAL_DATA } from "../config/data-files.js?v=20261020-control-align";
+import { ASSET_VERSION } from "../config/site.js?v=20261020-control-align";
 
 export async function loadDatabase() {
   const pairs = await Promise.all(

@@ -1,7 +1,7 @@
-import { formatCharacterText } from "../text.js?v=20261020-arc-fold";
+import { formatCharacterText } from "../text.js?v=20261020-control-align";
 
-import { esc } from "../../../core/dom.js?v=20261020-arc-fold";
-import { sourceLinks } from "../sources.js?v=20261020-arc-fold";
+import { esc } from "../../../core/dom.js?v=20261020-control-align";
+import { sourceLinks } from "../sources.js?v=20261020-control-align";
 
 export function renderOverview(p, options = {}) {
   const {

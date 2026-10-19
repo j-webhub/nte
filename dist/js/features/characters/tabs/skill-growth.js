@@ -1,5 +1,5 @@
-import { state } from "../../../core/state.js?v=20261020-arc-fold";
-import { esc, fmt } from "../../../core/dom.js?v=20261020-arc-fold";
+import { state } from "../../../core/state.js?v=20261020-control-align";
+import { esc, fmt } from "../../../core/dom.js?v=20261020-control-align";
 
 export function renderSkillGrowth(p) {
   const data = state.db.growth.skillUpgrades;

@@ -1,4 +1,4 @@
-import { state } from "../../core/state.js?v=20261020-home-wallpaper";
+import { state } from "../../core/state.js?v=20261020-home-menu-images";
 
 export function getProfile(id) {
   const character = state.db.characters[id];

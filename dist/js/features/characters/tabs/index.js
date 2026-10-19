@@ -1,10 +1,10 @@
-import { state } from "../../../core/state.js?v=20261020-home-wallpaper";
-import { renderOverview } from "./passives.js?v=20261020-home-wallpaper";
-import { renderSkills } from "./skills.js?v=20261020-home-wallpaper";
-import { renderAwakening } from "./awakening.js?v=20261020-home-wallpaper";
-import { renderArcs } from "./arcs.js?v=20261020-home-wallpaper";
-import { renderConsole } from "./console.js?v=20261020-home-wallpaper";
-import { renderGrowth } from "./growth.js?v=20261020-home-wallpaper";
+import { state } from "../../../core/state.js?v=20261020-home-menu-images";
+import { renderOverview } from "./passives.js?v=20261020-home-menu-images";
+import { renderSkills } from "./skills.js?v=20261020-home-menu-images";
+import { renderAwakening } from "./awakening.js?v=20261020-home-menu-images";
+import { renderArcs } from "./arcs.js?v=20261020-home-menu-images";
+import { renderConsole } from "./console.js?v=20261020-home-menu-images";
+import { renderGrowth } from "./growth.js?v=20261020-home-menu-images";
 
 export function renderTab(p) {
   if (state.activeTab === "skills") return renderSkills(p);

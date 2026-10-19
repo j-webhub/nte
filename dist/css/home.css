@@ -116,22 +116,88 @@
 
 .portal-grid {
   display: grid;
-  grid-template-columns: repeat(5,minmax(0,1fr));
-  gap: 9px;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 10px;
 }
 
 .portal-card {
+  position: relative;
+  isolation: isolate;
   display: flex;
+  justify-content: flex-end;
   min-width: 0;
-  min-height: 128px;
+  min-height: 240px;
   flex-direction: column;
-  padding: 15px;
+  overflow: hidden;
+  padding: 0;
   border: 1px solid #29343f;
   border-radius: 11px;
   text-align: left;
   background: linear-gradient(145deg,#141c24,#10151b);
   cursor: pointer;
   transition: border-color .18s,transform .18s,background .18s;
+}
+
+.portal-card-wallpapers {
+  grid-column: span 2;
+}
+.portal-card-art {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(ellipse at center,rgb(164 192 210 / 13%),transparent 75%);
+}
+.portal-card-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+.portal-card-arcs .portal-card-art img {
+  padding: 12px 12px 30px;
+  object-fit: contain;
+  object-position: center;
+}
+.portal-card-notices .portal-card-art {
+  padding-bottom: 85px;
+}
+.portal-card-notices .portal-card-art img {
+  object-fit: contain;
+  object-position: center;
+}
+.portal-card-guides .portal-card-art img,
+.portal-card-wallpapers .portal-card-art img {
+  object-position: center 40%;
+}
+.portal-card-copy {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 62px 16px 14px;
+  background: linear-gradient(transparent,rgb(8 15 23 / 78%));
+}
+.portal-menu-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+.portal-menu-random {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 8px 10px;
+  border: 1px solid #2c3e4c;
+  border-radius: 7px;
+  background: #101922;
+  color: #f0f4f7;
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
 }
 
 .portal-card:hover {
@@ -155,7 +221,7 @@
 .portal-card-title {
   margin: 0;
   color: #e6ebef;
-  font-size: 15px;
+  font-size: 16px;
   letter-spacing: -.04em;
 }
 
@@ -166,7 +232,7 @@
 
 .portal-card-description {
   margin-top: 6px;
-  color: #8996a1;
+  color: #c8d4dd;
   font-size: 11px;
   line-height: 1.5;
 }
@@ -177,7 +243,7 @@
   justify-content: space-between;
   margin-top: auto;
   padding-top: 15px;
-  color: var(--accent);
+  color: #c0d8e8;
   font-size: 10px;
 }
 

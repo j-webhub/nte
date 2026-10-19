@@ -1,8 +1,8 @@
-import { $ } from "../../core/dom.js?v=20261020-home-wallpaper";
-import { repository } from "./repository.js?v=20261020-home-wallpaper";
-import { createId, sanitizeHtml, safeVideoLinks } from "./content.js?v=20261020-home-wallpaper";
-import { createZip, readZip, safeArchivePath } from "./archive.js?v=20261020-home-wallpaper";
-import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES, MAX_BACKUP_BYTES, MAX_MANIFEST_BYTES } from "./config.js?v=20261020-home-wallpaper";
+import { $ } from "../../core/dom.js?v=20261020-home-menu-images";
+import { repository } from "./repository.js?v=20261020-home-menu-images";
+import { createId, sanitizeHtml, safeVideoLinks } from "./content.js?v=20261020-home-menu-images";
+import { createZip, readZip, safeArchivePath } from "./archive.js?v=20261020-home-menu-images";
+import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES, MAX_BACKUP_BYTES, MAX_MANIFEST_BYTES } from "./config.js?v=20261020-home-menu-images";
 const encoder = new TextEncoder();
 
 export async function exportBackup({ setStatus }) {

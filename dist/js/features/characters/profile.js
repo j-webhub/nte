@@ -1,8 +1,8 @@
-import { state } from "../../core/state.js?v=20261020-home-wallpaper";
-import { $, esc, fmt } from "../../core/dom.js?v=20261020-home-wallpaper";
-import { elem, assetUrl, elementIconUrl, arcTypeIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-home-wallpaper";
-import { getProfile } from "./model.js?v=20261020-home-wallpaper";
-import { renderTab } from "./tabs/index.js?v=20261020-home-wallpaper";
+import { state } from "../../core/state.js?v=20261020-home-menu-images";
+import { $, esc, fmt } from "../../core/dom.js?v=20261020-home-menu-images";
+import { elem, assetUrl, elementIconUrl, arcTypeIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-home-menu-images";
+import { getProfile } from "./model.js?v=20261020-home-menu-images";
+import { renderTab } from "./tabs/index.js?v=20261020-home-menu-images";
 
 export function bindCharacterIllustration() {
   const visual = $("#main-content .hero-visual");

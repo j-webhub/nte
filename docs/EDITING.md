@@ -91,6 +91,8 @@
 
 ## 디자인 수정하기
 
+홈 메뉴 순서는 `dist/js/features/home/index.js`의 `PORTAL_MODULES`에서 수정합니다. 캐릭터·아크·월페이퍼 카드 이미지는 `menuImage()`에서 각 DB를 참조하며, 공지·공략의 고정 이미지는 `dist/img/home/`에 있습니다. 3열 배치에서 월페이퍼가 두 칸을 차지하고, 카드의 하단 텍스트 그라데이션은 `home.css`의 `.portal-card-copy`에서 조절합니다.
+
 아크 이미지는 `dist/img/arcs/`에 256×256 투명 WebP로 저장하고, `nte-character-signature-arcs-v1.4.json`의 해당 아크에 `imageFile` 파일명을 지정합니다. 아크 DB와 캐릭터 상세의 아크 탭이 같은 이미지를 사용합니다.
 
 캐릭터 DB의 속성·희귀도 필터는 중복 선택할 수 있으며, 선택한 버튼을 다시 누르면 해제됩니다. 버튼 내부 정렬은 `control-alignment.css`, 등급 글자와 원형 필터는 `character-gallery.css`에서 조정합니다.

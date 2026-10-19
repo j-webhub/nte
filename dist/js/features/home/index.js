@@ -1,7 +1,25 @@
-import { state } from "../../core/state.js?v=20261020-home-wallpaper";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-home-wallpaper";
+import { state } from "../../core/state.js?v=20261020-home-menu-images";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-home-menu-images";
 
 let lastWallpaperUrl = "";
+const lastMenuImages = new Map();
+
+function menuImage(view) {
+  let images = [];
+  if (view === "characters") images = [...state.db.roster.characters, ...(state.db.roster.confirmedUpcoming || [])]
+    .filter(character => character.portraitFile)
+    .map(character => "./img/character/" + encodeURIComponent(character.portraitFile));
+  if (view === "arcs") images = (state.db.arcs.arcs || []).filter(arc => arc.imageFile)
+    .map(arc => "./img/arcs/" + encodeURIComponent(arc.imageFile));
+  if (view === "wallpapers") images = bannerWallpapers().map(item => item.imageUrl);
+  if (view === "notices") return "./img/home/notices.webp";
+  if (view === "guides") return "./img/home/guides.webp";
+  const alternatives = images.filter(url => url !== lastMenuImages.get(view));
+  const pool = alternatives.length ? alternatives : images;
+  const image = pool[Math.floor(Math.random() * pool.length)] || "";
+  lastMenuImages.set(view, image);
+  return image;
+}
 
 function bannerWallpapers() {
   return (state.db.wallpapers.items || []).filter(item => item.imageUrl && !/-mobile\.[^/]+$/i.test(item.imageUrl));
@@ -17,13 +35,6 @@ function randomWallpaper() {
 }
 
 const PORTAL_MODULES = [
-  {
-    view: "notices",
-    title: "공지사항",
-    description: "공식 뉴스와 업데이트, 이벤트 소식",
-    count: () => (state.db.notices.items || []).length + "건",
-    icon: "▤"
-  },
   {
     view: "characters",
     title: "캐릭터 DB",
@@ -43,6 +54,13 @@ const PORTAL_MODULES = [
     description: "현재 등록된 전용 아크와 단계별 효과",
     count: () => (state.db.arcs.arcs || []).length + "종",
     icon: "◇"
+  },
+  {
+    view: "notices",
+    title: "공지사항",
+    description: "공식 뉴스와 업데이트, 이벤트 소식",
+    count: () => (state.db.notices.items || []).length + "건",
+    icon: "▤"
   },
   {
     view: "guides",
@@ -65,20 +83,20 @@ export function renderHome() {
   const latest = [...(state.db.notices.items || [])]
     .sort((a, b) => b.date.localeCompare(a.date))
     .slice(0, 2);
-  const cards = PORTAL_MODULES.map(
-    (module) =>
-      '<button type="button" class="portal-card" data-view="' +
+  const cards = PORTAL_MODULES.map((module) => {
+    const image = menuImage(module.view);
+    return '<button type="button" class="portal-card portal-card-' + module.view + '" data-view="' +
       module.view +
-      '"><span class="portal-card-top"><strong class="portal-card-title">' +
+      '">' + (image ? '<span class="portal-card-art" aria-hidden="true"><img data-home-menu-image="' + module.view +
+      '" src="' + esc(image) + '" alt="" loading="lazy" decoding="async"></span>' : '') +
+      '<span class="portal-card-copy"><strong class="portal-card-title">' +
       esc(module.title) +
-      '</strong><span class="portal-card-icon" aria-hidden="true">' +
-      module.icon +
-      '</span></span><span class="portal-card-description">' +
+      '</strong><span class="portal-card-description">' +
       esc(module.description) +
       '</span><span class="portal-card-bottom"><span>' +
       esc(module.count()) +
-      '</span><span class="portal-card-arrow" aria-hidden="true">↗</span></span></button>'
-  ).join("");
+      '</span><span class="portal-card-arrow" aria-hidden="true">↗</span></span></span></button>';
+  }).join("");
   const notices = latest.length
     ? latest
         .map(
@@ -108,8 +126,8 @@ export function renderHome() {
       '<button type="button" class="portal-hero-random" data-home-wallpaper-random><span aria-hidden="true">⤨</span>다른 랜덤 이미지</button>' : '') +
     '</section>' +
     '<section class="portal-section"><div class="section-head"><div><h2>아카이브 ' +
-    '메뉴</h2><p>확인할 정보를 선택하세요.</p></div><span class="portal-version">GLOBAL · ' +
-    '1.4</span></div><div class="portal-grid">' +
+    '메뉴</h2><p>확인할 정보를 선택하세요.</p></div><div class="portal-menu-actions"><span class="portal-version">GLOBAL · ' +
+    '1.4</span><button type="button" class="portal-menu-random" data-home-menu-random>랜덤 이미지 다시 보기</button></div></div><div class="portal-grid">' +
     cards +
     "</div></section>" +
     '<section class="portal-latest"><div><p class="eyebrow">OFFICIAL ' +
@@ -123,5 +141,12 @@ export function renderHome() {
     const next = randomWallpaper();
     const image = $(".portal-hero-wallpaper");
     if (next && image) image.src = next.imageUrl;
+  });
+  $("[data-home-menu-random]")?.addEventListener("click", () => {
+    ["characters", "arcs", "wallpapers"].forEach(view => {
+      const image = $('[data-home-menu-image="' + view + '"]');
+      const next = menuImage(view);
+      if (image && next) image.src = next;
+    });
   });
 }

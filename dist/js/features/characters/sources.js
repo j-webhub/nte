@@ -1,5 +1,5 @@
-import { state } from "../../core/state.js?v=20261020-home-wallpaper";
-import { esc } from "../../core/dom.js?v=20261020-home-wallpaper";
+import { state } from "../../core/state.js?v=20261020-home-menu-images";
+import { esc } from "../../core/dom.js?v=20261020-home-menu-images";
 
 export function sourceLinks(p, domesticOnly = false) {
   const urls = new Set();

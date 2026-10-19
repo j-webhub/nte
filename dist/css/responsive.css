@@ -68,7 +68,7 @@
   }
 
   .portal-card {
-    min-height: 128px;
+    min-height: 240px;
   }
 
   .portal-hero-art {
@@ -181,8 +181,12 @@
   }
 
   .portal-card {
-    min-height: 128px;
-    padding: 12px;
+    min-height: 235px;
+    padding: 0;
+  }
+
+  .portal-card-copy {
+    padding: 58px 12px 14px;
   }
 
   .portal-card-title {

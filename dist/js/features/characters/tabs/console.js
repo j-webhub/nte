@@ -1,6 +1,6 @@
-import { state } from "../../../core/state.js?v=20261020-akane-passives";
-import { esc } from "../../../core/dom.js?v=20261020-akane-passives";
-import { sourceLinks } from "../sources.js?v=20261020-akane-passives";
+import { state } from "../../../core/state.js?v=20261020-akane-bio";
+import { esc } from "../../../core/dom.js?v=20261020-akane-bio";
+import { sourceLinks } from "../sources.js?v=20261020-akane-bio";
 
 export function renderConsole(p) {
   const build = p.console;

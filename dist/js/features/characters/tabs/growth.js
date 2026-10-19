@@ -1,5 +1,5 @@
-import { state } from "../../../core/state.js?v=20261020-akane-passives";
-import { esc, fmt } from "../../../core/dom.js?v=20261020-akane-passives";
+import { state } from "../../../core/state.js?v=20261020-akane-bio";
+import { esc, fmt } from "../../../core/dom.js?v=20261020-akane-bio";
 
 export function renderGrowth(p) {
   const data = state.db.growth;

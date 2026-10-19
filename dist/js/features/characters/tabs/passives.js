@@ -1,6 +1,6 @@
 
-import { esc } from "../../../core/dom.js?v=20261020-akane-passives";
-import { sourceLinks } from "../sources.js?v=20261020-akane-passives";
+import { esc } from "../../../core/dom.js?v=20261020-akane-bio";
+import { sourceLinks } from "../sources.js?v=20261020-akane-bio";
 
 export function renderOverview(p, options = {}) {
   const {

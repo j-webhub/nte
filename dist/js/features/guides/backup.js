@@ -1,8 +1,8 @@
-import { $ } from "../../core/dom.js?v=20261020-akane-passives";
-import { repository } from "./repository.js?v=20261020-akane-passives";
-import { createId, sanitizeHtml, safeVideoLinks } from "./content.js?v=20261020-akane-passives";
-import { createZip, readZip, safeArchivePath } from "./archive.js?v=20261020-akane-passives";
-import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES, MAX_BACKUP_BYTES, MAX_MANIFEST_BYTES } from "./config.js?v=20261020-akane-passives";
+import { $ } from "../../core/dom.js?v=20261020-akane-bio";
+import { repository } from "./repository.js?v=20261020-akane-bio";
+import { createId, sanitizeHtml, safeVideoLinks } from "./content.js?v=20261020-akane-bio";
+import { createZip, readZip, safeArchivePath } from "./archive.js?v=20261020-akane-bio";
+import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES, MAX_BACKUP_BYTES, MAX_MANIFEST_BYTES } from "./config.js?v=20261020-akane-bio";
 const encoder = new TextEncoder();
 
 export async function exportBackup({ setStatus }) {

@@ -6,7 +6,7 @@ import {
   NOTICE_PAGE_SIZE,
   siteFooter,
   setView
-} from "./common.js?v=20261020-akane-voice-actors";
+} from "./common.js?v=20261020-character-passives";
 const elem = (id) => ELEMENTS[id] || { name: id || "—", color: "#aab5bf" };
 
 const ELEMENTS = {
@@ -242,7 +242,7 @@ const CHARACTER_DISPLAY_ORDER = [
 ];
 
 const TABS = [
-  ["overview", "요약"],
+  ["overview", "패시브"],
   ["skills", "기술표"],
   ["awakening", "돌파·각성"],
   ["arcs", "전용 아크"],
@@ -1219,7 +1219,7 @@ function coefficientSourceLinks(p) {
 function renderOverview(p, options = {}) {
   const {
     includeSources = true,
-    includeMechanic = true,
+    includeMechanic = false,
     passiveHeading = "고유 패시브",
     includeUniquePlaceholder = false
   } = options;

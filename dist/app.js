@@ -1,9 +1,9 @@
-import { registerPageModules, start } from "./common.js?v=20261020-akane-voice-actors";
-import { renderHome } from "./home.js?v=20261020-akane-voice-actors";
+import { registerPageModules, start } from "./common.js?v=20261020-character-passives";
+import { renderHome } from "./home.js?v=20261020-character-passives";
 import {
   initializeGuides,
   renderGuides
-} from "./guide-board.js?v=20261020-akane-voice-actors";
+} from "./guide-board.js?v=20261020-character-passives";
 import {
   initializePages,
   renderNotices,
@@ -13,7 +13,7 @@ import {
   renderRoster,
   renderProfile,
   closeWallpaperLightbox
-} from "./pages.js?v=20261020-akane-voice-actors";
+} from "./pages.js?v=20261020-character-passives";
 
 registerPageModules({
   initialize: () => {

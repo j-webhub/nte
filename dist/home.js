@@ -1,4 +1,4 @@
-import { state, $, esc, siteFooter } from "./common.js?v=20261020-akane-voice-actors";
+import { state, $, esc, siteFooter } from "./common.js?v=20261020-character-passives";
 
 const PORTAL_MODULES = [
   {

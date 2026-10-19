@@ -123,7 +123,20 @@
     "conflictNoteKo": "한국 인벤 데이터베이스의 III형 보너스 치명 확률 +8%를 적용했습니다. NTEBuild는 +7.5%로 달리 표기하므로 차이를 출처에 남깁니다."
   },
   "fieldSkills": {
-    "passives": [],
+    "passives": [
+      {
+        "nameKo": "변신! 슈퍼 민트!",
+        "unlock": "",
+        "effectKo": "「블라썸」 강화: 「창조의 꽃」 명중 시 피해 범위가 확대된다.",
+        "verificationNoteKo": "사용자가 제공한 한국어 설명입니다."
+      },
+      {
+        "nameKo": "퇴근! 빙고 시간!",
+        "unlock": "",
+        "effectKo": "민트가 필드에 있을 때 자신의 방어력이 20% 상승하고, 경직 저항력이 30% 상승한다.",
+        "verificationNoteKo": "사용자가 제공한 한국어 설명입니다."
+      }
+    ],
     "citySkills": [
       {
         "nameKo": "민트 회오리",

@@ -119,7 +119,20 @@
     ]
   },
   "fieldSkills": {
-    "passives": [],
+    "passives": [
+      {
+        "nameKo": "먹어도 돼?",
+        "unlock": "",
+        "effectKo": "「스코치」 강화: 「스코치」 상태인 목표에게 적용된 지속 피해형 상태 1개당 목표가 받는 지속 피해가 25% 증가한다. (최대 100% 증가)",
+        "verificationNoteKo": "사용자가 제공한 한국어 설명입니다."
+      },
+      {
+        "nameKo": "유령 장난",
+        "unlock": "",
+        "effectKo": "사키리가 성공적으로 적에게 「에어본」 또는 「제압」을 부여 시, 적의 방어력이 10% 감소한다. (20초간 지속)",
+        "verificationNoteKo": "사용자가 제공한 한국어 설명입니다."
+      }
+    ],
     "citySkills": [
       {
         "nameKo": "노력 없이는 보상도 없다",

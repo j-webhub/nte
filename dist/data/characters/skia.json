@@ -121,7 +121,20 @@
     ]
   },
   "fieldSkills": {
-    "passives": [],
+    "passives": [
+      {
+        "nameKo": "현장 진압",
+        "unlock": "",
+        "effectKo": "「레모라」 강화: 「그림자 송곳니」가 「레모라」 상태의 목표를 선택 시, 「레모라」를 1회 추가 부여한다.",
+        "verificationNoteKo": "사용자가 제공한 한국어 설명입니다."
+      },
+      {
+        "nameKo": "검거 완료",
+        "unlock": "",
+        "effectKo": "「울부짖는 개떼」 발동 후 15초 동안 「그림자 송곳니」가 주는 피해(「은신 잠영」 모드의 접촉 피해 포함)가 10% 상승한다.",
+        "verificationNoteKo": "사용자가 제공한 한국어 설명입니다."
+      }
+    ],
     "citySkills": [
       {
         "nameKo": "중간 관리자",

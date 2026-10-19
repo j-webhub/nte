@@ -117,7 +117,26 @@
     ]
   },
   "fieldSkills": {
-    "passives": [],
+    "passives": [
+      {
+        "nameKo": "유령난초 문장",
+        "unlock": "",
+        "effectKo": "「블라썸」 강화: 시간 정지 중에도 「창조의 줄기」 공격은 멈추지 않는다.",
+        "verificationNoteKo": "사용자가 제공한 한국어 설명입니다."
+      },
+      {
+        "nameKo": "세상의 모든 진귀한 것",
+        "unlock": "",
+        "effectKo": "「울티메이트: 밀려드는 세상」 종결 피해 배율이 100% 상승한다.",
+        "verificationNoteKo": "사용자가 제공한 한국어 설명입니다."
+      },
+      {
+        "nameKo": "빙설의 의식",
+        "unlock": "",
+        "effectKo": "호토리가 전투 상태가 아니고 「열린 시계」로 축적한 에너지가 0보다 크면, 일반 공격을 길게 눌러 시간을 멈춘 것같이 만들 수 있다.",
+        "verificationNoteKo": "사용자가 제공한 한국어 설명입니다."
+      }
+    ],
     "citySkills": [
       {
         "nameKo": "보물찾기",

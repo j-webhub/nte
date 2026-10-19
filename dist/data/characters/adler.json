@@ -119,7 +119,20 @@
     ]
   },
   "fieldSkills": {
-    "passives": [],
+    "passives": [
+      {
+        "nameKo": "절제",
+        "unlock": "",
+        "effectKo": "「스코치」 강화: 목표에게 「스코치」를 부여할 때마다 공격력 20% 감소, 속성 저항 10% 감소, 붕괴 효율 10% 상승의 3가지 디버프 효과 중 무작위로 하나가 부여된다. (15초간 지속, 동일 효과 중첩 불가)",
+        "verificationNoteKo": "사용자가 제공한 한국어 설명입니다."
+      },
+      {
+        "nameKo": "정심",
+        "unlock": "",
+        "effectKo": "아들러의 방어가 20% 증가한다.",
+        "verificationNoteKo": "사용자가 제공한 한국어 설명입니다."
+      }
+    ],
     "citySkills": [
       {
         "nameKo": "커피 장인",

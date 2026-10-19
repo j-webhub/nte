@@ -136,7 +136,20 @@
     "buildNoteKo": "「세상을 뒤흔든 비」 아크를 장착하면 사이클 강도 옵션의 우선도가 올라가는 별도 운용이 있습니다."
   },
   "fieldSkills": {
-    "passives": [],
+    "passives": [
+      {
+        "nameKo": "감정사",
+        "unlock": "",
+        "effectKo": "「차지」 강화: 현재 출전한 캐릭터가 울트에너지를 획득하면, 제로 기본 공격력의 50%만큼 HP를 회복한다.",
+        "verificationNoteKo": "사용자가 제공한 한국어 설명입니다."
+      },
+      {
+        "nameKo": "이상 감지력",
+        "unlock": "",
+        "effectKo": "「울티메이트: 완벽 제거」로 주는 피해가 25% 증가한다.",
+        "verificationNoteKo": "사용자가 제공한 한국어 설명입니다."
+      }
+    ],
     "citySkills": [
       {
         "nameKo": "별 다섯 개의 모범",

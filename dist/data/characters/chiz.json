@@ -119,7 +119,20 @@
     ]
   },
   "fieldSkills": {
-    "passives": [],
+    "passives": [
+      {
+        "nameKo": "날아가는 새 증후군",
+        "unlock": "",
+        "effectKo": "「차지」 강화: 필드 위 캐릭터가 획득하는 울트에너지 4P 증가.",
+        "verificationNoteKo": "사용자가 제공한 한국어 설명입니다."
+      },
+      {
+        "nameKo": "수집벽",
+        "unlock": "",
+        "effectKo": "치즈가 필드에 있을 경우, 자신의 에너지 충전 효율이 20% 증가한다.",
+        "verificationNoteKo": "사용자가 제공한 한국어 설명입니다."
+      }
+    ],
     "citySkills": [
       {
         "nameKo": "로비 관리자",

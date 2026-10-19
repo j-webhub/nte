@@ -13,7 +13,8 @@
     "arcType": "Condensate",
     "communityRoleKo": "생존",
     "released": true,
-    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/fadia"
+    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/fadia",
+    "portraitFile": "파디아.webp"
   },
   "detail": {
     "id": "fadia",
@@ -38,6 +39,12 @@
       "skill": "범위 공격을 가하고 HP가 가장 높은 적에게 「파멸의 체험」을 부여합니다. 효과가 유지되는 동안 대상이 받는 피해 일부를 공유하며, 정해진 공유 한도에 도달하거나 전투를 벗어나면 효과가 끝납니다.",
       "ultimate": "「신의 대적자」 형태에 들어가 적을 연속 공격하고 자신을 회복합니다. 상태 중 추가 추격 공격으로 공격을 이어갑니다.",
       "support": "범위 안의 적을 공격합니다."
+    },
+    "skillNamesKo": {
+      "basic": "무언의 부정",
+      "skill": "존재 증명의 체험",
+      "ultimate": "고통을 넘어선 환희",
+      "support": "이단자의 조롱"
     }
   },
   "setting": null,

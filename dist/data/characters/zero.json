@@ -24,7 +24,8 @@
       ]
     },
     "nameNote": "남성·여성 선택형은 별도 캐릭터가 아니라 동일 캐릭터의 외형/성별 선택으로 통합했습니다.",
-    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/zero"
+    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/zero",
+    "portraitFile": "제로.webp"
   },
   "detail": {
     "id": "zero",
@@ -50,6 +51,12 @@
       "skill": "세 차례 공격한 뒤 이능력 포를 발사합니다. 첫 번째 표적의 레벨이 제로보다 낮으면 추가 피해를 줍니다.",
       "ultimate": "전방을 휩쓰는 다단 공격을 펼쳐 범위 안의 적을 연속으로 공격합니다.",
       "support": "「파열」 공격을 두 차례 발동해 범위 안의 적을 공격합니다."
+    },
+    "skillNamesKo": {
+      "basic": "흔적 감정",
+      "skill": "틈새 감정",
+      "ultimate": "완벽 제거",
+      "support": "파열"
     }
   },
   "setting": {

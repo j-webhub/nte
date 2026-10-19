@@ -13,7 +13,8 @@
     "arcType": "Liquid",
     "communityRoleKo": "메인 딜러",
     "released": true,
-    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/lacrimosa"
+    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/lacrimosa",
+    "portraitFile": "라크리모사.webp"
   },
   "detail": {
     "id": "lacrimosa",
@@ -38,6 +39,12 @@
       "skill": "「히스테릭 모닝」으로 범위 공격을 가하고 「악몽」을 쌓습니다. 「악마의 선물」은 적의 기술을 복제해 일정 시간 그 기술을 활용하게 합니다.",
       "ultimate": "현재 공격 방식에 따라 다른 탈것을 불러 넓은 범위를 연속 공격하고 「악몽」을 축적합니다.",
       "support": "인형을 빠르게 조종해 범위 안의 적을 공격합니다."
+    },
+    "skillNamesKo": {
+      "basic": "새콤달콤한 제재",
+      "skill": "히스테릭 모닝 / 악마의 선물",
+      "ultimate": "평일 최후의 심판",
+      "support": "긴급 각성"
     }
   },
   "setting": {

@@ -14,7 +14,8 @@
     "communityRoleKo": "메인 딜러",
     "released": true,
     "nameNote": "한국 커뮤니티 DB는 우미츠키, 중국 DB는 우미츠키를 사용합니다. 영문 클라이언트 이름 Aurelia를 기본 키로 유지했습니다.",
-    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/aurelia"
+    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/aurelia",
+    "portraitFile": "우미츠키.webp"
   },
   "detail": {
     "id": "aurelia",
@@ -40,6 +41,12 @@
       "skill": "주변 적을 공격하고 「카덴차」 상태에 진입합니다. 상태 중 젤리피시와 함께 공격을 이어가며 주변 적을 압박합니다.",
       "ultimate": "젤리피시를 소환해 넓은 범위의 적을 여러 차례 공격하고, 적들을 한곳으로 모읍니다.",
       "support": "젤리피시가 적에게 기습 공격을 가합니다."
+    },
+    "skillNamesKo": {
+      "basic": "아카펠라",
+      "skill": "아리아의 카덴차",
+      "ultimate": "카논 합창",
+      "support": "불협화음"
     }
   },
   "setting": {

@@ -13,7 +13,8 @@
     "arcType": "Solid",
     "communityRoleKo": "버퍼",
     "released": true,
-    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/haniel"
+    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/haniel",
+    "portraitFile": "하니엘.webp"
   },
   "detail": {
     "id": "haniel",
@@ -38,6 +39,12 @@
       "skill": "「4부 화음」을 쌓습니다. 화음은 일정 간격으로 축적되며, 최대치에 도달할 때마다 구구새 주변에 범위 공격 「합주」를 발동합니다.",
       "ultimate": "「초이능학과 넘버원」 영역을 만들어 아군을 강화합니다. 영역 중 「합주」가 발동하면 더 넓고 강한 「합주·심포니」가 추가로 발생하며, 필드 캐릭터의 다음 공격도 일정 시간 강화됩니다.",
       "support": "투사체를 발사해 적을 공격합니다."
+    },
+    "skillNamesKo": {
+      "basic": "카이로세크 비술",
+      "skill": "조용한 달밤 숲의 수호자",
+      "ultimate": "「하니엘」이라는 이름의 선율",
+      "support": "쿠키 영상"
     }
   },
   "setting": {

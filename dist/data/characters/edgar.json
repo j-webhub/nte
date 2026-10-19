@@ -13,7 +13,8 @@
     "arcType": "Liquid",
     "communityRoleKo": "생존 / 힐러",
     "released": true,
-    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/edgar"
+    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/edgar",
+    "portraitFile": "에드가.webp"
   },
   "detail": {
     "id": "edgar",
@@ -38,6 +39,12 @@
       "skill": "길게 눌러 공격을 이어가며 지속 피해를 주고, HP가 가장 낮은 팀원을 치료합니다.",
       "ultimate": "넓은 범위에 지속되는 영역을 만들어 적을 공격합니다. 영역 안에서는 필드에 있는 캐릭터의 HP가 계속 회복됩니다.",
       "support": "가방을 들고 돌진해 적에게 피해를 주고 붕괴를 누적합니다."
+    },
+    "skillNamesKo": {
+      "basic": "실전체술",
+      "skill": "광류",
+      "ultimate": "피네간의 경야",
+      "support": "지식의 무게"
     }
   },
   "setting": {

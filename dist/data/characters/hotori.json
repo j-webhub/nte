@@ -13,7 +13,8 @@
     "arcType": "Solid",
     "communityRoleKo": "서브 딜러",
     "released": true,
-    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/hotori"
+    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/hotori",
+    "portraitFile": "호토리.webp"
   },
   "detail": {
     "id": "hotori",
@@ -38,6 +39,12 @@
       "skill": "시계 자원을 소모해 공격하고, 5초 동안 팀원이 사용한 지원 스킬과 바이레일 스킬을 기록합니다.",
       "ultimate": "시계 자원이 가득 찼을 때 검을 뽑아 시간을 멈추고 연속 참격을 쌓아 마무리합니다. 기록한 아군의 공격을 재현해 연계하며, 상태 중 캐릭터 교체는 제한됩니다.",
       "support": "우산을 펼쳐 주변의 적을 공격합니다."
+    },
+    "skillNamesKo": {
+      "basic": "유동하는 달빛",
+      "skill": "현실 리플레이",
+      "ultimate": "밀려드는 세상",
+      "support": "점주의 권위"
     }
   },
   "setting": {

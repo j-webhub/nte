@@ -13,7 +13,8 @@
     "arcType": "Liquid",
     "communityRoleKo": "서브 딜러",
     "released": true,
-    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/daffodil"
+    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/daffodil",
+    "portraitFile": "다포딜.webp"
   },
   "detail": {
     "id": "daffodill",
@@ -38,6 +39,12 @@
       "skill": "파티원이 지원 스킬을 사용할 때 공명 자원을 얻으며, 최대 두 번까지 저장합니다. 지원 스킬을 더 사용해 강화된 바이레일 스킬을 발동하면 피해와 붕괴 성능이 높아지고, 자원이 가득 찬 뒤에는 「메아리」 공격으로 전환됩니다.",
       "ultimate": "자신을 강화하고 적에게 「통찰」을 부여합니다. 상태 중 환영 보법을 사용할 수 있으며, 강화된 이동 공격과 회피를 이어가 적을 공격합니다.",
       "support": "검을 휘둘러 전방의 적을 공격합니다."
+    },
+    "skillNamesKo": {
+      "basic": "잔잔한 수면",
+      "skill": "공명",
+      "ultimate": "피날레 장식",
+      "support": "극한 교차"
     }
   },
   "setting": {

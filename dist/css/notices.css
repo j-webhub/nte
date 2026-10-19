@@ -1,0 +1,117 @@
+.notice-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 18px 0 8px;
+  color: #9aa7b1;
+  font-size: 11px;
+}
+
+.notice-pagination button {
+  min-height: 34px;
+  padding: 0 13px;
+  border: 1px solid #2a3540;
+  border-radius: 7px;
+  color: #d5dde3;
+  background: #11171e;
+  cursor: pointer;
+}
+
+.notice-pagination button:hover:not(:disabled) {
+  border-color: #667b8d;
+}
+
+.notice-pagination button:disabled {
+  opacity: .4;
+  cursor: default;
+}
+
+.notice-list {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 10px;
+}
+
+.notice-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  min-height: 210px;
+  padding: 17px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: #10151b;
+}
+
+.notice-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: #7f8c97;
+  font-size: 10px;
+}
+
+.notice-type {
+  padding: 4px 7px;
+  border: 1px solid #3a4b59;
+  border-radius: 5px;
+  color: #a9bdcc;
+  background: #18222b;
+}
+
+.notice-type-event {
+  border-color: #725941;
+  color: #d5b992;
+  background: #201a14;
+}
+
+.notice-type-notice {
+  border-color: #5d526f;
+  color: #c0afd6;
+  background: #1c1722;
+}
+
+.notice-card h3 {
+  margin: 14px 0 7px;
+  color: #e8edf1;
+  font-size: 16px;
+  line-height: 1.45;
+  letter-spacing: -.03em;
+}
+
+.notice-card > p {
+  margin: 0 0 16px;
+  color: #a6b1bb;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.notice-card-source {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 9px;
+  margin-top: auto;
+  padding-top: 11px;
+  border-top: 1px solid #27313b;
+  color: #7d8a95;
+  font-size: 10px;
+}
+
+.notice-card-source a,.portal-source-line a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.notice-card-source a:hover,.portal-source-line a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.portal-source-line {
+  margin: 17px 0 0;
+  color: #7f8c97;
+  font-size: 10px;
+}

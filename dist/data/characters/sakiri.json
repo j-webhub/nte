@@ -13,7 +13,8 @@
     "arcType": "Gas",
     "communityRoleKo": "버퍼 / 몹몰이",
     "released": true,
-    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/sakiri"
+    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/sakiri",
+    "portraitFile": "사키리.webp"
   },
   "detail": {
     "id": "sakiri",
@@ -38,6 +39,12 @@
       "skill": "짧게 누르면 적을 끌어당기고 넘어뜨리는 공격을 합니다. 길게 누르면 적을 빨아들인 뒤 중력으로 들어 올립니다. 강한 적은 들어 올릴 수 없습니다.",
       "ultimate": "거대한 식사를 통해 적에게 피해를 주고, 사키리의 기본 공격력에 비례해 공격력을 높입니다.",
       "support": "키로마루가 발을 굴러 적을 공격합니다."
+    },
+    "skillNamesKo": {
+      "basic": "키로마루 박치기",
+      "skill": "집어삼키기",
+      "ultimate": "폭식의 연회",
+      "support": "뭉개기!"
     }
   },
   "setting": {

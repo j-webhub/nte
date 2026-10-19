@@ -113,5 +113,24 @@
       "releaseStatusAsOfSnapshot": "unclear",
       "note": "Appears in a Chinese community roster but is absent from the current English and Korean released-character lists. Keep out of the playable roster until confirmed in the live client or an official announcement."
     }
+  ],
+  "displayCharacterIds": [
+    "blackbird",
+    "linko",
+    "zankou",
+    "iroi",
+    "shinku",
+    "chaos",
+    "lacrimosa",
+    "hotori",
+    "nanally",
+    "zero",
+    "chiz",
+    "daffodill",
+    "jiuyuan",
+    "baicang",
+    "sakiri",
+    "hathor",
+    "fadia"
   ]
 }

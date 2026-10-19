@@ -13,7 +13,8 @@
     "arcType": "Plasma",
     "communityRoleKo": "메인 딜러",
     "released": true,
-    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/nanally"
+    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/nanally",
+    "portraitFile": "나나리.webp"
   },
   "detail": {
     "id": "nanally",
@@ -38,6 +39,12 @@
       "skill": "범위 공격을 다섯 차례 가하고 「초대 가주의 권능」 상태에 진입합니다. 다시 사용하면 상태를 종료합니다.",
       "ultimate": "넓은 범위에 연속 공격을 가하고 「이인자」를 소환해 전투를 돕게 합니다.",
       "support": "차지한 뒤 회전 발차기로 적을 공격합니다."
+    },
+    "skillNamesKo": {
+      "basic": "콜린스 가문 비전 기술",
+      "skill": "콜린스·어흥술",
+      "ultimate": "콜린스·궁극술",
+      "support": "정의 강림"
     }
   },
   "setting": {

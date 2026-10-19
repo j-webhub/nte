@@ -13,7 +13,8 @@
     "arcType": "Plasma",
     "communityRoleKo": "메인 딜러",
     "released": true,
-    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/hathor"
+    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/hathor",
+    "portraitFile": "하토르.webp"
   },
   "detail": {
     "id": "hathor",
@@ -38,6 +39,12 @@
       "skill": "「공중 지령」으로 이동하며 적을 공격하고 「스피드퀵」을 쌓습니다. 길게 눌러 목표를 지정해 강화 공격을 준비할 수 있으며, 「긴급 배송」이 활성화되면 「싸이클론 스트라이크」로 연속 돌진 공격을 가하고 방어 효과를 얻습니다.",
       "ultimate": "익스프레스 상태에 진입해 이동과 공격을 강화하고 바이레일 스킬을 강화합니다. 「스피드퀵」 축적 상태가 강화 효과에 반영되며, 캐릭터를 교체하면 상태가 종료됩니다.",
       "support": "두 차례 발차기로 적을 공격합니다."
+    },
+    "skillNamesKo": {
+      "basic": "초스피드 배송",
+      "skill": "공중 지령",
+      "ultimate": "라이더 익스프레스",
+      "support": "조준 낙하"
     }
   },
   "setting": {

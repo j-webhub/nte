@@ -13,7 +13,8 @@
     "arcType": "Condensate",
     "communityRoleKo": "생존",
     "released": true,
-    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/adler"
+    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/adler",
+    "portraitFile": "아들러.webp"
   },
   "detail": {
     "id": "adler",
@@ -38,6 +39,12 @@
       "skill": "「공여 환영」을 소환해 주변 적을 공격하고 지속 피해를 줍니다. 동시에 자신과 아군에게 보호막 「깨달음의 가호」를 부여하며, 축적한 「업」을 소모해 스킬의 직접 피해와 지속 피해를 강화할 수 있습니다.",
       "ultimate": "다섯 「공여」를 소환해 표적을 연속 공격합니다. 적이 하나뿐이면 공격이 추가로 적중합니다.",
       "support": "조준해 압축탄을 발사하고 전방의 적을 공격합니다."
+    },
+    "skillNamesKo": {
+      "basic": "악업 초월",
+      "skill": "처단의 가호",
+      "ultimate": "만물 정화",
+      "support": "맑은 거울"
     }
   },
   "setting": {

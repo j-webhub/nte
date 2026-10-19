@@ -1,4 +1,5 @@
-import { state, $, esc, siteFooter } from "./common.js?v=20261020-character-passives";
+import { state } from "../../core/state.js?v=20261020-reorganized";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-reorganized";
 
 const PORTAL_MODULES = [
   {

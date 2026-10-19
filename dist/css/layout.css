@@ -1,0 +1,61 @@
+/* Portal navigation and content modules */
+.topbar {
+  height: auto;
+  min-height: 76px;
+  flex-wrap: wrap;
+}
+
+.primary-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  min-width: 0;
+  margin: 0 auto;
+}
+
+.primary-nav button {
+  position: relative;
+  flex: 0 0 auto;
+  min-height: 42px;
+  padding: 0 10px;
+  border: 0;
+  color: #8996a2;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.primary-nav button:hover,.primary-nav button[aria-current="page"] {
+  color: #edf1f4;
+}
+
+.primary-nav button[aria-current="page"]::after {
+  position: absolute;
+  right: 10px;
+  bottom: 2px;
+  left: 10px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent);
+  content: "";
+}
+
+.workspace {
+  display: block;
+  min-height: calc(100vh - 76px);
+}
+
+.workspace[data-view="characters"] {
+  display: grid;
+  grid-template-columns: 286px minmax(0,1fr);
+}
+
+.roster-panel {
+  display: none;
+}
+
+.workspace[data-view="characters"] .roster-panel {
+  display: flex;
+}

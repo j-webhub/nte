@@ -13,7 +13,8 @@
     "arcType": "Condensate",
     "communityRoleKo": "메인 딜러",
     "released": true,
-    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/shinku"
+    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/shinku",
+    "portraitFile": "신쿠.webp"
   },
   "detail": {
     "id": "shinku",
@@ -38,6 +39,12 @@
       "skill": "「고속 돌파」로 적에게 돌진해 연속 공격합니다. 「적염 해방」 중에는 「일말의 이성」을 소모해 「적염 강림」을 발동할 수 있으며, 한 번의 해방 동안 정해진 횟수까지 이어갈 수 있습니다.",
       "ultimate": "「야성의 투지」를 소모해 「적염 해방」에 진입하고, 강화된 공격을 펼칩니다. 해방 상태에서 다시 발동하면 「적염의 척결」로 마무리합니다.",
       "support": "「돌파 전술」로 전방을 걷어차 적을 공격하고, 전투 자원을 얻습니다."
+    },
+    "skillNamesKo": {
+      "basic": "특수 격투술 / 공포의 급습",
+      "skill": "고속 돌파 / 적염 강림",
+      "ultimate": "적염의 척결 / 척결의 용염",
+      "support": "돌파 전술"
     }
   },
   "setting": {

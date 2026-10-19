@@ -13,7 +13,8 @@
     "arcType": "Solid",
     "communityRoleKo": "서브 딜러 / 몹몰이",
     "released": true,
-    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/jiuyuan"
+    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/jiuyuan",
+    "portraitFile": "구원.webp"
   },
   "detail": {
     "id": "jiuyuan",
@@ -38,6 +39,12 @@
       "skill": "적 주변을 이동하며 공격하고 끌어당깁니다. 약속 탄환 네 발을 얻어 표적에게 「위험한 장미의 약속」을 남기고, 이후 공격으로 표식을 활용합니다.",
       "ultimate": "빠른 연속 사격 후 넓은 범위에 폭발을 일으킵니다. 표식이 있는 적을 정산 상태로 만들고 마지막 공격으로 표식 효과를 처리합니다.",
       "support": "곡선을 그리는 탄환으로 표적을 공격하고 추가 탄환을 준비합니다."
+    },
+    "skillNamesKo": {
+      "basic": "비밀이 생겨날 때",
+      "skill": "정보 사냥꾼",
+      "ultimate": "최종 결산",
+      "support": "시크릿 포착"
     }
   },
   "setting": {

@@ -1,44 +1,7 @@
-const FILES = {
-  index: "characters/index.json",
-  arcs: "nte-character-signature-arcs-v1.4.json",
-  consoles: "nte-cartridge-sets-v1.4.json",
-  growth: "nte-character-growth-v1.4.json",
-  notices: "portal-notices.json",
-  guides: "portal-guides.json",
-  wallpapers: "portal-wallpapers.json"
-};
-const OPTIONAL_PORTAL_DATA = {
-  notices: {
-    schemaVersion: 1,
-    sourceUrl: "https://nte.perfectworld.com/kr/article/news/index.html",
-    items: []
-  },
-  guides: { schemaVersion: 1, items: [] },
-  wallpapers: {
-    schemaVersion: 1,
-    sourceSearchUrl:
-      "https://x.com/search?q=from%3ANTE_KO%20%EC%9B%94%ED%8D%BC%EC%9D%B4%ED%8D%BC&src=typed_query&f=top",
-    items: []
-  }
-};
+import { state } from "./state.js?v=20261020-reorganized";
+import { $, esc, fmt } from "./dom.js?v=20261020-reorganized";
+import { loadDatabase } from "./data.js?v=20261020-reorganized";
 
-export const state = {
-  db: null,
-  selectedId: "blackbird",
-  activeTab: "overview",
-  skillLevel: 1,
-  activeSkillGroup: "basic",
-  growthTargetLevel: 80,
-  arcRank: 1,
-  activeView: "home",
-  activeNoticeFilter: "all",
-  activeNoticeId: null,
-  activeNoticePage: 1,
-  activeWallpaperGallery: null,
-  activeWallpaperIndex: 0,
-  wallpaperReturnFocus: null
-};
-const NOTICE_PAGE_SIZE = 12;
 const VALID_VIEWS = new Set([
   "home",
   "notices",
@@ -48,71 +11,9 @@ const VALID_VIEWS = new Set([
   "wallpapers"
 ]);
 
-const $ = (selector) => document.querySelector(selector);
-
-const esc = (value) =>
-  String(value ?? "").replace(
-    /[&<>"']/g,
-    (c) =>
-      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[
-        c
-      ]
-  );
-
-const fmt = (value) => Number(value).toLocaleString("ko-KR");
-
-export async function start() {
+async function start() {
   try {
-    const pairs = await Promise.all(
-      Object.entries(FILES).map(async ([key, file]) => {
-        try {
-          const response = await fetch("./data/" + file + "?v=20261020-character-passives");
-          if (!response.ok) {
-            if (OPTIONAL_PORTAL_DATA[key])
-              return [key, OPTIONAL_PORTAL_DATA[key]];
-            throw new Error("자료 파일을 불러오지 못했습니다: " + file);
-          }
-          return [key, await response.json()];
-        } catch (error) {
-          if (OPTIONAL_PORTAL_DATA[key])
-            return [key, OPTIONAL_PORTAL_DATA[key]];
-          throw error;
-        }
-      })
-    );
-    const shared = Object.fromEntries(pairs);
-    const index = shared.index;
-    const ids = [...index.releasedCharacterIds, ...index.upcomingCharacterIds];
-    if (new Set(ids).size !== ids.length)
-      throw new Error("캐릭터 목록에 중복 ID가 있습니다.");
-    const characterEntries = await Promise.all(
-      ids.map(async (id) => {
-        const response = await fetch(
-          "./data/characters/" + encodeURIComponent(id) + ".json?v=20261020-character-passives"
-        );
-        if (!response.ok)
-          throw new Error("캐릭터 자료를 불러오지 못했습니다: " + id);
-        const character = await response.json();
-        if (character.id !== id || character.roster?.id !== id)
-          throw new Error("캐릭터 파일의 ID가 목록과 일치하지 않습니다: " + id);
-        return [id, character];
-      })
-    );
-    const characters = Object.fromEntries(characterEntries);
-    state.db = {
-      ...shared,
-      characters,
-      roster: {
-        ...index.rosterMetadata,
-        characters: index.releasedCharacterIds.map(
-          (id) => characters[id].roster
-        ),
-        confirmedUpcoming: index.upcomingCharacterIds.map(
-          (id) => characters[id].roster
-        ),
-        watchlist: index.watchlist || []
-      }
-    };
+    state.db = await loadDatabase();
     init();
   } catch (error) {
     $("#main-content").innerHTML =
@@ -236,17 +137,8 @@ function renderActiveView() {
   else if (state.activeView === "wallpapers") pageModules.renderWallpapers();
 }
 
-function siteFooter() {
-  return (
-    '<footer class="main-footer"><span>커뮤니티 자료 기반 캐릭터 도감</span><a ' +
-    'href="./data/nte-character-sources.md" target="_blank" rel="noopener ' +
-    'noreferrer">출처</a></footer>'
-  );
-}
-
 let pageModules = {};
-export function registerPageModules(modules) {
+function registerPageModules(modules) {
   pageModules = modules;
 }
-
-export { $, esc, fmt, NOTICE_PAGE_SIZE, siteFooter, setView };
+export { start, setView, openNotice, registerPageModules };

@@ -13,7 +13,8 @@
     "arcType": "Condensate",
     "communityRoleKo": "메인 딜러",
     "released": true,
-    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/chaos"
+    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/chaos",
+    "portraitFile": "카오스.webp"
   },
   "detail": {
     "id": "chaos",
@@ -38,6 +39,12 @@
       "skill": "총격과 사냥개의 물어뜯기로 적을 공격하고 최대 두 명에게 「추격 허가」를 부여합니다. 표식이 있는 적에게는 강화된 후속 공격을 가해 표식을 활용합니다.",
       "ultimate": "사냥개를 불러 주변 적을 표식하고 「악명의 굴레」 상태에 돌입합니다. 상태 중 죄목 축적과 재단 공격이 강화됩니다.",
       "support": "낫을 휘둘러 전방의 적을 공격합니다."
+    },
+    "skillNamesKo": {
+      "basic": "추적",
+      "skill": "혐의점 포착",
+      "ultimate": "죄업 청산",
+      "support": "강습"
     }
   },
   "setting": null,

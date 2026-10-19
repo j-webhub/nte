@@ -13,7 +13,8 @@
     "arcType": "Condensate",
     "communityRoleKo": "메인 딜러",
     "released": true,
-    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/baicang"
+    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/baicang",
+    "portraitFile": "백장.webp"
   },
   "detail": {
     "id": "baicang",
@@ -38,6 +39,12 @@
       "skill": "「공평한 마음」으로 적을 공격합니다. 회피 직후에는 「억눌린 생각」으로 「금」을, 특정 공격 뒤에는 「정죄의 일격」으로 「죄」를 생성합니다. 각 공격으로 모은 말은 울티메이트에서 종류별 효과를 냅니다.",
       "ultimate": "「가을 심판」 영역을 펼치고 축적한 말을 사용합니다. 「금」은 단일 적을, 「죄」는 범위 안의 적을 공격하고, 「축」은 단일 적을 공격하면서 아군을 회복합니다.",
       "support": "적을 공격해 「금」을 생성합니다."
+    },
+    "skillNamesKo": {
+      "basic": "언행일치",
+      "skill": "아낌없는 가르침",
+      "ultimate": "가을 심판",
+      "support": "농땡이 끝"
     }
   },
   "setting": {

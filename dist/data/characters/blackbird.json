@@ -14,7 +14,8 @@
     "communityRoleKo": "메인 딜러",
     "released": true,
     "nameNote": "레이븐은 1.4 공식 한국어 공지의 표기입니다. 해외 DB의 Blackbird와 동일 인물입니다.",
-    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/blackbird"
+    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/blackbird",
+    "portraitFile": "레이븐.webp"
   },
   "detail": {
     "id": "blackbird",
@@ -44,6 +45,12 @@
       "skill": "「장송의 깃털」로 적을 표식하면 아군의 공격에 맞춰 레이븐이 협동 공격 「실낙조」를 발동하고 「악의」를 얻습니다. 협동 공격은 짧은 재사용 대기시간이 있으며 정해진 횟수까지 발동합니다. 마녀 상태에서는 강화 공격 후 「저승의 화염」을 발동할 수 있고, 이 공격은 「악의」를 소모합니다.",
       "ultimate": "「구세의 마녀」 상태에 진입해 공격을 강화하고, 상태 중 다시 발동하면 마녀의 힘을 거둬들이며 적을 공격합니다. 상태 지속 중 필드에서 물러나면 지속 시간이 멈춥니다.",
       "support": "필드에 진입하며 전방의 적을 공격합니다. 마녀 상태에서는 「악의」를 소모하는 강화 지원 공격을 사용합니다."
+    },
+    "skillNamesKo": {
+      "basic": "스쳐가는 그림자 / 번제의 불길",
+      "skill": "장송의 깃털 / 저승의 화염",
+      "ultimate": "모든 영혼에 안식을 / 불꽃들을 하나로",
+      "support": "단죄는 나의 몫"
     }
   },
   "setting": {

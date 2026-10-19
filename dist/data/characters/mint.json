@@ -13,7 +13,8 @@
     "arcType": "Liquid",
     "communityRoleKo": "메인 딜러",
     "released": true,
-    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/mint"
+    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/mint",
+    "portraitFile": "민트.webp"
   },
   "detail": {
     "id": "mint",
@@ -38,6 +39,12 @@
       "skill": "「오의·슈퍼 바람 할퀴기」로 앞으로 돌진했다가 되돌아오며 두 차례 범위 공격을 가합니다.",
       "ultimate": "「오의·벽력 질풍참」을 발동해 바람 칼날을 연속으로 날리고 마지막 일격을 가합니다.",
       "support": "공중에서 차지한 뒤 적을 꿰뚫는 공격을 사용합니다."
+    },
+    "skillNamesKo": {
+      "basic": "만점 수용술",
+      "skill": "오의·슈퍼 바람 할퀴기",
+      "ultimate": "오의·벽력 질풍참",
+      "support": "오의·무적 회오리검"
     }
   },
   "setting": {

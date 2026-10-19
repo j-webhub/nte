@@ -17,7 +17,8 @@
     "source": "https://nte.perfectworld.com/kr/article/news/gamenews/20260929/264413.html",
     "officialSource": "https://nte.perfectworld.com/kr/article/news/gamenews/20260929/264413.html",
     "detailsSourceStatus": "official introduction and 2026-10-21 global release schedule confirmed; user-provided Korean skill, awakening, resonance, passive, and city-skill details entered; base stats and level coefficients pending",
-    "communityRoleKo": "기타리스트 · 전직 이상 헌터"
+    "communityRoleKo": "기타리스트 · 전직 이상 헌터",
+    "portraitFile": "아카네.webp"
   },
   "detail": {
     "id": "akane-rin",
@@ -55,7 +56,12 @@
       "https://ntegame.net/ko/guides/upcoming-characters/",
       "https://www.mone.gg/tw/blog/nte/akane-rin-guide.html"
     ],
-    "comparisonNote": "글로벌 1.4 후반은 공식 발표 기준 2026-10-21(KST) 출시 예정이다. 스킬·각성·공명·패시브·도시 스킬 설명은 사용자가 제공한 한국어 문구를 반영했으며, 기본 능력치와 레벨별 계수는 확인 후 추가한다."
+    "comparisonNote": "글로벌 1.4 후반은 공식 발표 기준 2026-10-21(KST) 출시 예정이다. 스킬·각성·공명·패시브·도시 스킬 설명은 사용자가 제공한 한국어 문구를 반영했으며, 기본 능력치와 레벨별 계수는 확인 후 추가한다.",
+    "releaseInfoKo": {
+      "schedule": "글로벌 1.4 후반 업데이트와 함께 2026.10.21 (KST) 출시 예정입니다.",
+      "reward": "후반 업데이트 점검 완료 후 아카네 코스튬 「바텐더 스페셜」과 200만 폰즈가 지급될 예정입니다.",
+      "pending": "아래 스킬과 각성·공명·생활 효과는 사용자가 제공한 한국어 설명입니다. 80레벨 기본 능력치와 레벨별 계수는 아직 입력되지 않았습니다."
+    }
   },
   "setting": {
     "summary": "라이브하우스 스타사인의 파트타임 기타리스트. 과거 이상 헌터였으며, 헤테로를 탐험할 때 기타를 꺼내 연주할 수 있다.",

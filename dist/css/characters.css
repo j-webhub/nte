@@ -346,8 +346,18 @@
   color: var(--accent);
 }
 
-.tag.element {
+.tag.element, .tag.arc-type {
   gap: 6px;
+}
+
+.tag.arc-type .arc-type-icon {
+  display: block;
+  flex: 0 0 15px;
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  object-fit: contain;
+  object-position: center;
 }
 
 .element-icon {

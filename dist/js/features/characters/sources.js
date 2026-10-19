@@ -1,5 +1,5 @@
-import { state } from "../../core/state.js?v=20261020-filter-layout-fix";
-import { esc } from "../../core/dom.js?v=20261020-filter-layout-fix";
+import { state } from "../../core/state.js?v=20261020-profile-type-icon";
+import { esc } from "../../core/dom.js?v=20261020-profile-type-icon";
 
 export function sourceLinks(p, domesticOnly = false) {
   const urls = new Set();

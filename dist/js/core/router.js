@@ -1,6 +1,6 @@
-import { state } from "./state.js?v=20261020-filter-layout-fix";
-import { $, esc, fmt } from "./dom.js?v=20261020-filter-layout-fix";
-import { loadDatabase } from "./data.js?v=20261020-filter-layout-fix";
+import { state } from "./state.js?v=20261020-profile-type-icon";
+import { $, esc, fmt } from "./dom.js?v=20261020-profile-type-icon";
+import { loadDatabase } from "./data.js?v=20261020-profile-type-icon";
 
 const VALID_VIEWS = new Set([
   "home",

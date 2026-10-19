@@ -1,6 +1,6 @@
-import { state } from "../../core/state.js?v=20261020-filter-layout-fix";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-filter-layout-fix";
-import { NOTICE_PAGE_SIZE } from "../../config/site.js?v=20261020-filter-layout-fix";
+import { state } from "../../core/state.js?v=20261020-profile-type-icon";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-profile-type-icon";
+import { NOTICE_PAGE_SIZE } from "../../config/site.js?v=20261020-profile-type-icon";
 
 export function renderNoticeCard(item) {
   return (

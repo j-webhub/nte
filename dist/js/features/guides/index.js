@@ -1,9 +1,9 @@
-import { state } from "../../core/state.js?v=20261020-filter-layout-fix";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-filter-layout-fix";
-import { repository } from "./repository.js?v=20261020-filter-layout-fix";
-import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES } from "./config.js?v=20261020-filter-layout-fix";
-import { createId, bytesOf, safeVideoLinks, sanitizeHtml } from "./content.js?v=20261020-filter-layout-fix";
-import { exportBackup, importBackup } from "./backup.js?v=20261020-filter-layout-fix";
+import { state } from "../../core/state.js?v=20261020-profile-type-icon";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-profile-type-icon";
+import { repository } from "./repository.js?v=20261020-profile-type-icon";
+import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES } from "./config.js?v=20261020-profile-type-icon";
+import { createId, bytesOf, safeVideoLinks, sanitizeHtml } from "./content.js?v=20261020-profile-type-icon";
+import { exportBackup, importBackup } from "./backup.js?v=20261020-profile-type-icon";
 
 let currentPostId = null;
 let currentPost = null;

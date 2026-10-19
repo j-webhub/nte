@@ -1,7 +1,7 @@
-import { formatCharacterText } from "../text.js?v=20261020-filter-layout-fix";
-import { state } from "../../../core/state.js?v=20261020-filter-layout-fix";
-import { esc } from "../../../core/dom.js?v=20261020-filter-layout-fix";
-import { sourceLinks } from "../sources.js?v=20261020-filter-layout-fix";
+import { formatCharacterText } from "../text.js?v=20261020-profile-type-icon";
+import { state } from "../../../core/state.js?v=20261020-profile-type-icon";
+import { esc } from "../../../core/dom.js?v=20261020-profile-type-icon";
+import { sourceLinks } from "../sources.js?v=20261020-profile-type-icon";
 
 export function renderConsole(p) {
   const build = p.console;

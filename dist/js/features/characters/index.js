@@ -1,11 +1,11 @@
-import { state } from "../../core/state.js?v=20261020-filter-layout-fix";
-import { $ } from "../../core/dom.js?v=20261020-filter-layout-fix";
-import { openCharacter } from "../../core/router.js?v=20261020-filter-layout-fix";
-import { ELEMENT_ORDER, elem, elementIconUrl } from "./catalog.js?v=20261020-filter-layout-fix";
-import { renderRoster } from "./roster.js?v=20261020-filter-layout-fix";
-import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-filter-layout-fix";
-import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-filter-layout-fix";
-import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261020-filter-layout-fix";
+import { state } from "../../core/state.js?v=20261020-profile-type-icon";
+import { $ } from "../../core/dom.js?v=20261020-profile-type-icon";
+import { openCharacter } from "../../core/router.js?v=20261020-profile-type-icon";
+import { ELEMENT_ORDER, elem, elementIconUrl } from "./catalog.js?v=20261020-profile-type-icon";
+import { renderRoster } from "./roster.js?v=20261020-profile-type-icon";
+import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-profile-type-icon";
+import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-profile-type-icon";
+import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261020-profile-type-icon";
 
 export { renderRoster, renderProfile };
 

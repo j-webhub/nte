@@ -1,6 +1,6 @@
-import { state } from "../../../core/state.js?v=20261020-filter-layout-fix";
-import { esc, fmt } from "../../../core/dom.js?v=20261020-filter-layout-fix";
-import { renderSkillGrowth } from "./skill-growth.js?v=20261020-filter-layout-fix";
+import { state } from "../../../core/state.js?v=20261020-profile-type-icon";
+import { esc, fmt } from "../../../core/dom.js?v=20261020-profile-type-icon";
+import { renderSkillGrowth } from "./skill-growth.js?v=20261020-profile-type-icon";
 
 export function renderGrowth(p) {
   const data = state.db.growth;

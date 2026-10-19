@@ -1,7 +1,7 @@
-import { state } from "../../core/state.js?v=20261020-filter-layout-fix";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-filter-layout-fix";
-import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261020-filter-layout-fix";
-import { renderArcTypeIcon, renderRarityBadge } from "../characters/badges.js?v=20261020-filter-layout-fix";
+import { state } from "../../core/state.js?v=20261020-profile-type-icon";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-profile-type-icon";
+import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261020-profile-type-icon";
+import { renderArcTypeIcon, renderRarityBadge } from "../characters/badges.js?v=20261020-profile-type-icon";
 
 function renderArcEffect(arc) {
   const text = interpolateArcRankEffect(arc, 1) || "자료 없음";

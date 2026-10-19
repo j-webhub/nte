@@ -1,8 +1,8 @@
-import { state } from "../../core/state.js?v=20261020-filter-layout-fix";
-import { $, esc, fmt } from "../../core/dom.js?v=20261020-filter-layout-fix";
-import { elem, assetUrl, elementIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-filter-layout-fix";
-import { getProfile } from "./model.js?v=20261020-filter-layout-fix";
-import { renderTab } from "./tabs/index.js?v=20261020-filter-layout-fix";
+import { state } from "../../core/state.js?v=20261020-profile-type-icon";
+import { $, esc, fmt } from "../../core/dom.js?v=20261020-profile-type-icon";
+import { elem, assetUrl, elementIconUrl, arcTypeIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-profile-type-icon";
+import { getProfile } from "./model.js?v=20261020-profile-type-icon";
+import { renderTab } from "./tabs/index.js?v=20261020-profile-type-icon";
 
 export function bindCharacterIllustration() {
   const visual = $("#main-content .hero-visual");
@@ -180,7 +180,8 @@ export function renderProfile() {
     esc(elementIconUrl(p.roster.element)) +
     '" alt="">' +
     esc(e.name) +
-    '속성</span><span class="tag">' +
+    '속성</span><span class="tag arc-type">' +
+    (ARC_TYPES[p.roster.arcType] ? '<img class="arc-type-icon" src="' + esc(arcTypeIconUrl(p.roster.arcType)) + '" alt="" aria-hidden="true">' : '') +
     esc(ARC_TYPES[p.roster.arcType] || p.roster.arcType) +
     '</span><span class="tag rarity">' +
     esc(p.roster.rarity) +

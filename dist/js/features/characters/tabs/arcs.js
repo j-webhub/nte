@@ -1,8 +1,8 @@
-import { formatCharacterText } from "../text.js?v=20261020-akane-intro-cleanup";
-import { state } from "../../../core/state.js?v=20261020-akane-intro-cleanup";
-import { esc } from "../../../core/dom.js?v=20261020-akane-intro-cleanup";
-import { sourceLinks } from "../sources.js?v=20261020-akane-intro-cleanup";
-import { interpolateArcRankEffect } from "../../../shared/arc-ranks.js?v=20261020-akane-intro-cleanup";
+import { formatCharacterText } from "../text.js?v=20261020-arc-filters";
+import { state } from "../../../core/state.js?v=20261020-arc-filters";
+import { esc } from "../../../core/dom.js?v=20261020-arc-filters";
+import { sourceLinks } from "../sources.js?v=20261020-arc-filters";
+import { interpolateArcRankEffect } from "../../../shared/arc-ranks.js?v=20261020-arc-filters";
 
 export function renderArcs(p) {
   const character = state.db.arcs.characters.find(

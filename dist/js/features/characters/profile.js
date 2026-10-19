@@ -1,8 +1,8 @@
-import { state } from "../../core/state.js?v=20261020-akane-intro-cleanup";
-import { $, esc, fmt } from "../../core/dom.js?v=20261020-akane-intro-cleanup";
-import { elem, assetUrl, elementIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-akane-intro-cleanup";
-import { getProfile } from "./model.js?v=20261020-akane-intro-cleanup";
-import { renderTab } from "./tabs/index.js?v=20261020-akane-intro-cleanup";
+import { state } from "../../core/state.js?v=20261020-arc-filters";
+import { $, esc, fmt } from "../../core/dom.js?v=20261020-arc-filters";
+import { elem, assetUrl, elementIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-arc-filters";
+import { getProfile } from "./model.js?v=20261020-arc-filters";
+import { renderTab } from "./tabs/index.js?v=20261020-arc-filters";
 
 export function bindCharacterIllustration() {
   const visual = $("#main-content .hero-visual");

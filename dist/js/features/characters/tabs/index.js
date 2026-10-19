@@ -1,10 +1,10 @@
-import { state } from "../../../core/state.js?v=20261020-akane-intro-cleanup";
-import { renderOverview } from "./passives.js?v=20261020-akane-intro-cleanup";
-import { renderSkills } from "./skills.js?v=20261020-akane-intro-cleanup";
-import { renderAwakening } from "./awakening.js?v=20261020-akane-intro-cleanup";
-import { renderArcs } from "./arcs.js?v=20261020-akane-intro-cleanup";
-import { renderConsole } from "./console.js?v=20261020-akane-intro-cleanup";
-import { renderGrowth } from "./growth.js?v=20261020-akane-intro-cleanup";
+import { state } from "../../../core/state.js?v=20261020-arc-filters";
+import { renderOverview } from "./passives.js?v=20261020-arc-filters";
+import { renderSkills } from "./skills.js?v=20261020-arc-filters";
+import { renderAwakening } from "./awakening.js?v=20261020-arc-filters";
+import { renderArcs } from "./arcs.js?v=20261020-arc-filters";
+import { renderConsole } from "./console.js?v=20261020-arc-filters";
+import { renderGrowth } from "./growth.js?v=20261020-arc-filters";
 
 export function renderTab(p) {
   if (state.activeTab === "skills") return renderSkills(p);

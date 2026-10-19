@@ -1,5 +1,5 @@
-import { state } from "../../core/state.js?v=20261020-akane-intro-cleanup";
-import { esc } from "../../core/dom.js?v=20261020-akane-intro-cleanup";
+import { state } from "../../core/state.js?v=20261020-arc-filters";
+import { esc } from "../../core/dom.js?v=20261020-arc-filters";
 
 export function sourceLinks(p, domesticOnly = false) {
   const urls = new Set();

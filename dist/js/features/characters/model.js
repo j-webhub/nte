@@ -1,4 +1,4 @@
-import { state } from "../../core/state.js?v=20261020-akane-intro-cleanup";
+import { state } from "../../core/state.js?v=20261020-arc-filters";
 
 export function getProfile(id) {
   const character = state.db.characters[id];

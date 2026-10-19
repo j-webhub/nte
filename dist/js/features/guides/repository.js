@@ -1,4 +1,4 @@
-import { DATABASE_NAME, DATABASE_VERSION, STORE_NAME } from "./config.js?v=20261020-akane-intro-cleanup";
+import { DATABASE_NAME, DATABASE_VERSION, STORE_NAME } from "./config.js?v=20261020-arc-filters";
 
 class IndexedDbGuideRepository {
   constructor() {

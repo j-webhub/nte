@@ -1,9 +1,50 @@
 .arc-db-toolbar {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
   margin: 0 0 13px;
+}
+
+.arc-db-toolbar .portal-search {
+  flex: 1 1 240px;
+}
+
+.arc-db-filter-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.arc-db-filter-label {
+  margin-right: 4px;
+  color: #96a3ad;
+  font-size: 11px;
+}
+
+.arc-db-filter-group button {
+  min-height: 38px;
+  padding: 7px 11px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  color: #b9c4cc;
+  background: #111820;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.arc-db-filter-group button[aria-pressed="true"] {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: #1b2830;
+}
+
+.arc-db-filter-group button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .portal-search {

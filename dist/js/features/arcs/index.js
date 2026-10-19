@@ -1,8 +1,9 @@
-import { state } from "../../core/state.js?v=20261020-akane-intro-cleanup";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-akane-intro-cleanup";
-import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261020-akane-intro-cleanup";
+import { state } from "../../core/state.js?v=20261020-arc-filters";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-arc-filters";
+import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261020-arc-filters";
+import { ARC_TYPES } from "../characters/catalog.js?v=20261020-arc-filters";
 
-export function arcDatabaseCards(query = "") {
+function filteredArcs(query = "") {
   const term = query.trim().toLocaleLowerCase("ko");
   const characters = new Map(
     state.db.roster.characters.map((character) => [character.id, character])
@@ -10,7 +11,8 @@ export function arcDatabaseCards(query = "") {
   const arcs = (state.db.arcs.arcs || [])
     .filter((arc) => {
       const owner = characters.get(arc.characterId);
-      return (
+      return (!state.arcTypeFilter || (arc.arcType || owner?.arcType) === state.arcTypeFilter) &&
+        (!state.arcRarityFilter || arc.rarity === state.arcRarityFilter) && (
         !term ||
         [arc.nameKo, arc.nameEn, owner?.names.ko, owner?.names.en]
           .filter(Boolean)
@@ -20,8 +22,13 @@ export function arcDatabaseCards(query = "") {
       );
     })
     .sort((a, b) => (a.nameKo || "").localeCompare(b.nameKo || "", "ko"));
+  return { arcs, characters };
+}
+
+export function arcDatabaseCards(query = "") {
+  const { arcs, characters } = filteredArcs(query);
   if (!arcs.length)
-    return '<div class="portal-empty"><h2>검색 결과가 없습니다</h2><p>아크 이름이나 캐릭터 이름을 확인해 주세요.</p></div>';
+    return '<div class="portal-empty"><h2>검색 결과가 없습니다</h2><p>검색어 또는 선택한 타입·희귀도를 변경해 주세요.</p></div>';
   return arcs
     .map((arc) => {
       const owner = characters.get(arc.characterId);
@@ -30,7 +37,7 @@ export function arcDatabaseCards(query = "") {
         '<article class="arc-db-card"><div class="arc-db-card-top"><span class="arc-rarity">' +
         esc(arc.rarity || "—") +
         '급</span><span class="arc-db-owner">' +
-        esc(owner?.names.ko || "캐릭터 미분류") +
+        esc([ARC_TYPES[arc.arcType || owner?.arcType], owner?.names.ko].filter(Boolean).join(" · ") || "캐릭터 미분류") +
         "</span></div><h2>" +
         esc(arc.nameKo || "이름 미확인") +
         '</h2><p class="arc-db-en">' +
@@ -57,7 +64,11 @@ export function arcDatabaseCards(query = "") {
 
 export function renderArcDatabase() {
   const query = $("#arc-search")?.value || "";
-  const count = (state.db.arcs.arcs || []).length;
+  const count = filteredArcs(query).arcs.length;
+  const filters = (items, attribute, selected, label) =>
+    '<div class="arc-db-filter-group" role="group" aria-label="' + label + '"><span class="arc-db-filter-label">' + label.replace("아크 ", "") + '</span>' + items.map(([value, text]) =>
+      '<button type="button" ' + attribute + '="' + value + '" aria-pressed="' + (selected === value) + '">' + text + '</button>'
+    ).join("") + '</div>';
   $("#main-content").innerHTML =
     '<div class="portal-page-heading"><p class="eyebrow">DATABASE / ARC</p>' +
     "<h1>아크 DB</h1><p>현재 수집된 전용 아크의 능력치와 1단계 효과입니다. 단계별 상세 효과는 캐릭터 DB에서 확인할 " +
@@ -65,20 +76,39 @@ export function renderArcDatabase() {
     'class="portal-search"><span aria-hidden="true">⌕</span><span ' +
     'class="sr-only">아크 검색</span><input id="arc-search" type="search" value="' +
     esc(query) +
-    '" placeholder="아크 또는 캐릭터 검색" autocomplete="off"></label><span class="portal-result-count">' +
+    '" placeholder="아크 또는 캐릭터 검색" autocomplete="off"></label>' +
+    filters([["", "전체"], ["Solid", "고체"], ["Gas", "기체"], ["Liquid", "액체"], ["Plasma", "플라즈마"], ["Condensate", "결합"]], "data-arc-type-filter", state.arcTypeFilter, "아크 타입") +
+    filters([["", "전체"], ["S", "S"], ["A", "A"]], "data-arc-rarity-filter", state.arcRarityFilter, "아크 희귀도") +
+    '<span id="arc-result-count" class="portal-result-count" aria-live="polite">' +
     count +
-    '종 등록</span></div><div class="arc-db-grid">' +
+    '종 표시</span></div><div class="arc-db-grid">' +
     arcDatabaseCards(query) +
     "</div>" +
     siteFooter();
 }
 
 export function refreshArcDatabaseList() {
+  const query = $("#arc-search")?.value || "";
   const list = $("#main-content .arc-db-grid");
-  if (list) list.innerHTML = arcDatabaseCards($("#arc-search")?.value || "");
+  if (list) list.innerHTML = arcDatabaseCards(query);
+  const count = $("#arc-result-count");
+  if (count) count.textContent = filteredArcs(query).arcs.length + "종 표시";
+  $("#main-content").querySelectorAll("[data-arc-type-filter], [data-arc-rarity-filter]").forEach(button => {
+    const selected = button.hasAttribute("data-arc-type-filter")
+      ? button.dataset.arcTypeFilter === state.arcTypeFilter
+      : button.dataset.arcRarityFilter === state.arcRarityFilter;
+    button.setAttribute("aria-pressed", String(selected));
+  });
 }
 
 export function initializeArcs() {
+  $("#main-content").addEventListener("click", event => {
+    const button = event.target.closest("[data-arc-type-filter], [data-arc-rarity-filter]");
+    if (!button) return;
+    if (button.hasAttribute("data-arc-type-filter")) state.arcTypeFilter = button.dataset.arcTypeFilter;
+    else state.arcRarityFilter = button.dataset.arcRarityFilter;
+    refreshArcDatabaseList();
+  });
   $("#main-content").addEventListener("input", event => {
     if (event.target.matches("#arc-search")) refreshArcDatabaseList();
   });

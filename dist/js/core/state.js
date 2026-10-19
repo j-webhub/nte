@@ -9,6 +9,8 @@ export const state = {
   growthSkillTargetLevel: 10,
   growthSkillCount: 4,
   arcRank: 1,
+  arcTypeFilter: "",
+  arcRarityFilter: "",
   activeView: "home",
   activeNoticeFilter: "all",
   activeNoticeId: null,

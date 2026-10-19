@@ -5,7 +5,7 @@
   "scope": "Global 1.4 released roster: all 23 unique playable characters. Esper Zero is one character record.",
   "glossary": {
     "consoleKo": "콘솔",
-    "consoleShapeKo": "콘솔 드라이브 형태(II/III/IV); sources also call these Modules or Drives.",
+    "consoleShapeKo": "콘솔 드라이브 형태(II/III/IV), sources also call these Modules or Drives.",
     "cartridgeKo": "카트리지 세트",
     "notesKo": "캐릭터별 추천 및 주·부옵은 커뮤니티 빌드 기준이며 파티, 보유 옵션, 각성, 전용 아크와 운용 방식에 따라 달라질 수 있습니다."
   },
@@ -35,7 +35,7 @@
       "nameEn": "Devil’s Blood: Curse",
       "nameKo": "악마의 피: 저주",
       "twoPieceKo": "혼속성 피해 +10%.",
-      "fourPieceKo": "주는 피해 +18%; 노바 또는 스테인 상태의 적에게는 보너스가 +36%로 증가.",
+      "fourPieceKo": "주는 피해 +18%, 노바 또는 스테인 상태의 적에게는 보너스가 +36%로 증가.",
       "sourceUrls": [
         "https://neverness.app/console",
         "https://nte.inven.co.kr/db/esper/18"

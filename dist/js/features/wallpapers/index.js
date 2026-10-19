@@ -1,5 +1,5 @@
-import { state } from "../../core/state.js?v=20261020-akane-intro-cleanup";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-akane-intro-cleanup";
+import { state } from "../../core/state.js?v=20261020-arc-filters";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-arc-filters";
 
 export function wallpaperFileName(item) {
   return String(item.imageUrl || "")

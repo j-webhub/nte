@@ -39,6 +39,7 @@ const ELEMENT_ICON_FILES = {
 const CHARACTER_IMAGE_FILES = {
   adler: "아들러",
   aurelia: "우미츠키",
+  "akane-rin": "아카네",
   baicang: "백장",
   blackbird: "레이븐",
   chaos: "카오스",
@@ -1007,23 +1008,27 @@ function renderProfile() {
       esc(assetUrl(illustration)) +
       '" alt="">'
     : "";
-  const profileContent = isUpcoming
-    ? renderUpcomingProfile(p)
-    : renderStats(p.mechanics) +
-      '<nav class="tabs" role="tablist" aria-label="캐릭터 데이터">' +
-      TABS.map(
-        ([id, label]) =>
-          '<button class="tab-button" role="tab" aria-selected="' +
-          (state.activeTab === id) +
-          '" aria-controls="tab-panel" data-tab="' +
-          id +
-          '">' +
-          label +
-          "</button>"
-      ).join("") +
-      '</nav><section id="tab-panel" class="tab-content" role="tabpanel">' +
-      renderTab(p) +
-      "</section>";
+  const tabButtons = TABS.map(([id, defaultLabel]) => {
+    const label =
+      isUpcoming && id === "overview" ? "패시브" : defaultLabel;
+    return (
+      '<button class="tab-button" role="tab" aria-selected="' +
+      (state.activeTab === id) +
+      '" aria-controls="tab-panel" data-tab="' +
+      id +
+      '">' +
+      label +
+      "</button>"
+    );
+  }).join("");
+  const profileContent =
+    (isUpcoming ? renderUpcomingProfile(p) : "") +
+    renderStats(p.mechanics) +
+    '<nav class="tabs" role="tablist" aria-label="캐릭터 데이터">' +
+    tabButtons +
+    '</nav><section id="tab-panel" class="tab-content" role="tabpanel">' +
+    renderTab(p) +
+    "</section>";
   $("#main-content").innerHTML =
     '<div class="profile-topline"><span>캐릭터 데이터 / ' +
     esc(p.roster.names.ko) +
@@ -1073,50 +1078,26 @@ function renderProfile() {
     '</span><a ' +
     'href="./data/nte-character-sources.md" target="_blank" rel="noopener ' +
     'noreferrer">출처</a></footer>';
-  if (!isUpcoming)
-    $("#main-content")
-      .querySelectorAll("[data-tab]")
-      .forEach((button) => {
-        button.addEventListener("click", () => {
-          state.activeTab = button.dataset.tab;
-          refreshActiveTab();
-        });
+  $("#main-content")
+    .querySelectorAll("[data-tab]")
+    .forEach((button) => {
+      button.addEventListener("click", () => {
+        state.activeTab = button.dataset.tab;
+        refreshActiveTab();
       });
+    });
   if (imageMarkup) bindCharacterIllustration();
 }
 
 function renderUpcomingProfile(p) {
   const date = String(p.roster.plannedGlobalAvailability || "")
     .replaceAll("-", ".");
-  const skills = SKILLS.map(([category, key]) => {
-    const name =
-      p.detail?.skillNamesKo?.[key] ||
-      SKILL_NAMES_KO[p.roster.id]?.[key] ||
-      category;
-    const description = String(p.detail?.skillDescriptionsKo?.[key] || "").trim();
-    return (
-      '<article class="content-card upcoming-skill-card"><span class="upcoming-data-category">' +
-      esc(category) +
-      "</span><h3>" +
-      esc(name) +
-      '</h3><p class="mechanic-copy upcoming-data-copy">' +
-      esc(description || "효과 설명은 아직 제공되지 않았습니다.") +
-      "</p></article>"
-    );
-  }).join("");
   return (
     '<div class="panel-grid upcoming-character-grid"><article class="content-card"><h3>글로벌 출시 일정</h3><p class="mechanic-copy">글로벌 1.4 후반 업데이트와 함께 ' +
     esc(date) +
     ' (KST) 출시 예정입니다.</p></article><article class="content-card"><h3>공식 소개</h3><p class="mechanic-copy">' +
     esc(p.detail?.officialBioKo || "공식 소개를 확인 중입니다.") +
-    '</p></article><article class="content-card"><h3>공식 보상 안내</h3><p class="mechanic-copy">후반 업데이트 점검 완료 후 아카네 코스튬 「바텐더 스페셜」과 200만 폰즈가 지급될 예정입니다.</p></article><article class="content-card"><h3>추가 확인이 필요한 데이터</h3><p class="mechanic-copy">아래 스킬과 각성·공명·생활 효과는 사용자가 제공한 한국어 설명입니다. 80레벨 기본 능력치와 레벨별 계수는 아직 입력되지 않았습니다.</p></article></div>' +
-    '<div class="panel-grid upcoming-skill-grid">' +
-    skills +
-    "</div>" +
-    renderOverview(p, false) +
-    renderAwakening(p, false) +
-    sourceLinks(p) +
-    coefficientSourceLinks(p)
+    '</p></article><article class="content-card"><h3>공식 보상 안내</h3><p class="mechanic-copy">후반 업데이트 점검 완료 후 아카네 코스튬 「바텐더 스페셜」과 200만 폰즈가 지급될 예정입니다.</p></article><article class="content-card"><h3>추가 확인이 필요한 데이터</h3><p class="mechanic-copy">아래 스킬과 각성·공명·생활 효과는 사용자가 제공한 한국어 설명입니다. 80레벨 기본 능력치와 레벨별 계수는 아직 입력되지 않았습니다.</p></article></div>'
   );
 }
 function renderStats(m) {
@@ -1152,7 +1133,14 @@ function renderTab(p) {
   if (state.activeTab === "console") return renderConsole(p);
   if (state.activeTab === "growth") return renderGrowth(p);
 
-  return renderOverview(p);
+  return p.roster?.released
+    ? renderOverview(p)
+    : renderOverview(p, {
+        includeSources: false,
+        includeMechanic: false,
+        passiveHeading: "패시브",
+        includeUniquePlaceholder: true
+      });
 }
 
 function sourceLinks(p, domesticOnly = false) {
@@ -1228,7 +1216,13 @@ function coefficientSourceLinks(p) {
     /* '<p class="source-note">레벨별 배율은 표시된 원자료의 수치를 옮겨 한국어 항목명으로 정리했습니다. 국내 한국어 자료에서 전 항목을 검증한 값으로 보지는 않습니다.</p>' + */ "</details>"
   );
 }
-function renderOverview(p, includeSources = true) {
+function renderOverview(p, options = {}) {
+  const {
+    includeSources = true,
+    includeMechanic = true,
+    passiveHeading = "고유 패시브",
+    includeUniquePlaceholder = false
+  } = options;
   const data = p.fieldSkills;
   const passiveRows = (data?.passives || [])
     .map(
@@ -1288,14 +1282,23 @@ function renderOverview(p, includeSources = true) {
       '" target="_blank" rel="noopener noreferrer">패시브·생활 스킬 원자료</a>'
     : "";
   return (
-    '<div class="panel-grid"><article class="content-card"><h3>핵심 메커니즘</h3><p class="mechanic-copy">' +
-    esc(p.detail?.coreMechanicKo || "요약 자료를 수집 중입니다.") +
-    "</p>" +
-    '</article><article class="content-card"><h3>고유 패시브</h3>' +
+    '<div class="panel-grid">' +
+    (includeMechanic
+      ? '<article class="content-card"><h3>핵심 메커니즘</h3><p class="mechanic-copy">' +
+        esc(p.detail?.coreMechanicKo || "요약 자료를 수집 중입니다.") +
+        "</p></article>"
+      : "") +
+    '<article class="content-card"><h3>' +
+    esc(passiveHeading) +
+    "</h3>" +
     (passiveRows
       ? '<div class="profile-skill-list">' + passiveRows + "</div>"
       : "") +
-    '</article><article class="content-card"><h3>캐릭터 도시 스킬</h3>' +
+    "</article>" +
+    (includeUniquePlaceholder
+      ? '<article class="content-card"><h3>고유 패시브</h3><div class="upcoming-placeholder" aria-label="고유 패시브 내용을 추가할 자리"></div></article>'
+      : "") +
+    '<article class="content-card"><h3>캐릭터 도시 스킬</h3>' +
     (cityRows ? '<div class="profile-skill-list">' + cityRows + "</div>" : "") +
     /* '<p class="source-note">적용 분야는 스킬 효과가 연결되는 영역을 뜻하며, 도시 활동 목록과는 별도입니다. 미확인 레벨은 비워두었습니다.</p>' + */ fieldSource +
     "</article></div>" +

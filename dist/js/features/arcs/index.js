@@ -1,7 +1,8 @@
-import { state } from "../../core/state.js?v=20261020-arc-filters";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-arc-filters";
-import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261020-arc-filters";
-import { ARC_TYPES } from "../characters/catalog.js?v=20261020-arc-filters";
+import { state } from "../../core/state.js?v=20261020-character-gallery";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-character-gallery";
+import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261020-character-gallery";
+import { ARC_TYPES } from "../characters/catalog.js?v=20261020-character-gallery";
+import { renderArcTypeIcon, renderRarityBadge } from "../characters/badges.js?v=20261020-character-gallery";
 
 function filteredArcs(query = "") {
   const term = query.trim().toLocaleLowerCase("ko");
@@ -34,9 +35,10 @@ export function arcDatabaseCards(query = "") {
       const owner = characters.get(arc.characterId);
       const stats = arc.level80 || {};
       return (
-        '<article class="arc-db-card"><div class="arc-db-card-top"><span class="arc-rarity">' +
-        esc(arc.rarity || "—") +
-        '급</span><span class="arc-db-owner">' +
+        '<article class="arc-db-card"><div class="arc-db-card-top">' +
+        renderRarityBadge(arc.rarity || "—") +
+        '<span class="arc-db-owner">' +
+        renderArcTypeIcon(arc.arcType || owner?.arcType) +
         esc([ARC_TYPES[arc.arcType || owner?.arcType], owner?.names.ko].filter(Boolean).join(" · ") || "캐릭터 미분류") +
         "</span></div><h2>" +
         esc(arc.nameKo || "이름 미확인") +
@@ -67,7 +69,9 @@ export function renderArcDatabase() {
   const count = filteredArcs(query).arcs.length;
   const filters = (items, attribute, selected, label) =>
     '<div class="arc-db-filter-group" role="group" aria-label="' + label + '"><span class="arc-db-filter-label">' + label.replace("아크 ", "") + '</span>' + items.map(([value, text]) =>
-      '<button type="button" ' + attribute + '="' + value + '" aria-pressed="' + (selected === value) + '">' + text + '</button>'
+      '<button type="button" ' + attribute + '="' + value + '" aria-pressed="' + (selected === value) + '" aria-label="' + text + '">' +
+      (value && attribute === "data-arc-type-filter" ? renderArcTypeIcon(value) : "") +
+      (value && attribute === "data-arc-rarity-filter" ? renderRarityBadge(value) : '<span>' + text + '</span>') + '</button>'
     ).join("") + '</div>';
   $("#main-content").innerHTML =
     '<div class="portal-page-heading"><p class="eyebrow">DATABASE / ARC</p>' +

@@ -1,9 +1,9 @@
-import { state } from "../../core/state.js?v=20261020-arc-filters";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-arc-filters";
-import { repository } from "./repository.js?v=20261020-arc-filters";
-import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES } from "./config.js?v=20261020-arc-filters";
-import { createId, bytesOf, safeVideoLinks, sanitizeHtml } from "./content.js?v=20261020-arc-filters";
-import { exportBackup, importBackup } from "./backup.js?v=20261020-arc-filters";
+import { state } from "../../core/state.js?v=20261020-character-gallery";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-character-gallery";
+import { repository } from "./repository.js?v=20261020-character-gallery";
+import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES } from "./config.js?v=20261020-character-gallery";
+import { createId, bytesOf, safeVideoLinks, sanitizeHtml } from "./content.js?v=20261020-character-gallery";
+import { exportBackup, importBackup } from "./backup.js?v=20261020-character-gallery";
 
 let currentPostId = null;
 let currentPost = null;

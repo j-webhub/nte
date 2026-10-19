@@ -1,7 +1,7 @@
-import { formatCharacterText } from "../text.js?v=20261020-arc-filters";
+import { formatCharacterText } from "../text.js?v=20261020-character-gallery";
 
-import { esc } from "../../../core/dom.js?v=20261020-arc-filters";
-import { sourceLinks } from "../sources.js?v=20261020-arc-filters";
+import { esc } from "../../../core/dom.js?v=20261020-character-gallery";
+import { sourceLinks } from "../sources.js?v=20261020-character-gallery";
 
 export function renderOverview(p, options = {}) {
   const {

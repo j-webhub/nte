@@ -9,6 +9,8 @@
 | 캐릭터 이미지 | `dist/img/character/`와 캐릭터 JSON의 `roster.portraitFile` |
 | 프로필 상단·성우 배치·출시 안내 | `dist/js/features/characters/profile.js` |
 | 캐릭터 목록·검색·정렬 | `dist/js/features/characters/roster.js` |
+| 캐릭터 포스터 카드·검색·속성 중복 선택 | `dist/js/features/characters/gallery.js` |
+| 캐릭터·아크 공통 등급 및 아이콘 | `dist/js/features/characters/badges.js`, `dist/css/character-gallery.css` |
 | 패시브·도시 스킬 화면 | `dist/js/features/characters/tabs/passives.js` |
 | 기술표·계수 화면 | `dist/js/features/characters/tabs/skills.js` |
 | 각성·공명 화면 | `dist/js/features/characters/tabs/awakening.js` |
@@ -28,6 +30,8 @@
 | 공략 파일 한도·허용 글꼴 | `dist/js/features/guides/config.js` |
 
 ## 캐릭터 한 명 수정하기
+
+캐릭터 DB 첫 화면(`#characters`)은 전체 이미지 카드입니다. 카드를 누르면 `#characters/{id}`의 기존 상세 화면과 왼쪽 이름 목록이 표시됩니다. 왼쪽 목록 최상단의 `전체 캐릭터 보기`로 카드 목록에 돌아갈 수 있습니다. 카드 검색어와 선택한 속성은 화면 이동 중 유지됩니다. 속성은 중복 선택할 수 있고, 모두 해제하면 전체가 표시됩니다.
 
 사키리는 `dist/data/characters/sakiri.json`을 엽니다. 기술명과 이미지 이름도 이 파일에서 관리합니다.
 

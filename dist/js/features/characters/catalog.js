@@ -31,6 +31,14 @@ export const assetUrl = (file) =>
   "./img/character/" + encodeURIComponent(file);
 export const elementIconUrl = (element) =>
   "./img/icon/" + encodeURIComponent(ELEMENT_ICON_FILES[element]);
+export const ARC_TYPE_ICON_FILES = {
+  Solid: "solid.webp",
+  Gas: "gas.webp",
+  Liquid: "liquid.webp",
+  Plasma: "plasma.webp",
+  Condensate: "boson.webp"
+};
+export const arcTypeIconUrl = type => "./img/arc-type/" + ARC_TYPE_ICON_FILES[type];
 export const ARC_TYPES = {
   Condensate: "결합",
   Gas: "기체",

@@ -18,6 +18,7 @@
 
 - `img/character/`: 캐릭터 WebP 일러스트입니다. 캐릭터 JSON의 `roster.portraitFile`에 확장자를 포함한 파일명을 입력합니다. 예: `아카네.webp`.
 - `img/icon/`: 6개 속성 아이콘을 투명 WebP 한 형식으로 보관합니다. PNG와 WebP가 중복되던 아이콘은 PNG 원본을 무손실 변환해 투명도와 해상도를 보존했습니다.
+- `img/arc-type/`: 고체·기체·액체·플라즈마·결합의 투명 WebP 아이콘입니다. 2026-10-20에 `https://nte.hq1.pro/ko/characters`에서 사용하는 `YH_UI_icon_{solid,gas,liquid,plasma,boson}.webp`를 수집했습니다. 타입별 파일 연결은 `catalog.js`의 `ARC_TYPE_ICON_FILES`에서 관리합니다.
 - `img/wallpaper/`: 월페이퍼 이미지입니다. 카드와 확대 화면은 `portal-wallpapers.json`의 `imageUrl`로 파일을 연결합니다.
 
 ## 캐릭터를 추가할 때

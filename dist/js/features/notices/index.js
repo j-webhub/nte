@@ -1,6 +1,6 @@
-import { state } from "../../core/state.js?v=20261020-arc-filters";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-arc-filters";
-import { NOTICE_PAGE_SIZE } from "../../config/site.js?v=20261020-arc-filters";
+import { state } from "../../core/state.js?v=20261020-character-gallery";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-character-gallery";
+import { NOTICE_PAGE_SIZE } from "../../config/site.js?v=20261020-character-gallery";
 
 export function renderNoticeCard(item) {
   return (

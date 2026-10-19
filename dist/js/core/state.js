@@ -1,6 +1,9 @@
 export const state = {
   db: null,
   selectedId: "blackbird",
+  characterScreen: "gallery",
+  characterGalleryQuery: "",
+  characterGalleryElements: [],
   activeTab: "overview",
   skillLevel: 1,
   activeSkillGroup: "basic",

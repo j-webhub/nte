@@ -1,10 +1,10 @@
-import { state } from "../../../core/state.js?v=20261020-arc-filters";
-import { renderOverview } from "./passives.js?v=20261020-arc-filters";
-import { renderSkills } from "./skills.js?v=20261020-arc-filters";
-import { renderAwakening } from "./awakening.js?v=20261020-arc-filters";
-import { renderArcs } from "./arcs.js?v=20261020-arc-filters";
-import { renderConsole } from "./console.js?v=20261020-arc-filters";
-import { renderGrowth } from "./growth.js?v=20261020-arc-filters";
+import { state } from "../../../core/state.js?v=20261020-character-gallery";
+import { renderOverview } from "./passives.js?v=20261020-character-gallery";
+import { renderSkills } from "./skills.js?v=20261020-character-gallery";
+import { renderAwakening } from "./awakening.js?v=20261020-character-gallery";
+import { renderArcs } from "./arcs.js?v=20261020-character-gallery";
+import { renderConsole } from "./console.js?v=20261020-character-gallery";
+import { renderGrowth } from "./growth.js?v=20261020-character-gallery";
 
 export function renderTab(p) {
   if (state.activeTab === "skills") return renderSkills(p);

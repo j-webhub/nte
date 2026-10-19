@@ -1,9 +1,9 @@
-import { formatCharacterText } from "../text.js?v=20261020-arc-filters";
-import { state } from "../../../core/state.js?v=20261020-arc-filters";
-import { $, esc, fmt } from "../../../core/dom.js?v=20261020-arc-filters";
-import { SKILLS } from "../catalog.js?v=20261020-arc-filters";
-import { getProfile } from "../model.js?v=20261020-arc-filters";
-import { sourceLinks, coefficientSourceLinks } from "../sources.js?v=20261020-arc-filters";
+import { formatCharacterText } from "../text.js?v=20261020-character-gallery";
+import { state } from "../../../core/state.js?v=20261020-character-gallery";
+import { $, esc, fmt } from "../../../core/dom.js?v=20261020-character-gallery";
+import { SKILLS } from "../catalog.js?v=20261020-character-gallery";
+import { getProfile } from "../model.js?v=20261020-character-gallery";
+import { sourceLinks, coefficientSourceLinks } from "../sources.js?v=20261020-character-gallery";
 
 export function formatPercent(value) {
   const percent = Math.round(Number(value) * 1000) / 10;

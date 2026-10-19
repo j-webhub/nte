@@ -1,6 +1,6 @@
-import { state } from "../../../core/state.js?v=20261020-arc-filters";
-import { esc, fmt } from "../../../core/dom.js?v=20261020-arc-filters";
-import { renderSkillGrowth } from "./skill-growth.js?v=20261020-arc-filters";
+import { state } from "../../../core/state.js?v=20261020-character-gallery";
+import { esc, fmt } from "../../../core/dom.js?v=20261020-character-gallery";
+import { renderSkillGrowth } from "./skill-growth.js?v=20261020-character-gallery";
 
 export function renderGrowth(p) {
   const data = state.db.growth;

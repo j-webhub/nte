@@ -1,12 +1,18 @@
-import { state } from "../../core/state.js?v=20261020-arc-filters";
-import { $ } from "../../core/dom.js?v=20261020-arc-filters";
-import { setView } from "../../core/router.js?v=20261020-arc-filters";
-import { ELEMENT_ORDER, ELEMENTS } from "./catalog.js?v=20261020-arc-filters";
-import { renderRoster } from "./roster.js?v=20261020-arc-filters";
-import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-arc-filters";
-import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-arc-filters";
+import { state } from "../../core/state.js?v=20261020-character-gallery";
+import { $ } from "../../core/dom.js?v=20261020-character-gallery";
+import { openCharacter } from "../../core/router.js?v=20261020-character-gallery";
+import { ELEMENT_ORDER, ELEMENTS } from "./catalog.js?v=20261020-character-gallery";
+import { renderRoster } from "./roster.js?v=20261020-character-gallery";
+import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-character-gallery";
+import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-character-gallery";
+import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261020-character-gallery";
 
 export { renderRoster, renderProfile };
+
+export function renderCharacters() {
+  if (state.characterScreen === "detail") renderProfile();
+  else renderCharacterGallery();
+}
 
 export function initializeCharacters() {
   ELEMENT_ORDER.forEach((key) => {
@@ -21,21 +27,28 @@ export function initializeCharacters() {
   $("#roster-list").addEventListener("click", (event) => {
     const row = event.target.closest("[data-id]");
     if (!row) return;
-    state.selectedId = row.dataset.id;
-    state.activeTab = "overview";
-    state.arcRank = 1;
-    state.skillLevel = 1;
-    state.activeSkillGroup = "basic";
-    renderRoster();
-    renderProfile();
+    openCharacter(row.dataset.id);
   });
   $("#main-content").addEventListener("click", event => {
+    const galleryCard = event.target.closest("[data-character-card]");
+    if (galleryCard) {
+      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button !== 0) return;
+      event.preventDefault();
+      openCharacter(galleryCard.dataset.characterCard);
+      return;
+    }
+    const elementButton = event.target.closest("[data-gallery-element]");
+    if (elementButton) {
+      const element = elementButton.dataset.galleryElement;
+      const selected = state.characterGalleryElements;
+      state.characterGalleryElements = selected.includes(element)
+        ? selected.filter(value => value !== element) : [...selected, element];
+      refreshCharacterGallery();
+      return;
+    }
     const characterButton = event.target.closest("[data-open-character]");
     if (characterButton) {
-      state.selectedId = characterButton.dataset.openCharacter;
-      state.activeTab = "arcs";
-      renderRoster();
-      setView("characters");
+      openCharacter(characterButton.dataset.openCharacter, { tab: "arcs" });
       return;
     }
     const groupButton = event.target.closest("[data-skill-group]");
@@ -64,6 +77,11 @@ export function initializeCharacters() {
       );
       refreshActiveTab();
     }
+  });
+  $("#main-content").addEventListener("input", event => {
+    if (!event.target.matches("[data-gallery-search]")) return;
+    state.characterGalleryQuery = event.target.value;
+    refreshCharacterGallery();
   });
   $("#main-content").addEventListener("change", (event) => {
     const skillGrowthControl = event.target.closest("[data-growth-skill-current], [data-growth-skill-target], [data-growth-skill-count]");
@@ -113,7 +131,7 @@ export function initializeCharacters() {
       !["INPUT", "TEXTAREA", "SELECT"].includes(document.activeElement.tagName)
     ) {
       event.preventDefault();
-      $("#character-search").focus();
+      (state.characterScreen === "gallery" ? $("[data-gallery-search]") : $("#character-search"))?.focus();
     }
   });
 }

@@ -1,6 +1,6 @@
-import { state } from "./state.js?v=20261020-arc-filters";
-import { $, esc, fmt } from "./dom.js?v=20261020-arc-filters";
-import { loadDatabase } from "./data.js?v=20261020-arc-filters";
+import { state } from "./state.js?v=20261020-character-gallery";
+import { $, esc, fmt } from "./dom.js?v=20261020-character-gallery";
+import { loadDatabase } from "./data.js?v=20261020-character-gallery";
 
 const VALID_VIEWS = new Set([
   "home",
@@ -64,6 +64,15 @@ function init() {
 
 function syncViewFromAddress() {
   const [view, encodedNoticeId] = location.hash.slice(1).split("/");
+  if (view === "characters" && encodedNoticeId) {
+    try {
+      const id = decodeURIComponent(encodedNoticeId);
+      if (state.db.characters[id]) {
+        openCharacter(id, { push: false });
+        return;
+      }
+    } catch {}
+  }
   if (view === "notices" && encodedNoticeId) {
     try {
       const noticeId = decodeURIComponent(encodedNoticeId);
@@ -82,16 +91,37 @@ function setView(view, options = {}) {
   if (
     options.push !== false &&
     state.activeView === view &&
-    state.activeNoticeId === null
+    state.activeNoticeId === null &&
+    !(view === "characters" && state.characterScreen === "detail")
   )
     return;
   pageModules.closeWallpaperLightbox();
   state.activeView = view;
   state.activeNoticeId = null;
+  if (view === "characters") state.characterScreen = "gallery";
   if (options.push !== false && location.hash !== "#" + view)
     history.pushState({ view }, "", "#" + view);
   syncViewChrome();
   renderActiveView();
+}
+
+function openCharacter(id, options = {}) {
+  if (!state.db.characters[id]?.roster) return;
+  pageModules.closeWallpaperLightbox();
+  state.activeView = "characters";
+  state.activeNoticeId = null;
+  state.characterScreen = "detail";
+  state.selectedId = id;
+  state.activeTab = options.tab || "overview";
+  state.arcRank = 1;
+  state.skillLevel = 1;
+  state.activeSkillGroup = "basic";
+  const hash = "#characters/" + encodeURIComponent(id);
+  if (options.push !== false && location.hash !== hash)
+    history.pushState({ view: "characters", characterId: id }, "", hash);
+  syncViewChrome();
+  pageModules.renderRoster();
+  pageModules.renderProfile();
 }
 
 function openNotice(noticeId, options = {}) {
@@ -110,6 +140,7 @@ function openNotice(noticeId, options = {}) {
 
 function syncViewChrome() {
   $("#workspace").dataset.view = state.activeView;
+  $("#workspace").dataset.characterScreen = state.characterScreen;
   $("#primary-nav")
     .querySelectorAll("button[data-view]")
     .forEach((button) => {
@@ -117,7 +148,7 @@ function syncViewChrome() {
         button.setAttribute("aria-current", "page");
       else button.removeAttribute("aria-current");
     });
-  if (state.activeView !== "characters")
+  if (state.activeView !== "characters" || state.characterScreen === "gallery")
     document.documentElement.style.setProperty("--accent", "#8ca3b8");
 }
 
@@ -131,7 +162,7 @@ function renderActiveView() {
       );
     if (notice) pageModules.renderNoticeDetail(notice);
     else pageModules.renderNotices();
-  } else if (state.activeView === "characters") pageModules.renderProfile();
+  } else if (state.activeView === "characters") pageModules.renderCharacters();
   else if (state.activeView === "arcs") pageModules.renderArcDatabase();
   else if (state.activeView === "guides") pageModules.renderGuides();
   else if (state.activeView === "wallpapers") pageModules.renderWallpapers();
@@ -141,4 +172,4 @@ let pageModules = {};
 function registerPageModules(modules) {
   pageModules = modules;
 }
-export { start, setView, openNotice, registerPageModules };
+export { start, setView, openNotice, openCharacter, registerPageModules };

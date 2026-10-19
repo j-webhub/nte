@@ -1,6 +1,6 @@
-import { state } from "../../core/state.js?v=20261020-arc-filters";
-import { $, esc } from "../../core/dom.js?v=20261020-arc-filters";
-import { elem, elementIconUrl } from "./catalog.js?v=20261020-arc-filters";
+import { state } from "../../core/state.js?v=20261020-character-gallery";
+import { $, esc } from "../../core/dom.js?v=20261020-character-gallery";
+import { elem, elementIconUrl } from "./catalog.js?v=20261020-character-gallery";
 
 export function renderRoster() {
   const CHARACTER_DISPLAY_ORDER = state.db.index.displayCharacterIds || state.db.index.releasedCharacterIds;

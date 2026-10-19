@@ -92,6 +92,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .section-head p { margin: 5px 0 0; color: #85929e; font-size: 13px; line-height: 1.55; }
 .panel-grid, .two-column { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }.content-card { min-width: 0; padding: 18px 19px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
 .content-card h3 { margin: 0 0 13px; color: #e7edf1; font-size: 14px; }.mechanic-copy { margin: 0; color: #bdc7cf; font-size: 14px; line-height: 1.8; }
+.upcoming-skill-grid { margin-top: 12px; }.upcoming-skill-card h3 { margin-top: 8px; }.upcoming-data-category { color: var(--accent); font-size: 11px; }.upcoming-data-copy { white-space: pre-line; }
 .profile-skill-list { display: grid; gap: 10px; }.profile-skill-row { padding-top: 10px; border-top: 1px solid #1c2630; }.profile-skill-row:first-child { padding-top: 0; border-top: 0; }.profile-skill-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; }.profile-skill-heading strong { color: #dfe5ea; font-size: 13px; font-weight: 620; }.profile-skill-tag { flex: 0 0 auto; padding: 3px 7px; border: 1px solid color-mix(in srgb,var(--accent) 30%,#35414d); border-radius: 999px; color: var(--accent); font-size: 10px; }.profile-skill-row p { margin: 6px 0 0; color: #aeb9c3; font-size: 12px; line-height: 1.65; white-space: pre-line; }
 .city-skill-meta { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 5px; }
 .city-skill-heading { align-items: flex-start; }

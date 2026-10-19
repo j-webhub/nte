@@ -1088,13 +1088,35 @@ function renderProfile() {
 function renderUpcomingProfile(p) {
   const date = String(p.roster.plannedGlobalAvailability || "")
     .replaceAll("-", ".");
+  const skills = SKILLS.map(([category, key]) => {
+    const name =
+      p.detail?.skillNamesKo?.[key] ||
+      SKILL_NAMES_KO[p.roster.id]?.[key] ||
+      category;
+    const description = String(p.detail?.skillDescriptionsKo?.[key] || "").trim();
+    return (
+      '<article class="content-card upcoming-skill-card"><span class="upcoming-data-category">' +
+      esc(category) +
+      "</span><h3>" +
+      esc(name) +
+      '</h3><p class="mechanic-copy upcoming-data-copy">' +
+      esc(description || "효과 설명은 아직 제공되지 않았습니다.") +
+      "</p></article>"
+    );
+  }).join("");
   return (
     '<div class="panel-grid upcoming-character-grid"><article class="content-card"><h3>글로벌 출시 일정</h3><p class="mechanic-copy">글로벌 1.4 후반 업데이트와 함께 ' +
     esc(date) +
     ' (KST) 출시 예정입니다.</p></article><article class="content-card"><h3>공식 소개</h3><p class="mechanic-copy">' +
     esc(p.detail?.officialBioKo || "공식 소개를 확인 중입니다.") +
-    '</p></article><article class="content-card"><h3>공식 보상 안내</h3><p class="mechanic-copy">후반 업데이트 점검 완료 후 아카네 코스튬 「바텐더 스페셜」과 200만 폰즈가 지급될 예정입니다.</p></article><article class="content-card"><h3>전투 데이터</h3><p class="mechanic-copy">스킬, 각성, 능력치와 성장 재료는 글로벌 업데이트 후 확인해 추가합니다.</p></article></div>' +
-    sourceLinks(p)
+    '</p></article><article class="content-card"><h3>공식 보상 안내</h3><p class="mechanic-copy">후반 업데이트 점검 완료 후 아카네 코스튬 「바텐더 스페셜」과 200만 폰즈가 지급될 예정입니다.</p></article><article class="content-card"><h3>추가 확인이 필요한 데이터</h3><p class="mechanic-copy">아래 스킬과 각성·공명·생활 효과는 사용자가 제공한 한국어 설명입니다. 80레벨 기본 능력치와 레벨별 계수는 아직 입력되지 않았습니다.</p></article></div>' +
+    '<div class="panel-grid upcoming-skill-grid">' +
+    skills +
+    "</div>" +
+    renderOverview(p, false) +
+    renderAwakening(p, false) +
+    sourceLinks(p) +
+    coefficientSourceLinks(p)
   );
 }
 function renderStats(m) {
@@ -1206,16 +1228,20 @@ function coefficientSourceLinks(p) {
     /* '<p class="source-note">레벨별 배율은 표시된 원자료의 수치를 옮겨 한국어 항목명으로 정리했습니다. 국내 한국어 자료에서 전 항목을 검증한 값으로 보지는 않습니다.</p>' + */ "</details>"
   );
 }
-function renderOverview(p) {
+function renderOverview(p, includeSources = true) {
   const data = p.fieldSkills;
   const passiveRows = (data?.passives || [])
     .map(
       (item) =>
         '<article class="profile-skill-row"><div class="profile-skill-heading"><strong>' +
         esc(item.nameKo) +
-        '</strong><span class="profile-skill-tag">돌파 ' +
-        esc(item.unlock) +
-        "</span></div><p>" +
+        '</strong>' +
+        (String(item.unlock || "").trim()
+          ? '<span class="profile-skill-tag">돌파 ' +
+            esc(item.unlock) +
+            "</span>"
+          : "") +
+        "</div><p>" +
         esc(item.effectKo) +
         "</p></article>"
     )
@@ -1273,7 +1299,7 @@ function renderOverview(p) {
     (cityRows ? '<div class="profile-skill-list">' + cityRows + "</div>" : "") +
     /* '<p class="source-note">적용 분야는 스킬 효과가 연결되는 영역을 뜻하며, 도시 활동 목록과는 별도입니다. 미확인 레벨은 비워두었습니다.</p>' + */ fieldSource +
     "</article></div>" +
-    sourceLinks(p, true)
+    (includeSources ? sourceLinks(p, true) : "")
   );
 }
 function renderSkills(p) {
@@ -1281,7 +1307,9 @@ function renderSkills(p) {
     SKILLS.find(([, key]) => key === state.activeSkillGroup) || SKILLS[0];
   const [category, key] = selected;
   const skillName =
-    SKILL_NAMES_KO[p.roster.id]?.[key] || "한국어 기술명 확인 중";
+    p.detail?.skillNamesKo?.[key] ||
+    SKILL_NAMES_KO[p.roster.id]?.[key] ||
+    "한국어 기술명 확인 중";
   const glyph =
     { basic: "공", skill: "바", ultimate: "울", support: "지" }[key] || "기";
   const nav = SKILLS.map(
@@ -1359,7 +1387,7 @@ function renderSkills(p) {
     coefficientSourceLinks(p)
   );
 }
-function renderAwakening(p) {
+function renderAwakening(p, includeSources = true) {
   const m = p.mechanics;
 
   const awakenings = (m?.awakeningEffectsKo || [])
@@ -1404,7 +1432,7 @@ function renderAwakening(p) {
     '</article><article class="content-card"><div class="section-head"><div><h2>공명 효과</h2></div></div>' +
     (resonance ? '<div class="resonance-grid">' + resonance + "</div>" : "") +
     "</article></div>" +
-    sourceLinks(p, true)
+    (includeSources ? sourceLinks(p, true) : "")
   );
 }
 

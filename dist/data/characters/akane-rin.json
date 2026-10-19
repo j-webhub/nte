@@ -16,14 +16,14 @@
     "released": false,
     "source": "https://nte.perfectworld.com/kr/article/news/gamenews/20260929/264413.html",
     "officialSource": "https://nte.perfectworld.com/kr/article/news/gamenews/20260929/264413.html",
-    "detailsSourceStatus": "official introduction confirmed; global release scheduled for 2026-10-21; combat details pending live verification",
+    "detailsSourceStatus": "official introduction and 2026-10-21 global release schedule confirmed; user-provided Korean skill, awakening, resonance, passive, and city-skill details entered; base stats and level coefficients pending",
     "communityRoleKo": "기타리스트 · 전직 이상 헌터"
   },
   "detail": {
     "id": "akane-rin",
     "globalStatus": "announced_phase_2_not_yet_released_globally",
     "officialBioKo": "라이브하우스 스타사인의 파트타임 기타리스트다. 과거 이상 헌터로 활동했으며, 헤테로를 탐험할 때 기타를 꺼내 연주할 수 있다.",
-    "coreMechanicKo": "전투 스킬과 계수는 글로벌 출시 후 확인 예정입니다.",
+    "coreMechanicKo": "일반 공격으로 「파워 코드」를 획득하고, 바이레일 스킬로 「오버톤」 또는 「음역」을 펼쳐 일반 공격 피해를 전달한다. 파티가 처음으로 「레모라」를 발동하면 두 효과가 적에게 레모라를 부여하며, 레모라 상태의 적에게 다시 부여하면 추가 상속성 이능력 피해를 준다.",
     "keySkillNamesEn": {
       "basic": "Stringblade",
       "skill": "Rhythm Wave / Synced Resonance",
@@ -31,10 +31,16 @@
       "support": null
     },
     "skillDescriptionsKo": {
-      "basic": "",
-      "skill": "",
-      "ultimate": "",
+      "basic": "일반 공격: 현의 칼날\n아카네 린이 최대 4단 연속 공격을 가해 상속성 이능력 피해를 준다. 목표에 명중하면 「파워 코드」를 획득한다.\n\n일반 공격: 스테이지 다이빙\n체공 중 일반 공격을 누르면 착지하며 주변 적에게 1회 상속성 이능력 피해를 준다. 피해는 낙하 높이에 비례해 최대 100% 증가한다.\n\n극한 반격: 깃날 리버브\n극한 회피 발동 후 일반 공격을 누르면 상속성 이능력 피해를 준다. 발동 후 일정 시간 내 「일반 공격: 현의 칼날」을 사용하면 공격 단계가 유지된다.",
+      "skill": "바이레일 스킬: 그루브 사운드\n짧게 누르면 목표에게 「오버톤」을 부여한다. 아카네 린의 일반 공격 피해가 「오버톤」이 부여된 원거리 목표에게 전달된다.\n\n길게 누르면 「음역」을 펼친다. 아카네 린의 일반 공격 피해가 「음역」 안의 모든 적에게 전달된다.\n\n필드에는 「오버톤」과 「음역」 중 하나만 존재할 수 있다.",
+      "ultimate": "울티메이트: 클라이맥스 임팩트\n1단계: 목표 범위 내 적에게 고위력 상속성 이능력 피해를 주고 「화려한 독주」 상태에 진입한다. 상태 중 아카네 린의 경직 저항력이 증가한다.\n\n2단계: 「화려한 독주」 상태에 진입한 뒤 4초가 지나면 언제든 울티메이트를 다시 눌러 2단계를 발동하고 상태를 종료할 수 있다. 목표 범위 내 적에게 다시 고위력 상속성 이능력 피해를 준다. 2단계는 직접 발동해야 하며 자동 발동되지 않는다. 상태 종료 전 발동하지 않으면 기회가 사라진다.\n\n「화려한 독주」는 현재 적용 중인 「오버톤」 또는 「음역」을 제거하거나 대체하지 않는다.",
       "support": ""
+    },
+    "skillNamesKo": {
+      "basic": "현의 칼날 / 스테이지 다이빙 / 깃날 리버브",
+      "skill": "그루브 사운드",
+      "ultimate": "클라이맥스 임팩트",
+      "support": "변주 코드"
     },
     "sourceReviewPatch": "official Version 1.4 second-half announcement, 2026-10-16",
     "voiceActors": {
@@ -49,7 +55,7 @@
       "https://ntegame.net/ko/guides/upcoming-characters/",
       "https://www.mone.gg/tw/blog/nte/akane-rin-guide.html"
     ],
-    "comparisonNote": "글로벌 1.4 후반은 공식 발표 기준 2026-10-21(KST) 출시 예정이다. 현재 공개 화면에는 공식 소개와 일정만 반영하며, 전투 상세는 업데이트 후 인게임 자료로 갱신한다."
+    "comparisonNote": "글로벌 1.4 후반은 공식 발표 기준 2026-10-21(KST) 출시 예정이다. 스킬·각성·공명·패시브·도시 스킬 설명은 사용자가 제공한 한국어 문구를 반영했으며, 기본 능력치와 레벨별 계수는 확인 후 추가한다."
   },
   "setting": {
     "summary": "라이브하우스 스타사인의 파트타임 기타리스트. 과거 이상 헌터였으며, 헤테로를 탐험할 때 기타를 꺼내 연주할 수 있다.",
@@ -66,17 +72,27 @@
     "id": "akane-rin",
     "nameKo": "아카네",
     "level80BaseStats": null,
-    "awakeningEffectsKo": [],
-    "resonanceKo": {},
+    "awakeningEffectsKo": [
+      "A1: 강화 바이레일 스킬 「레조넌스」를 발동할 때마다 아카네 린의 기본 공격력 1,000%에 해당하는 HP를 즉시 회복하고, 방어력이 50%, 경직 저항력이 60% 증가한다. (15초 지속)",
+      "A2: 「오버톤」이 부여되었거나 「음역」 내에 있는 적의 상속성 저항이 12% 감소한다.",
+      "A3: 바이레일 스킬 「그루브 사운드」를 눌러 「오버톤」을 발동하면 해당 스킬에 1,000%의 고정 배율이 더해진다. 「음역」의 반경이 30% 확대되고, 바이레일 스킬 「그루브 사운드」를 길게 눌러 「음역」을 발동하면 범위 내의 적을 끌어당긴다.",
+      "A4: 강화 바이레일 스킬 「레조넌스」를 발동하면 아카네 린의 치명 피해가 30% 증가한다. (15초 지속)",
+      "A5: 「오버톤」이 전달하는 일반 공격의 배율 증가 효과가 64%로 증가한다. 「음역」이 전달하는 일반 공격의 피해 증가 효과가 90%로 증가한다.",
+      "A6: 「별빛의 격정」이 추가로 아카네 린에게 방어 무시 효과를 16% 부여한다."
+    ],
+    "resonanceKo": {
+      "3": "온음계: 일반 공격, 바이레일 스킬, 울티메이트 스킬 레벨이 1 상승한다. 전투에 진입하면 「파워 코드」가 즉시 가득 찬다. 강화 바이레일 스킬 「레조넌스」에 800% 고정 배율이 추가되며, 「울티메이트: 클라이맥스 임팩트」 2단계에 1,000% 고정 배율이 추가된다.",
+      "6": "폴리포니: 강화 바이레일 스킬 「레조넌스」를 발동할 때마다 「파워 코드」를 10P 회복한다. 발동하면 아카네 린의 치명 피해가 64% 증가한다. (25초 지속)"
+    },
     "sourceUrl": "",
-    "notes": "글로벌 클라이언트에서 확인 후 입력 예정입니다.",
+    "notes": "각성·공명 효과는 사용자가 제공한 한국어 설명을 반영했습니다. 80레벨 기본 능력치와 레벨별 스킬 계수는 확인 후 입력합니다.",
     "awakeningNamesKo": {
-      "A1": "",
-      "A2": "",
-      "A3": "",
-      "A4": "",
-      "A5": "",
-      "A6": ""
+      "A1": "교실 뒤의 기타 악보",
+      "A2": "기타샵의 카포",
+      "A3": "나무 밑의 타임캡슐",
+      "A4": "헤드폰 노이즈",
+      "A5": "밴드의 메트로놈",
+      "A6": "무대 앞의 초신성"
     }
   },
   "console": {
@@ -97,8 +113,41 @@
     "sourceUrls": []
   },
   "fieldSkills": {
-    "passives": [],
-    "citySkills": [],
+    "passives": [
+      {
+        "nameKo": "절대음감",
+        "unlock": "",
+        "effectKo": "파티 전체가 처음으로 「레모라」를 발동하면 「오버톤」과 「음역」이 각각 목표에게 일정 시간마다 「레모라」를 부여하며, 전투 이탈 시까지 지속된다. 파티 전체가 레모라 상태인 목표에게 「레모라」를 다시 부여하면 아카네 린이 추가로 상속성 이능력 피해를 준다. 각 목표의 남은 레모라 시간이 길수록 피해 증가가 상승하며, 피해 증가에는 상한이 있다. 동일 목표에 대한 발동은 쿨타임이 있다."
+      },
+      {
+        "nameKo": "별빛의 격정",
+        "unlock": "",
+        "effectKo": "울티메이트를 발동하면 아카네 린의 공격력이 20% 증가한다. (20초 지속, 중첩 불가, 중복 발동 시 지속 시간 갱신)"
+      }
+    ],
+    "citySkills": [
+      {
+        "nameKo": "바텐더 스페셜",
+        "categoryKo": "상점",
+        "maxLevel": 5,
+        "effectKo": {
+          "Lv.1": "아카네 린이 배치된 가게의 유동인구가 18P 증가한다.",
+          "Lv.2": "아카네 린이 배치된 가게의 식재료 소모속도가 1% 감소한다.",
+          "Lv.3": "아카네 린이 배치된 가게의 유동인구가 18P 증가한다.",
+          "Lv.4": "아카네 린이 배치된 가게의 식재료 소모속도가 1% 감소한다.",
+          "Lv.5": "아카네 린이 배치된 가게의 유동인구가 27P 증가한다."
+        }
+      },
+      {
+        "nameKo": "슈퍼스타",
+        "categoryKo": "도시 활동",
+        "maxLevel": 2,
+        "effectKo": {
+          "Lv.1": "「파워코드」에서 라운드마다 도시 활력제를 1P 추가로 소모한다.",
+          "Lv.2": "「파워코드」에서 라운드마다 도시 활력제를 1P 추가로 소모한다."
+        }
+      }
+    ],
     "sourceUrl": ""
   },
   "domesticSourcesKo": [],
@@ -109,7 +158,11 @@
   "r3": {
     "nameKo": "아카네",
     "sourceUrl": "",
-    "r3Raises": [],
+    "r3Raises": [
+      "일반 공격",
+      "바이레일 스킬",
+      "울티메이트"
+    ],
     "tables": {}
   },
   "crosscheck": {

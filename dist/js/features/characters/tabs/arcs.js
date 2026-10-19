@@ -1,8 +1,8 @@
-import { formatCharacterText } from "../text.js?v=20261020-shuffle-center";
-import { state } from "../../../core/state.js?v=20261020-shuffle-center";
-import { esc } from "../../../core/dom.js?v=20261020-shuffle-center";
-import { sourceLinks } from "../sources.js?v=20261020-shuffle-center";
-import { interpolateArcRankEffect } from "../../../shared/arc-ranks.js?v=20261020-shuffle-center";
+import { formatCharacterText } from "../text.js?v=20261020-akane-equipment-growth";
+import { state } from "../../../core/state.js?v=20261020-akane-equipment-growth";
+import { esc } from "../../../core/dom.js?v=20261020-akane-equipment-growth";
+import { sourceLinks } from "../sources.js?v=20261020-akane-equipment-growth";
+import { interpolateArcRankEffect } from "../../../shared/arc-ranks.js?v=20261020-akane-equipment-growth";
 
 export function renderArcs(p) {
   const character = state.db.arcs.characters.find(

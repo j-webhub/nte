@@ -1,8 +1,8 @@
-import { state } from "../../core/state.js?v=20261020-shuffle-center";
-import { $, esc, fmt } from "../../core/dom.js?v=20261020-shuffle-center";
-import { elem, assetUrl, elementIconUrl, arcTypeIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-shuffle-center";
-import { getProfile } from "./model.js?v=20261020-shuffle-center";
-import { renderTab } from "./tabs/index.js?v=20261020-shuffle-center";
+import { state } from "../../core/state.js?v=20261020-akane-equipment-growth";
+import { $, esc, fmt } from "../../core/dom.js?v=20261020-akane-equipment-growth";
+import { elem, assetUrl, elementIconUrl, arcTypeIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-akane-equipment-growth";
+import { getProfile } from "./model.js?v=20261020-akane-equipment-growth";
+import { renderTab } from "./tabs/index.js?v=20261020-akane-equipment-growth";
 
 export function bindCharacterIllustration() {
   const visual = $("#main-content .hero-visual");

@@ -1,7 +1,7 @@
-import { state } from "../../core/state.js?v=20261020-shuffle-center";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-shuffle-center";
-import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261020-shuffle-center";
-import { renderArcTypeIcon, renderRarityBadge } from "../characters/badges.js?v=20261020-shuffle-center";
+import { state } from "../../core/state.js?v=20261020-akane-equipment-growth";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-akane-equipment-growth";
+import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261020-akane-equipment-growth";
+import { renderArcTypeIcon, renderRarityBadge } from "../characters/badges.js?v=20261020-akane-equipment-growth";
 
 function renderArcEffect(arc) {
   const text = interpolateArcRankEffect(arc, 1) || "자료 없음";
@@ -16,7 +16,7 @@ function renderArcEffect(arc) {
 function filteredArcs(query = "") {
   const term = query.trim().toLocaleLowerCase("ko");
   const characters = new Map(
-    state.db.roster.characters.map((character) => [character.id, character])
+    [...state.db.roster.characters, ...(state.db.roster.confirmedUpcoming || [])].map((character) => [character.id, character])
   );
   const arcs = (state.db.arcs.arcs || [])
     .filter((arc) => {

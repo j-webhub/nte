@@ -187,6 +187,12 @@
       "family": "whispers",
       "unique": "charging-knight-spark-plug",
       "slug": "zero"
+    },
+    "akane-rin": {
+      "family": "delusions",
+      "unique": "charging-knight-spark-plug",
+      "slug": "akane",
+      "sourceUrl": "https://www.kaiden.gg/nte/characters/akane/"
     }
   },
   "sources": [
@@ -789,6 +795,22 @@
         "sourceUrls": [
           "https://www.kaiden.gg/nte/characters/zero/",
           "https://gamewith.ai/nte/ko/character/zero"
+        ]
+      },
+      "akane-rin": {
+        "bookMaterials": [
+          "SkillUpMaterial_04_lv1",
+          "SkillUpMaterial_04_lv2",
+          "SkillUpMaterial_04_lv3"
+        ],
+        "fieldMaterials": [
+          "material_xuannianwangning",
+          "material_kewangwangning",
+          "material_chaoyanwangning"
+        ],
+        "weeklyMaterial": "mofeikesi_yinzhang",
+        "sourceUrls": [
+          "https://www.kaiden.gg/nte/characters/akane/"
         ]
       }
     },

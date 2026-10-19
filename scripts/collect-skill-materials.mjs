@@ -5,7 +5,7 @@ const root = path.resolve(import.meta.dirname, "..");
 const directory = path.join(root, "dist/data/characters");
 const output = path.join(root, "docs/research/skill-materials-20261020.json");
 const characters = fs.readdirSync(directory)
-  .filter(file => file.endsWith(".json") && !["index.json", "akane-rin.json"].includes(file))
+  .filter(file => file.endsWith(".json") && file !== "index.json")
   .map(file => JSON.parse(fs.readFileSync(path.join(directory, file), "utf8")));
 const decode = text => text.replace(/&amp;/g, "&").replace(/&#39;|&apos;/g, "'").replace(/&quot;/g, '"');
 const plain = html => decode(html.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim());
@@ -28,7 +28,8 @@ let next = 0;
 async function worker() {
   while (next < characters.length) {
     const character = characters[next++];
-    const sourceUrl = `https://www.kaiden.gg/nte/characters/${character.id}/`;
+    const sourceSlug = character.id === "akane-rin" ? "akane" : character.id;
+    const sourceUrl = `https://www.kaiden.gg/nte/characters/${sourceSlug}/`;
     const response = await fetch(sourceUrl);
     if (!response.ok) throw new Error(`${character.id}: HTTP ${response.status}`);
     const html = await response.text();

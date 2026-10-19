@@ -1,7 +1,7 @@
-import { formatCharacterText } from "../text.js?v=20261020-shuffle-center";
+import { formatCharacterText } from "../text.js?v=20261020-akane-equipment-growth";
 
-import { esc } from "../../../core/dom.js?v=20261020-shuffle-center";
-import { sourceLinks } from "../sources.js?v=20261020-shuffle-center";
+import { esc } from "../../../core/dom.js?v=20261020-akane-equipment-growth";
+import { sourceLinks } from "../sources.js?v=20261020-akane-equipment-growth";
 
 export function renderAwakening(p, includeSources = true) {
   const m = p.mechanics;

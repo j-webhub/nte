@@ -1,5 +1,5 @@
-import { state } from "../../core/state.js?v=20261020-shuffle-center";
-import { esc } from "../../core/dom.js?v=20261020-shuffle-center";
+import { state } from "../../core/state.js?v=20261020-akane-equipment-growth";
+import { esc } from "../../core/dom.js?v=20261020-akane-equipment-growth";
 
 export function sourceLinks(p, domesticOnly = false) {
   const urls = new Set();

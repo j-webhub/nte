@@ -1,6 +1,6 @@
-import { state } from "../../../core/state.js?v=20261020-shuffle-center";
-import { esc, fmt } from "../../../core/dom.js?v=20261020-shuffle-center";
-import { renderSkillGrowth } from "./skill-growth.js?v=20261020-shuffle-center";
+import { state } from "../../../core/state.js?v=20261020-akane-equipment-growth";
+import { esc, fmt } from "../../../core/dom.js?v=20261020-akane-equipment-growth";
+import { renderSkillGrowth } from "./skill-growth.js?v=20261020-akane-equipment-growth";
 
 export function renderGrowth(p) {
   const data = state.db.growth;
@@ -103,7 +103,7 @@ export function renderGrowth(p) {
   const sourceLinks = [
     [
       "캐릭터별 돌파 원자료",
-      "https://neverness.app/characters/" + encodeURIComponent(character.slug)
+      character.sourceUrl || "https://neverness.app/characters/" + encodeURIComponent(character.slug)
     ],
     ["한국어 재료·획득처 도감", "https://gigle.kr/nte/materials"],
     [

@@ -4,11 +4,12 @@
   "gameVersion": "1.4 Global",
   "scope": {
     "releasedCharacters": 23,
-    "charactersWithConfirmedSignatureArc": 22,
-    "signatureArcRecords": 23,
+    "charactersWithConfirmedSignatureArc": 23,
+    "signatureArcRecords": 24,
     "definition": "A signature Arc is one explicitly linked to a character by a motif/signature guide or character-specific source. General best-in-slot/recommended Arcs are not treated as signatures without that link.",
     "zeroRule": "Zero is one character and has two distinct signature Arc records.",
-    "excluded": "Mint's possible recommendations are not included as confirmed signatures because the reviewed sources disagree and do not establish a dedicated Arc link."
+    "excluded": "Mint's possible recommendations are not included as confirmed signatures because the reviewed sources disagree and do not establish a dedicated Arc link.",
+    "upcomingCharactersWithSignatureArc": 1
   },
   "dataNotes": [
     "R1 and R5 effects are sourced values. Rank 2-4 values in rankInterpolationPairs are linearly interpolated from the matching R1/R5 numeric options; non-scaling conditions and durations remain as written in R1.",
@@ -182,6 +183,13 @@
       "signatureArcIds": [
         "day-off",
         "the-rain-that-shook-the-world"
+      ]
+    },
+    {
+      "characterId": "akane-rin",
+      "status": "announced_signature",
+      "signatureArcIds": [
+        "far-side-of-the-moon"
       ]
     }
   ],
@@ -1056,6 +1064,36 @@
         ]
       ],
       "imageFile": "the-rain-that-shook-the-world.webp"
+    },
+    {
+      "id": "far-side-of-the-moon",
+      "nameEn": "Far Side of the Moon",
+      "nameKo": "달의 대척점",
+      "characterId": "akane-rin",
+      "arcType": "Liquid",
+      "rarity": "S",
+      "level80": {
+        "attack": 570,
+        "secondaryStat": "치명 피해",
+        "secondaryValue": "48%"
+      },
+      "rankEffects": {
+        "R1": "치명 확률 +16%. 일반 공격 명중 후 바이레일 스킬 피해 +7%(5초, 최대 4중첩, 획득 간격 0.3초). 바이레일 스킬 사용 후 일반 공격 피해 +28%(15초). 두 효과가 동시에 적용되면 상속성 피해 +16%.",
+        "R2": "치명 확률 +20%. 일반 공격 명중 후 바이레일 스킬 피해 +8.75%(5초, 최대 4중첩, 획득 간격 0.3초). 바이레일 스킬 사용 후 일반 공격 피해 +35%(15초). 두 효과가 동시에 적용되면 상속성 피해 +20%.",
+        "R3": "치명 확률 +24%. 일반 공격 명중 후 바이레일 스킬 피해 +10.5%(5초, 최대 4중첩, 획득 간격 0.3초). 바이레일 스킬 사용 후 일반 공격 피해 +42%(15초). 두 효과가 동시에 적용되면 상속성 피해 +24%.",
+        "R4": "치명 확률 +28%. 일반 공격 명중 후 바이레일 스킬 피해 +12.25%(5초, 최대 4중첩, 획득 간격 0.3초). 바이레일 스킬 사용 후 일반 공격 피해 +49%(15초). 두 효과가 동시에 적용되면 상속성 피해 +28%.",
+        "R5": "치명 확률 +32%. 일반 공격 명중 후 바이레일 스킬 피해 +14%(5초, 최대 4중첩, 획득 간격 0.3초). 바이레일 스킬 사용 후 일반 공격 피해 +56%(15초). 두 효과가 동시에 적용되면 상속성 피해 +32%."
+      },
+      "verification": {
+        "status": "community_pre_release",
+        "note": "2026-10-20 공개 커뮤니티 DB 기준. R1~R5 수치는 각 단계의 원자료 값을 사용했습니다."
+      },
+      "sources": {
+        "arcDb": "https://www.kaiden.gg/nte/arcs/far-side-of-the-moon/",
+        "mapping": "https://www.kaiden.gg/nte/characters/akane/",
+        "koreanGuide": "https://ccf1007overmen.tistory.com/1951?category=1587992"
+      },
+      "imageFile": "far-side-of-the-moon.webp"
     }
   ]
 }

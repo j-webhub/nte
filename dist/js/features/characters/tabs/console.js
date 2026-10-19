@@ -1,7 +1,7 @@
-import { formatCharacterText } from "../text.js?v=20261020-shuffle-center";
-import { state } from "../../../core/state.js?v=20261020-shuffle-center";
-import { esc } from "../../../core/dom.js?v=20261020-shuffle-center";
-import { sourceLinks } from "../sources.js?v=20261020-shuffle-center";
+import { formatCharacterText } from "../text.js?v=20261020-akane-equipment-growth";
+import { state } from "../../../core/state.js?v=20261020-akane-equipment-growth";
+import { esc } from "../../../core/dom.js?v=20261020-akane-equipment-growth";
+import { sourceLinks } from "../sources.js?v=20261020-akane-equipment-growth";
 
 export function renderConsole(p) {
   const build = p.console;
@@ -17,7 +17,8 @@ export function renderConsole(p) {
     .map((id) => sets.get(id))
     .filter(Boolean);
 
-  const layout = (build.console.recommendedLayout || [])
+  const hasLayout = Boolean(build.console.recommendedLayout?.length);
+  const layout = (hasLayout ? build.console.recommendedLayout : [build.console.preferredModuleShape].filter(Boolean))
     .map((shape) => {
       const koreanShape = { II: "2", III: "3", IV: "4" }[shape] || shape;
 
@@ -54,9 +55,9 @@ export function renderConsole(p) {
     '<div class="two-column"><article class="content-card"><div class="section-head"><div><h2>콘솔 설정</h2><p>' +
     formatCharacterText(build.console.perDriveBonusKo, p.roster.element) +
     "</p></div></div>" +
-    '<div class="drive-layout" aria-label="권장 드라이브 배치">' +
+    '<div class="drive-layout" aria-label="' + (hasLayout ? '권장 드라이브 배치' : '특화 드라이브 형태') + '">' +
     layout +
-    '</div><p class="source-note">가이드가 제시한 배치 예시입니다. 우선 카트리지 4세트 효과를 맞춘 뒤 보유 드라이브에 맞춰 조정하세요.</p></article>' +
+    '</div><p class="source-note">' + esc(build.console.layoutNoteKo || '가이드가 제시한 배치 예시입니다. 우선 카트리지 4세트 효과를 맞춘 뒤 보유 드라이브에 맞춰 조정하세요.') + '</p></article>' +
     '<article class="content-card"><h3>추천 카트리지</h3><p class="cartridge-name">' +
     esc(best?.nameKo || "자료 없음") +
     "</p>" +

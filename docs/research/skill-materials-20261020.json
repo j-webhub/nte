@@ -1042,6 +1042,875 @@
       ]
     },
     {
+      "id": "akane-rin",
+      "nameKo": "아카네",
+      "sourceUrl": "https://www.kaiden.gg/nte/characters/akane/",
+      "koreanSourceUrl": null,
+      "skills": [
+        {
+          "totalCoins": 437000,
+          "totalMaterials": [
+            {
+              "nameEn": "Synchronicity of Thought",
+              "count": 10,
+              "asset": "SkillUpMaterial_04_lv1.webp"
+            },
+            {
+              "nameEn": "Suspended Delusions",
+              "count": 10,
+              "asset": "material_xuannianwangning.webp"
+            },
+            {
+              "nameEn": "Resonance of Faith",
+              "count": 10,
+              "asset": "SkillUpMaterial_04_lv2.webp"
+            },
+            {
+              "nameEn": "Yearning Delusions",
+              "count": 10,
+              "asset": "material_kewangwangning.webp"
+            },
+            {
+              "nameEn": "Good Boy Stamp",
+              "count": 8,
+              "asset": "mofeikesi_yinzhang.webp"
+            },
+            {
+              "nameEn": "Heart-Racing Night",
+              "count": 16,
+              "asset": "SkillUpMaterial_04_lv3.webp"
+            },
+            {
+              "nameEn": "Transcendent Delusions",
+              "count": 16,
+              "asset": "material_chaoyanwangning.webp"
+            }
+          ],
+          "levels": [
+            {
+              "level": 2,
+              "requiredAscension": 2,
+              "coins": 2000,
+              "materials": [
+                {
+                  "nameEn": "Synchronicity of Thought",
+                  "count": 2,
+                  "asset": "SkillUpMaterial_04_lv1.webp"
+                },
+                {
+                  "nameEn": "Suspended Delusions",
+                  "count": 2,
+                  "asset": "material_xuannianwangning.webp"
+                }
+              ]
+            },
+            {
+              "level": 3,
+              "requiredAscension": 3,
+              "coins": 5000,
+              "materials": [
+                {
+                  "nameEn": "Synchronicity of Thought",
+                  "count": 3,
+                  "asset": "SkillUpMaterial_04_lv1.webp"
+                },
+                {
+                  "nameEn": "Suspended Delusions",
+                  "count": 3,
+                  "asset": "material_xuannianwangning.webp"
+                }
+              ]
+            },
+            {
+              "level": 4,
+              "requiredAscension": 3,
+              "coins": 10000,
+              "materials": [
+                {
+                  "nameEn": "Synchronicity of Thought",
+                  "count": 5,
+                  "asset": "SkillUpMaterial_04_lv1.webp"
+                },
+                {
+                  "nameEn": "Suspended Delusions",
+                  "count": 5,
+                  "asset": "material_xuannianwangning.webp"
+                }
+              ]
+            },
+            {
+              "level": 5,
+              "requiredAscension": 4,
+              "coins": 20000,
+              "materials": [
+                {
+                  "nameEn": "Resonance of Faith",
+                  "count": 2,
+                  "asset": "SkillUpMaterial_04_lv2.webp"
+                },
+                {
+                  "nameEn": "Yearning Delusions",
+                  "count": 2,
+                  "asset": "material_kewangwangning.webp"
+                }
+              ]
+            },
+            {
+              "level": 6,
+              "requiredAscension": 4,
+              "coins": 40000,
+              "materials": [
+                {
+                  "nameEn": "Resonance of Faith",
+                  "count": 3,
+                  "asset": "SkillUpMaterial_04_lv2.webp"
+                },
+                {
+                  "nameEn": "Yearning Delusions",
+                  "count": 3,
+                  "asset": "material_kewangwangning.webp"
+                }
+              ]
+            },
+            {
+              "level": 7,
+              "requiredAscension": 5,
+              "coins": 60000,
+              "materials": [
+                {
+                  "nameEn": "Resonance of Faith",
+                  "count": 5,
+                  "asset": "SkillUpMaterial_04_lv2.webp"
+                },
+                {
+                  "nameEn": "Yearning Delusions",
+                  "count": 5,
+                  "asset": "material_kewangwangning.webp"
+                },
+                {
+                  "nameEn": "Good Boy Stamp",
+                  "count": 1,
+                  "asset": "mofeikesi_yinzhang.webp"
+                }
+              ]
+            },
+            {
+              "level": 8,
+              "requiredAscension": 5,
+              "coins": 80000,
+              "materials": [
+                {
+                  "nameEn": "Heart-Racing Night",
+                  "count": 3,
+                  "asset": "SkillUpMaterial_04_lv3.webp"
+                },
+                {
+                  "nameEn": "Transcendent Delusions",
+                  "count": 3,
+                  "asset": "material_chaoyanwangning.webp"
+                },
+                {
+                  "nameEn": "Good Boy Stamp",
+                  "count": 1,
+                  "asset": "mofeikesi_yinzhang.webp"
+                }
+              ]
+            },
+            {
+              "level": 9,
+              "requiredAscension": 6,
+              "coins": 100000,
+              "materials": [
+                {
+                  "nameEn": "Heart-Racing Night",
+                  "count": 5,
+                  "asset": "SkillUpMaterial_04_lv3.webp"
+                },
+                {
+                  "nameEn": "Transcendent Delusions",
+                  "count": 5,
+                  "asset": "material_chaoyanwangning.webp"
+                },
+                {
+                  "nameEn": "Good Boy Stamp",
+                  "count": 2,
+                  "asset": "mofeikesi_yinzhang.webp"
+                }
+              ]
+            },
+            {
+              "level": 10,
+              "requiredAscension": 6,
+              "coins": 120000,
+              "materials": [
+                {
+                  "nameEn": "Heart-Racing Night",
+                  "count": 8,
+                  "asset": "SkillUpMaterial_04_lv3.webp"
+                },
+                {
+                  "nameEn": "Transcendent Delusions",
+                  "count": 8,
+                  "asset": "material_chaoyanwangning.webp"
+                },
+                {
+                  "nameEn": "Good Boy Stamp",
+                  "count": 4,
+                  "asset": "mofeikesi_yinzhang.webp"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "totalCoins": 437000,
+          "totalMaterials": [
+            {
+              "nameEn": "Synchronicity of Thought",
+              "count": 10,
+              "asset": "SkillUpMaterial_04_lv1.webp"
+            },
+            {
+              "nameEn": "Suspended Delusions",
+              "count": 10,
+              "asset": "material_xuannianwangning.webp"
+            },
+            {
+              "nameEn": "Resonance of Faith",
+              "count": 10,
+              "asset": "SkillUpMaterial_04_lv2.webp"
+            },
+            {
+              "nameEn": "Yearning Delusions",
+              "count": 10,
+              "asset": "material_kewangwangning.webp"
+            },
+            {
+              "nameEn": "Good Boy Stamp",
+              "count": 8,
+              "asset": "mofeikesi_yinzhang.webp"
+            },
+            {
+              "nameEn": "Heart-Racing Night",
+              "count": 16,
+              "asset": "SkillUpMaterial_04_lv3.webp"
+            },
+            {
+              "nameEn": "Transcendent Delusions",
+              "count": 16,
+              "asset": "material_chaoyanwangning.webp"
+            }
+          ],
+          "levels": [
+            {
+              "level": 2,
+              "requiredAscension": 2,
+              "coins": 2000,
+              "materials": [
+                {
+                  "nameEn": "Synchronicity of Thought",
+                  "count": 2,
+                  "asset": "SkillUpMaterial_04_lv1.webp"
+                },
+                {
+                  "nameEn": "Suspended Delusions",
+                  "count": 2,
+                  "asset": "material_xuannianwangning.webp"
+                }
+              ]
+            },
+            {
+              "level": 3,
+              "requiredAscension": 3,
+              "coins": 5000,
+              "materials": [
+                {
+                  "nameEn": "Synchronicity of Thought",
+                  "count": 3,
+                  "asset": "SkillUpMaterial_04_lv1.webp"
+                },
+                {
+                  "nameEn": "Suspended Delusions",
+                  "count": 3,
+                  "asset": "material_xuannianwangning.webp"
+                }
+              ]
+            },
+            {
+              "level": 4,
+              "requiredAscension": 3,
+              "coins": 10000,
+              "materials": [
+                {
+                  "nameEn": "Synchronicity of Thought",
+                  "count": 5,
+                  "asset": "SkillUpMaterial_04_lv1.webp"
+                },
+                {
+                  "nameEn": "Suspended Delusions",
+                  "count": 5,
+                  "asset": "material_xuannianwangning.webp"
+                }
+              ]
+            },
+            {
+              "level": 5,
+              "requiredAscension": 4,
+              "coins": 20000,
+              "materials": [
+                {
+                  "nameEn": "Resonance of Faith",
+                  "count": 2,
+                  "asset": "SkillUpMaterial_04_lv2.webp"
+                },
+                {
+                  "nameEn": "Yearning Delusions",
+                  "count": 2,
+                  "asset": "material_kewangwangning.webp"
+                }
+              ]
+            },
+            {
+              "level": 6,
+              "requiredAscension": 4,
+              "coins": 40000,
+              "materials": [
+                {
+                  "nameEn": "Resonance of Faith",
+                  "count": 3,
+                  "asset": "SkillUpMaterial_04_lv2.webp"
+                },
+                {
+                  "nameEn": "Yearning Delusions",
+                  "count": 3,
+                  "asset": "material_kewangwangning.webp"
+                }
+              ]
+            },
+            {
+              "level": 7,
+              "requiredAscension": 5,
+              "coins": 60000,
+              "materials": [
+                {
+                  "nameEn": "Resonance of Faith",
+                  "count": 5,
+                  "asset": "SkillUpMaterial_04_lv2.webp"
+                },
+                {
+                  "nameEn": "Yearning Delusions",
+                  "count": 5,
+                  "asset": "material_kewangwangning.webp"
+                },
+                {
+                  "nameEn": "Good Boy Stamp",
+                  "count": 1,
+                  "asset": "mofeikesi_yinzhang.webp"
+                }
+              ]
+            },
+            {
+              "level": 8,
+              "requiredAscension": 5,
+              "coins": 80000,
+              "materials": [
+                {
+                  "nameEn": "Heart-Racing Night",
+                  "count": 3,
+                  "asset": "SkillUpMaterial_04_lv3.webp"
+                },
+                {
+                  "nameEn": "Transcendent Delusions",
+                  "count": 3,
+                  "asset": "material_chaoyanwangning.webp"
+                },
+                {
+                  "nameEn": "Good Boy Stamp",
+                  "count": 1,
+                  "asset": "mofeikesi_yinzhang.webp"
+                }
+              ]
+            },
+            {
+              "level": 9,
+              "requiredAscension": 6,
+              "coins": 100000,
+              "materials": [
+                {
+                  "nameEn": "Heart-Racing Night",
+                  "count": 5,
+                  "asset": "SkillUpMaterial_04_lv3.webp"
+                },
+                {
+                  "nameEn": "Transcendent Delusions",
+                  "count": 5,
+                  "asset": "material_chaoyanwangning.webp"
+                },
+                {
+                  "nameEn": "Good Boy Stamp",
+                  "count": 2,
+                  "asset": "mofeikesi_yinzhang.webp"
+                }
+              ]
+            },
+            {
+              "level": 10,
+              "requiredAscension": 6,
+              "coins": 120000,
+              "materials": [
+                {
+                  "nameEn": "Heart-Racing Night",
+                  "count": 8,
+                  "asset": "SkillUpMaterial_04_lv3.webp"
+                },
+                {
+                  "nameEn": "Transcendent Delusions",
+                  "count": 8,
+                  "asset": "material_chaoyanwangning.webp"
+                },
+                {
+                  "nameEn": "Good Boy Stamp",
+                  "count": 4,
+                  "asset": "mofeikesi_yinzhang.webp"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "totalCoins": 437000,
+          "totalMaterials": [
+            {
+              "nameEn": "Synchronicity of Thought",
+              "count": 10,
+              "asset": "SkillUpMaterial_04_lv1.webp"
+            },
+            {
+              "nameEn": "Suspended Delusions",
+              "count": 10,
+              "asset": "material_xuannianwangning.webp"
+            },
+            {
+              "nameEn": "Resonance of Faith",
+              "count": 10,
+              "asset": "SkillUpMaterial_04_lv2.webp"
+            },
+            {
+              "nameEn": "Yearning Delusions",
+              "count": 10,
+              "asset": "material_kewangwangning.webp"
+            },
+            {
+              "nameEn": "Good Boy Stamp",
+              "count": 8,
+              "asset": "mofeikesi_yinzhang.webp"
+            },
+            {
+              "nameEn": "Heart-Racing Night",
+              "count": 16,
+              "asset": "SkillUpMaterial_04_lv3.webp"
+            },
+            {
+              "nameEn": "Transcendent Delusions",
+              "count": 16,
+              "asset": "material_chaoyanwangning.webp"
+            }
+          ],
+          "levels": [
+            {
+              "level": 2,
+              "requiredAscension": 2,
+              "coins": 2000,
+              "materials": [
+                {
+                  "nameEn": "Synchronicity of Thought",
+                  "count": 2,
+                  "asset": "SkillUpMaterial_04_lv1.webp"
+                },
+                {
+                  "nameEn": "Suspended Delusions",
+                  "count": 2,
+                  "asset": "material_xuannianwangning.webp"
+                }
+              ]
+            },
+            {
+              "level": 3,
+              "requiredAscension": 3,
+              "coins": 5000,
+              "materials": [
+                {
+                  "nameEn": "Synchronicity of Thought",
+                  "count": 3,
+                  "asset": "SkillUpMaterial_04_lv1.webp"
+                },
+                {
+                  "nameEn": "Suspended Delusions",
+                  "count": 3,
+                  "asset": "material_xuannianwangning.webp"
+                }
+              ]
+            },
+            {
+              "level": 4,
+              "requiredAscension": 3,
+              "coins": 10000,
+              "materials": [
+                {
+                  "nameEn": "Synchronicity of Thought",
+                  "count": 5,
+                  "asset": "SkillUpMaterial_04_lv1.webp"
+                },
+                {
+                  "nameEn": "Suspended Delusions",
+                  "count": 5,
+                  "asset": "material_xuannianwangning.webp"
+                }
+              ]
+            },
+            {
+              "level": 5,
+              "requiredAscension": 4,
+              "coins": 20000,
+              "materials": [
+                {
+                  "nameEn": "Resonance of Faith",
+                  "count": 2,
+                  "asset": "SkillUpMaterial_04_lv2.webp"
+                },
+                {
+                  "nameEn": "Yearning Delusions",
+                  "count": 2,
+                  "asset": "material_kewangwangning.webp"
+                }
+              ]
+            },
+            {
+              "level": 6,
+              "requiredAscension": 4,
+              "coins": 40000,
+              "materials": [
+                {
+                  "nameEn": "Resonance of Faith",
+                  "count": 3,
+                  "asset": "SkillUpMaterial_04_lv2.webp"
+                },
+                {
+                  "nameEn": "Yearning Delusions",
+                  "count": 3,
+                  "asset": "material_kewangwangning.webp"
+                }
+              ]
+            },
+            {
+              "level": 7,
+              "requiredAscension": 5,
+              "coins": 60000,
+              "materials": [
+                {
+                  "nameEn": "Resonance of Faith",
+                  "count": 5,
+                  "asset": "SkillUpMaterial_04_lv2.webp"
+                },
+                {
+                  "nameEn": "Yearning Delusions",
+                  "count": 5,
+                  "asset": "material_kewangwangning.webp"
+                },
+                {
+                  "nameEn": "Good Boy Stamp",
+                  "count": 1,
+                  "asset": "mofeikesi_yinzhang.webp"
+                }
+              ]
+            },
+            {
+              "level": 8,
+              "requiredAscension": 5,
+              "coins": 80000,
+              "materials": [
+                {
+                  "nameEn": "Heart-Racing Night",
+                  "count": 3,
+                  "asset": "SkillUpMaterial_04_lv3.webp"
+                },
+                {
+                  "nameEn": "Transcendent Delusions",
+                  "count": 3,
+                  "asset": "material_chaoyanwangning.webp"
+                },
+                {
+                  "nameEn": "Good Boy Stamp",
+                  "count": 1,
+                  "asset": "mofeikesi_yinzhang.webp"
+                }
+              ]
+            },
+            {
+              "level": 9,
+              "requiredAscension": 6,
+              "coins": 100000,
+              "materials": [
+                {
+                  "nameEn": "Heart-Racing Night",
+                  "count": 5,
+                  "asset": "SkillUpMaterial_04_lv3.webp"
+                },
+                {
+                  "nameEn": "Transcendent Delusions",
+                  "count": 5,
+                  "asset": "material_chaoyanwangning.webp"
+                },
+                {
+                  "nameEn": "Good Boy Stamp",
+                  "count": 2,
+                  "asset": "mofeikesi_yinzhang.webp"
+                }
+              ]
+            },
+            {
+              "level": 10,
+              "requiredAscension": 6,
+              "coins": 120000,
+              "materials": [
+                {
+                  "nameEn": "Heart-Racing Night",
+                  "count": 8,
+                  "asset": "SkillUpMaterial_04_lv3.webp"
+                },
+                {
+                  "nameEn": "Transcendent Delusions",
+                  "count": 8,
+                  "asset": "material_chaoyanwangning.webp"
+                },
+                {
+                  "nameEn": "Good Boy Stamp",
+                  "count": 4,
+                  "asset": "mofeikesi_yinzhang.webp"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "totalCoins": 437000,
+          "totalMaterials": [
+            {
+              "nameEn": "Synchronicity of Thought",
+              "count": 10,
+              "asset": "SkillUpMaterial_04_lv1.webp"
+            },
+            {
+              "nameEn": "Suspended Delusions",
+              "count": 10,
+              "asset": "material_xuannianwangning.webp"
+            },
+            {
+              "nameEn": "Resonance of Faith",
+              "count": 10,
+              "asset": "SkillUpMaterial_04_lv2.webp"
+            },
+            {
+              "nameEn": "Yearning Delusions",
+              "count": 10,
+              "asset": "material_kewangwangning.webp"
+            },
+            {
+              "nameEn": "Good Boy Stamp",
+              "count": 8,
+              "asset": "mofeikesi_yinzhang.webp"
+            },
+            {
+              "nameEn": "Heart-Racing Night",
+              "count": 16,
+              "asset": "SkillUpMaterial_04_lv3.webp"
+            },
+            {
+              "nameEn": "Transcendent Delusions",
+              "count": 16,
+              "asset": "material_chaoyanwangning.webp"
+            }
+          ],
+          "levels": [
+            {
+              "level": 2,
+              "requiredAscension": 2,
+              "coins": 2000,
+              "materials": [
+                {
+                  "nameEn": "Synchronicity of Thought",
+                  "count": 2,
+                  "asset": "SkillUpMaterial_04_lv1.webp"
+                },
+                {
+                  "nameEn": "Suspended Delusions",
+                  "count": 2,
+                  "asset": "material_xuannianwangning.webp"
+                }
+              ]
+            },
+            {
+              "level": 3,
+              "requiredAscension": 3,
+              "coins": 5000,
+              "materials": [
+                {
+                  "nameEn": "Synchronicity of Thought",
+                  "count": 3,
+                  "asset": "SkillUpMaterial_04_lv1.webp"
+                },
+                {
+                  "nameEn": "Suspended Delusions",
+                  "count": 3,
+                  "asset": "material_xuannianwangning.webp"
+                }
+              ]
+            },
+            {
+              "level": 4,
+              "requiredAscension": 3,
+              "coins": 10000,
+              "materials": [
+                {
+                  "nameEn": "Synchronicity of Thought",
+                  "count": 5,
+                  "asset": "SkillUpMaterial_04_lv1.webp"
+                },
+                {
+                  "nameEn": "Suspended Delusions",
+                  "count": 5,
+                  "asset": "material_xuannianwangning.webp"
+                }
+              ]
+            },
+            {
+              "level": 5,
+              "requiredAscension": 4,
+              "coins": 20000,
+              "materials": [
+                {
+                  "nameEn": "Resonance of Faith",
+                  "count": 2,
+                  "asset": "SkillUpMaterial_04_lv2.webp"
+                },
+                {
+                  "nameEn": "Yearning Delusions",
+                  "count": 2,
+                  "asset": "material_kewangwangning.webp"
+                }
+              ]
+            },
+            {
+              "level": 6,
+              "requiredAscension": 4,
+              "coins": 40000,
+              "materials": [
+                {
+                  "nameEn": "Resonance of Faith",
+                  "count": 3,
+                  "asset": "SkillUpMaterial_04_lv2.webp"
+                },
+                {
+                  "nameEn": "Yearning Delusions",
+                  "count": 3,
+                  "asset": "material_kewangwangning.webp"
+                }
+              ]
+            },
+            {
+              "level": 7,
+              "requiredAscension": 5,
+              "coins": 60000,
+              "materials": [
+                {
+                  "nameEn": "Resonance of Faith",
+                  "count": 5,
+                  "asset": "SkillUpMaterial_04_lv2.webp"
+                },
+                {
+                  "nameEn": "Yearning Delusions",
+                  "count": 5,
+                  "asset": "material_kewangwangning.webp"
+                },
+                {
+                  "nameEn": "Good Boy Stamp",
+                  "count": 1,
+                  "asset": "mofeikesi_yinzhang.webp"
+                }
+              ]
+            },
+            {
+              "level": 8,
+              "requiredAscension": 5,
+              "coins": 80000,
+              "materials": [
+                {
+                  "nameEn": "Heart-Racing Night",
+                  "count": 3,
+                  "asset": "SkillUpMaterial_04_lv3.webp"
+                },
+                {
+                  "nameEn": "Transcendent Delusions",
+                  "count": 3,
+                  "asset": "material_chaoyanwangning.webp"
+                },
+                {
+                  "nameEn": "Good Boy Stamp",
+                  "count": 1,
+                  "asset": "mofeikesi_yinzhang.webp"
+                }
+              ]
+            },
+            {
+              "level": 9,
+              "requiredAscension": 6,
+              "coins": 100000,
+              "materials": [
+                {
+                  "nameEn": "Heart-Racing Night",
+                  "count": 5,
+                  "asset": "SkillUpMaterial_04_lv3.webp"
+                },
+                {
+                  "nameEn": "Transcendent Delusions",
+                  "count": 5,
+                  "asset": "material_chaoyanwangning.webp"
+                },
+                {
+                  "nameEn": "Good Boy Stamp",
+                  "count": 2,
+                  "asset": "mofeikesi_yinzhang.webp"
+                }
+              ]
+            },
+            {
+              "level": 10,
+              "requiredAscension": 6,
+              "coins": 120000,
+              "materials": [
+                {
+                  "nameEn": "Heart-Racing Night",
+                  "count": 8,
+                  "asset": "SkillUpMaterial_04_lv3.webp"
+                },
+                {
+                  "nameEn": "Transcendent Delusions",
+                  "count": 8,
+                  "asset": "material_chaoyanwangning.webp"
+                },
+                {
+                  "nameEn": "Good Boy Stamp",
+                  "count": 4,
+                  "asset": "mofeikesi_yinzhang.webp"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "koreanLevels": []
+    },
+    {
       "id": "aurelia",
       "nameKo": "우미츠키",
       "sourceUrl": "https://www.kaiden.gg/nte/characters/aurelia/",

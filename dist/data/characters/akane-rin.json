@@ -16,7 +16,7 @@
     "released": false,
     "source": "https://nte.perfectworld.com/kr/article/news/gamenews/20260929/264413.html",
     "officialSource": "https://nte.perfectworld.com/kr/article/news/gamenews/20260929/264413.html",
-    "detailsSourceStatus": "official introduction and 2026-10-21 global release schedule confirmed; user-provided Korean skill, awakening, resonance, passive, and city-skill details entered; base stats and level coefficients pending",
+    "detailsSourceStatus": "User-provided Korean skill and awakening text preserved; signature Arc, console specialization/build, ascension and direct skill upgrade materials added from community sources on 2026-10-20. Global release remains scheduled for 2026-10-21.",
     "communityRoleKo": "기타리스트 · 전직 이상 헌터",
     "portraitFile": "아카네.webp"
   },
@@ -105,17 +105,33 @@
     "nameKo": "아카네",
     "nameEn": "Akane Rin",
     "console": {
-      "preferredModuleShape": "",
-      "perDriveBonusKo": "",
-      "recommendedLayout": []
+      "preferredModuleShape": "III",
+      "perDriveBonusKo": "III형 드라이브 1개당 공격력 +10%",
+      "recommendedLayout": [],
+      "layoutNoteKo": "20칸 콘솔의 III형 특화입니다. 카트리지 4세트 효과를 먼저 완성하고, III형 드라이브를 우선 배치하세요."
     },
     "cartridge": {
-      "recommendedSetId": "",
-      "alternativeSetIds": []
+      "recommendedSetId": "street-boxer",
+      "alternativeSetIds": [
+        "shadow-creed"
+      ]
     },
-    "mainStatPriorityKo": [],
-    "substatPriorityKo": [],
-    "sourceUrls": []
+    "mainStatPriorityKo": [
+      "상속성 피해%",
+      "치명 확률% · 치명 피해%",
+      "공격력%"
+    ],
+    "substatPriorityKo": [
+      "치명 확률%",
+      "치명 피해%",
+      "공격력%",
+      "피해%"
+    ],
+    "sourceUrls": [
+      "https://www.kaiden.gg/nte/characters/akane/",
+      "https://ccf1007overmen.tistory.com/1951?category=1587992"
+    ],
+    "buildNoteKo": "출시 전 커뮤니티 가이드 기준입니다. 전용 아크와 카트리지의 치명 확률을 합산해 주옵션을 선택하세요."
   },
   "fieldSkills": {
     "passives": [

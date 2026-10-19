@@ -1,5 +1,5 @@
-import { state } from "../../../core/state.js?v=20261020-shuffle-center";
-import { esc, fmt } from "../../../core/dom.js?v=20261020-shuffle-center";
+import { state } from "../../../core/state.js?v=20261020-akane-equipment-growth";
+import { esc, fmt } from "../../../core/dom.js?v=20261020-akane-equipment-growth";
 
 export function renderSkillGrowth(p) {
   const data = state.db.growth.skillUpgrades;

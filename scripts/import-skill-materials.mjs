@@ -30,7 +30,6 @@ const materials = {};
 const characters = {};
 const discrepancies = [];
 for (const character of research.characters) {
-  if (character.id === "akane-rin") throw new Error("Akane research remains pending");
   if (character.skills.length !== 4) throw new Error(`${character.id}: expected 4 skills`);
   for (const skill of character.skills) {
     if (JSON.stringify(profile(skill)) !== JSON.stringify(levels)) throw new Error(`${character.id}: separate cost profile needed`);

@@ -1,5 +1,5 @@
-import { state } from "../../core/state.js?v=20261020-shuffle-center";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-shuffle-center";
+import { state } from "../../core/state.js?v=20261020-akane-equipment-growth";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-akane-equipment-growth";
 
 let lastWallpaperUrl = "";
 const lastMenuImages = new Map();

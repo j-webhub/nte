@@ -1,7 +1,7 @@
-import { formatCharacterText } from "../text.js?v=20261020-akane-equipment-growth";
-import { state } from "../../../core/state.js?v=20261020-akane-equipment-growth";
-import { esc } from "../../../core/dom.js?v=20261020-akane-equipment-growth";
-import { sourceLinks } from "../sources.js?v=20261020-akane-equipment-growth";
+import { formatCharacterText } from "../text.js?v=20261020-copyright-footer";
+import { state } from "../../../core/state.js?v=20261020-copyright-footer";
+import { esc } from "../../../core/dom.js?v=20261020-copyright-footer";
+import { sourceLinks } from "../sources.js?v=20261020-copyright-footer";
 
 export function renderConsole(p) {
   const build = p.console;

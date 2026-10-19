@@ -1,8 +1,8 @@
-import { state } from "../../core/state.js?v=20261020-akane-equipment-growth";
-import { $, esc, fmt } from "../../core/dom.js?v=20261020-akane-equipment-growth";
-import { elem, assetUrl, elementIconUrl, arcTypeIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-akane-equipment-growth";
-import { getProfile } from "./model.js?v=20261020-akane-equipment-growth";
-import { renderTab } from "./tabs/index.js?v=20261020-akane-equipment-growth";
+import { state } from "../../core/state.js?v=20261020-copyright-footer";
+import { $, esc, fmt, siteFooter } from "../../core/dom.js?v=20261020-copyright-footer";
+import { elem, assetUrl, elementIconUrl, arcTypeIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-copyright-footer";
+import { getProfile } from "./model.js?v=20261020-copyright-footer";
+import { renderTab } from "./tabs/index.js?v=20261020-copyright-footer";
 
 export function bindCharacterIllustration() {
   const visual = $("#main-content .hero-visual");
@@ -200,11 +200,7 @@ export function renderProfile() {
     imageMarkup +
     "</div></section>" +
     profileContent +
-    '<footer class="main-footer"><span>' +
-    (isUpcoming ? "공식 발표 기반 · 출시 전 정보" : "커뮤니티 자료 기반 캐릭터 도감") +
-    '</span><a ' +
-    'href="./data/nte-character-sources.md" target="_blank" rel="noopener ' +
-    'noreferrer">출처</a></footer>';
+    siteFooter(isUpcoming ? "공식 발표 기반 · 출시 전 정보" : "커뮤니티 자료 기반 캐릭터 도감");
   $("#main-content")
     .querySelectorAll("[data-tab]")
     .forEach((button) => {

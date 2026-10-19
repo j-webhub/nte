@@ -1,5 +1,5 @@
-import { DATA_FILES, OPTIONAL_PORTAL_DATA } from "../config/data-files.js?v=20261020-akane-equipment-growth";
-import { ASSET_VERSION } from "../config/site.js?v=20261020-akane-equipment-growth";
+import { DATA_FILES, OPTIONAL_PORTAL_DATA } from "../config/data-files.js?v=20261020-copyright-footer";
+import { ASSET_VERSION } from "../config/site.js?v=20261020-copyright-footer";
 
 export async function loadDatabase() {
   const pairs = await Promise.all(

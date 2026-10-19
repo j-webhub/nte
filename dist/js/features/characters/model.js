@@ -1,4 +1,4 @@
-import { state } from "../../core/state.js?v=20261020-akane-equipment-growth";
+import { state } from "../../core/state.js?v=20261020-copyright-footer";
 
 export function getProfile(id) {
   const character = state.db.characters[id];

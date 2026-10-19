@@ -1,7 +1,7 @@
-import { state } from "../../core/state.js?v=20261020-akane-equipment-growth";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-akane-equipment-growth";
-import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261020-akane-equipment-growth";
-import { renderArcTypeIcon, renderRarityBadge } from "../characters/badges.js?v=20261020-akane-equipment-growth";
+import { state } from "../../core/state.js?v=20261020-copyright-footer";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-copyright-footer";
+import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261020-copyright-footer";
+import { renderArcTypeIcon, renderRarityBadge } from "../characters/badges.js?v=20261020-copyright-footer";
 
 function renderArcEffect(arc) {
   const text = interpolateArcRankEffect(arc, 1) || "자료 없음";

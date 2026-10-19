@@ -1,9 +1,9 @@
-import { formatCharacterText } from "../text.js?v=20261020-akane-equipment-growth";
-import { state } from "../../../core/state.js?v=20261020-akane-equipment-growth";
-import { $, esc, fmt } from "../../../core/dom.js?v=20261020-akane-equipment-growth";
-import { SKILLS } from "../catalog.js?v=20261020-akane-equipment-growth";
-import { getProfile } from "../model.js?v=20261020-akane-equipment-growth";
-import { sourceLinks, coefficientSourceLinks } from "../sources.js?v=20261020-akane-equipment-growth";
+import { formatCharacterText } from "../text.js?v=20261020-copyright-footer";
+import { state } from "../../../core/state.js?v=20261020-copyright-footer";
+import { $, esc, fmt } from "../../../core/dom.js?v=20261020-copyright-footer";
+import { SKILLS } from "../catalog.js?v=20261020-copyright-footer";
+import { getProfile } from "../model.js?v=20261020-copyright-footer";
+import { sourceLinks, coefficientSourceLinks } from "../sources.js?v=20261020-copyright-footer";
 
 export function formatPercent(value) {
   const percent = Math.round(Number(value) * 1000) / 10;

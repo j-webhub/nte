@@ -1,7 +1,7 @@
-import { formatCharacterText } from "../text.js?v=20261020-akane-equipment-growth";
+import { formatCharacterText } from "../text.js?v=20261020-copyright-footer";
 
-import { esc } from "../../../core/dom.js?v=20261020-akane-equipment-growth";
-import { sourceLinks } from "../sources.js?v=20261020-akane-equipment-growth";
+import { esc } from "../../../core/dom.js?v=20261020-copyright-footer";
+import { sourceLinks } from "../sources.js?v=20261020-copyright-footer";
 
 export function renderOverview(p, options = {}) {
   const {

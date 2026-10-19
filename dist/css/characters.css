@@ -1421,6 +1421,24 @@
   text-underline-offset: 3px;
 }
 
+.footer-copy {
+  min-width: 0;
+  max-width: 900px;
+  color: #97a3af;
+  font-size: 11px;
+  line-height: 1.7;
+}
+.footer-copy p {
+  margin: 4px 0 0;
+}
+.footer-copy .footer-copyright {
+  margin-top: 12px;
+  color: #c3cdd5;
+}
+.footer-copy .footer-rights-scope {
+  margin-top: 0;
+}
+
 .growth-heading {
   align-items: center;
 }

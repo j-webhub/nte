@@ -1,7 +1,7 @@
-import { state } from "../../core/state.js?v=20261020-akane-equipment-growth";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-akane-equipment-growth";
-import { ELEMENT_ORDER, elem, elementIconUrl, assetUrl } from "./catalog.js?v=20261020-akane-equipment-growth";
-import { renderElementIcon, renderArcTypeIcon, renderRarityBadge } from "./badges.js?v=20261020-akane-equipment-growth";
+import { state } from "../../core/state.js?v=20261020-copyright-footer";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-copyright-footer";
+import { ELEMENT_ORDER, elem, elementIconUrl, assetUrl } from "./catalog.js?v=20261020-copyright-footer";
+import { renderElementIcon, renderArcTypeIcon, renderRarityBadge } from "./badges.js?v=20261020-copyright-footer";
 
 function galleryCharacters() {
   const term = state.characterGalleryQuery.trim().toLocaleLowerCase("ko");

@@ -1,5 +1,5 @@
-import { state } from "../../core/state.js?v=20261020-akane-equipment-growth";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-akane-equipment-growth";
+import { state } from "../../core/state.js?v=20261020-copyright-footer";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-copyright-footer";
 
 export function wallpaperFileName(item) {
   return String(item.imageUrl || "")

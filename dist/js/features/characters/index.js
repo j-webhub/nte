@@ -1,11 +1,11 @@
-import { state } from "../../core/state.js?v=20261020-profile-type-icon";
-import { $ } from "../../core/dom.js?v=20261020-profile-type-icon";
-import { openCharacter } from "../../core/router.js?v=20261020-profile-type-icon";
-import { ELEMENT_ORDER, elem, elementIconUrl } from "./catalog.js?v=20261020-profile-type-icon";
-import { renderRoster } from "./roster.js?v=20261020-profile-type-icon";
-import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-profile-type-icon";
-import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-profile-type-icon";
-import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261020-profile-type-icon";
+import { state } from "../../core/state.js?v=20261020-city-skills";
+import { $ } from "../../core/dom.js?v=20261020-city-skills";
+import { openCharacter } from "../../core/router.js?v=20261020-city-skills";
+import { ELEMENT_ORDER, elem, elementIconUrl } from "./catalog.js?v=20261020-city-skills";
+import { renderRoster } from "./roster.js?v=20261020-city-skills";
+import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-city-skills";
+import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-city-skills";
+import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261020-city-skills";
 
 export { renderRoster, renderProfile };
 

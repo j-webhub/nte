@@ -1,5 +1,5 @@
-import { state } from "../../core/state.js?v=20261020-profile-type-icon";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-profile-type-icon";
+import { state } from "../../core/state.js?v=20261020-city-skills";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-city-skills";
 
 const PORTAL_MODULES = [
   {

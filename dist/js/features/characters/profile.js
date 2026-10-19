@@ -1,8 +1,8 @@
-import { state } from "../../core/state.js?v=20261020-profile-type-icon";
-import { $, esc, fmt } from "../../core/dom.js?v=20261020-profile-type-icon";
-import { elem, assetUrl, elementIconUrl, arcTypeIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-profile-type-icon";
-import { getProfile } from "./model.js?v=20261020-profile-type-icon";
-import { renderTab } from "./tabs/index.js?v=20261020-profile-type-icon";
+import { state } from "../../core/state.js?v=20261020-city-skills";
+import { $, esc, fmt } from "../../core/dom.js?v=20261020-city-skills";
+import { elem, assetUrl, elementIconUrl, arcTypeIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-city-skills";
+import { getProfile } from "./model.js?v=20261020-city-skills";
+import { renderTab } from "./tabs/index.js?v=20261020-city-skills";
 
 export function bindCharacterIllustration() {
   const visual = $("#main-content .hero-visual");

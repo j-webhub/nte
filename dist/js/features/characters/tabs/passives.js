@@ -1,7 +1,7 @@
-import { formatCharacterText } from "../text.js?v=20261020-profile-type-icon";
+import { formatCharacterText } from "../text.js?v=20261020-city-skills";
 
-import { esc } from "../../../core/dom.js?v=20261020-profile-type-icon";
-import { sourceLinks } from "../sources.js?v=20261020-profile-type-icon";
+import { esc } from "../../../core/dom.js?v=20261020-city-skills";
+import { sourceLinks } from "../sources.js?v=20261020-city-skills";
 
 export function renderOverview(p, options = {}) {
   const {
@@ -29,7 +29,7 @@ export function renderOverview(p, options = {}) {
     .map((item) => {
       const levels =
         item.effectKo && typeof item.effectKo === "object" ? item.effectKo : {};
-      const maxLevel = [2, 5].includes(Number(item.maxLevel))
+      const maxLevel = [1, 2, 5].includes(Number(item.maxLevel))
         ? Number(item.maxLevel)
         : 5;
       const stages = Array.from({ length: maxLevel }, (_, index) => {

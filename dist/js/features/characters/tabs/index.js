@@ -1,10 +1,10 @@
-import { state } from "../../../core/state.js?v=20261020-profile-type-icon";
-import { renderOverview } from "./passives.js?v=20261020-profile-type-icon";
-import { renderSkills } from "./skills.js?v=20261020-profile-type-icon";
-import { renderAwakening } from "./awakening.js?v=20261020-profile-type-icon";
-import { renderArcs } from "./arcs.js?v=20261020-profile-type-icon";
-import { renderConsole } from "./console.js?v=20261020-profile-type-icon";
-import { renderGrowth } from "./growth.js?v=20261020-profile-type-icon";
+import { state } from "../../../core/state.js?v=20261020-city-skills";
+import { renderOverview } from "./passives.js?v=20261020-city-skills";
+import { renderSkills } from "./skills.js?v=20261020-city-skills";
+import { renderAwakening } from "./awakening.js?v=20261020-city-skills";
+import { renderArcs } from "./arcs.js?v=20261020-city-skills";
+import { renderConsole } from "./console.js?v=20261020-city-skills";
+import { renderGrowth } from "./growth.js?v=20261020-city-skills";
 
 export function renderTab(p) {
   if (state.activeTab === "skills") return renderSkills(p);

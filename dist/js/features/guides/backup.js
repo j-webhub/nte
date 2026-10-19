@@ -1,8 +1,8 @@
-import { $ } from "../../core/dom.js?v=20261020-profile-type-icon";
-import { repository } from "./repository.js?v=20261020-profile-type-icon";
-import { createId, sanitizeHtml, safeVideoLinks } from "./content.js?v=20261020-profile-type-icon";
-import { createZip, readZip, safeArchivePath } from "./archive.js?v=20261020-profile-type-icon";
-import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES, MAX_BACKUP_BYTES, MAX_MANIFEST_BYTES } from "./config.js?v=20261020-profile-type-icon";
+import { $ } from "../../core/dom.js?v=20261020-city-skills";
+import { repository } from "./repository.js?v=20261020-city-skills";
+import { createId, sanitizeHtml, safeVideoLinks } from "./content.js?v=20261020-city-skills";
+import { createZip, readZip, safeArchivePath } from "./archive.js?v=20261020-city-skills";
+import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES, MAX_BACKUP_BYTES, MAX_MANIFEST_BYTES } from "./config.js?v=20261020-city-skills";
 const encoder = new TextEncoder();
 
 export async function exportBackup({ setStatus }) {

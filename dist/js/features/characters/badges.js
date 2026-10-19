@@ -1,5 +1,5 @@
-import { esc } from "../../core/dom.js?v=20261020-profile-type-icon";
-import { elem, elementIconUrl, arcTypeIconUrl, ARC_TYPES } from "./catalog.js?v=20261020-profile-type-icon";
+import { esc } from "../../core/dom.js?v=20261020-city-skills";
+import { elem, elementIconUrl, arcTypeIconUrl, ARC_TYPES } from "./catalog.js?v=20261020-city-skills";
 
 export function renderElementIcon(element) {
   return '<span class="db-icon-circle" role="img" aria-label="' + esc(elem(element).name + "속성") + '"><img class="db-element-icon" src="' +

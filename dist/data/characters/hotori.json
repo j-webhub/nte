@@ -146,7 +146,7 @@
     ],
     "citySkills": [
       {
-        "nameKo": "보물찾기",
+        "nameKo": "보물 사냥",
         "categoryKo": "도시 활동",
         "effectKo": {
           "Lv.1": "매회 경매마다 경매품이 1개 증가한다.",

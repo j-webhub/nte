@@ -1,6 +1,6 @@
-import { state } from "../../core/state.js?v=20261020-profile-type-icon";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-profile-type-icon";
-import { NOTICE_PAGE_SIZE } from "../../config/site.js?v=20261020-profile-type-icon";
+import { state } from "../../core/state.js?v=20261020-city-skills";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-city-skills";
+import { NOTICE_PAGE_SIZE } from "../../config/site.js?v=20261020-city-skills";
 
 export function renderNoticeCard(item) {
   return (

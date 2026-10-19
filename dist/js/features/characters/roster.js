@@ -1,6 +1,6 @@
-import { state } from "../../core/state.js?v=20261020-hathor-delivery";
-import { $, esc } from "../../core/dom.js?v=20261020-hathor-delivery";
-import { elem, elementIconUrl } from "./catalog.js?v=20261020-hathor-delivery";
+import { state } from "../../core/state.js?v=20261020-filter-selection-color";
+import { $, esc } from "../../core/dom.js?v=20261020-filter-selection-color";
+import { elem, elementIconUrl } from "./catalog.js?v=20261020-filter-selection-color";
 
 export function renderRoster() {
   const CHARACTER_DISPLAY_ORDER = state.db.index.displayCharacterIds || state.db.index.releasedCharacterIds;

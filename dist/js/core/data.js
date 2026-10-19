@@ -1,5 +1,5 @@
-import { DATA_FILES, OPTIONAL_PORTAL_DATA } from "../config/data-files.js?v=20261020-hathor-delivery";
-import { ASSET_VERSION } from "../config/site.js?v=20261020-hathor-delivery";
+import { DATA_FILES, OPTIONAL_PORTAL_DATA } from "../config/data-files.js?v=20261020-filter-selection-color";
+import { ASSET_VERSION } from "../config/site.js?v=20261020-filter-selection-color";
 
 export async function loadDatabase() {
   const pairs = await Promise.all(

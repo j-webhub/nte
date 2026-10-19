@@ -1,8 +1,8 @@
-import { state } from "../../core/state.js?v=20261020-hathor-delivery";
-import { $, esc, fmt } from "../../core/dom.js?v=20261020-hathor-delivery";
-import { elem, assetUrl, elementIconUrl, arcTypeIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-hathor-delivery";
-import { getProfile } from "./model.js?v=20261020-hathor-delivery";
-import { renderTab } from "./tabs/index.js?v=20261020-hathor-delivery";
+import { state } from "../../core/state.js?v=20261020-filter-selection-color";
+import { $, esc, fmt } from "../../core/dom.js?v=20261020-filter-selection-color";
+import { elem, assetUrl, elementIconUrl, arcTypeIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-filter-selection-color";
+import { getProfile } from "./model.js?v=20261020-filter-selection-color";
+import { renderTab } from "./tabs/index.js?v=20261020-filter-selection-color";
 
 export function bindCharacterIllustration() {
   const visual = $("#main-content .hero-visual");

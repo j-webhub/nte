@@ -1,9 +1,9 @@
-import { formatCharacterText } from "../text.js?v=20261020-hathor-delivery";
-import { state } from "../../../core/state.js?v=20261020-hathor-delivery";
-import { $, esc, fmt } from "../../../core/dom.js?v=20261020-hathor-delivery";
-import { SKILLS } from "../catalog.js?v=20261020-hathor-delivery";
-import { getProfile } from "../model.js?v=20261020-hathor-delivery";
-import { sourceLinks, coefficientSourceLinks } from "../sources.js?v=20261020-hathor-delivery";
+import { formatCharacterText } from "../text.js?v=20261020-filter-selection-color";
+import { state } from "../../../core/state.js?v=20261020-filter-selection-color";
+import { $, esc, fmt } from "../../../core/dom.js?v=20261020-filter-selection-color";
+import { SKILLS } from "../catalog.js?v=20261020-filter-selection-color";
+import { getProfile } from "../model.js?v=20261020-filter-selection-color";
+import { sourceLinks, coefficientSourceLinks } from "../sources.js?v=20261020-filter-selection-color";
 
 export function formatPercent(value) {
   const percent = Math.round(Number(value) * 1000) / 10;

@@ -1,4 +1,4 @@
-import { state } from "../../core/state.js?v=20261020-hathor-delivery";
+import { state } from "../../core/state.js?v=20261020-filter-selection-color";
 
 export function getProfile(id) {
   const character = state.db.characters[id];

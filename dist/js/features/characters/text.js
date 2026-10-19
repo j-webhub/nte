@@ -1,5 +1,5 @@
-import { esc } from "../../core/dom.js?v=20261020-hathor-delivery";
-import { elem } from "./catalog.js?v=20261020-hathor-delivery";
+import { esc } from "../../core/dom.js?v=20261020-filter-selection-color";
+import { elem } from "./catalog.js?v=20261020-filter-selection-color";
 
 // Match source text before escaping so user-entered descriptions stay plain text.
 export function formatCharacterText(value, element) {

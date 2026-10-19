@@ -1,7 +1,7 @@
-import { formatCharacterText } from "../text.js?v=20261020-hathor-delivery";
+import { formatCharacterText } from "../text.js?v=20261020-filter-selection-color";
 
-import { esc } from "../../../core/dom.js?v=20261020-hathor-delivery";
-import { sourceLinks } from "../sources.js?v=20261020-hathor-delivery";
+import { esc } from "../../../core/dom.js?v=20261020-filter-selection-color";
+import { sourceLinks } from "../sources.js?v=20261020-filter-selection-color";
 
 export function renderOverview(p, options = {}) {
   const {

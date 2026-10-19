@@ -1,7 +1,7 @@
-import { state } from "../../core/state.js?v=20261020-hathor-delivery";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-hathor-delivery";
-import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261020-hathor-delivery";
-import { renderArcTypeIcon, renderRarityBadge } from "../characters/badges.js?v=20261020-hathor-delivery";
+import { state } from "../../core/state.js?v=20261020-filter-selection-color";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-filter-selection-color";
+import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261020-filter-selection-color";
+import { renderArcTypeIcon, renderRarityBadge } from "../characters/badges.js?v=20261020-filter-selection-color";
 
 function renderArcEffect(arc) {
   const text = interpolateArcRankEffect(arc, 1) || "자료 없음";

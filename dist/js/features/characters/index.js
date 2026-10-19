@@ -1,10 +1,10 @@
-import { state } from "../../core/state.js?v=20261020-reorganized";
-import { $ } from "../../core/dom.js?v=20261020-reorganized";
-import { setView } from "../../core/router.js?v=20261020-reorganized";
-import { ELEMENT_ORDER, ELEMENTS } from "./catalog.js?v=20261020-reorganized";
-import { renderRoster } from "./roster.js?v=20261020-reorganized";
-import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-reorganized";
-import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-reorganized";
+import { state } from "../../core/state.js?v=20261020-akane-passives";
+import { $ } from "../../core/dom.js?v=20261020-akane-passives";
+import { setView } from "../../core/router.js?v=20261020-akane-passives";
+import { ELEMENT_ORDER, ELEMENTS } from "./catalog.js?v=20261020-akane-passives";
+import { renderRoster } from "./roster.js?v=20261020-akane-passives";
+import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-akane-passives";
+import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-akane-passives";
 
 export { renderRoster, renderProfile };
 

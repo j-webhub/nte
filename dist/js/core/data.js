@@ -1,5 +1,5 @@
-import { DATA_FILES, OPTIONAL_PORTAL_DATA } from "../config/data-files.js?v=20261020-reorganized";
-import { ASSET_VERSION } from "../config/site.js?v=20261020-reorganized";
+import { DATA_FILES, OPTIONAL_PORTAL_DATA } from "../config/data-files.js?v=20261020-akane-passives";
+import { ASSET_VERSION } from "../config/site.js?v=20261020-akane-passives";
 
 export async function loadDatabase() {
   const pairs = await Promise.all(

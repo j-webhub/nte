@@ -1,5 +1,5 @@
-import { state } from "../../core/state.js?v=20261020-reorganized";
-import { esc } from "../../core/dom.js?v=20261020-reorganized";
+import { state } from "../../core/state.js?v=20261020-akane-passives";
+import { esc } from "../../core/dom.js?v=20261020-akane-passives";
 
 export function sourceLinks(p, domesticOnly = false) {
   const urls = new Set();

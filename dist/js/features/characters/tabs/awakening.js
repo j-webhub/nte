@@ -1,6 +1,6 @@
 
-import { esc } from "../../../core/dom.js?v=20261020-reorganized";
-import { sourceLinks } from "../sources.js?v=20261020-reorganized";
+import { esc } from "../../../core/dom.js?v=20261020-akane-passives";
+import { sourceLinks } from "../sources.js?v=20261020-akane-passives";
 
 export function renderAwakening(p, includeSources = true) {
   const m = p.mechanics;

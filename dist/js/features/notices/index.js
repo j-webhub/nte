@@ -1,6 +1,6 @@
-import { state } from "../../core/state.js?v=20261020-reorganized";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-reorganized";
-import { NOTICE_PAGE_SIZE } from "../../config/site.js?v=20261020-reorganized";
+import { state } from "../../core/state.js?v=20261020-akane-passives";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-akane-passives";
+import { NOTICE_PAGE_SIZE } from "../../config/site.js?v=20261020-akane-passives";
 
 export function renderNoticeCard(item) {
   return (

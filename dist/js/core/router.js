@@ -1,6 +1,6 @@
-import { state } from "./state.js?v=20261020-reorganized";
-import { $, esc, fmt } from "./dom.js?v=20261020-reorganized";
-import { loadDatabase } from "./data.js?v=20261020-reorganized";
+import { state } from "./state.js?v=20261020-akane-passives";
+import { $, esc, fmt } from "./dom.js?v=20261020-akane-passives";
+import { loadDatabase } from "./data.js?v=20261020-akane-passives";
 
 const VALID_VIEWS = new Set([
   "home",

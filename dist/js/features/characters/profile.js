@@ -1,8 +1,8 @@
-import { state } from "../../core/state.js?v=20261020-reorganized";
-import { $, esc, fmt } from "../../core/dom.js?v=20261020-reorganized";
-import { elem, assetUrl, elementIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-reorganized";
-import { getProfile } from "./model.js?v=20261020-reorganized";
-import { renderTab } from "./tabs/index.js?v=20261020-reorganized";
+import { state } from "../../core/state.js?v=20261020-akane-passives";
+import { $, esc, fmt } from "../../core/dom.js?v=20261020-akane-passives";
+import { elem, assetUrl, elementIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-akane-passives";
+import { getProfile } from "./model.js?v=20261020-akane-passives";
+import { renderTab } from "./tabs/index.js?v=20261020-akane-passives";
 
 export function bindCharacterIllustration() {
   const visual = $("#main-content .hero-visual");

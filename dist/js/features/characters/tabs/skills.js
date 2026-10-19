@@ -1,8 +1,8 @@
-import { state } from "../../../core/state.js?v=20261020-reorganized";
-import { $, esc, fmt } from "../../../core/dom.js?v=20261020-reorganized";
-import { SKILLS } from "../catalog.js?v=20261020-reorganized";
-import { getProfile } from "../model.js?v=20261020-reorganized";
-import { sourceLinks, coefficientSourceLinks } from "../sources.js?v=20261020-reorganized";
+import { state } from "../../../core/state.js?v=20261020-akane-passives";
+import { $, esc, fmt } from "../../../core/dom.js?v=20261020-akane-passives";
+import { SKILLS } from "../catalog.js?v=20261020-akane-passives";
+import { getProfile } from "../model.js?v=20261020-akane-passives";
+import { sourceLinks, coefficientSourceLinks } from "../sources.js?v=20261020-akane-passives";
 
 export function formatPercent(value) {
   const percent = Math.round(Number(value) * 1000) / 10;

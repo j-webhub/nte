@@ -1,12 +1,11 @@
 
-import { esc } from "../../../core/dom.js?v=20261020-reorganized";
-import { sourceLinks } from "../sources.js?v=20261020-reorganized";
+import { esc } from "../../../core/dom.js?v=20261020-akane-passives";
+import { sourceLinks } from "../sources.js?v=20261020-akane-passives";
 
 export function renderOverview(p, options = {}) {
   const {
     includeSources = true,
-    passiveHeading = "고유 패시브",
-    includeUniquePlaceholder = false
+    passiveHeading = "고유 패시브"
   } = options;
   const data = p.fieldSkills;
   const passiveRows = (data?.passives || [])
@@ -75,9 +74,6 @@ export function renderOverview(p, options = {}) {
       ? '<div class="profile-skill-list">' + passiveRows + "</div>"
       : "") +
     "</article>" +
-    (includeUniquePlaceholder
-      ? '<article class="content-card"><h3>고유 패시브</h3><div class="upcoming-placeholder" aria-label="고유 패시브 내용을 추가할 자리"></div></article>'
-      : "") +
     '<article class="content-card"><h3>캐릭터 도시 스킬</h3>' +
     (cityRows ? '<div class="profile-skill-list">' + cityRows + "</div>" : "") +
     fieldSource +

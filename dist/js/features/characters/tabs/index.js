@@ -1,10 +1,10 @@
-import { state } from "../../../core/state.js?v=20261020-reorganized";
-import { renderOverview } from "./passives.js?v=20261020-reorganized";
-import { renderSkills } from "./skills.js?v=20261020-reorganized";
-import { renderAwakening } from "./awakening.js?v=20261020-reorganized";
-import { renderArcs } from "./arcs.js?v=20261020-reorganized";
-import { renderConsole } from "./console.js?v=20261020-reorganized";
-import { renderGrowth } from "./growth.js?v=20261020-reorganized";
+import { state } from "../../../core/state.js?v=20261020-akane-passives";
+import { renderOverview } from "./passives.js?v=20261020-akane-passives";
+import { renderSkills } from "./skills.js?v=20261020-akane-passives";
+import { renderAwakening } from "./awakening.js?v=20261020-akane-passives";
+import { renderArcs } from "./arcs.js?v=20261020-akane-passives";
+import { renderConsole } from "./console.js?v=20261020-akane-passives";
+import { renderGrowth } from "./growth.js?v=20261020-akane-passives";
 
 export function renderTab(p) {
   if (state.activeTab === "skills") return renderSkills(p);
@@ -19,8 +19,6 @@ export function renderTab(p) {
   return p.roster?.released
     ? renderOverview(p)
     : renderOverview(p, {
-        includeSources: false,
-        passiveHeading: "패시브",
-        includeUniquePlaceholder: true
+        includeSources: false
       });
 }

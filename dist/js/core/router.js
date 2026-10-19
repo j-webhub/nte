@@ -1,6 +1,6 @@
-import { state } from "./state.js?v=20261020-arc-images-rarity";
-import { $, esc, fmt } from "./dom.js?v=20261020-arc-images-rarity";
-import { loadDatabase } from "./data.js?v=20261020-arc-images-rarity";
+import { state } from "./state.js?v=20261020-mulmangsan";
+import { $, esc, fmt } from "./dom.js?v=20261020-mulmangsan";
+import { loadDatabase } from "./data.js?v=20261020-mulmangsan";
 
 const VALID_VIEWS = new Set([
   "home",

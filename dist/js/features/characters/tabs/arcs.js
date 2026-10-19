@@ -1,8 +1,8 @@
-import { formatCharacterText } from "../text.js?v=20261020-arc-images-rarity";
-import { state } from "../../../core/state.js?v=20261020-arc-images-rarity";
-import { esc } from "../../../core/dom.js?v=20261020-arc-images-rarity";
-import { sourceLinks } from "../sources.js?v=20261020-arc-images-rarity";
-import { interpolateArcRankEffect } from "../../../shared/arc-ranks.js?v=20261020-arc-images-rarity";
+import { formatCharacterText } from "../text.js?v=20261020-mulmangsan";
+import { state } from "../../../core/state.js?v=20261020-mulmangsan";
+import { esc } from "../../../core/dom.js?v=20261020-mulmangsan";
+import { sourceLinks } from "../sources.js?v=20261020-mulmangsan";
+import { interpolateArcRankEffect } from "../../../shared/arc-ranks.js?v=20261020-mulmangsan";
 
 export function renderArcs(p) {
   const character = state.db.arcs.characters.find(

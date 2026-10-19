@@ -1,5 +1,5 @@
-import { state } from "../../core/state.js?v=20261020-arc-images-rarity";
-import { esc } from "../../core/dom.js?v=20261020-arc-images-rarity";
+import { state } from "../../core/state.js?v=20261020-mulmangsan";
+import { esc } from "../../core/dom.js?v=20261020-mulmangsan";
 
 export function sourceLinks(p, domesticOnly = false) {
   const urls = new Set();

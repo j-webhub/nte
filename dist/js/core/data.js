@@ -1,5 +1,5 @@
-import { DATA_FILES, OPTIONAL_PORTAL_DATA } from "../config/data-files.js?v=20261020-arc-images-rarity";
-import { ASSET_VERSION } from "../config/site.js?v=20261020-arc-images-rarity";
+import { DATA_FILES, OPTIONAL_PORTAL_DATA } from "../config/data-files.js?v=20261020-mulmangsan";
+import { ASSET_VERSION } from "../config/site.js?v=20261020-mulmangsan";
 
 export async function loadDatabase() {
   const pairs = await Promise.all(

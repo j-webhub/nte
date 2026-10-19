@@ -1,11 +1,11 @@
-import { state } from "../../core/state.js?v=20261020-arc-images-rarity";
-import { $ } from "../../core/dom.js?v=20261020-arc-images-rarity";
-import { openCharacter } from "../../core/router.js?v=20261020-arc-images-rarity";
-import { ELEMENT_ORDER, elem, elementIconUrl } from "./catalog.js?v=20261020-arc-images-rarity";
-import { renderRoster } from "./roster.js?v=20261020-arc-images-rarity";
-import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-arc-images-rarity";
-import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-arc-images-rarity";
-import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261020-arc-images-rarity";
+import { state } from "../../core/state.js?v=20261020-mulmangsan";
+import { $ } from "../../core/dom.js?v=20261020-mulmangsan";
+import { openCharacter } from "../../core/router.js?v=20261020-mulmangsan";
+import { ELEMENT_ORDER, elem, elementIconUrl } from "./catalog.js?v=20261020-mulmangsan";
+import { renderRoster } from "./roster.js?v=20261020-mulmangsan";
+import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-mulmangsan";
+import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-mulmangsan";
+import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261020-mulmangsan";
 
 export { renderRoster, renderProfile };
 

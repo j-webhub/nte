@@ -1,10 +1,10 @@
-import { state } from "../../../core/state.js?v=20261020-arc-images-rarity";
-import { renderOverview } from "./passives.js?v=20261020-arc-images-rarity";
-import { renderSkills } from "./skills.js?v=20261020-arc-images-rarity";
-import { renderAwakening } from "./awakening.js?v=20261020-arc-images-rarity";
-import { renderArcs } from "./arcs.js?v=20261020-arc-images-rarity";
-import { renderConsole } from "./console.js?v=20261020-arc-images-rarity";
-import { renderGrowth } from "./growth.js?v=20261020-arc-images-rarity";
+import { state } from "../../../core/state.js?v=20261020-mulmangsan";
+import { renderOverview } from "./passives.js?v=20261020-mulmangsan";
+import { renderSkills } from "./skills.js?v=20261020-mulmangsan";
+import { renderAwakening } from "./awakening.js?v=20261020-mulmangsan";
+import { renderArcs } from "./arcs.js?v=20261020-mulmangsan";
+import { renderConsole } from "./console.js?v=20261020-mulmangsan";
+import { renderGrowth } from "./growth.js?v=20261020-mulmangsan";
 
 export function renderTab(p) {
   if (state.activeTab === "skills") return renderSkills(p);

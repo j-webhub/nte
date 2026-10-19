@@ -1,8 +1,8 @@
-import { state } from "../../core/state.js?v=20261020-arc-images-rarity";
-import { $, esc, fmt } from "../../core/dom.js?v=20261020-arc-images-rarity";
-import { elem, assetUrl, elementIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-arc-images-rarity";
-import { getProfile } from "./model.js?v=20261020-arc-images-rarity";
-import { renderTab } from "./tabs/index.js?v=20261020-arc-images-rarity";
+import { state } from "../../core/state.js?v=20261020-mulmangsan";
+import { $, esc, fmt } from "../../core/dom.js?v=20261020-mulmangsan";
+import { elem, assetUrl, elementIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-mulmangsan";
+import { getProfile } from "./model.js?v=20261020-mulmangsan";
+import { renderTab } from "./tabs/index.js?v=20261020-mulmangsan";
 
 export function bindCharacterIllustration() {
   const visual = $("#main-content .hero-visual");

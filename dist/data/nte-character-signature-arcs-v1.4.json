@@ -189,7 +189,8 @@
     {
       "id": "umbrella",
       "nameEn": "Umbrella",
-      "nameKo": "우산",
+      "nameKo": "물망산",
+      "imageFile": "umbrella.webp",
       "characterId": "adler",
       "rarity": "A",
       "level80": {

@@ -1,7 +1,7 @@
-import { formatCharacterText } from "../text.js?v=20261020-arc-images-rarity";
+import { formatCharacterText } from "../text.js?v=20261020-mulmangsan";
 
-import { esc } from "../../../core/dom.js?v=20261020-arc-images-rarity";
-import { sourceLinks } from "../sources.js?v=20261020-arc-images-rarity";
+import { esc } from "../../../core/dom.js?v=20261020-mulmangsan";
+import { sourceLinks } from "../sources.js?v=20261020-mulmangsan";
 
 export function renderOverview(p, options = {}) {
   const {

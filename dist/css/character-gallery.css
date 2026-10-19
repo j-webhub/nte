@@ -250,7 +250,7 @@
   width: auto;
   padding: 2px 4px;
   text-align: center;
-  transform: skewX(-10deg) translateY(-1px);
+  transform: skewX(-10deg) translateY(1px);
   transform-origin: center;
 }
 @media (prefers-reduced-motion: reduce) {

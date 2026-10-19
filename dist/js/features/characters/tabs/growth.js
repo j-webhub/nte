@@ -1,6 +1,6 @@
-import { state } from "../../../core/state.js?v=20261020-filter-selection-color";
-import { esc, fmt } from "../../../core/dom.js?v=20261020-filter-selection-color";
-import { renderSkillGrowth } from "./skill-growth.js?v=20261020-filter-selection-color";
+import { state } from "../../../core/state.js?v=20261020-type-opacity";
+import { esc, fmt } from "../../../core/dom.js?v=20261020-type-opacity";
+import { renderSkillGrowth } from "./skill-growth.js?v=20261020-type-opacity";
 
 export function renderGrowth(p) {
   const data = state.db.growth;

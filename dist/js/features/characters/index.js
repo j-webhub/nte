@@ -1,11 +1,11 @@
-import { state } from "../../core/state.js?v=20261020-filter-selection-color";
-import { $ } from "../../core/dom.js?v=20261020-filter-selection-color";
-import { openCharacter } from "../../core/router.js?v=20261020-filter-selection-color";
-import { ELEMENT_ORDER, elem, elementIconUrl } from "./catalog.js?v=20261020-filter-selection-color";
-import { renderRoster } from "./roster.js?v=20261020-filter-selection-color";
-import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-filter-selection-color";
-import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-filter-selection-color";
-import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261020-filter-selection-color";
+import { state } from "../../core/state.js?v=20261020-type-opacity";
+import { $ } from "../../core/dom.js?v=20261020-type-opacity";
+import { openCharacter } from "../../core/router.js?v=20261020-type-opacity";
+import { ELEMENT_ORDER, elem, elementIconUrl } from "./catalog.js?v=20261020-type-opacity";
+import { renderRoster } from "./roster.js?v=20261020-type-opacity";
+import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-type-opacity";
+import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-type-opacity";
+import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261020-type-opacity";
 
 export { renderRoster, renderProfile };
 

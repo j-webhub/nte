@@ -1,6 +1,6 @@
-import { state } from "./state.js?v=20261020-filter-selection-color";
-import { $, esc, fmt } from "./dom.js?v=20261020-filter-selection-color";
-import { loadDatabase } from "./data.js?v=20261020-filter-selection-color";
+import { state } from "./state.js?v=20261020-type-opacity";
+import { $, esc, fmt } from "./dom.js?v=20261020-type-opacity";
+import { loadDatabase } from "./data.js?v=20261020-type-opacity";
 
 const VALID_VIEWS = new Set([
   "home",

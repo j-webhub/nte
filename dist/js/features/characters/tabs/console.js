@@ -1,7 +1,7 @@
-import { formatCharacterText } from "../text.js?v=20261020-filter-selection-color";
-import { state } from "../../../core/state.js?v=20261020-filter-selection-color";
-import { esc } from "../../../core/dom.js?v=20261020-filter-selection-color";
-import { sourceLinks } from "../sources.js?v=20261020-filter-selection-color";
+import { formatCharacterText } from "../text.js?v=20261020-type-opacity";
+import { state } from "../../../core/state.js?v=20261020-type-opacity";
+import { esc } from "../../../core/dom.js?v=20261020-type-opacity";
+import { sourceLinks } from "../sources.js?v=20261020-type-opacity";
 
 export function renderConsole(p) {
   const build = p.console;

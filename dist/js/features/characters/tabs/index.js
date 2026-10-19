@@ -1,10 +1,10 @@
-import { state } from "../../../core/state.js?v=20261020-filter-selection-color";
-import { renderOverview } from "./passives.js?v=20261020-filter-selection-color";
-import { renderSkills } from "./skills.js?v=20261020-filter-selection-color";
-import { renderAwakening } from "./awakening.js?v=20261020-filter-selection-color";
-import { renderArcs } from "./arcs.js?v=20261020-filter-selection-color";
-import { renderConsole } from "./console.js?v=20261020-filter-selection-color";
-import { renderGrowth } from "./growth.js?v=20261020-filter-selection-color";
+import { state } from "../../../core/state.js?v=20261020-type-opacity";
+import { renderOverview } from "./passives.js?v=20261020-type-opacity";
+import { renderSkills } from "./skills.js?v=20261020-type-opacity";
+import { renderAwakening } from "./awakening.js?v=20261020-type-opacity";
+import { renderArcs } from "./arcs.js?v=20261020-type-opacity";
+import { renderConsole } from "./console.js?v=20261020-type-opacity";
+import { renderGrowth } from "./growth.js?v=20261020-type-opacity";
 
 export function renderTab(p) {
   if (state.activeTab === "skills") return renderSkills(p);

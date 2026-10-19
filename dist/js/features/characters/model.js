@@ -1,4 +1,4 @@
-import { state } from "../../core/state.js?v=20261020-filter-selection-color";
+import { state } from "../../core/state.js?v=20261020-type-opacity";
 
 export function getProfile(id) {
   const character = state.db.characters[id];

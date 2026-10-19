@@ -1,5 +1,5 @@
-import { state } from "../../core/state.js?v=20261020-filter-selection-color";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-filter-selection-color";
+import { state } from "../../core/state.js?v=20261020-type-opacity";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-type-opacity";
 
 const PORTAL_MODULES = [
   {

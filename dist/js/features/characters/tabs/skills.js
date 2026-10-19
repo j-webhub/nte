@@ -1,9 +1,9 @@
-import { formatCharacterText } from "../text.js?v=20261020-filter-selection-color";
-import { state } from "../../../core/state.js?v=20261020-filter-selection-color";
-import { $, esc, fmt } from "../../../core/dom.js?v=20261020-filter-selection-color";
-import { SKILLS } from "../catalog.js?v=20261020-filter-selection-color";
-import { getProfile } from "../model.js?v=20261020-filter-selection-color";
-import { sourceLinks, coefficientSourceLinks } from "../sources.js?v=20261020-filter-selection-color";
+import { formatCharacterText } from "../text.js?v=20261020-type-opacity";
+import { state } from "../../../core/state.js?v=20261020-type-opacity";
+import { $, esc, fmt } from "../../../core/dom.js?v=20261020-type-opacity";
+import { SKILLS } from "../catalog.js?v=20261020-type-opacity";
+import { getProfile } from "../model.js?v=20261020-type-opacity";
+import { sourceLinks, coefficientSourceLinks } from "../sources.js?v=20261020-type-opacity";
 
 export function formatPercent(value) {
   const percent = Math.round(Number(value) * 1000) / 10;

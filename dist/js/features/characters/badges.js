@@ -1,5 +1,5 @@
-import { esc } from "../../core/dom.js?v=20261020-filter-selection-color";
-import { elem, elementIconUrl, arcTypeIconUrl, ARC_TYPES } from "./catalog.js?v=20261020-filter-selection-color";
+import { esc } from "../../core/dom.js?v=20261020-type-opacity";
+import { elem, elementIconUrl, arcTypeIconUrl, ARC_TYPES } from "./catalog.js?v=20261020-type-opacity";
 
 export function renderElementIcon(element) {
   return '<span class="db-icon-circle" role="img" aria-label="' + esc(elem(element).name + "속성") + '"><img class="db-element-icon" src="' +
@@ -8,7 +8,7 @@ export function renderElementIcon(element) {
 
 export function renderArcTypeIcon(type) {
   if (!ARC_TYPES[type]) return "";
-  return '<span class="db-icon-circle db-type-icon" style="--arc-type-symbol:url(' + esc(arcTypeIconUrl(type)) + ')" role="img" data-icon-label="' + esc(ARC_TYPES[type]) + '" aria-label="' + esc(ARC_TYPES[type]) + '"><img class="db-arc-icon" src="' +
+  return '<span class="db-icon-circle db-type-icon" role="img" data-icon-label="' + esc(ARC_TYPES[type]) + '" aria-label="' + esc(ARC_TYPES[type]) + '"><img class="db-arc-icon" src="' +
     esc(arcTypeIconUrl(type)) + '" alt="" aria-hidden="true"></span>';
 }
 

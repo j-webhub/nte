@@ -1,7 +1,17 @@
-import { state } from "../../core/state.js?v=20261020-round-filters";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-round-filters";
-import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261020-round-filters";
-import { renderArcTypeIcon, renderRarityBadge } from "../characters/badges.js?v=20261020-round-filters";
+import { state } from "../../core/state.js?v=20261020-arc-fold";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-arc-fold";
+import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261020-arc-fold";
+import { renderArcTypeIcon, renderRarityBadge } from "../characters/badges.js?v=20261020-arc-fold";
+
+function renderArcEffect(arc) {
+  const text = interpolateArcRankEffect(arc, 1) || "자료 없음";
+  const content = text.length > 180
+    ? '<details class="arc-db-long-effect"><summary><span class="arc-db-effect-preview" aria-hidden="true">' +
+      esc(text.slice(0, 150).trimEnd()) + '…</span><span class="arc-db-effect-more">효과 더 보기 ⌄</span>' +
+      '<span class="arc-db-effect-less">효과 접기 ⌃</span></summary><p>' + esc(text) + '</p></details>'
+    : '<p>' + esc(text) + '</p>';
+  return '<div class="arc-db-effect"><span>R1 효과</span>' + content + '</div>';
+}
 
 function filteredArcs(query = "") {
   const term = query.trim().toLocaleLowerCase("ko");
@@ -49,9 +59,8 @@ export function arcDatabaseCards(query = "") {
         esc(stats.secondaryStat || "부옵션") +
         " " +
         esc(stats.secondaryValue || "—") +
-        '</span></div><div class="arc-db-effect"><span>R1 효과</span><p>' +
-        esc(interpolateArcRankEffect(arc, 1) || "자료 없음") +
-        "</p></div>" +
+        '</span></div>' +
+        renderArcEffect(arc) +
         (owner
           ? '<button type="button" class="arc-db-character-link" data-open-character="' +
             esc(owner.id) +

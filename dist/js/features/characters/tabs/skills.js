@@ -1,9 +1,9 @@
-import { formatCharacterText } from "../text.js?v=20261020-round-filters";
-import { state } from "../../../core/state.js?v=20261020-round-filters";
-import { $, esc, fmt } from "../../../core/dom.js?v=20261020-round-filters";
-import { SKILLS } from "../catalog.js?v=20261020-round-filters";
-import { getProfile } from "../model.js?v=20261020-round-filters";
-import { sourceLinks, coefficientSourceLinks } from "../sources.js?v=20261020-round-filters";
+import { formatCharacterText } from "../text.js?v=20261020-arc-fold";
+import { state } from "../../../core/state.js?v=20261020-arc-fold";
+import { $, esc, fmt } from "../../../core/dom.js?v=20261020-arc-fold";
+import { SKILLS } from "../catalog.js?v=20261020-arc-fold";
+import { getProfile } from "../model.js?v=20261020-arc-fold";
+import { sourceLinks, coefficientSourceLinks } from "../sources.js?v=20261020-arc-fold";
 
 export function formatPercent(value) {
   const percent = Math.round(Number(value) * 1000) / 10;

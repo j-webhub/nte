@@ -1,7 +1,7 @@
-import { formatCharacterText } from "../text.js?v=20261020-round-filters";
+import { formatCharacterText } from "../text.js?v=20261020-arc-fold";
 
-import { esc } from "../../../core/dom.js?v=20261020-round-filters";
-import { sourceLinks } from "../sources.js?v=20261020-round-filters";
+import { esc } from "../../../core/dom.js?v=20261020-arc-fold";
+import { sourceLinks } from "../sources.js?v=20261020-arc-fold";
 
 export function renderOverview(p, options = {}) {
   const {

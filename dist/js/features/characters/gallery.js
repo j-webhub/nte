@@ -1,7 +1,7 @@
-import { state } from "../../core/state.js?v=20261020-round-filters";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-round-filters";
-import { ELEMENT_ORDER, elem, elementIconUrl, assetUrl } from "./catalog.js?v=20261020-round-filters";
-import { renderElementIcon, renderArcTypeIcon, renderRarityBadge } from "./badges.js?v=20261020-round-filters";
+import { state } from "../../core/state.js?v=20261020-arc-fold";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-arc-fold";
+import { ELEMENT_ORDER, elem, elementIconUrl, assetUrl } from "./catalog.js?v=20261020-arc-fold";
+import { renderElementIcon, renderArcTypeIcon, renderRarityBadge } from "./badges.js?v=20261020-arc-fold";
 
 function galleryCharacters() {
   const term = state.characterGalleryQuery.trim().toLocaleLowerCase("ko");

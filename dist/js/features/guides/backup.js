@@ -1,8 +1,8 @@
-import { $ } from "../../core/dom.js?v=20261020-round-filters";
-import { repository } from "./repository.js?v=20261020-round-filters";
-import { createId, sanitizeHtml, safeVideoLinks } from "./content.js?v=20261020-round-filters";
-import { createZip, readZip, safeArchivePath } from "./archive.js?v=20261020-round-filters";
-import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES, MAX_BACKUP_BYTES, MAX_MANIFEST_BYTES } from "./config.js?v=20261020-round-filters";
+import { $ } from "../../core/dom.js?v=20261020-arc-fold";
+import { repository } from "./repository.js?v=20261020-arc-fold";
+import { createId, sanitizeHtml, safeVideoLinks } from "./content.js?v=20261020-arc-fold";
+import { createZip, readZip, safeArchivePath } from "./archive.js?v=20261020-arc-fold";
+import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES, MAX_BACKUP_BYTES, MAX_MANIFEST_BYTES } from "./config.js?v=20261020-arc-fold";
 const encoder = new TextEncoder();
 
 export async function exportBackup({ setStatus }) {

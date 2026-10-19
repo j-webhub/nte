@@ -1,6 +1,6 @@
-import { state } from "../../core/state.js?v=20261020-round-filters";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-round-filters";
-import { NOTICE_PAGE_SIZE } from "../../config/site.js?v=20261020-round-filters";
+import { state } from "../../core/state.js?v=20261020-arc-fold";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-arc-fold";
+import { NOTICE_PAGE_SIZE } from "../../config/site.js?v=20261020-arc-fold";
 
 export function renderNoticeCard(item) {
   return (

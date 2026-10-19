@@ -1,6 +1,6 @@
-import { state } from "./state.js?v=20261020-round-filters";
-import { $, esc, fmt } from "./dom.js?v=20261020-round-filters";
-import { loadDatabase } from "./data.js?v=20261020-round-filters";
+import { state } from "./state.js?v=20261020-arc-fold";
+import { $, esc, fmt } from "./dom.js?v=20261020-arc-fold";
+import { loadDatabase } from "./data.js?v=20261020-arc-fold";
 
 const VALID_VIEWS = new Set([
   "home",

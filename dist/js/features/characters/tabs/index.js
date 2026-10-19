@@ -1,10 +1,10 @@
-import { state } from "../../../core/state.js?v=20261020-round-filters";
-import { renderOverview } from "./passives.js?v=20261020-round-filters";
-import { renderSkills } from "./skills.js?v=20261020-round-filters";
-import { renderAwakening } from "./awakening.js?v=20261020-round-filters";
-import { renderArcs } from "./arcs.js?v=20261020-round-filters";
-import { renderConsole } from "./console.js?v=20261020-round-filters";
-import { renderGrowth } from "./growth.js?v=20261020-round-filters";
+import { state } from "../../../core/state.js?v=20261020-arc-fold";
+import { renderOverview } from "./passives.js?v=20261020-arc-fold";
+import { renderSkills } from "./skills.js?v=20261020-arc-fold";
+import { renderAwakening } from "./awakening.js?v=20261020-arc-fold";
+import { renderArcs } from "./arcs.js?v=20261020-arc-fold";
+import { renderConsole } from "./console.js?v=20261020-arc-fold";
+import { renderGrowth } from "./growth.js?v=20261020-arc-fold";
 
 export function renderTab(p) {
   if (state.activeTab === "skills") return renderSkills(p);

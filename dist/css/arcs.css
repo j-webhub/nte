@@ -147,6 +147,44 @@
   white-space: pre-line;
 }
 
+.arc-db-long-effect summary {
+  margin-top: 5px;
+  list-style: none;
+  cursor: pointer;
+}
+.arc-db-long-effect summary::-webkit-details-marker {
+  display: none;
+}
+.arc-db-effect-preview {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  color: #b9c4cc;
+  font-size: 11px;
+  line-height: 1.65;
+  white-space: pre-line;
+}
+.arc-db-effect-more, .arc-db-effect-less {
+  display: block;
+  margin-top: 7px;
+  color: var(--accent);
+  font-size: 11px;
+}
+.arc-db-effect-less,
+.arc-db-long-effect[open] .arc-db-effect-preview,
+.arc-db-long-effect[open] .arc-db-effect-more {
+  display: none;
+}
+.arc-db-long-effect[open] .arc-db-effect-less {
+  display: block;
+}
+.arc-db-long-effect summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
 .arc-db-character-link {
   align-self: flex-end;
   margin-top: auto;

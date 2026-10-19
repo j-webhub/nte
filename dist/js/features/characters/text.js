@@ -1,5 +1,5 @@
-import { esc } from "../../core/dom.js?v=20261020-round-filters";
-import { elem } from "./catalog.js?v=20261020-round-filters";
+import { esc } from "../../core/dom.js?v=20261020-arc-fold";
+import { elem } from "./catalog.js?v=20261020-arc-fold";
 
 // Match source text before escaping so user-entered descriptions stay plain text.
 export function formatCharacterText(value, element) {

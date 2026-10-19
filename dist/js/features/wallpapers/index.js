@@ -1,5 +1,5 @@
-import { state } from "../../core/state.js?v=20261020-round-filters";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-round-filters";
+import { state } from "../../core/state.js?v=20261020-arc-fold";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-arc-fold";
 
 export function wallpaperFileName(item) {
   return String(item.imageUrl || "")

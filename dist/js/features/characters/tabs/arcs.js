@@ -1,8 +1,8 @@
-import { formatCharacterText } from "../text.js?v=20261020-type-opacity";
-import { state } from "../../../core/state.js?v=20261020-type-opacity";
-import { esc } from "../../../core/dom.js?v=20261020-type-opacity";
-import { sourceLinks } from "../sources.js?v=20261020-type-opacity";
-import { interpolateArcRankEffect } from "../../../shared/arc-ranks.js?v=20261020-type-opacity";
+import { formatCharacterText } from "../text.js?v=20261020-filter-opacity";
+import { state } from "../../../core/state.js?v=20261020-filter-opacity";
+import { esc } from "../../../core/dom.js?v=20261020-filter-opacity";
+import { sourceLinks } from "../sources.js?v=20261020-filter-opacity";
+import { interpolateArcRankEffect } from "../../../shared/arc-ranks.js?v=20261020-filter-opacity";
 
 export function renderArcs(p) {
   const character = state.db.arcs.characters.find(

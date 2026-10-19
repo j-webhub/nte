@@ -1,8 +1,8 @@
-import { $ } from "../../core/dom.js?v=20261020-type-opacity";
-import { repository } from "./repository.js?v=20261020-type-opacity";
-import { createId, sanitizeHtml, safeVideoLinks } from "./content.js?v=20261020-type-opacity";
-import { createZip, readZip, safeArchivePath } from "./archive.js?v=20261020-type-opacity";
-import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES, MAX_BACKUP_BYTES, MAX_MANIFEST_BYTES } from "./config.js?v=20261020-type-opacity";
+import { $ } from "../../core/dom.js?v=20261020-filter-opacity";
+import { repository } from "./repository.js?v=20261020-filter-opacity";
+import { createId, sanitizeHtml, safeVideoLinks } from "./content.js?v=20261020-filter-opacity";
+import { createZip, readZip, safeArchivePath } from "./archive.js?v=20261020-filter-opacity";
+import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES, MAX_BACKUP_BYTES, MAX_MANIFEST_BYTES } from "./config.js?v=20261020-filter-opacity";
 const encoder = new TextEncoder();
 
 export async function exportBackup({ setStatus }) {

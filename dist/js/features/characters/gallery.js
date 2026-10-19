@@ -1,7 +1,7 @@
-import { state } from "../../core/state.js?v=20261020-type-opacity";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-type-opacity";
-import { ELEMENT_ORDER, elem, elementIconUrl, assetUrl } from "./catalog.js?v=20261020-type-opacity";
-import { renderElementIcon, renderArcTypeIcon, renderRarityBadge } from "./badges.js?v=20261020-type-opacity";
+import { state } from "../../core/state.js?v=20261020-filter-opacity";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-filter-opacity";
+import { ELEMENT_ORDER, elem, elementIconUrl, assetUrl } from "./catalog.js?v=20261020-filter-opacity";
+import { renderElementIcon, renderArcTypeIcon, renderRarityBadge } from "./badges.js?v=20261020-filter-opacity";
 
 function galleryCharacters() {
   const term = state.characterGalleryQuery.trim().toLocaleLowerCase("ko");

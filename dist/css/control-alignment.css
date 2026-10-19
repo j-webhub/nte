@@ -82,10 +82,10 @@
   padding: 0;
 }
 
-/* Selection filters: solid white at rest, color only while selected. */
+/* Selection filters: dim white at rest, fully opaque while selected. */
 .character-gallery-element[aria-pressed="false"] img {
   filter: brightness(0) invert(1);
-  opacity: 1;
+  opacity: .4;
 }
 .character-gallery-element[aria-pressed="true"] img {
   filter: none;
@@ -95,6 +95,9 @@
   background: none;
   color: #fff;
   -webkit-text-fill-color: #fff;
+  opacity: .4;
+}
+.arc-db-filter-group button[aria-pressed="true"] .db-grade-letter {
   opacity: 1;
 }
 .arc-db-filter-group button .db-arc-icon {

@@ -1,8 +1,8 @@
-import { state } from "../../core/state.js?v=20261020-type-opacity";
-import { $, esc, fmt } from "../../core/dom.js?v=20261020-type-opacity";
-import { elem, assetUrl, elementIconUrl, arcTypeIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-type-opacity";
-import { getProfile } from "./model.js?v=20261020-type-opacity";
-import { renderTab } from "./tabs/index.js?v=20261020-type-opacity";
+import { state } from "../../core/state.js?v=20261020-filter-opacity";
+import { $, esc, fmt } from "../../core/dom.js?v=20261020-filter-opacity";
+import { elem, assetUrl, elementIconUrl, arcTypeIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-filter-opacity";
+import { getProfile } from "./model.js?v=20261020-filter-opacity";
+import { renderTab } from "./tabs/index.js?v=20261020-filter-opacity";
 
 export function bindCharacterIllustration() {
   const visual = $("#main-content .hero-visual");

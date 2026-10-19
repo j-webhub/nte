@@ -1,5 +1,5 @@
-import { state } from "../../../core/state.js?v=20261020-type-opacity";
-import { esc, fmt } from "../../../core/dom.js?v=20261020-type-opacity";
+import { state } from "../../../core/state.js?v=20261020-filter-opacity";
+import { esc, fmt } from "../../../core/dom.js?v=20261020-filter-opacity";
 
 export function renderSkillGrowth(p) {
   const data = state.db.growth.skillUpgrades;

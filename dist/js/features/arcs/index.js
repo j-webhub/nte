@@ -1,7 +1,7 @@
-import { state } from "../../core/state.js?v=20261020-type-opacity";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-type-opacity";
-import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261020-type-opacity";
-import { renderArcTypeIcon, renderRarityBadge } from "../characters/badges.js?v=20261020-type-opacity";
+import { state } from "../../core/state.js?v=20261020-filter-opacity";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-filter-opacity";
+import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261020-filter-opacity";
+import { renderArcTypeIcon, renderRarityBadge } from "../characters/badges.js?v=20261020-filter-opacity";
 
 function renderArcEffect(arc) {
   const text = interpolateArcRankEffect(arc, 1) || "자료 없음";

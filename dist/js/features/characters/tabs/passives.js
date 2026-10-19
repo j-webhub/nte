@@ -1,7 +1,7 @@
-import { formatCharacterText } from "../text.js?v=20261020-db-layout-fixes";
+import { formatCharacterText } from "../text.js?v=20261020-round-filters";
 
-import { esc } from "../../../core/dom.js?v=20261020-db-layout-fixes";
-import { sourceLinks } from "../sources.js?v=20261020-db-layout-fixes";
+import { esc } from "../../../core/dom.js?v=20261020-round-filters";
+import { sourceLinks } from "../sources.js?v=20261020-round-filters";
 
 export function renderOverview(p, options = {}) {
   const {

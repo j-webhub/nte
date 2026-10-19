@@ -1,7 +1,7 @@
-import { state } from "../../core/state.js?v=20261020-db-layout-fixes";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-db-layout-fixes";
-import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261020-db-layout-fixes";
-import { renderArcTypeIcon, renderRarityBadge } from "../characters/badges.js?v=20261020-db-layout-fixes";
+import { state } from "../../core/state.js?v=20261020-round-filters";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-round-filters";
+import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261020-round-filters";
+import { renderArcTypeIcon, renderRarityBadge } from "../characters/badges.js?v=20261020-round-filters";
 
 function filteredArcs(query = "") {
   const term = query.trim().toLocaleLowerCase("ko");

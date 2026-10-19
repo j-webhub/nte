@@ -7,8 +7,8 @@
   <meta name="description" content="이환 공지사항, 캐릭터와 아크 데이터베이스, 공략, 월페이퍼를 모아 보는 아카이브입니다.">
   <title>이환 아카이브</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css?v=20261020-db-layout-fixes">
-  <script type="module" src="./js/app.js?v=20261020-db-layout-fixes"></script>
+  <link rel="stylesheet" href="./styles.css?v=20261020-round-filters">
+  <script type="module" src="./js/app.js?v=20261020-round-filters"></script>
 </head>
 <body>
   <div class="app-shell">
@@ -34,8 +34,8 @@
       <aside class="roster-panel" id="roster-panel" aria-label="캐릭터 목록">
         <div class="roster-heading"><div><p class="eyebrow">캐릭터 도감</p><h2>캐릭터</h2></div><span class="roster-count" id="roster-count">—</span></div>
         <label class="search-box"><span class="search-icon" aria-hidden="true">⌕</span><span class="sr-only">캐릭터 검색</span><input id="character-search" type="search" placeholder="이름 검색" autocomplete="off"><kbd>/</kbd></label>
-        <label class="filter-label" for="element-filter">속성으로 찾기</label>
-        <select id="element-filter" class="element-filter"><option value="">모든 속성</option></select>
+        <p class="filter-label" id="roster-element-label">속성으로 찾기</p>
+        <div id="roster-element-filters" class="character-gallery-elements roster-element-filters" role="group" aria-labelledby="roster-element-label"></div>
         <a class="roster-all-characters" href="#characters">← 전체 캐릭터 보기</a>
         <div class="roster-list" id="roster-list" role="listbox" aria-label="출시 캐릭터"></div>
         <div class="roster-foot"><span class="foot-rule"></span><span>출시 캐릭터 기준 · 제로는 단일 항목</span></div>

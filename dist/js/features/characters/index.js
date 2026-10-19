@@ -1,11 +1,11 @@
-import { state } from "../../core/state.js?v=20261020-db-layout-fixes";
-import { $ } from "../../core/dom.js?v=20261020-db-layout-fixes";
-import { openCharacter } from "../../core/router.js?v=20261020-db-layout-fixes";
-import { ELEMENT_ORDER, ELEMENTS } from "./catalog.js?v=20261020-db-layout-fixes";
-import { renderRoster } from "./roster.js?v=20261020-db-layout-fixes";
-import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-db-layout-fixes";
-import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-db-layout-fixes";
-import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261020-db-layout-fixes";
+import { state } from "../../core/state.js?v=20261020-round-filters";
+import { $ } from "../../core/dom.js?v=20261020-round-filters";
+import { openCharacter } from "../../core/router.js?v=20261020-round-filters";
+import { ELEMENT_ORDER, elem, elementIconUrl } from "./catalog.js?v=20261020-round-filters";
+import { renderRoster } from "./roster.js?v=20261020-round-filters";
+import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-round-filters";
+import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-round-filters";
+import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261020-round-filters";
 
 export { renderRoster, renderProfile };
 
@@ -15,15 +15,20 @@ export function renderCharacters() {
 }
 
 export function initializeCharacters() {
-  ELEMENT_ORDER.forEach((key) => {
-    const value = ELEMENTS[key];
-    const option = document.createElement("option");
-    option.value = key;
-    option.textContent = value.name + "속성";
-    $("#element-filter").append(option);
+  $("#roster-element-filters").innerHTML = ELEMENT_ORDER.map(element =>
+    '<button type="button" class="character-gallery-element" data-roster-element="' + element +
+    '" aria-pressed="false" aria-label="' + elem(element).name + '속성" title="' + elem(element).name +
+    '속성 · 다시 누르면 해제"><img src="' + elementIconUrl(element) + '" alt="" aria-hidden="true"></button>'
+  ).join("");
+  $("#roster-element-filters").addEventListener("click", event => {
+    const button = event.target.closest("[data-roster-element]");
+    if (!button) return;
+    const element = button.dataset.rosterElement;
+    state.rosterElements = state.rosterElements.includes(element)
+      ? state.rosterElements.filter(value => value !== element) : [...state.rosterElements, element];
+    renderRoster();
   });
   $("#character-search").addEventListener("input", renderRoster);
-  $("#element-filter").addEventListener("change", renderRoster);
   $("#roster-list").addEventListener("click", (event) => {
     const row = event.target.closest("[data-id]");
     if (!row) return;

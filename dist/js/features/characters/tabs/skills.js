@@ -1,9 +1,9 @@
-import { formatCharacterText } from "../text.js?v=20261020-db-layout-fixes";
-import { state } from "../../../core/state.js?v=20261020-db-layout-fixes";
-import { $, esc, fmt } from "../../../core/dom.js?v=20261020-db-layout-fixes";
-import { SKILLS } from "../catalog.js?v=20261020-db-layout-fixes";
-import { getProfile } from "../model.js?v=20261020-db-layout-fixes";
-import { sourceLinks, coefficientSourceLinks } from "../sources.js?v=20261020-db-layout-fixes";
+import { formatCharacterText } from "../text.js?v=20261020-round-filters";
+import { state } from "../../../core/state.js?v=20261020-round-filters";
+import { $, esc, fmt } from "../../../core/dom.js?v=20261020-round-filters";
+import { SKILLS } from "../catalog.js?v=20261020-round-filters";
+import { getProfile } from "../model.js?v=20261020-round-filters";
+import { sourceLinks, coefficientSourceLinks } from "../sources.js?v=20261020-round-filters";
 
 export function formatPercent(value) {
   const percent = Math.round(Number(value) * 1000) / 10;

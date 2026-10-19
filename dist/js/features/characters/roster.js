@@ -1,18 +1,21 @@
-import { state } from "../../core/state.js?v=20261020-db-layout-fixes";
-import { $, esc } from "../../core/dom.js?v=20261020-db-layout-fixes";
-import { elem, elementIconUrl } from "./catalog.js?v=20261020-db-layout-fixes";
+import { state } from "../../core/state.js?v=20261020-round-filters";
+import { $, esc } from "../../core/dom.js?v=20261020-round-filters";
+import { elem, elementIconUrl } from "./catalog.js?v=20261020-round-filters";
 
 export function renderRoster() {
   const CHARACTER_DISPLAY_ORDER = state.db.index.displayCharacterIds || state.db.index.releasedCharacterIds;
   const term = $("#character-search").value.trim().toLowerCase(),
-    filter = $("#element-filter").value;
+    filter = state.rosterElements;
+  $("#roster-element-filters").querySelectorAll("[data-roster-element]").forEach(button => {
+    button.setAttribute("aria-pressed", String(filter.includes(button.dataset.rosterElement)));
+  });
   const matches = (c) => {
     const searchable = [c.names.ko, c.names.en, c.names.zhHans]
       .join(" ")
       .toLowerCase();
     return (
       (!term || searchable.includes(term)) &&
-      (!filter || c.element === filter)
+      (!filter.length || filter.includes(c.element))
     );
   };
   const characters = state.db.roster.characters

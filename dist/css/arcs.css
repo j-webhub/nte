@@ -15,7 +15,7 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 4px;
+  gap: 7px;
 }
 
 .arc-db-filter-label {
@@ -25,12 +25,14 @@
 }
 
 .arc-db-filter-group button {
+  width: 38px;
+  height: 38px;
   min-height: 38px;
-  padding: 7px 11px;
-  border: 1px solid var(--line);
-  border-radius: 7px;
+  padding: 3px;
+  border: 1px solid transparent;
+  border-radius: 50%;
   color: #b9c4cc;
-  background: #111820;
+  background: rgb(0 0 0 / 30%);
   font: inherit;
   font-size: 12px;
   cursor: pointer;
@@ -39,7 +41,13 @@
 .arc-db-filter-group button[aria-pressed="true"] {
   color: var(--accent);
   border-color: var(--accent);
-  background: #1b2830;
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  background: rgb(0 0 0 / 30%);
+}
+
+.arc-db-filter-group button .db-icon-circle {
+  background: transparent;
 }
 
 .arc-db-filter-group button:focus-visible {

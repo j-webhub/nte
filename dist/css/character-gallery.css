@@ -140,6 +140,20 @@
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
+.roster-element-filters {
+  gap: 5px;
+  padding: 3px 0;
+}
+.roster-element-filters .character-gallery-element {
+  flex-basis: 30px;
+  width: 30px;
+  height: 30px;
+  padding: 3px;
+}
+.roster-element-filters .character-gallery-element img {
+  width: 24px;
+  height: 24px;
+}
 .character-gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr));

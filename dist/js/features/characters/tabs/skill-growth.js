@@ -1,5 +1,5 @@
-import { state } from "../../../core/state.js?v=20261020-db-layout-fixes";
-import { esc, fmt } from "../../../core/dom.js?v=20261020-db-layout-fixes";
+import { state } from "../../../core/state.js?v=20261020-round-filters";
+import { esc, fmt } from "../../../core/dom.js?v=20261020-round-filters";
 
 export function renderSkillGrowth(p) {
   const data = state.db.growth.skillUpgrades;

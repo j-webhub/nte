@@ -4,6 +4,7 @@ export const state = {
   characterScreen: "gallery",
   characterGalleryQuery: "",
   characterGalleryElements: [],
+  rosterElements: [],
   activeTab: "overview",
   skillLevel: 1,
   activeSkillGroup: "basic",

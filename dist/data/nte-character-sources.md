@@ -2,6 +2,10 @@
 
 ## 공식 자료
 
+- [10월 21일 서버 점검 및 아카네 린 추가 안내](https://nte.perfectworld.com/kr/article/news/gamenews/20261019/264679.html)
+- [2026년 10월 19일 위반 계정 제재 공지](https://nte.perfectworld.com/kr/article/news/gamebroad/20261019/264669.html)
+- [2026년 10월 12일 위반 계정 제재 공지](https://nte.perfectworld.com/kr/article/news/gamebroad/20261012/264508.html)
+
 - [공식 한국어 사이트](https://nte.perfectworld.com/kr/article/news/gamenews/20260929/264413.html)
 - [아카네 글로벌 1.4 후반 업데이트 발표](https://www.gamespress.com/nl/NTE-Neverness-to-Everness-Takes-the-Stage-on-October-21-with-Akane-Rin)
 - [공식 중국어 사이트](https://yh.wanmei.com/main.html)

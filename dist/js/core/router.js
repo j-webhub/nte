@@ -1,8 +1,8 @@
-import { state } from "./state.js?v=20261020-searchable-pages";
-import { $, esc, fmt } from "./dom.js?v=20261020-searchable-pages";
-import { loadDatabase } from "./data.js?v=20261020-searchable-pages";
-import { pagePath, readRoute, isPlainClick } from "./urls.js?v=20261020-searchable-pages";
-import { updatePageMetadata } from "./metadata.js?v=20261020-searchable-pages";
+import { state } from "./state.js?v=20261021-official-notices-akane";
+import { $, esc, fmt } from "./dom.js?v=20261021-official-notices-akane";
+import { loadDatabase } from "./data.js?v=20261021-official-notices-akane";
+import { pagePath, readRoute, isPlainClick } from "./urls.js?v=20261021-official-notices-akane";
+import { updatePageMetadata } from "./metadata.js?v=20261021-official-notices-akane";
 
 const VALID_VIEWS = new Set([
   "home",

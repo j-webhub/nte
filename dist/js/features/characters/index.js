@@ -1,12 +1,12 @@
-import { state } from "../../core/state.js?v=20261020-searchable-pages";
-import { $ } from "../../core/dom.js?v=20261020-searchable-pages";
-import { openCharacter } from "../../core/router.js?v=20261020-searchable-pages";
-import { ELEMENT_ORDER, elem, elementIconUrl } from "./catalog.js?v=20261020-searchable-pages";
-import { renderRoster } from "./roster.js?v=20261020-searchable-pages";
-import { renderProfile, refreshActiveTab } from "./profile.js?v=20261020-searchable-pages";
-import { refreshSkillLevel } from "./tabs/skills.js?v=20261020-searchable-pages";
-import { isPlainClick } from "../../core/urls.js?v=20261020-searchable-pages";
-import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261020-searchable-pages";
+import { state } from "../../core/state.js?v=20261021-official-notices-akane";
+import { $ } from "../../core/dom.js?v=20261021-official-notices-akane";
+import { openCharacter } from "../../core/router.js?v=20261021-official-notices-akane";
+import { ELEMENT_ORDER, elem, elementIconUrl } from "./catalog.js?v=20261021-official-notices-akane";
+import { renderRoster } from "./roster.js?v=20261021-official-notices-akane";
+import { renderProfile, refreshActiveTab } from "./profile.js?v=20261021-official-notices-akane";
+import { refreshSkillLevel } from "./tabs/skills.js?v=20261021-official-notices-akane";
+import { isPlainClick } from "../../core/urls.js?v=20261021-official-notices-akane";
+import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261021-official-notices-akane";
 
 export { renderRoster, renderProfile };
 

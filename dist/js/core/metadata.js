@@ -1,5 +1,5 @@
-import { SITE_URL } from "../config/site.js?v=20261020-searchable-pages";
-import { pagePath } from "./urls.js?v=20261020-searchable-pages";
+import { SITE_URL } from "../config/site.js?v=20261021-official-notices-akane";
+import { pagePath } from "./urls.js?v=20261021-official-notices-akane";
 
 const labels = {home:"이환 아카이브",characters:"캐릭터 DB",arcs:"아크 DB",notices:"공지사항",guides:"공략 게시판",wallpapers:"월페이퍼"};
 const tabLabels = {overview:"소개·패시브",skills:"스킬·레벨별 계수",awakening:"돌파·각성·공명",arcs:"전용 아크",console:"콘솔·카트리지",growth:"성장·육성 재료"};

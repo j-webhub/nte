@@ -1,4 +1,4 @@
-import { SITE_URL } from "../config/site.js?v=20261020-searchable-pages";
+import { SITE_URL } from "../config/site.js?v=20261021-official-notices-akane";
 
 export const SITE_PATH = new URL(SITE_URL).pathname;
 export const CHARACTER_TABS = new Set(["overview", "skills", "awakening", "arcs", "console", "growth"]);

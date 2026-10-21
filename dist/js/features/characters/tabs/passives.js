@@ -1,7 +1,7 @@
-import { formatCharacterText } from "../text.js?v=20261020-searchable-pages";
+import { formatCharacterText } from "../text.js?v=20261021-official-notices-akane";
 
-import { esc } from "../../../core/dom.js?v=20261020-searchable-pages";
-import { sourceLinks } from "../sources.js?v=20261020-searchable-pages";
+import { esc } from "../../../core/dom.js?v=20261021-official-notices-akane";
+import { sourceLinks } from "../sources.js?v=20261021-official-notices-akane";
 
 export function renderOverview(p, options = {}) {
   const {

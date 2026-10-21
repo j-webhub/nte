@@ -1,10 +1,10 @@
-import { state } from "../../core/state.js?v=20261020-searchable-pages";
-import { $, esc, fmt, siteFooter } from "../../core/dom.js?v=20261020-searchable-pages";
-import { elem, assetUrl, elementIconUrl, arcTypeIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261020-searchable-pages";
-import { getProfile } from "./model.js?v=20261020-searchable-pages";
-import { renderTab } from "./tabs/index.js?v=20261020-searchable-pages";
-import { pagePath, isPlainClick } from "../../core/urls.js?v=20261020-searchable-pages";
-import { updatePageMetadata } from "../../core/metadata.js?v=20261020-searchable-pages";
+import { state } from "../../core/state.js?v=20261021-official-notices-akane";
+import { $, esc, fmt, siteFooter } from "../../core/dom.js?v=20261021-official-notices-akane";
+import { elem, assetUrl, elementIconUrl, arcTypeIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261021-official-notices-akane";
+import { getProfile } from "./model.js?v=20261021-official-notices-akane";
+import { renderTab } from "./tabs/index.js?v=20261021-official-notices-akane";
+import { pagePath, isPlainClick } from "../../core/urls.js?v=20261021-official-notices-akane";
+import { updatePageMetadata } from "../../core/metadata.js?v=20261021-official-notices-akane";
 
 export function bindCharacterIllustration() {
   const visual = $("#main-content .hero-visual");

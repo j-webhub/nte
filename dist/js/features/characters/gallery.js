@@ -1,8 +1,8 @@
-import { state } from "../../core/state.js?v=20261020-searchable-pages";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-searchable-pages";
-import { ELEMENT_ORDER, elem, elementIconUrl, assetUrl } from "./catalog.js?v=20261020-searchable-pages";
-import { renderElementIcon, renderArcTypeIcon, renderRarityBadge } from "./badges.js?v=20261020-searchable-pages";
-import { pagePath } from "../../core/urls.js?v=20261020-searchable-pages";
+import { state } from "../../core/state.js?v=20261021-official-notices-akane";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261021-official-notices-akane";
+import { ELEMENT_ORDER, elem, elementIconUrl, assetUrl } from "./catalog.js?v=20261021-official-notices-akane";
+import { renderElementIcon, renderArcTypeIcon, renderRarityBadge } from "./badges.js?v=20261021-official-notices-akane";
+import { pagePath } from "../../core/urls.js?v=20261021-official-notices-akane";
 
 function galleryCharacters() {
   const term = state.characterGalleryQuery.trim().toLocaleLowerCase("ko");

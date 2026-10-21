@@ -1,10 +1,10 @@
-import { state } from "../../../core/state.js?v=20261020-searchable-pages";
-import { renderOverview } from "./passives.js?v=20261020-searchable-pages";
-import { renderSkills } from "./skills.js?v=20261020-searchable-pages";
-import { renderAwakening } from "./awakening.js?v=20261020-searchable-pages";
-import { renderArcs } from "./arcs.js?v=20261020-searchable-pages";
-import { renderConsole } from "./console.js?v=20261020-searchable-pages";
-import { renderGrowth } from "./growth.js?v=20261020-searchable-pages";
+import { state } from "../../../core/state.js?v=20261021-official-notices-akane";
+import { renderOverview } from "./passives.js?v=20261021-official-notices-akane";
+import { renderSkills } from "./skills.js?v=20261021-official-notices-akane";
+import { renderAwakening } from "./awakening.js?v=20261021-official-notices-akane";
+import { renderArcs } from "./arcs.js?v=20261021-official-notices-akane";
+import { renderConsole } from "./console.js?v=20261021-official-notices-akane";
+import { renderGrowth } from "./growth.js?v=20261021-official-notices-akane";
 
 export function renderTab(p) {
   if (state.activeTab === "skills") return renderSkills(p);

@@ -1,4 +1,4 @@
-import { state } from "../../core/state.js?v=20261020-searchable-pages";
+import { state } from "../../core/state.js?v=20261021-official-notices-akane";
 
 export function getProfile(id) {
   const character = state.db.characters[id];

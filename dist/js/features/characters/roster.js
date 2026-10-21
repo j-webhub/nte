@@ -1,7 +1,7 @@
-import { state } from "../../core/state.js?v=20261020-searchable-pages";
-import { $, esc } from "../../core/dom.js?v=20261020-searchable-pages";
-import { elem, elementIconUrl } from "./catalog.js?v=20261020-searchable-pages";
-import { pagePath } from "../../core/urls.js?v=20261020-searchable-pages";
+import { state } from "../../core/state.js?v=20261021-official-notices-akane";
+import { $, esc } from "../../core/dom.js?v=20261021-official-notices-akane";
+import { elem, elementIconUrl } from "./catalog.js?v=20261021-official-notices-akane";
+import { pagePath } from "../../core/urls.js?v=20261021-official-notices-akane";
 
 export function renderRoster() {
   const CHARACTER_DISPLAY_ORDER = state.db.index.displayCharacterIds || state.db.index.releasedCharacterIds;

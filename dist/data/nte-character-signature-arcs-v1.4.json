@@ -3,13 +3,13 @@
   "snapshotDate": "2026-10-02",
   "gameVersion": "1.4 Global",
   "scope": {
-    "releasedCharacters": 23,
+    "releasedCharacters": 24,
     "charactersWithConfirmedSignatureArc": 23,
     "signatureArcRecords": 24,
     "definition": "A signature Arc is one explicitly linked to a character by a motif/signature guide or character-specific source. General best-in-slot/recommended Arcs are not treated as signatures without that link.",
     "zeroRule": "Zero is one character and has two distinct signature Arc records.",
     "excluded": "Mint's possible recommendations are not included as confirmed signatures because the reviewed sources disagree and do not establish a dedicated Arc link.",
-    "upcomingCharactersWithSignatureArc": 1
+    "upcomingCharactersWithSignatureArc": 0
   },
   "dataNotes": [
     "R1 and R5 effects are sourced values. Rank 2-4 values in rankInterpolationPairs are linearly interpolated from the matching R1/R5 numeric options; non-scaling conditions and durations remain as written in R1.",
@@ -187,7 +187,7 @@
     },
     {
       "characterId": "akane-rin",
-      "status": "announced_signature",
+      "status": "confirmed",
       "signatureArcIds": [
         "far-side-of-the-moon"
       ]

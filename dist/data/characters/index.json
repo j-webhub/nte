@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "rosterMetadata": {
     "dataset": "Neverness to Everness character roster",
-    "snapshotDate": "2026-10-20",
+    "snapshotDate": "2026-10-21",
     "gameVersion": "1.4",
     "scope": "Unique playable characters released by the snapshot date; gender-selectable Esper Zero is one character record.",
     "coverage": {
-      "releasedUniqueCharacters": 23,
-      "confirmedUpcomingCharacters": 1,
+      "releasedUniqueCharacters": 24,
+      "confirmedUpcomingCharacters": 0,
       "plannedUniqueCharactersInGlobalVersion14": 24,
       "deepSkillAndGrowthData": "Individual character files contain Korean-source-verified skill names, combat summaries, awakenings 1-6, and awakening 3/6 bonuses, plus restored per-level coefficient tables with attributed source links. Coefficient values are not claimed as Korean-verified. Character city skills are stage-based; categoryKo marks an applicable field and is separate from a city-activity catalog. Unknown effects remain blank. Breakthrough-stage stat tables and materials remain unverified.",
       "acquisitionDetails": "not included; availability varies by server, event, and version"
@@ -70,13 +70,15 @@
       "koreanCommunityDatabase": "https://ntegame.net/ko/characters/",
       "koreanSecondaryRoster": "https://alkapa.gg/neverness-to-everness/characters",
       "chineseCommunityRoster": "https://wiki.mysqil.com/characters/",
-      "chineseBilibiliWikiRoster": "https://wiki.biligame.com/yh/%E8%A7%92%E8%89%B2%E5%9B%BE%E9%89%B4"
+      "chineseBilibiliWikiRoster": "https://wiki.biligame.com/yh/%E8%A7%92%E8%89%B2%E5%9B%BE%E9%89%B4",
+      "officialSecondHalfUpdate": "https://nte.perfectworld.com/kr/article/news/gamenews/20261019/264679.html"
     },
     "koreanSkillAwakeningVerificationDate": "2026-10-06",
     "deepSkillAndGrowthData": "Individual character files contain Korean-source-verified skill names, combat summaries, awakenings 1-6, and awakening 3/6 bonuses, plus restored per-level coefficient tables with attributed source links. Coefficient values are not claimed as Korean-verified. Character city skills are stage-based; categoryKo marks an applicable field and is separate from a city-activity catalog. Unknown effects remain blank. Breakthrough-stage stat tables and materials remain unverified."
   },
   "releasedCharacterIds": [
     "adler",
+    "akane-rin",
     "aurelia",
     "baicang",
     "blackbird",
@@ -100,9 +102,7 @@
     "zankou",
     "zero"
   ],
-  "upcomingCharacterIds": [
-    "akane-rin"
-  ],
+  "upcomingCharacterIds": [],
   "watchlist": [
     {
       "id": "taygedo",
@@ -115,6 +115,7 @@
     }
   ],
   "displayCharacterIds": [
+    "akane-rin",
     "blackbird",
     "linko",
     "zankou",

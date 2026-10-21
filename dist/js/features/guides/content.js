@@ -1,4 +1,4 @@
-import { ALLOWED_TAGS, BLOCKED_TAGS, FONT_FAMILIES, FONT_SIZES } from "./config.js?v=20261020-searchable-pages";
+import { ALLOWED_TAGS, BLOCKED_TAGS, FONT_FAMILIES, FONT_SIZES } from "./config.js?v=20261021-official-notices-akane";
 
 export function createId() {
   return crypto.randomUUID?.() || (Date.now().toString(36) + Math.random().toString(36).slice(2));

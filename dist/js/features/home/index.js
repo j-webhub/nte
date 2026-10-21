@@ -1,6 +1,6 @@
-import { state } from "../../core/state.js?v=20261020-searchable-pages";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261020-searchable-pages";
-import { pagePath } from "../../core/urls.js?v=20261020-searchable-pages";
+import { state } from "../../core/state.js?v=20261021-official-notices-akane";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261021-official-notices-akane";
+import { pagePath } from "../../core/urls.js?v=20261021-official-notices-akane";
 
 let lastWallpaperUrl = "";
 const lastMenuImages = new Map();

@@ -1,6 +1,6 @@
-import { state } from "../../../core/state.js?v=20261020-searchable-pages";
-import { esc, fmt } from "../../../core/dom.js?v=20261020-searchable-pages";
-import { renderSkillGrowth } from "./skill-growth.js?v=20261020-searchable-pages";
+import { state } from "../../../core/state.js?v=20261021-official-notices-akane";
+import { esc, fmt } from "../../../core/dom.js?v=20261021-official-notices-akane";
+import { renderSkillGrowth } from "./skill-growth.js?v=20261021-official-notices-akane";
 
 export function renderGrowth(p) {
   const data = state.db.growth;

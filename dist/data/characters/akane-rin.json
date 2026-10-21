@@ -15,7 +15,7 @@
     "released": true,
     "source": "https://nte.perfectworld.com/kr/article/news/gamenews/20261019/264679.html",
     "officialSource": "https://nte.perfectworld.com/kr/article/news/gamenews/20261019/264679.html",
-    "detailsSourceStatus": "User-provided Korean skill and awakening text preserved; signature Arc, console specialization/build, ascension and direct skill upgrade materials added from community sources on 2026-10-20. Released globally on 2026-10-21; release status updated at the user’s request.",
+    "detailsSourceStatus": "User-provided Korean skill and awakening text preserved; signature Arc, console specialization/build, ascension and direct skill upgrade materials added from community sources on 2026-10-20. Released globally on 2026-10-21; release status updated at the user’s request. Level 80 maximum-ascension HP/ATK/DEF cross-checked against Kaiden and Interactive Map on 2026-10-21; common unmodified critical stats are 5%/50%.",
     "communityRoleKo": "기타리스트 · 전직 이상 헌터",
     "portraitFile": "아카네.webp",
     "globalAvailability": "2026-10-21"
@@ -56,7 +56,7 @@
       "https://ntegame.net/ko/guides/upcoming-characters/",
       "https://www.mone.gg/tw/blog/nte/akane-rin-guide.html"
     ],
-    "comparisonNote": "2026-10-21 글로벌 출시 상태를 반영했습니다. 사용자가 제공한 한국어 스킬·각성·공명·패시브·도시 스킬 설명을 유지하며, 기본 능력치와 레벨별 계수는 확인 후 추가합니다.",
+    "comparisonNote": "2026-10-21 글로벌 출시 상태와 80레벨 최대 돌파 기본 능력치를 반영했습니다. 사용자가 제공한 한국어 스킬·각성·공명·패시브·도시 스킬 설명을 유지하며, 레벨별 계수는 확인 후 추가합니다.",
     "releaseInfoKo": {
       "schedule": "2026.10.21 글로벌 1.4 후반 업데이트에 추가되었습니다.",
       "reward": "1.4 종료 전 캐릭터 생성과 우편 해금 조건을 충족하면 아카네 린 코스튬 「바텐더 스페셜」과 200만 폰즈를 우편으로 받을 수 있습니다."
@@ -76,7 +76,13 @@
   "mechanics": {
     "id": "akane-rin",
     "nameKo": "아카네",
-    "level80BaseStats": null,
+    "level80BaseStats": {
+      "hp": 14678,
+      "atk": 556,
+      "def": 845,
+      "critRatePct": 5,
+      "critDamagePct": 50
+    },
     "awakeningEffectsKo": [
       "A1: 강화 바이레일 스킬 「레조넌스」를 발동할 때마다 아카네 린의 기본 공격력 1,000%에 해당하는 HP를 즉시 회복하고, 방어력이 50%, 경직 저항력이 60% 증가한다. (15초 지속)",
       "A2: 「오버톤」이 부여되었거나 「음역」 내에 있는 적의 상속성 저항이 12% 감소한다.",
@@ -89,8 +95,8 @@
       "3": "온음계: 일반 공격, 바이레일 스킬, 울티메이트 스킬 레벨이 1 상승한다. 전투에 진입하면 「파워 코드」가 즉시 가득 찬다. 강화 바이레일 스킬 「레조넌스」에 800% 고정 배율이 추가되며, 「울티메이트: 클라이맥스 임팩트」 2단계에 1,000% 고정 배율이 추가된다.",
       "6": "폴리포니: 강화 바이레일 스킬 「레조넌스」를 발동할 때마다 「파워 코드」를 10P 회복한다. 발동하면 아카네 린의 치명 피해가 64% 증가한다. (25초 지속)"
     },
-    "sourceUrl": "",
-    "notes": "각성·공명 효과는 사용자가 제공한 한국어 설명을 반영했습니다. 80레벨 기본 능력치와 레벨별 스킬 계수는 확인 후 입력합니다.",
+    "sourceUrl": "https://www.kaiden.gg/nte/characters/akane/",
+    "notes": "각성 이름과 효과는 사용자가 제공한 한국어 설명을 반영했습니다. 80레벨 최대 돌파 기본 능력치는 2026-10-21 Kaiden과 Interactive Map 데이터베이스를 대조했습니다. 치명 확률 5%, 치명 피해 50%는 장비·인연·각성 보너스를 제외한 공통 기본값입니다. 레벨별 스킬 계수는 확인 후 입력합니다.",
     "awakeningNamesKo": {
       "A1": "교실 뒤의 기타 악보",
       "A2": "기타샵의 카포",

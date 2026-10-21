@@ -1,7 +1,7 @@
-import { formatCharacterText } from "../text.js?v=20261021-official-notices-akane";
-import { state } from "../../../core/state.js?v=20261021-official-notices-akane";
-import { esc } from "../../../core/dom.js?v=20261021-official-notices-akane";
-import { sourceLinks } from "../sources.js?v=20261021-official-notices-akane";
+import { formatCharacterText } from "../text.js?v=20261021-akane-level80";
+import { state } from "../../../core/state.js?v=20261021-akane-level80";
+import { esc } from "../../../core/dom.js?v=20261021-akane-level80";
+import { sourceLinks } from "../sources.js?v=20261021-akane-level80";
 
 export function renderConsole(p) {
   const build = p.console;

@@ -1,9 +1,9 @@
-import { state } from "../../core/state.js?v=20261021-official-notices-akane";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261021-official-notices-akane";
-import { repository } from "./repository.js?v=20261021-official-notices-akane";
-import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES } from "./config.js?v=20261021-official-notices-akane";
-import { createId, bytesOf, safeVideoLinks, sanitizeHtml } from "./content.js?v=20261021-official-notices-akane";
-import { exportBackup, importBackup } from "./backup.js?v=20261021-official-notices-akane";
+import { state } from "../../core/state.js?v=20261021-akane-level80";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261021-akane-level80";
+import { repository } from "./repository.js?v=20261021-akane-level80";
+import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES } from "./config.js?v=20261021-akane-level80";
+import { createId, bytesOf, safeVideoLinks, sanitizeHtml } from "./content.js?v=20261021-akane-level80";
+import { exportBackup, importBackup } from "./backup.js?v=20261021-akane-level80";
 
 let currentPostId = null;
 let currentPost = null;

@@ -1,7 +1,7 @@
-import { state } from "../../core/state.js?v=20261021-official-notices-akane";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261021-official-notices-akane";
-import { pagePath } from "../../core/urls.js?v=20261021-official-notices-akane";
-import { NOTICE_PAGE_SIZE } from "../../config/site.js?v=20261021-official-notices-akane";
+import { state } from "../../core/state.js?v=20261021-akane-level80";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261021-akane-level80";
+import { pagePath } from "../../core/urls.js?v=20261021-akane-level80";
+import { NOTICE_PAGE_SIZE } from "../../config/site.js?v=20261021-akane-level80";
 
 export function renderNoticeCard(item) {
   return (

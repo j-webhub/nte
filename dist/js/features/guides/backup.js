@@ -1,8 +1,8 @@
-import { $ } from "../../core/dom.js?v=20261021-official-notices-akane";
-import { repository } from "./repository.js?v=20261021-official-notices-akane";
-import { createId, sanitizeHtml, safeVideoLinks } from "./content.js?v=20261021-official-notices-akane";
-import { createZip, readZip, safeArchivePath } from "./archive.js?v=20261021-official-notices-akane";
-import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES, MAX_BACKUP_BYTES, MAX_MANIFEST_BYTES } from "./config.js?v=20261021-official-notices-akane";
+import { $ } from "../../core/dom.js?v=20261021-akane-level80";
+import { repository } from "./repository.js?v=20261021-akane-level80";
+import { createId, sanitizeHtml, safeVideoLinks } from "./content.js?v=20261021-akane-level80";
+import { createZip, readZip, safeArchivePath } from "./archive.js?v=20261021-akane-level80";
+import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES, MAX_BACKUP_BYTES, MAX_MANIFEST_BYTES } from "./config.js?v=20261021-akane-level80";
 const encoder = new TextEncoder();
 
 export async function exportBackup({ setStatus }) {

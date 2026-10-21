@@ -1,4 +1,4 @@
-import { SITE_URL } from "../config/site.js?v=20261021-official-notices-akane";
+import { SITE_URL } from "../config/site.js?v=20261021-akane-level80";
 
 export const SITE_PATH = new URL(SITE_URL).pathname;
 export const CHARACTER_TABS = new Set(["overview", "skills", "awakening", "arcs", "console", "growth"]);

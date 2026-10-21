@@ -1,5 +1,5 @@
-import { esc } from "../../core/dom.js?v=20261021-official-notices-akane";
-import { elem } from "./catalog.js?v=20261021-official-notices-akane";
+import { esc } from "../../core/dom.js?v=20261021-akane-level80";
+import { elem } from "./catalog.js?v=20261021-akane-level80";
 
 // Match source text before escaping so user-entered descriptions stay plain text.
 export function formatCharacterText(value, element) {

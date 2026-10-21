@@ -1,8 +1,8 @@
-import { state } from "./state.js?v=20261021-official-notices-akane";
-import { $, esc, fmt } from "./dom.js?v=20261021-official-notices-akane";
-import { loadDatabase } from "./data.js?v=20261021-official-notices-akane";
-import { pagePath, readRoute, isPlainClick } from "./urls.js?v=20261021-official-notices-akane";
-import { updatePageMetadata } from "./metadata.js?v=20261021-official-notices-akane";
+import { state } from "./state.js?v=20261021-akane-level80";
+import { $, esc, fmt } from "./dom.js?v=20261021-akane-level80";
+import { loadDatabase } from "./data.js?v=20261021-akane-level80";
+import { pagePath, readRoute, isPlainClick } from "./urls.js?v=20261021-akane-level80";
+import { updatePageMetadata } from "./metadata.js?v=20261021-akane-level80";
 
 const VALID_VIEWS = new Set([
   "home",

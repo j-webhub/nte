@@ -5,7 +5,7 @@ export const SKILLS = [
   {id:'orbit',name:'위성 파편',en:'ORBITAL',icon:'◌',color:'#71daca',type:'공격',desc:'몸 주위를 회전하는 파편이 적을 밀어냅니다.',detail:'레벨마다 파편 +1, 접촉 피해 +18%.',weight:10},
   {id:'regen',name:'초재생',en:'REGENERATION',icon:'✚',color:'#9bdfac',type:'생존',desc:'상처를 회복하는 초능력. 체력이 서서히 재생됩니다.',detail:'레벨마다 초당 최대 체력의 0.35% 회복.',weight:12},
   {id:'haste',name:'신경 가속',en:'ACCELERATION',icon:'»',color:'#8dcdf9',type:'강화',desc:'신경 반응을 가속해 이동과 공격이 빨라집니다.',detail:'레벨마다 이동 속도 +7%, 공격 속도 +6%.',weight:11},
-  {id:'time',name:'시간 정지',en:'TIME STOP',icon:'◷',color:'#ded1ff',type:'특수',desc:'주기적으로 일반 적과 그 탄환의 시간을 멈춥니다. 보스와 보스 탄환은 면역입니다.',detail:'기본 주기 21초. 지속 1초 + 레벨당 0.2초. 성능 연구 및 장비 강화 불가.',weight:5},
+  {id:'time',name:'시간 정지',en:'TIME STOP',icon:'◷',color:'#ded1ff',type:'특수',desc:'주기적으로 일반 적과 그 탄환의 시간을 멈춥니다. 보스와 보스 탄환은 절반의 시간만 정지합니다.',detail:'기본 주기 21초. 지속 2초 + 레벨당 0.4초. 보스는 절반. 성능 연구 및 장비 강화 불가.',weight:5},
   {id:'frost',name:'절대 영도',en:'ABSOLUTE ZERO',icon:'❄',color:'#a0e5ff',type:'마법',desc:'냉기의 파동으로 주변 적을 얼리고 둔화시킵니다.',detail:'레벨마다 피해 +25%, 범위 +16.',weight:9},
   {id:'gravity',name:'중력 붕괴',en:'SINGULARITY',icon:'◉',color:'#bf9bff',type:'마법',desc:'가까운 적 아래에 중력장을 생성해 적을 끌어당깁니다.',detail:'레벨마다 피해 +25%, 중력장 반경 +10.',weight:6},
   {id:'shield',name:'정신 장벽',en:'PSYCHIC BARRIER',icon:'⬡',color:'#78c8e5',type:'생존',desc:'정신 에너지를 둘러 받는 피해를 줄입니다.',detail:'레벨마다 받는 피해 감소. 최대 65%.',weight:10},
@@ -13,8 +13,8 @@ export const SKILLS = [
   {id:'vampire',name:'생명 흡수',en:'LIFE DRAIN',icon:'♢',color:'#f794b3',type:'생존',desc:'적을 처치하면 생명 에너지를 흡수합니다.',detail:'레벨마다 처치 시 체력 0.6 회복.',weight:7},
 ];
 SKILLS.push(
-  {id:'sun',name:'인공 태양',en:'ARTIFICIAL SUN',icon:'☀',color:'#ffd18a',type:'융합',fusion:true,desc:'거대한 화염구와 사방으로 터지는 태양탄을 방출합니다.',detail:'홍련의 구 Lv.10 + 에너지 폭주 Lv.10. 두 능력을 소비해 자동 융합합니다.',weight:0},
-  {id:'chronos',name:'크로노스 엔진',en:'CHRONOS ENGINE',icon:'◴',color:'#c9bcff',type:'융합',fusion:true,desc:'가속된 신체로 전장을 누비며 일반 적의 시간을 정지시킵니다. 보스는 면역입니다.',detail:'시간 정지 Lv.10 + 신경 가속 Lv.10. 주기 13.5초, 정지 3초. 성능 연구 및 장비 강화 불가.',weight:0},
+  {id:'sun',name:'인공 태양',en:'ARTIFICIAL SUN',icon:'☀',color:'#ffd18a',type:'융합',fusion:true,desc:'거대한 화염구와 사방으로 터지는 태양탄을 방출합니다.',detail:'홍련의 구 Lv.10 + 에너지 폭주 Lv.10. 두 능력이 Lv.10일 때 레벨업 선택지에서 융합합니다.',weight:0},
+  {id:'chronos',name:'크로노스 엔진',en:'CHRONOS ENGINE',icon:'◴',color:'#c9bcff',type:'융합',fusion:true,desc:'가속된 신체로 전장을 누비며 일반 적의 시간을 정지시킵니다. 보스는 절반의 시간만 정지합니다.',detail:'시간 정지 Lv.10 + 신경 가속 Lv.10. 주기 13.5초, 정지 6초, 보스는 절반. 성능 연구 및 장비 강화 불가.',weight:0},
 );
 export const RECIPES = [
   {id:'sun',ingredients:['fire','nova'],level:10},
@@ -85,3 +85,17 @@ QUESTS.push(
  {id:'unlock_guardian',title:'끝까지 지키는 사람',desc:'7스테이지를 클리어하세요.',stat:'maxStage',target:8,character:'guardian',reward:450},
  {id:'unlock_rift',title:'경계의 추적자',desc:'9스테이지를 클리어하세요.',stat:'maxStage',target:10,character:'riftwalker',reward:550}
 );
+
+SKILLS.push(
+ {id:'healingfactor',name:'힐링팩터',en:'HEALING FACTOR',icon:'✤',color:'#8de9b0',type:'융합',fusion:true,desc:'매초 체력을 회복하고 치명상에서 한 번 부활합니다.',detail:'최대 체력의 초당 10% 회복, 출격당 1회 부활. 레벨당 회복 +1%p.',weight:8},
+ {id:'gravityshot',name:'중력탄환',en:'GRAVITY SHOT',icon:'⊚',color:'#bea5ff',type:'융합',fusion:true,desc:'명중 지점에 적을 끌어당기는 중력장을 만드는 탄환을 발사합니다.',detail:'명중 시 중력장 생성. 레벨당 피해·범위 강화.',weight:8},
+ {id:'satellitebarrier',name:'위성장벽',en:'SATELLITE BARRIER',icon:'⬢',color:'#89dfd9',type:'융합',fusion:true,desc:'적을 밀어내는 위성 장벽을 두르고 받는 피해를 줄입니다.',detail:'위성 접촉 피해와 밀치기, 피해 감소. 레벨당 강화.',weight:8}
+);
+RECIPES.push({id:'healingfactor',ingredients:['regen','vampire'],level:10},{id:'gravityshot',ingredients:['gravity','kinetic'],level:10},{id:'satellitebarrier',ingredients:['orbit','shield'],level:10});
+export const UNIT_SKILLS=[
+ {id:'unit_pickup',name:'감응 범위',en:'PICKUP RANGE',icon:'◎',color:'#b4e892',type:'유닛',desc:'이번 작전 동안 획득 범위 +12%.',detail:'레벨당 획득 범위 +12%.',weight:8},
+ {id:'unit_xp',name:'경험 적응',en:'XP GAIN',icon:'◇',color:'#b4e892',type:'유닛',desc:'이번 작전 동안 경험치 획득 +10%.',detail:'레벨당 경험치 +10%. 덩어리당 최대 20.',weight:8},
+ {id:'unit_rate',name:'공격 가속',en:'ATTACK RATE',icon:'ϟ',color:'#b4e892',type:'유닛',desc:'이번 작전 동안 공격 속도 +8%.',detail:'레벨당 공격 속도 +8%.',weight:8},
+ {id:'unit_speed',name:'기동 강화',en:'MOVE SPEED',icon:'»',color:'#b4e892',type:'유닛',desc:'이번 작전 동안 이동 속도 +8%.',detail:'레벨당 이동 속도 +8%.',weight:8},
+ {id:'unit_area',name:'범위 확장',en:'ATTACK AREA',icon:'◌',color:'#b4e892',type:'유닛',desc:'이번 작전 동안 공격 범위 +10%.',detail:'폭발·파동·중력장·위성 반경 레벨당 +10%.',weight:8}
+];

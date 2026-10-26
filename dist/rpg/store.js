@@ -1,15 +1,15 @@
 import {SKILLS,STAGES,CHARACTERS,UPGRADES,QUESTS,byId,upgradeCost} from './data.js';
-import {initializeGear,normalizeGear} from './equipment.js';
+import {initializeGear,normalizeGear,GRADE_IDS} from './equipment.js';
 const KEY='nightfall.save.v1';
-export function freshSave(){const s={version:3,credits:0,character:'jin',maxStage:1,upgrades:{},research:{},discovered:[],unlocked:['jin','seo'],claimed:[],stats:{kills:0,bosses:0,clears:0,runs:0,bestTime:0},history:[],sound:true};initializeGear(s);return s;}
+export function freshSave(){const s={version:4,credits:0,autoSellGrade:null,character:'jin',maxStage:1,upgrades:{},research:{},discovered:[],unlocked:['jin','seo'],claimed:[],stats:{kills:0,bosses:0,clears:0,runs:0,bestTime:0},history:[],sound:true};initializeGear(s);return s;}
 export function loadSave(storage=globalThis.localStorage){
   try{
     const raw=JSON.parse(storage.getItem(KEY));
     // Both schemas use the original key: v1 progress is migrated, never reset.
-    if(!raw||![1,2,3].includes(raw.version))return freshSave();
-    if(raw.version===1){try{if(!storage.getItem(KEY+'.backup'))storage.setItem(KEY+'.backup',JSON.stringify(raw));}catch{/* Backup failure must not discard existing progress. */}}
-    const s={...freshSave(),...raw,version:3};
-    s.credits=Math.max(0,Number(s.credits)||0);
+    if(!raw||![1,2,3,4].includes(raw.version))return freshSave();
+    if(raw.version===1||raw.version===3){try{const backup=KEY+(raw.version===1?'.backup':'.backup.v3');if(!storage.getItem(backup))storage.setItem(backup,JSON.stringify(raw));}catch{/* Backup failure must not discard existing progress. */}}
+    const s={...freshSave(),...raw,version:4};
+    s.credits=Math.max(0,Number(s.credits)||0);s.autoSellGrade=GRADE_IDS.includes(s.autoSellGrade)?s.autoSellGrade:null;
     s.maxStage=Math.min(STAGES.length,Math.max(1,Number(s.maxStage)||1));
     s.upgrades=Object.fromEntries(UPGRADES.map(u=>[u.id,Math.min(u.max,Math.max(0,Math.floor(Number(raw.upgrades?.[u.id])||0)))]));
     s.research=Object.fromEntries(SKILLS.map(k=>[k.id,{weight:Math.min(5,Math.max(0,Number(raw.research?.[k.id]?.weight)||0)),power:Math.min(5,Math.max(0,Number(raw.research?.[k.id]?.power)||0))}]));

@@ -39,7 +39,7 @@ export const UNIQUE_OPTIONS={
   core:{id:'focus',name:'각성 공명',desc:'초능력 강화 배율 +10% (EP/LE +20%)',itemName:'영원의 심장'},
 };
 // Probabilities are conditional on an equipment drop, not on each enemy kill.
-const STAGE_RATES=[[.70,.20,.08,.015,.005],[.58,.25,.12,.04,.01],[.45,.29,.18,.06,.02],[.35,.31,.23,.08,.03],[.27,.30,.28,.11,.04],[.25,.31,.28,.115,.045],[.245,.305,.28,.12,.05],[.24,.30,.28,.125,.055],[.235,.295,.28,.13,.06],[.23,.29,.28,.135,.065]];
+const STAGE_RATES=[[.70,.20,.08,.015,.005],[.58,.25,.12,.04,.01],[.45,.29,.18,.06,.02],[.35,.31,.23,.08,.03],[.27,.30,.28,.11,.04],[.25,.31,.28,.115,.045],[.245,.305,.28,.12,.05],[.24,.30,.28,.125,.055],[.235,.295,.28,.13,.06],[.23,.29,.28,.135,.065],[.227,.288,.28,.138,.067],[.224,.286,.28,.14,.07],[.222,.285,.28,.141,.072],[.22,.285,.28,.142,.073],[.218,.284,.28,.144,.074]];
 export function dropRates(stage=1,boss=false){
   const rates=[...STAGE_RATES[Math.min(STAGE_RATES.length-1,Math.max(0,Math.floor(stage)-1))]];
   if(boss){const high=rates.slice(2).reduce((a,b)=>a+b,0),low=rates[0]+rates[1];for(let i=0;i<rates.length;i++)rates[i]*=i>=2?2:(1-high*2)/low;}
@@ -98,7 +98,7 @@ export function calculateStats(save,character,skills={}){
     ability:(1+bonus.ability)*all,
     speed:character.speed*(1+(u.speed||0)*.05)*(1+bonus.speed)*(1+agility*.005)*(1+haste*.07*hastePower)*all,
     rate:(1+bonus.rate)*(1+(u.rate||0)*.05)*(1+agility*.003)*(1+haste*.06*hastePower)*all,
-    regen:.25*all*(1+bonus.regen),regenBoost:(1+bonus.regen)*all,cooldown:Math.max(.2,1-(u.cooldown||0)*.04-bonus.cooldown),pickup:95*all*(1+(u.pickup||0)*.15),
+    area:1+(u.area||0)*.05,xp:1+(u.xp||0)*.05,regen:.25*all*(1+bonus.regen),regenBoost:(1+bonus.regen)*all,cooldown:Math.max(.2,1-(u.cooldown||0)*.04-bonus.cooldown),pickup:95*all*(1+(u.pickup||0)*.15),
   };
 }
 
@@ -114,4 +114,4 @@ export function rerollGear(save,uid,random=Math.random){const item=save.gear.fin
 export function craftCandidates(save,uid){const main=save.gear.find(i=>i.uid===uid&&i.location==='bag');if(!main||!['uq','ep'].includes(main.rarity))return [];return save.gear.filter(i=>i.uid!==uid&&i.location==='bag'&&!isEquipped(save,i.uid)&&i.slot===main.slot&&i.rarity===main.rarity);}
 export function craftGear(save,uid,materials,random=Math.random){const main=save.gear.find(i=>i.uid===uid&&i.location==='bag');if(!main||!['uq','ep'].includes(main.rarity)||!Array.isArray(materials)||new Set(materials).size!==2)return null;const choices=craftCandidates(save,uid),valid=materials.every(id=>choices.some(i=>i.uid===id));const cost=main.rarity==='uq'?1000:3000,chance=main.rarity==='uq'?.5:.3;if(!valid||save.credits<cost)return null;const target=main.rarity==='uq'?'ep':'le';save.credits-=cost;save.gear=save.gear.filter(i=>!materials.includes(i.uid));const success=randomUnit(random)<chance;if(success){const upgraded=createGear(main.uid,main.slot,target,random);Object.assign(main,upgraded);}return {success,cost,target};}
 
-export function applyUnitStats(stats,units={}){return {...stats,speed:stats.speed*(1+(units.unit_speed||0)*.08),rate:stats.rate*(1+(units.unit_rate||0)*.08),pickup:stats.pickup*(1+(units.unit_pickup||0)*.12),area:1+(units.unit_area||0)*.10};}
+export function applyUnitStats(stats,units={}){return {...stats,speed:stats.speed*(1+(units.unit_speed||0)*.08),rate:stats.rate*(1+(units.unit_rate||0)*.08),pickup:stats.pickup*(1+(units.unit_pickup||0)*.12),area:(stats.area||1)*(1+(units.unit_area||0)*.10),xp:(stats.xp||1)*(1+(units.unit_xp||0)*.10)};}

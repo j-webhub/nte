@@ -1,5 +1,5 @@
-import {SKILLS,STAGES,CHARACTERS,UPGRADES,QUESTS,byId,upgradeCost} from './data.js?v=1.5.1';
-import {initializeGear,normalizeGear,GRADE_IDS} from './equipment.js?v=1.5.1';
+import {SKILLS,STAGES,CHARACTERS,UPGRADES,QUESTS,byId,upgradeCost} from './data.js?v=1.6.0';
+import {initializeGear,normalizeGear,GRADE_IDS} from './equipment.js?v=1.6.0';
 const KEY='nightfall.save.v1';
 export function freshSave(){const s={version:4,credits:0,autoSellGrade:null,character:'jin',maxStage:1,upgrades:{},research:{},discovered:[],unlocked:['jin','seo'],claimed:[],stats:{kills:0,bosses:0,clears:0,runs:0,bestTime:0},history:[],sound:true};initializeGear(s);return s;}
 export function loadSave(storage=globalThis.localStorage){
@@ -15,6 +15,7 @@ export function loadSave(storage=globalThis.localStorage){
     s.research=Object.fromEntries(SKILLS.map(k=>[k.id,{weight:Math.min(5,Math.max(0,Number(raw.research?.[k.id]?.weight)||0)),power:Math.min(5,Math.max(0,Number(raw.research?.[k.id]?.power)||0))}]));
     if(raw.version<3){for(const id of ['time','chronos']){const level=s.research[id].power;s.credits+=researchRefund(level);s.research[id].power=0;}}
     for(const key of ['discovered','unlocked','claimed','history'])if(!Array.isArray(s[key]))s[key]=freshSave()[key];
+    if(s.maxStage===10&&s.history.some(run=>run?.stage===10&&run.result==='clear'))s.maxStage=11;
     s.unlocked=[...new Set(['jin','seo',...s.unlocked.filter(id=>byId(CHARACTERS,id))])];
     if(!s.unlocked.includes(s.character))s.character='jin';
     s.stats={...freshSave().stats,...s.stats};

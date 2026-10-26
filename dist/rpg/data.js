@@ -99,3 +99,15 @@ export const UNIT_SKILLS=[
  {id:'unit_speed',name:'기동 강화',en:'MOVE SPEED',icon:'»',color:'#b4e892',type:'유닛',desc:'이번 작전 동안 이동 속도 +8%.',detail:'레벨당 이동 속도 +8%.',weight:8},
  {id:'unit_area',name:'범위 확장',en:'ATTACK AREA',icon:'◌',color:'#b4e892',type:'유닛',desc:'이번 작전 동안 공격 범위 +10%.',detail:'폭발·파동·중력장·위성 반경 레벨당 +10%.',weight:8}
 ];
+
+UPGRADES.push(
+ {id:'area',name:'광역 감응',icon:'◌',desc:'공격 범위 +5%',max:8,base:120},
+ {id:'xp',name:'경험 동조',icon:'◇',desc:'경험치 획득량 +5% (덩어리당 최대 20)',max:8,base:100}
+);
+STAGES.push(
+ {id:11,name:'침식된 항만',area:'SECTOR 11 · 동부 항만',desc:'검은 파도 사이로 이계의 침식이 부두를 삼킵니다.',difficulty:'위험도 XI',color:'#89c9cc',bosses:['심연의 도선사','침식의 해룡'],reward:4000},
+ {id:12,name:'유리 사막',area:'SECTOR 12 · 붕괴 산업단지',desc:'고열에 녹아내린 도시의 파편이 유리 모래로 흩날립니다.',difficulty:'위험도 XII',color:'#f2c991',bosses:['유리의 파수꾼','융해의 군주'],reward:4700},
+ {id:13,name:'공허의 궤도',area:'SECTOR 13 · 부유 지구',desc:'중력을 잃은 빌딩 사이에서 공허의 존재가 길을 막습니다.',difficulty:'위험도 XIII',color:'#b5a2e8',bosses:['궤도의 감시자','무중력의 지배자'],reward:5500},
+ {id:14,name:'기억의 폐허',area:'SECTOR 14 · 망각 구역',desc:'도시의 기억을 먹어 치운 그림자들이 되살아납니다.',difficulty:'위험도 XIV',color:'#a9c2ac',bosses:['망각의 사냥꾼','기억의 포식자'],reward:6400},
+ {id:15,name:'새벽의 문턱',area:'SECTOR 15 · 차원 종착점',desc:'끝없는 밤을 넘어 새벽으로 이어지는 마지막 문을 여세요.',difficulty:'위험도 XV',color:'#f4b7b9',bosses:['새벽의 집행자','영원의 밤'],reward:7400}
+);

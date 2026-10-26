@@ -1,5 +1,5 @@
-import {SKILLS,CHARACTERS,byId} from './data.js';
-import {calculateStats,applyUnitStats,equippedItems} from './equipment.js';
+import {SKILLS,CHARACTERS,byId} from './data.js?v=1.5.0';
+import {calculateStats,applyUnitStats,equippedItems} from './equipment.js?v=1.5.0';
 export function skillDetails(save,id,l=1,owned={},units={}){
  const stats=applyUnitStats(calculateStats(save,byId(CHARACTERS,save.character),owned),units),p=(1+(save.research[id]?.power||0)*.12)*stats.ability,m=stats.magic,rate=stats.rate,c=stats.cooldown;
  const has=x=>equippedItems(save).some(i=>i.special===x),multi=has('multi')?(['ep','le'].includes(equippedItems(save).find(i=>i.special==='multi')?.rarity)?2:1):0;

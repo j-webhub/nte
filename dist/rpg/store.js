@@ -1,5 +1,5 @@
-import {SKILLS,STAGES,CHARACTERS,UPGRADES,QUESTS,byId,upgradeCost} from './data.js';
-import {initializeGear,normalizeGear,GRADE_IDS} from './equipment.js';
+import {SKILLS,STAGES,CHARACTERS,UPGRADES,QUESTS,byId,upgradeCost} from './data.js?v=1.5.0';
+import {initializeGear,normalizeGear,GRADE_IDS} from './equipment.js?v=1.5.0';
 const KEY='nightfall.save.v1';
 export function freshSave(){const s={version:4,credits:0,autoSellGrade:null,character:'jin',maxStage:1,upgrades:{},research:{},discovered:[],unlocked:['jin','seo'],claimed:[],stats:{kills:0,bosses:0,clears:0,runs:0,bestTime:0},history:[],sound:true};initializeGear(s);return s;}
 export function loadSave(storage=globalThis.localStorage){

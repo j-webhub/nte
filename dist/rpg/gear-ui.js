@@ -1,6 +1,6 @@
-import {CHARACTERS,byId} from './data.js?v=1.5.0';
-import {SLOTS,GRADES,GRADE_IDS,STAT_NAMES,UNIQUE_OPTIONS,REROLL_COST,craftCandidates,extraRange,PERCENT_STATS,gearName,formatOption,optionRange,isEquipped,calculateStats,applyUnitStats,dropRates} from './equipment.js?v=1.5.0';
-import {icon} from './art.js?v=1.5.0';
+import {CHARACTERS,byId} from './data.js?v=1.5.1';
+import {SLOTS,GRADES,GRADE_IDS,STAT_NAMES,UNIQUE_OPTIONS,REROLL_COST,craftCandidates,extraRange,PERCENT_STATS,gearName,formatOption,optionRange,isEquipped,calculateStats,applyUnitStats,dropRates} from './equipment.js?v=1.5.1';
+import {icon} from './art.js?v=1.5.1';
 
 export const newGearView=()=>({tab:'bag',slot:'all',grade:'all',selected:null,page:0});
 const pct=n=>`${Number((n*100).toFixed(2))}%`;

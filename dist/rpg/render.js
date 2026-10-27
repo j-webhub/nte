@@ -1,4 +1,4 @@
-import {SPRITE_FRAMES} from './sprite-frames.js?v=1.7.3';
+import {SPRITE_FRAMES} from './sprite-frames.js?v=1.7.4';
 const TAU=Math.PI*2;
 export class Renderer{
   constructor(canvas){this.canvas=canvas;this.ctx=canvas.getContext('2d');this.width=0;this.height=0;this.spriteCache=new Map();this.facing=0;this.resize();}
@@ -26,7 +26,7 @@ export class Renderer{
     const hurt=g.hurtAnimation!=null&&g.elapsed-g.hurtAnimation<.45;
     const attack=g.attackAnimation!=null&&g.elapsed-g.attackAnimation<.24;
     const idle=!moving,action=idle;
-    const key=id+(action?'-actions':'-directions');let img=this.spriteCache.get(key);
+    const key=id+(action?'-actions':id==='hotori'?'-directions-v2':'-directions');let img=this.spriteCache.get(key);
     if(!img){img=new Image();img.src=`./sprites/${key}.png`;this.spriteCache.set(key,img);}
     if(!img.complete||!img.naturalWidth)return false;
     const row=action?(hurt?3:attack?2:0):this.facing;

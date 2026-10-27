@@ -116,3 +116,12 @@ export function craftCandidates(save,uid){const main=save.gear.find(i=>i.uid===u
 export function craftGear(save,uid,materials,random=Math.random){const main=save.gear.find(i=>i.uid===uid&&i.location==='bag');if(!main||!['uq','ep'].includes(main.rarity)||!Array.isArray(materials)||new Set(materials).size!==2)return null;const choices=craftCandidates(save,uid),valid=materials.every(id=>choices.some(i=>i.uid===id));const cost=main.rarity==='uq'?1000:3000,chance=main.rarity==='uq'?.5:.3;if(!valid||save.credits<cost)return null;const target=main.rarity==='uq'?'ep':'le';save.credits-=cost;save.gear=save.gear.filter(i=>!materials.includes(i.uid));const success=randomUnit(random)<chance;if(success){const upgraded=createGear(main.uid,main.slot,target,random);Object.assign(main,upgraded);}return {success,cost,target};}
 
 export function applyUnitStats(stats,units={}){return {...stats,speed:stats.speed*(1+(units.unit_speed||0)*.08),rate:stats.rate*(1+(units.unit_rate||0)*.08),pickup:stats.pickup*(1+(units.unit_pickup||0)*.12),area:(stats.area||1)*(1+(units.unit_area||0)*.10),xp:(stats.xp||1)*(1+(units.unit_xp||0)*.10)};}
+
+export function damageReduction(save,stats,skills={}){
+  const defense=stats.defense/(100+stats.defense);
+  const id=skills.satellitebarrier?'satellitebarrier':skills.shield?'shield':null;
+  const power=id?(1+(save.research[id]?.power||0)*.12)*stats.ability:0;
+  const skill=id==='satellitebarrier'?Math.min(.65,(.35+skills[id]*.025)*power):id==='shield'?Math.min(.65,skills[id]*.08*power):0;
+  const gear=equippedItems(save).some(item=>item.slot==='armor'&&item.special==='revive'&&item.rarity==='le')?.5:0;
+  return {defense,skill,gear,total:Math.min(.90,1-(1-defense)*(1-skill)+gear)};
+}

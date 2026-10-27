@@ -31,7 +31,7 @@ const RANGES={
   attack:[[2,4],[5,8],[9,13],[14,20],[21,30],[31,42],[43,56]],
 };
 export const UNIQUE_OPTIONS={
-  weapon:{id:'multi',name:'무한 궤도',desc:'기본 공격 관통, 발사체 벽 반사, 모든 발사체 +1 (EP/LE +2)',itemName:'무한의 궤적'},
+  weapon:{id:'multi',name:'무한 궤도',desc:'기본 공격 관통, 발사체 벽 반사, 발사체 크기 +50% (EP/LE +100%)',itemName:'무한의 궤적'},
   armor:{id:'revive',name:'불사조',desc:'출격당 1회 부활. 반경 300 내 적에게 초당 화염 피해 200 (EP/LE 400)',itemName:'불사조의 잔재'},
   helmet:{id:'chain',name:'폭풍 감응',desc:'연쇄 번개 갈래 +1, 파동 횟수 +1 (EP/LE +2)',itemName:'폭풍의 시선'},
   boots:{id:'dash',name:'위상 도약',desc:'이동 속도 +15% (EP/LE +30%)',itemName:'경계의 발걸음'},
@@ -76,6 +76,7 @@ export function normalizeGear(save){
   save.nextGearId=Math.max(1,Math.floor(Number(save.nextGearId)||1),...save.gear.map(i=>Number(i.uid.slice(5))+1));
 }
 export function equippedItems(save){return SLOTS.map(s=>save.gear.find(i=>i.uid===save.equipped[s.id]&&i.slot===s.id&&i.location==='bag')).filter(Boolean);}
+export function projectileScale(save){const weapon=equippedItems(save).find(i=>i.special==='multi');return weapon?1+(['ep','le'].includes(weapon.rarity)?1:.5)+(weapon.rarity==='le'?.5:0):1;}
 export function isEquipped(save,uid){return Object.values(save.equipped).includes(uid);}
 export function receiveGear(save,{stage=1,boss=false,random=Math.random}={}){
   const rarity=rollGrade(stage,boss,random),slot=SLOTS[Math.floor(randomUnit(random)*SLOTS.length)].id;

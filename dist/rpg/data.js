@@ -81,9 +81,9 @@ CHARACTERS.push(
 );
 QUESTS.push(
  {id:'unlock_frost',title:'서리 속의 구조 신호',desc:'3스테이지를 클리어하세요.',stat:'maxStage',target:4,character:'frostwalker',reward:250},
- {id:'unlock_storm',title:'폭풍을 향하여',desc:'5스테이지를 클리어하세요.',stat:'maxStage',target:6,character:'storm',reward:350},
- {id:'unlock_guardian',title:'끝까지 지키는 사람',desc:'7스테이지를 클리어하세요.',stat:'maxStage',target:8,character:'guardian',reward:450},
- {id:'unlock_rift',title:'경계의 추적자',desc:'9스테이지를 클리어하세요.',stat:'maxStage',target:10,character:'riftwalker',reward:550}
+ {id:'unlock_storm',title:'폭풍을 향하여',desc:'5스테이지를 클리어하세요.',stat:'maxStage',target:6,character:'storm',reward:350,gearReward:{slot:'weapon',rarity:'uq'}},
+ {id:'unlock_guardian',title:'끝까지 지키는 사람',desc:'7스테이지를 클리어하세요.',stat:'maxStage',target:8,character:'guardian',reward:450,gearReward:{slot:'armor',rarity:'uq'}},
+ {id:'unlock_rift',title:'경계의 추적자',desc:'9스테이지를 클리어하세요.',stat:'maxStage',target:10,character:'riftwalker',reward:550,gearReward:{slot:'core',rarity:'uq'}}
 );
 
 SKILLS.push(

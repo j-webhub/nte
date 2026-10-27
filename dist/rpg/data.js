@@ -114,7 +114,7 @@ STAGES.push(
 
 // Keep legacy IDs stable so each existing save retains the same unlocked slot and abilities.
 const NTE_CAST=[
- ['jin','이환의 민트','민트','mint','#80e8de','발랄한 이환과 함께 밤의 거리를 누비세요.'],
+ ['jin','민트','민트','mint','#80e8de','발랄한 이환과 함께 밤의 거리를 누비세요.'],
  ['seo','이능력자 제로','제로 (여)','zero','#c4b9eb','차분한 눈빛으로 균열을 추적하는 각성자.'],
  ['ember','호토리','검의 불꽃','hotori','#e98379','화염의 힘을 품은 검객.'],
  ['zero','나나리','시간 조율자','nanari','#ed83ad','멈춘 순간을 넘어 전장을 누빕니다.'],

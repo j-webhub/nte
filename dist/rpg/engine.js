@@ -1,5 +1,5 @@
-import {MODES,SKILLS,UNIT_SKILLS,RECIPES,CHARACTERS,STAGES,byId} from './data.js?v=1.7.2';
-import {calculateStats,applyUnitStats,equippedItems,projectileScale,receiveGear,equipGear,unequipGear} from './equipment.js?v=1.7.2';
+import {MODES,SKILLS,UNIT_SKILLS,RECIPES,CHARACTERS,STAGES,byId} from './data.js?v=1.7.3';
+import {calculateStats,applyUnitStats,equippedItems,projectileScale,receiveGear,equipGear,unequipGear} from './equipment.js?v=1.7.3';
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 const distance=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
 export class Game {

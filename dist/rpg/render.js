@@ -1,3 +1,4 @@
+import {SPRITE_FRAMES} from './sprite-frames.js?v=1.7.3';
 const TAU=Math.PI*2;
 export class Renderer{
   constructor(canvas){this.canvas=canvas;this.ctx=canvas.getContext('2d');this.width=0;this.height=0;this.spriteCache=new Map();this.facing=0;this.resize();}
@@ -30,8 +31,9 @@ export class Renderer{
     if(!img.complete||!img.naturalWidth)return false;
     const row=action?(hurt?3:attack?2:0):this.facing;
     const frame=action?(!hurt&&!attack?Math.floor(g.elapsed*2)%4:Math.min(3,Math.floor((g.elapsed-(hurt?g.hurtAnimation:g.attackAnimation))/.08))):Math.floor(g.elapsed*7)%4;
-    const sw=img.naturalWidth/4,sh=img.naturalHeight/4;
-    c.save();c.imageSmoothingEnabled=false;c.drawImage(img,frame*sw,row*sh,sw,sh,-32,-42,64,64);c.restore();return true;
+    const sheet=SPRITE_FRAMES[key],rect=sheet?.frames[row]?.[frame];if(!rect)return false;
+    const [sx,sy,sw,sh]=rect,scale=60/sheet.extent,dw=sw*scale,dh=sh*scale;
+    c.save();c.imageSmoothingEnabled=false;c.drawImage(img,sx,sy,sw,sh,-dw/2,20-dh,dw,dh);c.restore();return true;
   }
   player(c,g){const p=g.player;c.save();c.translate(p.x,p.y);if(g.invincible>0&&Math.floor(g.invincible*15)%2===0)c.globalAlpha=.5;c.fillStyle='#0006';c.beginPath();c.ellipse(0,16,18,6,0,0,TAU);c.fill();c.strokeStyle=g.character.color;c.lineWidth=1;c.globalAlpha*=.45;c.beginPath();c.arc(0,0,25,0,TAU);c.stroke();c.globalAlpha=1;if(!this.sprite(c,g)){c.fillStyle='#111e24';c.fillRect(-9,7,7,13);c.fillRect(3,7,7,13);c.fillStyle='#8da3a3';c.beginPath();c.moveTo(-13,-8);c.lineTo(12,-8);c.lineTo(16,13);c.lineTo(-16,13);c.closePath();c.fill();c.fillStyle='#293c43';c.fillRect(-6,-6,12,21);c.fillStyle=g.character.color;c.fillRect(-1,-4,2,16);c.fillStyle='#ddd2b8';c.beginPath();c.arc(0,-12,7,0,TAU);c.fill();c.fillStyle='#19252b';c.beginPath();c.arc(0,-14,7,Math.PI,TAU);c.fill();c.rotate(p.dir);c.fillStyle='#d2dfbd';c.fillRect(8,-3,17,5);c.fillStyle=g.character.color;c.fillRect(22,-2,5,3);}c.restore();if(g.skills.orbit||g.skills.satellitebarrier){c.strokeStyle='#a6e6d44d';c.beginPath();c.arc(p.x,p.y,80*g.stats.area,0,TAU);c.stroke();const count=g.skills.satellitebarrier?11+g.skills.satellitebarrier:g.skills.orbit+1;for(let i=0;i<count;i++){const a=g.elapsed*2.4+i/count*TAU;c.save();c.translate(p.x+Math.cos(a)*80*g.stats.area,p.y+Math.sin(a)*80*g.stats.area);c.rotate(a+Math.PI/4);c.fillStyle='#b4eee0';c.fillRect(-7,-7,14,14);c.restore();}}if(g.skills.shield||g.skills.satellitebarrier){c.strokeStyle='#8bc8e166';c.lineWidth=2;c.beginPath();c.arc(p.x,p.y,31,0,TAU);c.stroke();}}
 }

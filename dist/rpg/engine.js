@@ -1,6 +1,8 @@
-import {skillPower,physicalScale,magicScale,physicalRate,PHYSICAL_COEFFICIENTS as P,MAGIC_COEFFICIENTS as M} from './skill-balance.js?v=1.7.16';
-import {MODES,SKILLS,UNIT_SKILLS,RECIPES,CHARACTERS,STAGES,byId} from './data.js?v=1.7.16';
-import {calculateStats,applyUnitStats,equippedItems,damageReduction,receiveGear,equipGear,unequipGear} from './equipment.js?v=1.7.16';
+import {EnemyGrid} from './enemy-grid.js?v=1.7.17';
+import {bossAttackDamage} from './enemy-balance.js?v=1.7.17';
+import {skillPower,physicalScale,magicScale,physicalRate,PHYSICAL_COEFFICIENTS as P,MAGIC_COEFFICIENTS as M} from './skill-balance.js?v=1.7.17';
+import {MODES,SKILLS,UNIT_SKILLS,RECIPES,CHARACTERS,STAGES,byId} from './data.js?v=1.7.17';
+import {calculateStats,applyUnitStats,equippedItems,damageReduction,receiveGear,equipGear,unequipGear} from './equipment.js?v=1.7.17';
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 const distance=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
 export class Game {
@@ -35,7 +37,7 @@ export class Game {
   reroll(){if(this.state!=='levelup'||this.rerolls<=0||this.picksLeft!==(this.save.upgrades.double?2:1))return false;this.rerolls--;this.offers=this.offersForLevel();this.emit('reroll');return true;}
   gainXp(amount){this.xp+=amount;while(this.xp>=this.nextXp){this.xp-=this.nextXp;this.level++;this.nextXp=Math.floor(12+this.level*6+this.level*this.level*.45);this.pendingLevels++;}if(this.pendingLevels>0&&this.state==='playing')this.openLevel();}
   addItem(boss=false){const item=receiveGear(this.save,{stage:this.stage.id,boss,random:this.random});this.lootCount++;this.emit('item',{item});return item;}
-  spawn(bossIndex=null){const a=this.random()*Math.PI*2,dist=550+this.random()*150,t=this.time/600,stage=this.stage.id;let type=this.random()<.18?'runner':this.random()<.18?'tank':'walker';if(this.time>75&&this.random()<.12)type='spitter';const boss=bossIndex!==null;if(boss)type='boss';const bossScaling=1+Math.max(0,stage-5)*.6;const hp=boss?5*(2800+bossIndex*1700)*(1+(stage-1)*.8)*bossScaling*(1+Math.max(0,t-1)*.6):1.5*(type==='tank'?240:85)*(1+t*2.8)*(1+(stage-1)*.45);const e={id:++this.uid,x:clamp(this.player.x+Math.cos(a)*dist,30,2570),y:clamp(this.player.y+Math.sin(a)*dist,30,1770),type,boss,bossIndex,name:boss?this.stage.bosses[bossIndex%5===4?1:0]+(bossIndex%5===4?' · 지배자':' · '+(bossIndex+1)):'',hp,maxHp:hp,r:boss?40:type==='tank'?21:type==='runner'?11:15,speed:boss?90+Math.min(bossIndex,12)*7:type==='runner'?125:type==='tank'?40:type==='spitter'?56:65,damage:(boss?45+bossIndex*6:type==='tank'?28:18)*(boss?1+Math.max(0,stage-5)*.35:1)*(1+(stage-1)*.3)*(1+t*.5),attack:2+this.random()*2,slow:0,hit:0,animTime:0,dead:false};e.speed*=1+(stage-1)*.1;this.enemies.push(e);if(boss)this.emit('boss',{name:e.name,index:bossIndex});return e;}
+  spawn(bossIndex=null){const a=this.random()*Math.PI*2,dist=550+this.random()*150,t=this.time/600,stage=this.stage.id;let type=this.random()<.18?'runner':this.random()<.18?'tank':'walker';if(this.time>75&&this.random()<.12)type='spitter';const boss=bossIndex!==null;if(boss)type='boss';const bossScaling=1+Math.max(0,stage-5)*.6;const hp=boss?5*(2800+bossIndex*1700)*(1+(stage-1)*.8)*bossScaling*(1+Math.max(0,t-1)*.6):1.5*(type==='tank'?240:85)*(1+t*2.8)*(1+(stage-1)*.45);const e={id:++this.uid,x:clamp(this.player.x+Math.cos(a)*dist,30,2570),y:clamp(this.player.y+Math.sin(a)*dist,30,1770),type,boss,bossIndex,name:boss?this.stage.bosses[bossIndex%5===4?1:0]+(bossIndex%5===4?' · 지배자':' · '+(bossIndex+1)):'',hp,maxHp:hp,r:boss?40:type==='tank'?21:type==='runner'?11:15,speed:boss?90+Math.min(bossIndex,12)*7:type==='runner'?125:type==='tank'?40:type==='spitter'?56:65,damage:boss?bossAttackDamage(stage,bossIndex,this.time,this.mode):(type==='tank'?28:18)*(1+(stage-1)*.3)*(1+t*.5),attack:2+this.random()*2,slow:0,hit:0,animTime:0,dead:false};e.speed*=1+(stage-1)*.1;this.enemies.push(e);if(boss)this.emit('boss',{name:e.name,index:bossIndex});return e;}
   hit(e,damage){if(e.dead)return;if(this.specialGrade('leech')==='le')this.player.hp=Math.min(this.stats.hp,this.player.hp+2);e.hp-=damage;e.hit=.1;if(this.numbers.length<65)this.numbers.push({x:e.x,y:e.y-15,text:Math.round(damage),life:.65,color:'#e6f4d5'});if(e.hp<=0)this.kill(e);}
   kill(e){if(e.dead)return;e.dead=true;this.kills++;this.credits+=e.boss?30*this.stage.id:(.4+this.stage.id*.18);this.drops.push({x:e.x,y:e.y,type:'xp',value:e.boss?70:3+(e.type==='tank'?3:0),life:120});if(e.boss){this.bossKills++;this.addItem(true);this.player.hp=Math.min(this.stats.hp,this.player.hp+this.stats.hp*.2);this.emit('bosskill',{name:e.name});}else if(this.random()<.025)this.drops.push({x:e.x,y:e.y,type:'item',life:40});else if(this.random()<.016)this.drops.push({x:e.x,y:e.y,type:'heal',life:35});this.player.hp=Math.min(this.stats.hp,this.player.hp+(this.skills.vampire||0)*.6*this.power('vampire')+(this.has('leech')?(this.high('leech')?2:1):0));this.effects.push({type:'burst',x:e.x,y:e.y,r:e.r*1.7,color:e.boss?'#f7bd70':'#8db794',life:.3,max:.3});}
   damage(amount){if(this.invincible>0)return;const reduction=damageReduction(this.save,this.stats,this.skills,this.gearItems).total;this.player.hp-=amount*(1-reduction);this.invincible=.6;this.emit('hurt');if(this.player.hp<=0){if(this.skills.healingfactor&&!this.healingRevived){this.healingRevived=true;this.player.hp=this.stats.hp*.6;this.invincible=3;this.emit('revive',{source:'healingfactor'});}else if(this.has('revive')&&!this.revived){this.revived=true;this.player.hp=this.stats.hp*.6;this.invincible=3;this.emit('revive');}else{this.player.hp=0;this.end('death');}}}
@@ -58,11 +60,44 @@ export class Game {
     if(id==='gravity' &&target&&this.ready(id,6,dt)){this.fields.push({x:target.x,y:target.y,r:(105+l*10)*this.stats.area,damage:M.gravity*2*(1+l*.25)*magic*pow,life:3,tick:0});}
     if(id==='gravityshot'&&target&&this.ready(id,1.1,dt)){const a=Math.atan2(target.y-p.y,target.x-p.x);for(let i=0;i<1;i++)this.shoot(a+i*.14,M.gravityshot*(1+l*.2)*magic*pow,{speed:620,pierce:2,gravity:true,color:'#c2a5ff',r:7});}
   }}this.castReplay=false;if(this.skills.orbit||this.skills.satellitebarrier){this.orbitTick-=dt;if(this.orbitTick<=0){this.orbitTick=.23;const l=this.skills.satellitebarrier?10+this.skills.satellitebarrier:this.skills.orbit;for(let i=0;i<l+1;i++){const a=this.elapsed*2.4+i/(l+1)*Math.PI*2,o={x:p.x+Math.cos(a)*80*this.stats.area,y:p.y+Math.sin(a)*80*this.stats.area};for(const e of this.enemies)if(distance(e,o)<e.r+13){this.hit(e,P.orbit*physicalScale(this.stats)*(1+l*.18)*this.power(this.skills.satellitebarrier?'satellitebarrier':'orbit'));if(!e.boss){e.x+=Math.cos(a)*8;e.y+=Math.sin(a)*8;}}}}}}
+  updateProjectiles(dt){
+    if(!this.bullets.length)return;
+    const grid=new EnemyGrid(this.enemies),candidates=[],blast=[],visuals=new Map();
+    for(const b of this.bullets){
+      b.life-=dt;if(b.life<=0)continue;
+      b.x+=b.vx*dt;b.y+=b.vy*dt;
+      if(b.bounce){let reflected=false;
+        if(b.x<0||b.x>2600){b.x=clamp(b.x,0,2600);b.vx*=-1;reflected=true;}
+        if(b.y<0||b.y>1800){b.y=clamp(b.y,0,1800);b.vy*=-1;reflected=true;}
+        if(reflected)b.hit.clear();
+      }
+      for(const index of grid.query(b.x,b.y,b.r+grid.maxRadius,candidates)){
+        const e=this.enemies[index];if(e.dead||b.hit.has(e.id))continue;
+        if((e.x-b.x)**2+(e.y-b.y)**2>=(e.r+b.r)**2)continue;
+        b.hit.add(e.id);
+        if(b.gravity)this.fields.push({x:e.x,y:e.y,r:140*this.stats.area,damage:b.damage*.3,life:2,tick:0});
+        if(b.explode){
+          for(const index of grid.query(b.x,b.y,b.explode,blast)){
+            const other=this.enemies[index];
+            if(!other.dead&&(other.x-b.x)**2+(other.y-b.y)**2<b.explode*b.explode)this.hit(other,b.damage);
+          }
+          // Coalesce only the visual rings of simultaneous nearby explosions.
+          // Damage, per-hit healing, kills and drops are still resolved separately.
+          const key=`${Math.floor(b.x/32)},${Math.floor(b.y/32)},${Math.round(b.explode/16)},${b.color}`;
+          const effect=visuals.get(key);
+          if(effect)effect.impacts++;
+          else{const fx={type:'ring',x:b.x,y:b.y,r:b.explode,color:b.color,life:.35,max:.35,impacts:1};visuals.set(key,fx);this.effects.push(fx);}
+          b.life=0;
+        }else{this.hit(e,b.damage);b.pierce--;if(b.pierce<=0)b.life=0;}
+        if(b.life<=0)break;
+      }
+    }
+  }
   update(dt){if(this.state!=='playing')return;let remaining=Math.min(dt,.05);while(remaining>0&&this.state==='playing'){const step=Math.min(.025,remaining);this.step(step);remaining-=step;}}
   step(dt){this.elapsed+=dt;const clockDelta=dt*(this.accelerated?2:1);this.time=this.mode==='endless'?this.time+clockDelta:Math.min(600,this.time+clockDelta);this.invincible=Math.max(0,this.invincible-dt);this.dashCooldown=Math.max(0,this.dashCooldown-dt);this.dashTime=Math.max(0,this.dashTime-dt);this.frozen=Math.max(0,this.frozen-dt);this.bossFrozen=Math.max(0,this.bossFrozen-dt);const p=this.player;let dx=this.input.x,dy=this.input.y,len=Math.hypot(dx,dy);if(len>0){dx/=Math.max(1,len);dy/=Math.max(1,len);p.dir=Math.atan2(dy,dx);}if(this.dashTime>0&&len===0){dx=Math.cos(p.dir);dy=Math.sin(p.dir);}const speed=this.stats.speed*(this.dashTime>0?3.4:1);p.x=clamp(p.x+dx*speed*dt,35,2565);p.y=clamp(p.y+dy*speed*dt,35,1765);p.hp=Math.min(this.stats.hp,p.hp+(this.stats.regen+(this.skills.regen||0)*this.stats.hp*.0035*this.power('regen')*this.stats.regenBoost+(this.skills.healingfactor?this.stats.hp*(.10+(this.skills.healingfactor-1)*.01)*this.power('healingfactor')*this.stats.regenBoost:0))*dt);if(this.has('revive')){this.fireAuraTick-=dt;if(this.fireAuraTick<=0){this.fireAuraTick=1;const r=300*this.stats.area;this.effects.push({type:'ring',x:p.x,y:p.y,r,color:'#ff9d65',life:.3,max:.3});for(const e of this.enemies)if(distance(e,p)<r)this.hit(e,this.high('revive')?400:200);}}
     for(let i=0;i<Math.floor((this.time+1e-7)/120);i++)if(!this.bossSpawned.has(i)){this.bossSpawned.add(i);this.spawn(i);}for(let i=1;i<=Math.floor((this.time+1e-7)/60);i++)if(!this.collectorSpawned.has(i)){this.collectorSpawned.add(i);this.drops.push({x:100+this.random()*2400,y:100+this.random()*1600,type:'magnet',life:Infinity});}this.spawnTimer-=clockDelta;if(this.spawnTimer<=0&&this.enemies.length<150&&(this.mode==='endless'||this.time<600)){const n=Math.min(15,2+Math.floor(this.time/90)+this.stage.id-1);for(let i=0;i<n;i++)this.spawn();this.spawnTimer=Math.max(.45,1.25-this.time/900);}
     this.attack(dt);for(const e of this.enemies){if(e.dead)continue;e.hit=Math.max(0,e.hit-dt);e.slow=Math.max(0,e.slow-dt);const a=Math.atan2(p.y-e.y,p.x-e.x),d=distance(e,p);if(e.boss?this.bossFrozen===0:this.frozen===0){e.animTime+=dt;const v=e.speed*(e.slow>0?.38:1)*(e.type==='spitter'&&d<320?-.4:1);e.x=clamp(e.x+Math.cos(a)*v*dt,20,2580);e.y=clamp(e.y+Math.sin(a)*v*dt,20,1780);e.attack-=dt;if((e.boss||e.type==='spitter')&&e.attack<=0){const count=e.boss?12+Math.min(e.bossIndex||0,10)*2:1;for(let i=0;i<count;i++){const ang=e.boss?i/count*Math.PI*2+this.elapsed*.3:a;this.hostile.push({x:e.x,y:e.y,vx:Math.cos(ang)*150,vy:Math.sin(ang)*150,r:e.boss?7:5,life:6,damage:e.damage*.75,bossOwned:e.boss});}e.attack=e.boss?1.9:2.8;}}if(d<e.r+13&&(e.boss?this.bossFrozen===0:this.frozen===0))this.damage(e.damage);}
-    for(const b of this.bullets){b.life-=dt;b.x+=b.vx*dt;b.y+=b.vy*dt;if(b.bounce){let reflected=false;if(b.x<0||b.x>2600){b.x=clamp(b.x,0,2600);b.vx*=-1;reflected=true;}if(b.y<0||b.y>1800){b.y=clamp(b.y,0,1800);b.vy*=-1;reflected=true;}if(reflected)b.hit.clear();}for(const e of this.enemies){if(e.dead||b.hit.has(e.id)||b.life<=0)continue;if(distance(e,b)<e.r+b.r){b.hit.add(e.id);if(b.gravity)this.fields.push({x:e.x,y:e.y,r:140*this.stats.area,damage:b.damage*.3,life:2,tick:0});if(b.explode){for(const other of this.enemies)if(!other.dead&&distance(other,b)<b.explode)this.hit(other,b.damage);this.effects.push({type:'ring',x:b.x,y:b.y,r:b.explode,color:b.color,life:.35,max:.35});b.life=0;}else{this.hit(e,b.damage);b.pierce--;if(b.pierce<=0)b.life=0;}}}}
+    this.updateProjectiles(dt);
     for(const b of this.hostile){if(b.bossOwned?this.bossFrozen===0:this.frozen===0){b.x+=b.vx*dt;b.y+=b.vy*dt;b.life-=dt;if(distance(p,b)<b.r+12){this.damage(b.damage);b.life=0;}}}
     for(const f of this.fields){f.life-=dt;f.tick-=dt;for(const e of this.enemies){const d=distance(e,f);if(d<f.r){if(this.frozen===0&&!e.boss){const a=Math.atan2(f.y-e.y,f.x-e.x);e.x+=Math.cos(a)*80*dt;e.y+=Math.sin(a)*80*dt;}if(f.tick<=0)this.hit(e,f.damage*.5);}}if(f.tick<=0)f.tick=.5;}
     let gainedXp=0;for(const d of this.drops){d.life-=dt;const dist=distance(p,d);if(d.magnetized||dist<(this.stats.pickup)){const a=Math.atan2(p.y-d.y,p.x-d.x);d.x+=Math.cos(a)*520*dt;d.y+=Math.sin(a)*520*dt;if(dist<24){d.life=0;if(d.type==='xp')gainedXp+=Math.min(20,d.value*this.stats.xp);else if(d.type==='item')this.addItem();else if(d.type==='magnet'){for(const other of this.drops)if(other!==d&&other.type!=='magnet')other.magnetized=true;this.emit('magnet');}else p.hp=Math.min(this.stats.hp,p.hp+25);}}}

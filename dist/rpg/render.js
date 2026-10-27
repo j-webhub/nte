@@ -1,5 +1,6 @@
-import {spriteCache} from './sprite-assets.js?v=1.7.16';
-import {SPRITE_FRAMES} from './sprite-frames.js?v=1.7.16';
+import {spriteCache} from './sprite-assets.js?v=1.7.17';
+import {SPRITE_FRAMES} from './sprite-frames.js?v=1.7.17';
+import {walkFrame,characterSpriteScale} from './sprite-motion.js?v=1.7.17';
 const TAU=Math.PI*2;
 export function monsterSpriteName(e,stage=1){
   if(e.boss)return `boss-0${((e.bossIndex||0)+stage-1)%3+1}`;
@@ -53,6 +54,8 @@ export class Renderer{
   sprite(c,g){
     const id=g.character.sprite;if(!id||typeof Image==='undefined')return false;
     const moving=Math.abs(g.input.x)+Math.abs(g.input.y)>.001;
+    if(moving&&!this.wasMoving)this.walkStartedAt=g.elapsed;
+    this.wasMoving=moving;
     this.facing=moving?(Math.abs(g.input.x)>Math.abs(g.input.y)?(g.input.x>0?1:3):(g.input.y>0?0:2)):0;
     const hurt=g.hurtAnimation!=null&&g.elapsed-g.hurtAnimation<.45;
     const attack=g.attackAnimation!=null&&g.elapsed-g.attackAnimation<.24;
@@ -61,9 +64,9 @@ export class Renderer{
     if(!img){img=new Image();img.src=`./sprites/${key}.png`;this.spriteCache.set(key,img);}
     if(!img.complete||!img.naturalWidth)return false;
     const row=action?(hurt?3:attack?2:0):this.facing;
-    const frame=action?(!hurt&&!attack?Math.floor(g.elapsed*2)%4:Math.min(3,Math.floor((g.elapsed-(hurt?g.hurtAnimation:g.attackAnimation))/.08))):Math.floor(g.elapsed*7)%4;
+    const frame=action?(!hurt&&!attack?Math.floor(g.elapsed*2)%4:Math.min(3,Math.floor((g.elapsed-(hurt?g.hurtAnimation:g.attackAnimation))/.08))):walkFrame(g.elapsed-this.walkStartedAt);
     const sheet=SPRITE_FRAMES[key],rect=sheet?.frames[row]?.[frame];if(!rect)return false;
-    const [sx,sy,sw,sh]=rect,scale=60/sheet.extent,dw=sw*scale,dh=sh*scale;
+    const [sx,sy,sw,sh]=rect,scale=characterSpriteScale(id,row,moving),dw=sw*scale,dh=sh*scale;
     c.save();c.imageSmoothingEnabled=false;c.drawImage(img,sx,sy,sw,sh,-dw/2,20-dh,dw,dh);c.restore();return true;
   }
   player(c,g){const p=g.player;c.save();c.translate(p.x,p.y);if(g.invincible>0&&Math.floor(g.invincible*15)%2===0)c.globalAlpha=.5;c.fillStyle='#0006';c.beginPath();c.ellipse(0,16,18,6,0,0,TAU);c.fill();c.strokeStyle=g.character.color;c.lineWidth=1;c.globalAlpha*=.45;c.beginPath();c.arc(0,0,25,0,TAU);c.stroke();c.globalAlpha=1;if(!this.sprite(c,g)){c.fillStyle='#111e24';c.fillRect(-9,7,7,13);c.fillRect(3,7,7,13);c.fillStyle='#8da3a3';c.beginPath();c.moveTo(-13,-8);c.lineTo(12,-8);c.lineTo(16,13);c.lineTo(-16,13);c.closePath();c.fill();c.fillStyle='#293c43';c.fillRect(-6,-6,12,21);c.fillStyle=g.character.color;c.fillRect(-1,-4,2,16);c.fillStyle='#ddd2b8';c.beginPath();c.arc(0,-12,7,0,TAU);c.fill();c.fillStyle='#19252b';c.beginPath();c.arc(0,-14,7,Math.PI,TAU);c.fill();c.rotate(p.dir);c.fillStyle='#d2dfbd';c.fillRect(8,-3,17,5);c.fillStyle=g.character.color;c.fillRect(22,-2,5,3);}c.restore();if(g.skills.orbit||g.skills.satellitebarrier){c.strokeStyle='#a6e6d44d';c.beginPath();c.arc(p.x,p.y,80*g.stats.area,0,TAU);c.stroke();const count=g.skills.satellitebarrier?11+g.skills.satellitebarrier:g.skills.orbit+1;for(let i=0;i<count;i++){const a=g.elapsed*2.4+i/count*TAU;c.save();c.translate(p.x+Math.cos(a)*80*g.stats.area,p.y+Math.sin(a)*80*g.stats.area);c.rotate(a+Math.PI/4);c.fillStyle='#b4eee0';c.fillRect(-7,-7,14,14);c.restore();}}if(g.skills.shield||g.skills.satellitebarrier){c.strokeStyle='#8bc8e166';c.lineWidth=2;c.beginPath();c.arc(p.x,p.y,31,0,TAU);c.stroke();}}

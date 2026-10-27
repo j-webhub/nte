@@ -1,5 +1,5 @@
-import {spriteCache} from './sprite-assets.js?v=1.7.15';
-import {SPRITE_FRAMES} from './sprite-frames.js?v=1.7.15';
+import {spriteCache} from './sprite-assets.js?v=1.7.16';
+import {SPRITE_FRAMES} from './sprite-frames.js?v=1.7.16';
 const TAU=Math.PI*2;
 export function monsterSpriteName(e,stage=1){
   if(e.boss)return `boss-0${((e.bossIndex||0)+stage-1)%3+1}`;

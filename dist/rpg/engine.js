@@ -1,6 +1,6 @@
-import {skillPower,physicalScale,magicScale,physicalRate,PHYSICAL_COEFFICIENTS as P,MAGIC_COEFFICIENTS as M} from './skill-balance.js?v=1.7.15';
-import {MODES,SKILLS,UNIT_SKILLS,RECIPES,CHARACTERS,STAGES,byId} from './data.js?v=1.7.15';
-import {calculateStats,applyUnitStats,equippedItems,damageReduction,receiveGear,equipGear,unequipGear} from './equipment.js?v=1.7.15';
+import {skillPower,physicalScale,magicScale,physicalRate,PHYSICAL_COEFFICIENTS as P,MAGIC_COEFFICIENTS as M} from './skill-balance.js?v=1.7.16';
+import {MODES,SKILLS,UNIT_SKILLS,RECIPES,CHARACTERS,STAGES,byId} from './data.js?v=1.7.16';
+import {calculateStats,applyUnitStats,equippedItems,damageReduction,receiveGear,equipGear,unequipGear} from './equipment.js?v=1.7.16';
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 const distance=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
 export class Game {

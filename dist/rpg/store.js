@@ -1,6 +1,6 @@
-import {hasClearedStage} from './stage-access.js?v=1.7.15';
-import {SKILLS,STAGES,CHARACTERS,UPGRADES,QUESTS,byId,upgradeCost} from './data.js?v=1.7.15';
-import {initializeGear,normalizeGear,GRADE_IDS,createGear} from './equipment.js?v=1.7.15';
+import {hasClearedStage} from './stage-access.js?v=1.7.16';
+import {SKILLS,STAGES,CHARACTERS,UPGRADES,QUESTS,byId,upgradeCost} from './data.js?v=1.7.16';
+import {initializeGear,normalizeGear,GRADE_IDS,createGear} from './equipment.js?v=1.7.16';
 const KEY='nightfall.save.v1';
 export function freshSave(){const s={version:4,credits:0,autoSellGrade:null,character:'jin',maxStage:1,clearedStages:[],upgrades:{},research:{},discovered:[],unlocked:['jin','seo'],claimed:[],questGearClaimed:[],stats:{kills:0,bosses:0,clears:0,runs:0,bestTime:0},history:[],sound:true};initializeGear(s);return s;}
 export function loadSave(storage=globalThis.localStorage){

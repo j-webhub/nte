@@ -1,6 +1,6 @@
-import {STAGES} from '../data.js?v=1.7.15';
-import {loadSave} from '../store.js?v=1.7.15';
-import {MAP_STAGE_IDS,regionAccess,unlockedStage} from '../stage-access.js?v=1.7.15';
+import {STAGES} from '../data.js?v=1.7.16';
+import {loadSave} from '../store.js?v=1.7.16';
+import {MAP_STAGE_IDS,regionAccess,unlockedStage} from '../stage-access.js?v=1.7.16';
 let save=loadSave();
 const data=await (await fetch('./hub/map-regions.json')).json();
 const svg=document.querySelector('#map'),regionsNode=document.querySelector('#regions'),markersNode=document.querySelector('#markers'),back=document.querySelector('#back'),mapTitle=document.querySelector('#map-title'),help=document.querySelector('#map-help'),popup=document.querySelector('#mission-popup'),popupContent=document.querySelector('#popup-content');

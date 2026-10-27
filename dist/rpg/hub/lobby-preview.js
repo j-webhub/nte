@@ -1,6 +1,6 @@
-import {SPRITE_FRAMES} from '../sprite-frames.js?v=1.7.15';
-import {CHARACTERS} from '../data.js?v=1.7.15';
-import {loadSave} from '../store.js?v=1.7.15';
+import {SPRITE_FRAMES} from '../sprite-frames.js?v=1.7.16';
+import {CHARACTERS} from '../data.js?v=1.7.16';
+import {loadSave} from '../store.js?v=1.7.16';
 const canvas=document.querySelector('#room'),ctx=canvas.getContext('2d'),selector=document.querySelector('#character');
 const chars=[['mint','민트'],['zero','제로'],['hotori','호토리'],['nanari','나나리'],['shinku','신쿠'],['lacrimosa','라크리모사'],['iloy','일로이'],['zanhong','잔홍'],['akane','아카네'],['raven','레이븐']];
 const stations=[{id:'shinku',x:255,y:353,size:125},{id:'zero',x:1025,y:316,size:125},{id:'iloy',x:1390,y:405,size:146},{id:'lacrimosa',x:1382,y:283,size:70,sleep:true},{id:'raven',x:397,y:695,size:125},{id:'hotori',x:1515,y:726,size:135}];

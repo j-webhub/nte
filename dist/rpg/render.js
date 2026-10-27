@@ -21,15 +21,15 @@ export class Renderer{
   sprite(c,g){
     const id=g.character.sprite;if(!id||typeof Image==='undefined')return false;
     const moving=Math.abs(g.input.x)+Math.abs(g.input.y)>.001;
-    if(moving)this.facing=Math.abs(g.input.x)>Math.abs(g.input.y)?(g.input.x>0?1:3):(g.input.y>0?0:2);
+    this.facing=moving?(Math.abs(g.input.x)>Math.abs(g.input.y)?(g.input.x>0?1:3):(g.input.y>0?0:2)):0;
     const hurt=g.hurtAnimation!=null&&g.elapsed-g.hurtAnimation<.45;
     const attack=g.attackAnimation!=null&&g.elapsed-g.attackAnimation<.24;
-    const idle=!moving&&this.facing===0,action=this.facing===0&&(hurt||attack||idle);
+    const idle=!moving,action=idle;
     const key=id+(action?'-actions':'-directions');let img=this.spriteCache.get(key);
     if(!img){img=new Image();img.src=`./sprites/${key}.png`;this.spriteCache.set(key,img);}
     if(!img.complete||!img.naturalWidth)return false;
     const row=action?(hurt?3:attack?2:0):this.facing;
-    const frame=action?(idle&&!hurt&&!attack?Math.floor(g.elapsed*2)%4:Math.min(3,Math.floor((g.elapsed-(hurt?g.hurtAnimation:g.attackAnimation))/.08))):(moving?Math.floor(g.elapsed*7)%4:0);
+    const frame=action?(!hurt&&!attack?Math.floor(g.elapsed*2)%4:Math.min(3,Math.floor((g.elapsed-(hurt?g.hurtAnimation:g.attackAnimation))/.08))):Math.floor(g.elapsed*7)%4;
     const sw=img.naturalWidth/4,sh=img.naturalHeight/4;
     c.save();c.imageSmoothingEnabled=false;c.drawImage(img,frame*sw,row*sh,sw,sh,-32,-42,64,64);c.restore();return true;
   }

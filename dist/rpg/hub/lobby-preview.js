@@ -1,7 +1,9 @@
-import {walkFrame,characterSpriteScale} from '../sprite-motion.js?v=1.7.17';
-import {SPRITE_FRAMES} from '../sprite-frames.js?v=1.7.17';
-import {CHARACTERS} from '../data.js?v=1.7.17';
-import {loadSave} from '../store.js?v=1.7.17';
+import {mountBgm} from '../bgm.js?v=1.7.18';
+mountBgm('lobby');
+import {walkFrame,characterSpriteScale} from '../sprite-motion.js?v=1.7.18';
+import {SPRITE_FRAMES} from '../sprite-frames.js?v=1.7.18';
+import {CHARACTERS} from '../data.js?v=1.7.18';
+import {loadSave} from '../store.js?v=1.7.18';
 const canvas=document.querySelector('#room'),ctx=canvas.getContext('2d'),selector=document.querySelector('#character');
 const chars=[['mint','민트'],['zero','제로'],['hotori','호토리'],['nanari','나나리'],['shinku','신쿠'],['lacrimosa','라크리모사'],['iloy','일로이'],['zanhong','잔홍'],['akane','아카네'],['raven','레이븐']];
 const stations=[{id:'shinku',x:255,y:353,size:125},{id:'zero',x:1025,y:316,size:125},{id:'iloy',x:1390,y:405,size:146},{id:'lacrimosa',x:1382,y:283,size:70,sleep:true},{id:'raven',x:397,y:695,size:125},{id:'hotori',x:1515,y:726,size:135}];
@@ -26,7 +28,7 @@ selector.innerHTML=chars.map(([id,name])=>`<option value="${id}">${name}</option
 const current=CHARACTERS.find(c=>c.id===loadSave().character)?.sprite;selector.value=chars.some(([id])=>id===current)?current:'mint';
 const names=Object.fromEntries(chars),player={x:835,y:530,dir:0};const keys=new Set();let last=0,walkTime=0;
 selector.addEventListener('change',()=>canvas.focus());document.querySelector('#reset').onclick=()=>{player.x=835;player.y=530;canvas.focus();};
-window.addEventListener('keydown',e=>{if(e.target.tagName==='SELECT'||e.target.tagName==='BUTTON')return;if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','KeyW','KeyA','KeyS','KeyD'].includes(e.code)){keys.add(e.code);e.preventDefault();}});
+window.addEventListener('keydown',e=>{if(e.target.closest('#audio-controls')||['SELECT','BUTTON','INPUT'].includes(e.target.tagName))return;if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','KeyW','KeyA','KeyS','KeyD'].includes(e.code)){keys.add(e.code);e.preventDefault();}});
 window.addEventListener('keyup',e=>keys.delete(e.code));window.addEventListener('blur',()=>keys.clear());
 function sprite(id,x,y,t,{walking=false,dir=0,size=79,rotation=0}={}){const suffix=walking?(id==='hotori'?'directions-v2':'directions'):'actions',key=id+'-'+suffix,sheet=SPRITE_FRAMES[key],frame=walking?walkFrame(walkTime):Math.floor(t*2)%4,row=walking?dir:0;const [sx,sy,sw,sh]=sheet.frames[row][frame],scale=characterSpriteScale(id,row,walking,size),dw=sw*scale,dh=sh*scale;ctx.save();ctx.translate(x,y);ctx.rotate(rotation);ctx.imageSmoothingEnabled=false;ctx.drawImage(images.get(key),sx,sy,sw,sh,-dw/2,-dh,dw,dh);ctx.restore();}
 function ambient(id,x,y,t,size){const def=sheetDefs[id],img=ambientSheets.get(def.sheet),index=[0,1,2,1][Math.floor(t*1.8)%4],[l,top,r,bottom]=def.boxes[index],cellX=Math.round(img.naturalWidth*index/4),sx=cellX+l,sy=def.top+top,sw=r-l,sh=bottom-top,maxHeight=Math.max(...def.boxes.map(b=>b[3]-b[1])),scale=size/maxHeight;ctx.save();ctx.imageSmoothingEnabled=false;ctx.drawImage(img,sx,sy,sw,sh,x-sw*scale/2,y-sh*scale,sw*scale,sh*scale);ctx.restore();}

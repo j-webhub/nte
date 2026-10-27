@@ -1,6 +1,8 @@
-import {STAGES} from '../data.js?v=1.7.17';
-import {loadSave} from '../store.js?v=1.7.17';
-import {MAP_STAGE_IDS,regionAccess,unlockedStage} from '../stage-access.js?v=1.7.17';
+import {mountBgm} from '../bgm.js?v=1.7.18';
+mountBgm('lobby');
+import {STAGES} from '../data.js?v=1.7.18';
+import {loadSave} from '../store.js?v=1.7.18';
+import {MAP_STAGE_IDS,regionAccess,unlockedStage} from '../stage-access.js?v=1.7.18';
 let save=loadSave();
 const data=await (await fetch('./hub/map-regions.json')).json();
 const svg=document.querySelector('#map'),regionsNode=document.querySelector('#regions'),markersNode=document.querySelector('#markers'),back=document.querySelector('#back'),mapTitle=document.querySelector('#map-title'),help=document.querySelector('#map-help'),popup=document.querySelector('#mission-popup'),popupContent=document.querySelector('#popup-content');

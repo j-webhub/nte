@@ -1,6 +1,6 @@
-import {spriteCache} from './sprite-assets.js?v=1.7.17';
-import {SPRITE_FRAMES} from './sprite-frames.js?v=1.7.17';
-import {walkFrame,characterSpriteScale} from './sprite-motion.js?v=1.7.17';
+import {spriteCache} from './sprite-assets.js?v=1.7.18';
+import {SPRITE_FRAMES} from './sprite-frames.js?v=1.7.18';
+import {walkFrame,characterSpriteScale} from './sprite-motion.js?v=1.7.18';
 const TAU=Math.PI*2;
 export function monsterSpriteName(e,stage=1){
   if(e.boss)return `boss-0${((e.bossIndex||0)+stage-1)%3+1}`;
@@ -42,13 +42,14 @@ export class Renderer{
     const height=e.boss?160:e.type==='tank'?92:70,width=height*sw/sh;
     c.save();c.imageSmoothingEnabled=false;
     if(name==='normal-02'){c.shadowColor='#8dd9d1aa';c.shadowBlur=5;}
-    if(e.hit>0)c.filter='brightness(1.7)';
+    if(e.hit>0){const force=e.hit/.1;c.scale(1+force*.06,1-force*.04);}
     c.drawImage(img,frame*sw,0,sw,sh,-width/2,-height/2,width,height);c.restore();return true;
   }
   enemy(c,e,g){
     c.save();c.translate(e.x,e.y);c.fillStyle='#0005';c.beginPath();c.ellipse(0,e.r*.9,e.r*.9,5,0,0,TAU);c.fill();
     const drawn=this.monsterSprite(c,e,g);
     if(!drawn){const color=e.hit>0?'#f5eddb':((e.boss?g.bossFrozen:g.frozen)>0)?'#99b8d4':e.boss?'#bd727b':e.type==='tank'?'#8f9b6c':e.type==='runner'?'#b79c8c':e.type==='spitter'?'#a58bbc':'#6b9990';c.fillStyle=color;c.strokeStyle=e.boss?'#ffc0aa':'#c5dfb344';c.lineWidth=e.boss?2:1;c.beginPath();if(e.boss){for(let i=0;i<10;i++){const a=i/10*TAU+g.time*.3,r=i%2?e.r*.65:e.r;(i?c.lineTo.bind(c):c.moveTo.bind(c))(Math.cos(a)*r,Math.sin(a)*r);}c.closePath();c.fill();c.stroke();c.fillStyle='#271f2d';c.beginPath();c.arc(0,0,20,0,TAU);c.fill();c.fillStyle='#ffe5ab';c.fillRect(-12,-5,8,5);c.fillRect(4,-5,8,5);}else{const sway=Math.sin(g.time*7+e.id)*2;c.moveTo(-e.r*.6,-e.r*.5);c.lineTo(0,-e.r);c.lineTo(e.r*.6,-e.r*.5);c.lineTo(e.r,e.r*.7+sway);c.lineTo(0,e.r*.4);c.lineTo(-e.r,e.r*.7-sway);c.closePath();c.fill();c.stroke();c.fillStyle='#102528';c.fillRect(-6,-5,12,7);c.fillStyle='#d7efb2';c.fillRect(-5,-3,3,2);c.fillRect(2,-3,3,2);}}
+    if(e.hit>0){const a=Math.atan2(g.player.y-e.y,g.player.x-e.x),x=Math.cos(a)*e.r*.7,y=Math.sin(a)*e.r*.7,spread=5+(1-e.hit/.1)*9;c.save();c.translate(x,y);c.globalAlpha=Math.min(1,e.hit/.06);c.strokeStyle='#fff2be';c.lineWidth=2;c.beginPath();for(let i=0;i<4;i++){const angle=a+Math.PI/4+i*Math.PI/2;c.moveTo(Math.cos(angle)*3,Math.sin(angle)*3);c.lineTo(Math.cos(angle)*spread,Math.sin(angle)*spread);}c.stroke();c.restore();}
     if(e.hp<e.maxHp){const top=drawn?-(e.boss?80:e.type==='tank'?46:35)-7:-e.r-9;c.fillStyle='#17211c';c.fillRect(-e.r,top,e.r*2,3);c.fillStyle=e.boss?'#e8a296':'#c0d491';c.fillRect(-e.r,top,e.r*2*e.hp/e.maxHp,3);}c.restore();
   }
   sprite(c,g){

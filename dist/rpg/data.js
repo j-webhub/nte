@@ -1,15 +1,15 @@
 export const SKILLS = [
   {id:'kinetic',name:'염동 탄환',en:'KINETIC',icon:'◎',color:'#a4e774',type:'공격',desc:'정신력을 탄환으로 응축해 가까운 적을 관통합니다.',detail:'레벨마다 탄환 피해 +24%. 3레벨마다 발사체 +1.',weight:12},
-  {id:'fire',name:'홍련의 구',en:'PYROKINESIS',icon:'✺',color:'#ff9868',type:'마법',desc:'적에게 폭발하는 화염구를 발사합니다.',detail:'레벨마다 폭발 피해 +30%, 폭발 반경 +8.',weight:10},
+  {id:'fire',name:'홍련의 구',en:'PYROKINESIS',icon:'✺',color:'#ff9868',type:'마법',desc:'적에게 폭발하는 화염구를 발사합니다.',detail:'레벨마다 폭발 피해 +30%, 폭발 반경 +12.',weight:10},
   {id:'lightning',name:'연쇄 번개',en:'CHAIN LIGHTNING',icon:'ϟ',color:'#b7b1ff',type:'마법',desc:'번개가 가까운 적 사이를 연쇄 이동합니다.',detail:'레벨마다 피해 +24%, 연쇄 대상 +1.',weight:9},
   {id:'orbit',name:'위성 파편',en:'ORBITAL',icon:'◌',color:'#71daca',type:'공격',desc:'몸 주위를 회전하는 파편이 적을 밀어냅니다.',detail:'레벨마다 파편 +1, 접촉 피해 +18%.',weight:10},
   {id:'regen',name:'초재생',en:'REGENERATION',icon:'✚',color:'#9bdfac',type:'생존',desc:'상처를 회복하는 초능력. 체력이 서서히 재생됩니다.',detail:'레벨마다 초당 최대 체력의 0.35% 회복.',weight:12},
-  {id:'haste',name:'신경 가속',en:'ACCELERATION',icon:'»',color:'#8dcdf9',type:'강화',desc:'신경 반응을 가속해 이동과 공격이 빨라집니다.',detail:'레벨마다 이동 속도 +7%, 공격 속도 +6%.',weight:11},
+  {id:'haste',name:'신경 가속',en:'ACCELERATION',icon:'»',color:'#8dcdf9',type:'강화',desc:'신경 반응을 가속해 이동과 공격이 빨라집니다.',detail:'레벨마다 이동 속도 +7%, 공격 속도 +6%. 성능 연구 적용, 장비 초능력 강화 제외.',weight:11},
   {id:'time',name:'시간 정지',en:'TIME STOP',icon:'◷',color:'#ded1ff',type:'특수',desc:'주기적으로 일반 적과 그 탄환의 시간을 멈춥니다. 보스와 보스 탄환은 절반의 시간만 정지합니다.',detail:'기본 주기 21초. 지속 2초 + 레벨당 0.4초. 보스는 절반. 성능 연구 및 장비 강화 불가.',weight:5},
   {id:'frost',name:'절대 영도',en:'ABSOLUTE ZERO',icon:'❄',color:'#a0e5ff',type:'마법',desc:'냉기의 파동으로 주변 적을 얼리고 둔화시킵니다.',detail:'레벨마다 피해 +25%, 범위 +16.',weight:9},
   {id:'gravity',name:'중력 붕괴',en:'SINGULARITY',icon:'◉',color:'#bf9bff',type:'마법',desc:'가까운 적 아래에 중력장을 생성해 적을 끌어당깁니다.',detail:'레벨마다 피해 +25%, 중력장 반경 +10.',weight:6},
-  {id:'shield',name:'정신 장벽',en:'PSYCHIC BARRIER',icon:'⬡',color:'#78c8e5',type:'생존',desc:'정신 에너지를 둘러 받는 피해를 줄입니다.',detail:'레벨마다 받는 피해 감소. 최대 65%.',weight:10},
-  {id:'nova',name:'에너지 폭주',en:'NOVA',icon:'✧',color:'#ffd788',type:'공격',desc:'사방으로 에너지 탄환을 방출합니다.',detail:'레벨마다 탄환 +2, 피해 +22%.',weight:8},
+  {id:'shield',name:'정신 장벽',en:'PSYCHIC BARRIER',icon:'⬡',color:'#78c8e5',type:'생존',desc:'정신 에너지를 둘러 받는 피해를 줄입니다.',detail:'레벨마다 받는 피해 감소. 최대 65%. 성능 연구 적용, 장비 초능력 강화 제외.',weight:10},
+  {id:'nova',name:'에너지 폭주',en:'NOVA',icon:'✧',color:'#ffd788',type:'공격',desc:'공격력을 반영한 에너지 탄환을 사방으로 방출합니다.',detail:'레벨마다 탄환 +2, 피해 +22%.',weight:8},
   {id:'vampire',name:'생명 흡수',en:'LIFE DRAIN',icon:'♢',color:'#f794b3',type:'생존',desc:'적을 처치하면 생명 에너지를 흡수합니다.',detail:'레벨마다 처치 시 체력 0.6 회복.',weight:7},
 ];
 SKILLS.push(
@@ -48,10 +48,10 @@ export const byId = (list,id) => list.find(v=>v.id===id);
 export const upgradeCost = (u,level) => Math.round(u.base * Math.pow(1.65,level));
 
 SKILLS.push(
- {id:'lance',name:'공간 창',en:'SPACE LANCE',icon:'➶',color:'#79e8d4',type:'공격',desc:'공간을 꿰뚫는 빠른 관통 창을 발사합니다.',detail:'1.4초마다 발사. 피해 45 × (1 + 레벨 × 28%), 관통 5.',weight:9},
+ {id:'lance',name:'공간 창',en:'SPACE LANCE',icon:'➶',color:'#79e8d4',type:'공격',desc:'공간을 꿰뚫는 빠른 관통 창을 발사합니다.',detail:'기본 주기 1.4초. 공격력 기반 피해, 레벨마다 피해 +28%, 관통 5.',weight:9},
  {id:'pulse',name:'충격파',en:'SHOCKWAVE',icon:'◍',color:'#e9b8ff',type:'마법',desc:'주변 적을 밀어내는 정신 충격파를 방출합니다.',detail:'4초마다 발동. 피해 200 × (1 + 레벨 × 25%), 반경 170 + 레벨 × 12.',weight:9},
- {id:'tempest',name:'극지 폭풍',en:'POLAR TEMPEST',icon:'✵',color:'#a0e5ff',type:'융합',fusion:true,desc:'광역 번개 폭풍으로 주변 적을 공격하고 둔화시킵니다.',detail:'연쇄 번개 Lv.10 + 절대 영도 Lv.10. 2초마다 반경 420에 피해 1,200, 둔화 3초.',weight:0},
- {id:'rift',name:'차원 파쇄',en:'DIMENSION RIFT',icon:'✥',color:'#e9b8ff',type:'융합',fusion:true,desc:'여러 겹의 공간 창이 폭발하며 적진을 파괴합니다.',detail:'공간 창 Lv.10 + 충격파 Lv.10. 1.2초마다 창 5개, 피해 1,050, 폭발 반경 95.',weight:0}
+ {id:'tempest',name:'극지 폭풍',en:'POLAR TEMPEST',icon:'✵',color:'#a0e5ff',type:'융합',fusion:true,desc:'광역 번개 폭풍으로 주변 적을 공격하고 둔화시킵니다.',detail:'연쇄 번개 Lv.10 + 절대 영도 Lv.10. 2초마다 반경 420에 기본 피해 계수 600, 둔화 3초.',weight:0},
+ {id:'rift',name:'차원 파쇄',en:'DIMENSION RIFT',icon:'✥',color:'#e9b8ff',type:'융합',fusion:true,desc:'여러 겹의 공간 창이 폭발하며 적진을 파괴합니다.',detail:'공간 창 Lv.10 + 충격파 Lv.10. 1.2초마다 창 5개, 기본 피해 계수 200, 폭발 반경 95.',weight:0}
 );
 RECIPES.push({id:'tempest',ingredients:['lightning','frost'],level:10},{id:'rift',ingredients:['lance','pulse'],level:10});
 STAGES.push(
@@ -88,7 +88,7 @@ QUESTS.push(
 
 SKILLS.push(
  {id:'healingfactor',name:'힐링팩터',en:'HEALING FACTOR',icon:'✤',color:'#8de9b0',type:'융합',fusion:true,desc:'매초 체력을 회복하고 치명상에서 한 번 부활합니다.',detail:'최대 체력의 초당 10% 회복, 출격당 1회 부활. 레벨당 회복 +1%p.',weight:8},
- {id:'gravityshot',name:'중력탄환',en:'GRAVITY SHOT',icon:'⊚',color:'#bea5ff',type:'융합',fusion:true,desc:'명중 지점에 적을 끌어당기는 중력장을 만드는 탄환을 발사합니다.',detail:'명중 시 중력장 생성. 레벨당 피해·범위 강화.',weight:8},
+ {id:'gravityshot',name:'중력탄환',en:'GRAVITY SHOT',icon:'⊚',color:'#bea5ff',type:'융합',fusion:true,desc:'명중 지점에 적을 끌어당기는 중력장을 만드는 탄환을 발사합니다.',detail:'명중 시 2초간 중력장 생성. 레벨당 탄환 피해 강화.',weight:8},
  {id:'satellitebarrier',name:'위성장벽',en:'SATELLITE BARRIER',icon:'⬢',color:'#89dfd9',type:'융합',fusion:true,desc:'적을 밀어내는 위성 장벽을 두르고 받는 피해를 줄입니다.',detail:'위성 접촉 피해와 밀치기, 피해 감소. 레벨당 강화.',weight:8}
 );
 RECIPES.push({id:'healingfactor',ingredients:['regen','vampire'],level:10},{id:'gravityshot',ingredients:['gravity','kinetic'],level:10},{id:'satellitebarrier',ingredients:['orbit','shield'],level:10});

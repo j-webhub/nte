@@ -35,7 +35,7 @@ export const UNIQUE_OPTIONS={
   armor:{id:'revive',name:'불사조',desc:'출격당 1회 부활. 반경 300 내 적에게 초당 화염 피해 200 (EP/LE 400)',itemName:'불사조의 잔재'},
   helmet:{id:'chain',name:'폭풍 감응',desc:'연쇄 번개 갈래 +1, 파동 횟수 +1 (EP/LE +2)',itemName:'폭풍의 시선'},
   boots:{id:'dash',name:'위상 도약',desc:'이동 속도 +15% (EP/LE +30%)',itemName:'경계의 발걸음'},
-  gloves:{id:'leech',name:'생명 수확',desc:'적 처치 시 체력 1 회복 (EP/LE 2), 공격 속도 +15% (EP/LE +30%)',itemName:'포식자의 손길'},
+  gloves:{id:'leech',name:'생명 수확',desc:'적 처치 시 체력 1 회복 (EP/LE 2), 공격 속도 +7.5% (EP/LE +15%)',itemName:'포식자의 손길'},
   core:{id:'focus',name:'각성 공명',desc:'초능력 강화 배율 +10% (EP/LE +20%)',itemName:'영원의 심장'},
 };
 // Probabilities are conditional on an equipment drop, not on each enemy kill.
@@ -58,7 +58,7 @@ export function createGear(uid,slot,rarity='c',random=Math.random){
   }),special:index>=4?UNIQUE_OPTIONS[slot].id:null,extra:index>=5?rollExtra(slot,rarity,random):null};
 }
 export function gearName(item){return GRADE_IDS.indexOf(item.rarity)>=4?UNIQUE_OPTIONS[item.slot].itemName:SLOTS.find(s=>s.id===item.slot).nameplate;}
-export function formatOption(stat,value){return `${STAT_NAMES[stat]} +${PERCENT_STATS.has(stat)?`${Math.round(value*100)}%`:Number(value.toFixed(1))}`;}
+export function formatOption(stat,value){return `${STAT_NAMES[stat]} +${PERCENT_STATS.has(stat)?`${Number(((stat==='rate'?value/2:value)*100).toFixed(2))}%`:Number(value.toFixed(1))}`;}
 export function initializeGear(save){
   save.gear=[];save.equipped={};save.nextGearId=1;
   for(const slot of SLOTS){const item=createGear(`gear-${save.nextGearId++}`,slot.id,'c',()=>.5);save.gear.push(item);save.equipped[slot.id]=item.uid;}
@@ -89,9 +89,9 @@ export function moveGear(save,uid,destination){const item=save.gear.find(i=>i.ui
 export function sellGear(save,uid){const item=save.gear.find(i=>i.uid===uid);if(!item||isEquipped(save,uid))return 0;const price=GRADES[item.rarity].sell;save.gear.splice(save.gear.indexOf(item),1);save.credits+=price;return price;}
 export function calculateStats(save,character,skills={}){
   const bonus={attack:0,defense:0,hp:0,strength:0,intelligence:0,agility:0,rate:0,ability:0,regen:0,speed:0,all:0,attackPct:0,defensePct:0,cooldown:0,magicFlat:0};
-  for(const item of equippedItems(save)){for(const option of [{...item.base,value:enhancedBase(item)},...item.affixes,...(item.extra?[item.extra]:[])])bonus[option.stat]+=option.value;const upgraded=['ep','le'].includes(item.rarity);if(item.special==='focus')bonus.ability+=upgraded?.20:.10;if(item.special==='dash')bonus.speed+=upgraded?.30:.15;if(item.special==='leech')bonus.rate+=upgraded?.30:.15;if(item.slot==='core'&&item.rarity==='le')bonus.ability+=.30;}
+  for(const item of equippedItems(save)){for(const option of [{...item.base,value:enhancedBase(item)},...item.affixes,...(item.extra?[item.extra]:[])])bonus[option.stat]+=option.stat==='rate'?option.value/2:option.value;const upgraded=['ep','le'].includes(item.rarity);if(item.special==='focus')bonus.ability+=upgraded?.20:.10;if(item.special==='dash')bonus.speed+=upgraded?.30:.15;if(item.special==='leech')bonus.rate+=upgraded?.15:.075;if(item.slot==='core'&&item.rarity==='le')bonus.ability+=.30;}
   const u=save.upgrades,all=1+bonus.all,strength=(10+bonus.strength)*all,intelligence=(10+bonus.intelligence)*all,agility=(10+bonus.agility)*all;
-  const haste=skills.haste||(skills.chronos?10:0),hastePower=(1+(save.research.haste?.power||0)*.12)*(1+bonus.ability)*all;
+  const haste=skills.haste||(skills.chronos?10:0),hastePower=1+(save.research.haste?.power||0)*.12;
   return {strength,intelligence,agility,all:bonus.all,
     hp:(character.hp+(u.body||0)*15+bonus.hp)*all,
     attack:(character.attack+bonus.attack)*(1+bonus.attackPct)*(1+(u.power||0)*.08)*(1+strength*.01)*all,
@@ -121,7 +121,7 @@ export function applyUnitStats(stats,units={}){return {...stats,speed:stats.spee
 export function damageReduction(save,stats,skills={}){
   const defense=stats.defense/(100+stats.defense);
   const id=skills.satellitebarrier?'satellitebarrier':skills.shield?'shield':null;
-  const power=id?(1+(save.research[id]?.power||0)*.12)*stats.ability:0;
+  const power=id?(1+(save.research[id]?.power||0)*.12)*(id==='shield'?1:stats.ability):0;
   const skill=id==='satellitebarrier'?Math.min(.65,(.35+skills[id]*.025)*power):id==='shield'?Math.min(.65,skills[id]*.08*power):0;
   const gear=equippedItems(save).some(item=>item.slot==='armor'&&item.special==='revive'&&item.rarity==='le')?.5:0;
   return {defense,skill,gear,total:Math.min(.95,1-(1-defense)*(1-skill)+gear)};
@@ -129,7 +129,8 @@ export function damageReduction(save,stats,skills={}){
 
 // Enhancement increments are additive percentages of the original fixed option.
 export const ENHANCE_CHANCES=[1,.8,.6,.5,.4,.3,.25,.2,.15,.1];
-export function enhancementMultiplier(level=0){level=Math.max(0,Math.min(10,Math.floor(level)||0));return 1+level*.10+.025*level*(level-1);}
+export const ENHANCE_BONUSES=[0,.04,.09,.15,.22,.30,.40,.52,.65,.80,1];
+export function enhancementMultiplier(level=0){level=Math.max(0,Math.min(10,Math.floor(level)||0));return 1+ENHANCE_BONUSES[level];}
 export function enhancedBase(item){return item.base.value*enhancementMultiplier(item.enhance||0);}
 export function enhanceGear(save,uid,random=Math.random){const item=save.gear.find(i=>i.uid===uid&&i.location==='bag');if(!item)return null;const level=item.enhance||0,cost=1000+500*level;if(level>=10||save.credits<cost)return null;save.credits-=cost;const success=randomUnit(random)<ENHANCE_CHANCES[level];if(success)item.enhance=level+1;return {success,cost,level:item.enhance||0};}
 export function drawRates(){const rates=dropRates(3,true),low=rates.c+rates.u,scale=(low-.002)/low;return {...rates,c:rates.c*scale,u:rates.u*scale,ep:.0015,le:.0005};}

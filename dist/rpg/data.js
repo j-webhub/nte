@@ -111,3 +111,24 @@ STAGES.push(
  {id:14,name:'기억의 폐허',area:'SECTOR 14 · 망각 구역',desc:'도시의 기억을 먹어 치운 그림자들이 되살아납니다.',difficulty:'위험도 XIV',color:'#a9c2ac',bosses:['망각의 사냥꾼','기억의 포식자'],reward:6400},
  {id:15,name:'새벽의 문턱',area:'SECTOR 15 · 차원 종착점',desc:'끝없는 밤을 넘어 새벽으로 이어지는 마지막 문을 여세요.',difficulty:'위험도 XV',color:'#f4b7b9',bosses:['새벽의 집행자','영원의 밤'],reward:7400}
 );
+
+// Keep legacy IDs stable so each existing save retains the same unlocked slot and abilities.
+const NTE_CAST=[
+ ['jin','이환의 민트','민트','mint','#80e8de','발랄한 이환과 함께 밤의 거리를 누비세요.'],
+ ['seo','이능력자 제로','제로 (여)','zero','#c4b9eb','차분한 눈빛으로 균열을 추적하는 각성자.'],
+ ['ember','호토리','검의 불꽃','hotori','#e98379','화염의 힘을 품은 검객.'],
+ ['zero','나나리','시간 조율자','nanari','#ed83ad','멈춘 순간을 넘어 전장을 누빕니다.'],
+ ['frostwalker','신쿠','냉기 조율자','shinku','#d493c7','차가운 파동으로 적을 늦춥니다.'],
+ ['storm','라크리모사','전격 능력자','lacrimosa','#db9abb','연쇄 번개로 적 무리를 제압합니다.'],
+ ['guardian','일로이','정신 수호자','iloy','#9bddc6','정신 장벽으로 자신을 보호합니다.'],
+ ['riftwalker','잔홍','공간 추적자','zanhong','#d6c2e8','공간을 꿰뚫는 창으로 적을 추적합니다.']
+];
+for(const [id,name,tag,sprite,color,desc] of NTE_CAST)Object.assign(byId(CHARACTERS,id),{name,tag,sprite,color,desc,sex:'female'});
+CHARACTERS.push(
+ {id:'akane',name:'아카네',tag:'에너지 연주자',code:'AW—09',sex:'female',sprite:'akane',color:'#f1bc7f',skill:'nova',quest:'unlock_akane',desc:'에너지를 사방으로 방출하며 전장을 누빕니다.',stats:'에너지 폭주 Lv.1 보유 · 최대 체력 110',hp:110,attack:20,speed:225},
+ {id:'raven',name:'레이븐',tag:'중력 관측자',code:'AW—10',sex:'female',sprite:'raven',color:'#e8cb68',skill:'gravity',quest:'unlock_raven',desc:'중력장을 펼쳐 적을 끌어당깁니다.',stats:'중력 붕괴 Lv.1 보유 · 최대 체력 110',hp:110,attack:20,speed:225}
+);
+QUESTS.push(
+ {id:'unlock_akane',title:'울려 퍼지는 선율',desc:'11스테이지를 클리어하세요.',stat:'maxStage',target:12,character:'akane',reward:650},
+ {id:'unlock_raven',title:'밤을 보는 눈',desc:'13스테이지를 클리어하세요.',stat:'maxStage',target:14,character:'raven',reward:750}
+);

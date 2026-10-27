@@ -1,12 +1,12 @@
-import {MODES,SKILLS,UNIT_SKILLS,RECIPES,CHARACTERS,STAGES,byId} from './data.js?v=1.6.1';
-import {calculateStats,applyUnitStats,equippedItems,projectileScale,receiveGear,equipGear,unequipGear} from './equipment.js?v=1.6.1';
+import {MODES,SKILLS,UNIT_SKILLS,RECIPES,CHARACTERS,STAGES,byId} from './data.js?v=1.7.0';
+import {calculateStats,applyUnitStats,equippedItems,projectileScale,receiveGear,equipGear,unequipGear} from './equipment.js?v=1.7.0';
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 const distance=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
 export class Game {
   constructor(save,stageId=1,{random=Math.random,onEvent=()=>{},mode="normal",accelerated=false}={}){
     this.accelerated=accelerated||mode==="accelerated";this.mode=mode==="endless"?"endless":"normal";this.random=random;this.onEvent=onEvent;this.save=save;this.stage=byId(STAGES,stageId)||STAGES[0];this.character=byId(CHARACTERS,save.character)||CHARACTERS[0];this.state='playing';this.time=0;this.elapsed=0;this.level=1;this.xp=0;this.nextXp=12;this.kills=0;this.bossKills=0;this.credits=0;this.skills={};this.unitSkills={};this.fusedIngredients=new Set();this.collectorSpawned=new Set();this.bossFrozen=0;this.healingRevived=false;this.fireAuraTick=0;this.lootCount=0;this.enemies=[];this.bullets=[];this.hostile=[];this.drops=[];this.effects=[];this.numbers=[];this.fields=[];this.cooldowns={};this.bossSpawned=new Set();this.spawnTimer=.4;this.frozen=0;this.rerolls=save.upgrades.reroll||0;this.offers=[];this.picksLeft=0;this.input={x:0,y:0};this.dashCooldown=0;this.dashTime=0;this.invincible=0;this.revived=false;this.uid=0;this.pendingLevels=0;this.orbitTick=0;this.stats={};this.recalculate();this.player={x:1300,y:900,hp:this.stats.hp,dir:0};if(this.character.skill){this.skills[this.character.skill]=1;this.discover(this.character.skill);}this.recalculate();
   }
-  emit(type,data={}){this.onEvent({type,...data});}
+  emit(type,data={}){if(type==='shoot')this.attackAnimation=this.elapsed;if(type==='hurt')this.hurtAnimation=this.elapsed;this.onEvent({type,...data});}
   discover(id){if(!this.save.discovered.includes(id)){this.save.discovered.push(id);this.emit('discover',{id});}}
   recalculate(){this.stats=applyUnitStats(calculateStats(this.save,this.character,this.skills),this.unitSkills);if(this.player)this.player.hp=Math.min(this.player.hp,this.stats.hp);}
   power(id){return (1+(this.save.research[id]?.power||0)*.12)*this.stats.ability;}

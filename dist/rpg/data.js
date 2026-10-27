@@ -49,9 +49,9 @@ export const upgradeCost = (u,level) => Math.round(u.base * Math.pow(1.65,level)
 
 SKILLS.push(
  {id:'lance',name:'공간 창',en:'SPACE LANCE',icon:'➶',color:'#79e8d4',type:'공격',desc:'공간을 꿰뚫는 빠른 관통 창을 발사합니다.',detail:'1.4초마다 발사. 피해 45 × (1 + 레벨 × 28%), 관통 5.',weight:9},
- {id:'pulse',name:'충격파',en:'SHOCKWAVE',icon:'◍',color:'#e9b8ff',type:'마법',desc:'주변 적을 밀어내는 정신 충격파를 방출합니다.',detail:'4초마다 발동. 피해 40 × (1 + 레벨 × 25%), 반경 170 + 레벨 × 12.',weight:9},
- {id:'tempest',name:'극지 폭풍',en:'POLAR TEMPEST',icon:'✵',color:'#a0e5ff',type:'융합',fusion:true,desc:'광역 번개 폭풍으로 주변 적을 공격하고 둔화시킵니다.',detail:'연쇄 번개 Lv.10 + 절대 영도 Lv.10. 2초마다 반경 420에 피해 240, 둔화 3초.',weight:0},
- {id:'rift',name:'차원 파쇄',en:'DIMENSION RIFT',icon:'✥',color:'#e9b8ff',type:'융합',fusion:true,desc:'여러 겹의 공간 창이 폭발하며 적진을 파괴합니다.',detail:'공간 창 Lv.10 + 충격파 Lv.10. 1.2초마다 창 5개, 피해 210, 폭발 반경 95.',weight:0}
+ {id:'pulse',name:'충격파',en:'SHOCKWAVE',icon:'◍',color:'#e9b8ff',type:'마법',desc:'주변 적을 밀어내는 정신 충격파를 방출합니다.',detail:'4초마다 발동. 피해 200 × (1 + 레벨 × 25%), 반경 170 + 레벨 × 12.',weight:9},
+ {id:'tempest',name:'극지 폭풍',en:'POLAR TEMPEST',icon:'✵',color:'#a0e5ff',type:'융합',fusion:true,desc:'광역 번개 폭풍으로 주변 적을 공격하고 둔화시킵니다.',detail:'연쇄 번개 Lv.10 + 절대 영도 Lv.10. 2초마다 반경 420에 피해 1,200, 둔화 3초.',weight:0},
+ {id:'rift',name:'차원 파쇄',en:'DIMENSION RIFT',icon:'✥',color:'#e9b8ff',type:'융합',fusion:true,desc:'여러 겹의 공간 창이 폭발하며 적진을 파괴합니다.',detail:'공간 창 Lv.10 + 충격파 Lv.10. 1.2초마다 창 5개, 피해 1,050, 폭발 반경 95.',weight:0}
 );
 RECIPES.push({id:'tempest',ingredients:['lightning','frost'],level:10},{id:'rift',ingredients:['lance','pulse'],level:10});
 STAGES.push(

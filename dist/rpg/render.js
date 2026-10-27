@@ -1,4 +1,4 @@
-import {SPRITE_FRAMES} from './sprite-frames.js?v=1.7.4';
+import {SPRITE_FRAMES} from './sprite-frames.js?v=1.7.5';
 const TAU=Math.PI*2;
 export class Renderer{
   constructor(canvas){this.canvas=canvas;this.ctx=canvas.getContext('2d');this.width=0;this.height=0;this.spriteCache=new Map();this.facing=0;this.resize();}

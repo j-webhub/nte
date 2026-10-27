@@ -70,7 +70,7 @@ export function normalizeGear(save){
     if(!slot||index<0||typeof item.uid!=='string'||!/^gear-\d+$/.test(item.uid)||ids.has(item.uid))return false;
     if(!Array.isArray(item.affixes)||item.affixes.length!==2||!slot.affixes.every(stat=>item.affixes.filter(a=>a?.stat===stat).length===1))return false;
     const normalized=[];for(const stat of slot.affixes){const a=item.affixes.find(a=>a.stat===stat),[min,max]=RANGES[stat][index];if(!Number.isFinite(a.value)||a.value<min-1e-8||a.value>max+1e-8)return false;normalized.push({stat,value:a.value});}
-    if(index>=5&&!validExtra(item.extra,item.slot,item.rarity))return false;item.affixes=normalized;item.extra=index>=5?item.extra:null;item.base={stat:slot.base,value:slot.values[index]};item.special=index>=4?UNIQUE_OPTIONS[item.slot].id:null;item.location=item.location==='warehouse'?'warehouse':'bag';ids.add(item.uid);return true;
+    if(index>=5&&!validExtra(item.extra,item.slot,item.rarity))return false;item.affixes=normalized;item.extra=index>=5?item.extra:null;item.base={stat:slot.base,value:slot.values[index]};if(item.enhance!==undefined)item.enhance=Math.min(10,Math.max(0,Math.floor(Number(item.enhance)||0)));item.special=index>=4?UNIQUE_OPTIONS[item.slot].id:null;item.location=item.location==='warehouse'?'warehouse':'bag';ids.add(item.uid);return true;
   });
   const equipped={};for(const slot of SLOTS){const item=save.gear.find(i=>i.uid===save.equipped?.[slot.id]&&i.slot===slot.id&&i.location==='bag');if(item)equipped[slot.id]=item.uid;}save.equipped=equipped;
   save.nextGearId=Math.max(1,Math.floor(Number(save.nextGearId)||1),...save.gear.map(i=>Number(i.uid.slice(5))+1));
@@ -88,7 +88,7 @@ export function moveGear(save,uid,destination){const item=save.gear.find(i=>i.ui
 export function sellGear(save,uid){const item=save.gear.find(i=>i.uid===uid);if(!item||isEquipped(save,uid))return 0;const price=GRADES[item.rarity].sell;save.gear.splice(save.gear.indexOf(item),1);save.credits+=price;return price;}
 export function calculateStats(save,character,skills={}){
   const bonus={attack:0,defense:0,hp:0,strength:0,intelligence:0,agility:0,rate:0,ability:0,regen:0,speed:0,all:0,attackPct:0,defensePct:0,cooldown:0,magicFlat:0};
-  for(const item of equippedItems(save)){for(const option of [item.base,...item.affixes,...(item.extra?[item.extra]:[])])bonus[option.stat]+=option.value;const upgraded=['ep','le'].includes(item.rarity);if(item.special==='focus')bonus.ability+=upgraded?.20:.10;if(item.special==='dash')bonus.speed+=upgraded?.30:.15;if(item.special==='leech')bonus.rate+=upgraded?.30:.15;if(item.slot==='core'&&item.rarity==='le')bonus.ability+=.30;}
+  for(const item of equippedItems(save)){for(const option of [{...item.base,value:enhancedBase(item)},...item.affixes,...(item.extra?[item.extra]:[])])bonus[option.stat]+=option.value;const upgraded=['ep','le'].includes(item.rarity);if(item.special==='focus')bonus.ability+=upgraded?.20:.10;if(item.special==='dash')bonus.speed+=upgraded?.30:.15;if(item.special==='leech')bonus.rate+=upgraded?.30:.15;if(item.slot==='core'&&item.rarity==='le')bonus.ability+=.30;}
   const u=save.upgrades,all=1+bonus.all,strength=(10+bonus.strength)*all,intelligence=(10+bonus.intelligence)*all,agility=(10+bonus.agility)*all;
   const haste=skills.haste||(skills.chronos?10:0),hastePower=(1+(save.research.haste?.power||0)*.12)*(1+bonus.ability)*all;
   return {strength,intelligence,agility,all:bonus.all,
@@ -123,5 +123,14 @@ export function damageReduction(save,stats,skills={}){
   const power=id?(1+(save.research[id]?.power||0)*.12)*stats.ability:0;
   const skill=id==='satellitebarrier'?Math.min(.65,(.35+skills[id]*.025)*power):id==='shield'?Math.min(.65,skills[id]*.08*power):0;
   const gear=equippedItems(save).some(item=>item.slot==='armor'&&item.special==='revive'&&item.rarity==='le')?.5:0;
-  return {defense,skill,gear,total:Math.min(.90,1-(1-defense)*(1-skill)+gear)};
+  return {defense,skill,gear,total:Math.min(.95,1-(1-defense)*(1-skill)+gear)};
 }
+
+// Enhancement increments are additive percentages of the original fixed option.
+export const ENHANCE_CHANCES=[1,.8,.6,.5,.4,.3,.25,.2,.15,.1];
+export function enhancementMultiplier(level=0){level=Math.max(0,Math.min(10,Math.floor(level)||0));return 1+level*.10+.025*level*(level-1);}
+export function enhancedBase(item){return item.base.value*enhancementMultiplier(item.enhance||0);}
+export function enhanceGear(save,uid,random=Math.random){const item=save.gear.find(i=>i.uid===uid&&i.location==='bag');if(!item)return null;const level=item.enhance||0,cost=1000+500*level;if(level>=10||save.credits<cost)return null;save.credits-=cost;const success=randomUnit(random)<ENHANCE_CHANCES[level];if(success)item.enhance=level+1;return {success,cost,level:item.enhance||0};}
+export function drawRates(){const rates=dropRates(3,true),low=rates.c+rates.u,scale=(low-.002)/low;return {...rates,c:rates.c*scale,u:rates.u*scale,ep:.0015,le:.0005};}
+export function drawGear(save,count,random=Math.random){if(![1,10,100].includes(count)||save.credits<count*1000)return null;save.credits-=count*1000;const rates=drawRates(),result=[];for(let i=0;i<count;i++){let n=randomUnit(random),rarity='le';for(const [id,p]of Object.entries(rates)){n-=p;if(n<0){rarity=id;break;}}const slot=SLOTS[Math.floor(randomUnit(random)*SLOTS.length)].id,item=createGear(`gear-${save.nextGearId++}`,slot,rarity,random);if(save.autoSellGrade&&GRADE_IDS.indexOf(rarity)<=GRADE_IDS.indexOf(save.autoSellGrade)){save.credits+=GRADES[rarity].sell;item.autoSold=true;}else save.gear.push(item);result.push(item);}return result;}
+export function autoCraftWarehouse(save,random=Math.random){let attempts=0,success=0,spent=0,materials=0;for(const rarity of ['uq','ep'])for(const slot of SLOTS){while(true){const items=save.gear.filter(i=>i.location==='warehouse'&&i.rarity===rarity&&i.slot===slot.id&&!isEquipped(save,i.uid)).sort((a,b)=>(b.enhance||0)-(a.enhance||0));const cost=rarity==='uq'?1000:3000;if(items.length<3||save.credits<cost)break;const [main,...rest]=items,consumed=rest.slice(0,2);save.credits-=cost;spent+=cost;attempts++;materials+=2;save.gear=save.gear.filter(i=>!consumed.includes(i));if(randomUnit(random)<(rarity==='uq'?.5:.3)){const level=main.enhance||0,upgraded=createGear(main.uid,main.slot,rarity==='uq'?'ep':'le',random);Object.assign(main,upgraded,{location:'warehouse',enhance:level});success++;}}}return {attempts,success,spent,materials};}

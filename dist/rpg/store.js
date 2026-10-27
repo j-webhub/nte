@@ -1,7 +1,8 @@
-import {SKILLS,STAGES,CHARACTERS,UPGRADES,QUESTS,byId,upgradeCost} from './data.js?v=1.7.11';
-import {initializeGear,normalizeGear,GRADE_IDS,createGear} from './equipment.js?v=1.7.11';
+import {hasClearedStage} from './stage-access.js?v=1.7.15';
+import {SKILLS,STAGES,CHARACTERS,UPGRADES,QUESTS,byId,upgradeCost} from './data.js?v=1.7.15';
+import {initializeGear,normalizeGear,GRADE_IDS,createGear} from './equipment.js?v=1.7.15';
 const KEY='nightfall.save.v1';
-export function freshSave(){const s={version:4,credits:0,autoSellGrade:null,character:'jin',maxStage:1,upgrades:{},research:{},discovered:[],unlocked:['jin','seo'],claimed:[],questGearClaimed:[],stats:{kills:0,bosses:0,clears:0,runs:0,bestTime:0},history:[],sound:true};initializeGear(s);return s;}
+export function freshSave(){const s={version:4,credits:0,autoSellGrade:null,character:'jin',maxStage:1,clearedStages:[],upgrades:{},research:{},discovered:[],unlocked:['jin','seo'],claimed:[],questGearClaimed:[],stats:{kills:0,bosses:0,clears:0,runs:0,bestTime:0},history:[],sound:true};initializeGear(s);return s;}
 export function loadSave(storage=globalThis.localStorage){
   try{
     const raw=JSON.parse(storage.getItem(KEY));
@@ -16,6 +17,8 @@ export function loadSave(storage=globalThis.localStorage){
     if(raw.version<3){for(const id of ['time','chronos']){const level=s.research[id].power;s.credits+=researchRefund(level);s.research[id].power=0;}}
     for(const key of ['discovered','unlocked','claimed','questGearClaimed','history'])if(!Array.isArray(s[key]))s[key]=freshSave()[key];
     if(s.maxStage===10&&s.history.some(run=>run?.stage===10&&run.result==='clear'))s.maxStage=11;
+    s.clearedStages=Array.isArray(raw.clearedStages)?[...new Set(raw.clearedStages.filter(id=>Number.isInteger(id)&&id>=1&&id<=STAGES.length))]:[];
+    s.clearedStages=STAGES.filter(stage=>hasClearedStage(s,stage.id)).map(stage=>stage.id);
     s.unlocked=[...new Set(['jin','seo',...s.unlocked.filter(id=>byId(CHARACTERS,id))])];
     if(!s.unlocked.includes(s.character))s.character='jin';
     s.stats={...freshSave().stats,...s.stats};
@@ -31,7 +34,7 @@ export function buyResearch(s,id,kind){if(!s.discovered.includes(id)||!['weight'
 export function questProgress(s,q){return q.stat==='discovered'?s.discovered.length:q.stat==='maxStage'?s.maxStage:s.stats[q.stat]||0;}
 function grantQuestGear(s,q){if(!q.gearReward||s.questGearClaimed.includes(q.id))return;const {slot,rarity}=q.gearReward;const item=createGear(`gear-${s.nextGearId++}`,slot,rarity);s.gear.push(item);s.questGearClaimed.push(q.id);}
 export function claimQuest(s,id){const q=byId(QUESTS,id);if(!q||s.claimed.includes(id)||questProgress(s,q)<q.target)return false;s.claimed.push(id);s.credits+=q.reward;if(q.character&&!s.unlocked.includes(q.character))s.unlocked.push(q.character);grantQuestGear(s,q);return true;}
-export function settleRun(s,run){if(run.settled)return null;run.settled=true;const bonus=run.result==='clear'?run.stage.reward:0;const earned=Math.floor(run.credits)+bonus;s.credits+=earned;s.stats.runs++;s.stats.kills+=run.kills;s.stats.bosses+=run.bossKills;s.stats.bestTime=Math.max(s.stats.bestTime,Math.floor(run.time));if(run.result==='clear'){s.stats.clears++;s.maxStage=Math.max(s.maxStage,Math.min(STAGES.length,run.stage.id+1));}for(const id of Object.keys(run.skills))if(!s.discovered.includes(id))s.discovered.push(id);const entry={date:Date.now(),stage:run.stage.id,mode:run.mode||'normal',result:run.result,time:Math.floor(run.time),kills:run.kills,earned};s.history.unshift(entry);s.history=s.history.slice(0,12);return {...entry,bonus};}
+export function settleRun(s,run){if(run.settled)return null;run.settled=true;const bonus=run.result==='clear'?run.stage.reward:0;const earned=Math.floor(run.credits)+bonus;s.credits+=earned;s.stats.runs++;s.stats.kills+=run.kills;s.stats.bosses+=run.bossKills;s.stats.bestTime=Math.max(s.stats.bestTime,Math.floor(run.time));if(run.result==='clear'){s.clearedStages=[...new Set([...(s.clearedStages||[]),run.stage.id])];s.stats.clears++;s.maxStage=Math.max(s.maxStage,Math.min(STAGES.length,run.stage.id+1));}for(const id of Object.keys(run.skills))if(!s.discovered.includes(id))s.discovered.push(id);const entry={date:Date.now(),stage:run.stage.id,mode:run.mode||'normal',result:run.result,time:Math.floor(run.time),kills:run.kills,earned};s.history.unshift(entry);s.history=s.history.slice(0,12);return {...entry,bonus};}
 
 export const researchRefund=level=>Array.from({length:Math.min(5,Math.max(0,Math.floor(Number(level)||0)))},(_,i)=>60+i*70).reduce((a,b)=>a+b,0);
 export function researchResetPreview(s,id=null){const ids=id?[id]:SKILLS.map(k=>k.id);let refund=0,count=0;for(const key of ids){if(!byId(SKILLS,key))continue;const r=s.research[key];if(!r)continue;const w=researchRefund(r.weight),p=researchRefund(r.power);if(w||p){refund+=w+p;count++;}}return {count,refund};}

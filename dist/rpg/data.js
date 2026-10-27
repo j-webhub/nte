@@ -27,9 +27,9 @@ export const CHARACTERS = [
   {id:'zero',name:'백시우',tag:'시간 조율자',code:'AW—04',sex:'male',color:'#c5afff',skill:'time',quest:'breaker',desc:'멈춘 시간 속에서 눈을 뜬 연구원. 강화된 신체와 시간 정지 능력을 지닙니다.',stats:'시간 정지 Lv.1 보유 · 최대 체력 100',hp:100,attack:20,speed:225},
 ];
 export const STAGES = [
-  {id:1,name:'침묵의 교차로',area:'SECTOR 01 · 도심 외곽',desc:'검게 물든 도심. 첫 번째 균열이 관측된 구역에 진입하세요.',difficulty:'위험도 I',color:'#ace879',bosses:['균열의 파수꾼','공허의 집행자'],reward:180},
-  {id:2,name:'네온의 잔해',area:'SECTOR 02 · 상업 지구',desc:'꺼지지 않는 네온 아래, 변이체들이 더 빠르게 움직입니다.',difficulty:'위험도 II',color:'#8cd9ea',bosses:['네온 포식자','심연의 추적자'],reward:320},
-  {id:3,name:'제로 그라운드',area:'SECTOR 03 · 균열 중심',desc:'현실과 이계의 경계. 도시의 마지막 밤을 끝낼 시간입니다.',difficulty:'위험도 III',color:'#c8afff',bosses:['시간의 감시자','균열의 군주'],reward:520},
+  {id:1,name:'브릿지 베르트하이머 탑',area:'SECTOR 01 · 브릿지',desc:'브릿지의 베르트하이머 탑 주변을 조사합니다.',difficulty:'위험도 I',color:'#ace879',bosses:['균열의 파수꾼','공허의 집행자'],reward:180},
+  {id:2,name:'스테리 익스프레스',area:'SECTOR 02 · 브릿지',desc:'브릿지의 스테리 익스프레스 주변을 조사합니다.',difficulty:'위험도 II',color:'#8cd9ea',bosses:['네온 포식자','심연의 추적자'],reward:320},
+  {id:3,name:'세레니티 저택',area:'SECTOR 03 · 미지의 해안',desc:'미지의 해안에 자리한 세레니티 저택을 조사합니다.',difficulty:'위험도 III',color:'#c8afff',bosses:['시간의 감시자','균열의 군주'],reward:520},
 ];
 export const UPGRADES = [
   {id:'body',name:'신체 적응',icon:'⬡',desc:'최대 체력 +15',max:8,base:45},
@@ -55,8 +55,8 @@ SKILLS.push(
 );
 RECIPES.push({id:'tempest',ingredients:['lightning','frost'],level:10},{id:'rift',ingredients:['lance','pulse'],level:10});
 STAGES.push(
- {id:4,name:'침수된 연구소',area:'SECTOR 04 · 지하 연구소',desc:'버려진 실험체가 깨어나는 지하 시설.',difficulty:'위험도 IV',color:'#79e8d4',bosses:['변이 실험체','심해의 관측자'],reward:760},
- {id:5,name:'월식의 첨탑',area:'SECTOR 05 · 이계 관문',desc:'도시 위에 열린 관문에서 마지막 침공이 시작됩니다.',difficulty:'위험도 V',color:'#e9b8ff',bosses:['월식의 사도','차원의 지배자'],reward:1050}
+ {id:4,name:'이매지니스트',area:'SECTOR 04 · 미지의 해안',desc:'미지의 해안에 위치한 이매지니스트를 조사합니다.',difficulty:'위험도 IV',color:'#79e8d4',bosses:['변이 실험체','심해의 관측자'],reward:760},
+ {id:5,name:'에소라마치 상점가',area:'SECTOR 05 · 에소라마치',desc:'상점과 골목이 이어진 거리를 수색합니다.',difficulty:'위험도 V',color:'#e9b8ff',bosses:['월식의 사도','차원의 지배자'],reward:1050}
 );
 UPGRADES.push(
  {id:'pickup',name:'에테르 감응',icon:'◎',desc:'경험치·아이템 획득 범위 +15%',max:8,base:55},
@@ -67,11 +67,11 @@ UPGRADES.push(
 export const MODES={normal:{name:'일반',speed:1,desc:'10분 · 보스 5체 처치'},accelerated:{name:'가속',speed:2,desc:'전투 전체 2배속 · 실제 약 5분'},endless:{name:'무한',speed:1,desc:'시간 제한 없음 · 2분마다 보스 · 클리어 보너스 없음'}};
 
 STAGES.push(
- {id:6,name:'잿빛 환승역',area:'SECTOR 06 · 지하 철도',desc:'멈춘 열차 사이로 균열의 그림자가 퍼집니다.',difficulty:'위험도 VI',color:'#a0b9b6',bosses:['철로의 포식자','종착역의 망령'],reward:1400},
- {id:7,name:'서리의 방벽',area:'SECTOR 07 · 봉쇄 구역',desc:'얼어붙은 검문소 너머로 이계의 한기가 밀려옵니다.',difficulty:'위험도 VII',color:'#a0e5ff',bosses:['빙결의 수문장','동토의 군주'],reward:1800},
- {id:8,name:'폭풍 관측소',area:'SECTOR 08 · 고층 지구',desc:'끝없이 번개가 내리치는 관측소를 돌파하세요.',difficulty:'위험도 VIII',color:'#b7b1ff',bosses:['낙뢰의 사냥꾼','폭풍의 눈'],reward:2250},
- {id:9,name:'뒤틀린 성역',area:'SECTOR 09 · 차원 경계',desc:'도시와 이계가 겹쳐진 경계에서 중력이 뒤집힙니다.',difficulty:'위험도 IX',color:'#bf9bff',bosses:['경계의 심판자','허공의 수호자'],reward:2750},
- {id:10,name:'밤의 심장',area:'SECTOR 10 · 균열 최심부',desc:'모든 균열이 이어지는 근원. 마지막 심장을 멈추세요.',difficulty:'위험도 X',color:'#ffb5a2',bosses:['종말의 전령','밤의 심장'],reward:3400}
+ {id:6,name:'에소라마치 뒷골목',area:'SECTOR 06 · 에소라마치',desc:'좁은 골목에 확산된 균열을 조사합니다.',difficulty:'위험도 VI',color:'#a0b9b6',bosses:['철로의 포식자','종착역의 망령'],reward:1400},
+ {id:7,name:'극장 사거리',area:'SECTOR 07 · 뉴 헤랜드',desc:'뉴 헤랜드 극장 사거리 주변을 조사합니다.',difficulty:'위험도 VII',color:'#a0e5ff',bosses:['빙결의 수문장','동토의 군주'],reward:1800},
+ {id:8,name:'미다스 공방',area:'SECTOR 08 · 뉴 헤랜드',desc:'뉴 헤랜드의 미다스 공방 주변을 조사합니다.',difficulty:'위험도 VIII',color:'#b7b1ff',bosses:['낙뢰의 사냥꾼','폭풍의 눈'],reward:2250},
+ {id:9,name:'소원 나무',area:'SECTOR 09 · 뉴 헤랜드',desc:'뉴 헤랜드의 소원 나무 주변을 조사합니다.',difficulty:'위험도 IX',color:'#bf9bff',bosses:['경계의 심판자','허공의 수호자'],reward:2750},
+ {id:10,name:'핑크퍼스 은행',area:'SECTOR 10 · 뉴 헤랜드',desc:'뉴 헤랜드의 핑크퍼스 은행 주변을 조사합니다.',difficulty:'위험도 X',color:'#ffb5a2',bosses:['종말의 전령','밤의 심장'],reward:3400}
 );
 CHARACTERS.push(
  {id:'frostwalker',name:'차서린',tag:'냉기 조율자',code:'AW—05',sex:'female',color:'#a0e5ff',skill:'frost',quest:'unlock_frost',desc:'봉쇄 구역에서 살아남은 구조대원. 차가운 파동으로 적을 늦춥니다.',stats:'절대 영도 Lv.1 보유 · 최대 체력 115',hp:115,attack:19,speed:225},
@@ -105,11 +105,11 @@ UPGRADES.push(
  {id:'xp',name:'경험 동조',icon:'◇',desc:'경험치 획득량 +5% (덩어리당 최대 20)',max:8,base:100}
 );
 STAGES.push(
- {id:11,name:'침식된 항만',area:'SECTOR 11 · 동부 항만',desc:'검은 파도 사이로 이계의 침식이 부두를 삼킵니다.',difficulty:'위험도 XI',color:'#89c9cc',bosses:['심연의 도선사','침식의 해룡'],reward:4000},
- {id:12,name:'유리 사막',area:'SECTOR 12 · 붕괴 산업단지',desc:'고열에 녹아내린 도시의 파편이 유리 모래로 흩날립니다.',difficulty:'위험도 XII',color:'#f2c991',bosses:['유리의 파수꾼','융해의 군주'],reward:4700},
- {id:13,name:'공허의 궤도',area:'SECTOR 13 · 부유 지구',desc:'중력을 잃은 빌딩 사이에서 공허의 존재가 길을 막습니다.',difficulty:'위험도 XIII',color:'#b5a2e8',bosses:['궤도의 감시자','무중력의 지배자'],reward:5500},
- {id:14,name:'기억의 폐허',area:'SECTOR 14 · 망각 구역',desc:'도시의 기억을 먹어 치운 그림자들이 되살아납니다.',difficulty:'위험도 XIV',color:'#a9c2ac',bosses:['망각의 사냥꾼','기억의 포식자'],reward:6400},
- {id:15,name:'새벽의 문턱',area:'SECTOR 15 · 차원 종착점',desc:'끝없는 밤을 넘어 새벽으로 이어지는 마지막 문을 여세요.',difficulty:'위험도 XV',color:'#f4b7b9',bosses:['새벽의 집행자','영원의 밤'],reward:7400}
+ {id:11,name:'선샤인 타워',area:'SECTOR 11 · 미구엘',desc:'미구엘의 선샤인 타워 주변을 조사합니다.',difficulty:'위험도 XI',color:'#89c9cc',bosses:['심연의 도선사','침식의 해룡'],reward:4000},
+ {id:12,name:'운전면허 연습장',area:'SECTOR 12 · 미구엘',desc:'미구엘의 운전면허 연습장을 조사합니다.',difficulty:'위험도 XII',color:'#f2c991',bosses:['유리의 파수꾼','융해의 군주'],reward:4700},
+ {id:13,name:'캠핑장',area:'SECTOR 13 · 미구엘',desc:'미구엘의 캠핑장을 조사합니다.',difficulty:'위험도 XIII',color:'#b5a2e8',bosses:['궤도의 감시자','무중력의 지배자'],reward:5500},
+ {id:14,name:'저택의 나무',area:'SECTOR 14 · 미구엘',desc:'미구엘 저택의 나무 주변을 조사합니다.',difficulty:'위험도 XIV',color:'#a9c2ac',bosses:['망각의 사냥꾼','기억의 포식자'],reward:6400},
+ {id:15,name:'기차역',area:'SECTOR 15 · 미구엘',desc:'미구엘 기차역 주변을 조사합니다.',difficulty:'위험도 XV',color:'#f4b7b9',bosses:['새벽의 집행자','영원의 밤'],reward:7400}
 );
 
 // Keep legacy IDs stable so each existing save retains the same unlocked slot and abilities.

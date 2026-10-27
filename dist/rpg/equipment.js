@@ -87,9 +87,9 @@ export function equipGear(save,uid){const item=save.gear.find(i=>i.uid===uid&&i.
 export function unequipGear(save,slot){if(!save.equipped[slot])return false;delete save.equipped[slot];return true;}
 export function moveGear(save,uid,destination){const item=save.gear.find(i=>i.uid===uid);if(!item||isEquipped(save,uid)||!['bag','warehouse'].includes(destination)||item.location===destination)return false;item.location=destination;return true;}
 export function sellGear(save,uid){const item=save.gear.find(i=>i.uid===uid);if(!item||isEquipped(save,uid))return 0;const price=GRADES[item.rarity].sell;save.gear.splice(save.gear.indexOf(item),1);save.credits+=price;return price;}
-export function calculateStats(save,character,skills={}){
+export function calculateStats(save,character,skills={},items=equippedItems(save)){
   const bonus={attack:0,defense:0,hp:0,strength:0,intelligence:0,agility:0,rate:0,ability:0,regen:0,speed:0,all:0,attackPct:0,defensePct:0,cooldown:0,magicFlat:0};
-  for(const item of equippedItems(save)){for(const option of [{...item.base,value:enhancedBase(item)},...item.affixes,...(item.extra?[item.extra]:[])])bonus[option.stat]+=option.stat==='rate'?option.value/2:option.value;const upgraded=['ep','le'].includes(item.rarity);if(item.special==='focus')bonus.ability+=upgraded?.20:.10;if(item.special==='dash')bonus.speed+=upgraded?.30:.15;if(item.special==='leech')bonus.rate+=upgraded?.15:.075;if(item.slot==='core'&&item.rarity==='le')bonus.ability+=.30;}
+  for(const item of items){for(const option of [{...item.base,value:enhancedBase(item)},...item.affixes,...(item.extra?[item.extra]:[])])bonus[option.stat]+=option.stat==='rate'?option.value/2:option.value;const upgraded=['ep','le'].includes(item.rarity);if(item.special==='focus')bonus.ability+=upgraded?.20:.10;if(item.special==='dash')bonus.speed+=upgraded?.30:.15;if(item.special==='leech')bonus.rate+=upgraded?.15:.075;if(item.slot==='core'&&item.rarity==='le')bonus.ability+=.30;}
   const u=save.upgrades,all=1+bonus.all,strength=(10+bonus.strength)*all,intelligence=(10+bonus.intelligence)*all,agility=(10+bonus.agility)*all;
   const haste=skills.haste||(skills.chronos?10:0),hastePower=1+(save.research.haste?.power||0)*.12;
   return {strength,intelligence,agility,all:bonus.all,
@@ -118,12 +118,12 @@ export function craftGear(save,uid,materials,random=Math.random){const main=save
 
 export function applyUnitStats(stats,units={}){return {...stats,speed:stats.speed*(1+(units.unit_speed||0)*.08),rate:stats.rate*(1+(units.unit_rate||0)*.08),pickup:stats.pickup*(1+(units.unit_pickup||0)*.12),area:(stats.area||1)*(1+(units.unit_area||0)*.10),xp:(stats.xp||1)*(1+(units.unit_xp||0)*.10)};}
 
-export function damageReduction(save,stats,skills={}){
+export function damageReduction(save,stats,skills={},items=equippedItems(save)){
   const defense=stats.defense/(100+stats.defense);
   const id=skills.satellitebarrier?'satellitebarrier':skills.shield?'shield':null;
   const power=id?(1+(save.research[id]?.power||0)*.12)*(id==='shield'?1:stats.ability):0;
   const skill=id==='satellitebarrier'?Math.min(.65,(.35+skills[id]*.025)*power):id==='shield'?Math.min(.65,skills[id]*.08*power):0;
-  const gear=equippedItems(save).some(item=>item.slot==='armor'&&item.special==='revive'&&item.rarity==='le')?.5:0;
+  const gear=items.some(item=>item.slot==='armor'&&item.special==='revive'&&item.rarity==='le')?.5:0;
   return {defense,skill,gear,total:Math.min(.95,1-(1-defense)*(1-skill)+gear)};
 }
 

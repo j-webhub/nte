@@ -76,7 +76,8 @@ export function normalizeGear(save){
   save.nextGearId=Math.max(1,Math.floor(Number(save.nextGearId)||1),...save.gear.map(i=>Number(i.uid.slice(5))+1));
 }
 export function equippedItems(save){return SLOTS.map(s=>save.gear.find(i=>i.uid===save.equipped[s.id]&&i.slot===s.id&&i.location==='bag')).filter(Boolean);}
-export function projectileScale(save){const weapon=equippedItems(save).find(i=>i.special==='multi');return weapon?1+(['ep','le'].includes(weapon.rarity)?1:.5)+(weapon.rarity==='le'?.5:0):1;}
+export function projectileScale(save){const weapon=equippedItems(save).find(i=>i.special==='multi');return weapon?1+(['ep','le'].includes(weapon.rarity)?1:.5):1;}
+export function projectileBonus(save){return equippedItems(save).some(i=>i.special==='multi'&&i.rarity==='le')?1:0;}
 export function isEquipped(save,uid){return Object.values(save.equipped).includes(uid);}
 export function receiveGear(save,{stage=1,boss=false,random=Math.random}={}){
   const rarity=rollGrade(stage,boss,random),slot=SLOTS[Math.floor(randomUnit(random)*SLOTS.length)].id;

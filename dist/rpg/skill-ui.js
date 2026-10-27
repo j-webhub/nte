@@ -1,5 +1,5 @@
-import {SKILLS,CHARACTERS,byId} from './data.js?v=1.7.7';
-import {calculateStats,applyUnitStats,equippedItems,projectileScale,projectileBonus} from './equipment.js?v=1.7.7';
+import {SKILLS,CHARACTERS,byId} from './data.js?v=1.7.8';
+import {calculateStats,applyUnitStats,equippedItems,projectileScale,projectileBonus} from './equipment.js?v=1.7.8';
 export function skillDetails(save,id,l=1,owned={},units={}){
  const stats=applyUnitStats(calculateStats(save,byId(CHARACTERS,save.character),owned),units),p=(1+(save.research[id]?.power||0)*.12)*stats.ability,m=stats.magic,rate=stats.rate,c=stats.cooldown;
  const size=projectileScale(save),mult=1+projectileBonus(save);

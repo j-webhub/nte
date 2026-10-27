@@ -129,6 +129,6 @@ CHARACTERS.push(
  {id:'raven',name:'레이븐',tag:'중력 관측자',code:'AW—10',sex:'female',sprite:'raven',color:'#e8cb68',skill:'gravity',quest:'unlock_raven',desc:'중력장을 펼쳐 적을 끌어당깁니다.',stats:'중력 붕괴 Lv.1 보유 · 최대 체력 110',hp:110,attack:20,speed:225}
 );
 QUESTS.push(
- {id:'unlock_akane',title:'울려 퍼지는 선율',desc:'11스테이지를 클리어하세요.',stat:'maxStage',target:12,character:'akane',reward:650},
- {id:'unlock_raven',title:'밤을 보는 눈',desc:'13스테이지를 클리어하세요.',stat:'maxStage',target:14,character:'raven',reward:750}
+ {id:'unlock_akane',title:'울려 퍼지는 선율',desc:'11스테이지를 클리어하세요.',stat:'maxStage',target:12,character:'akane',reward:650,gearReward:{slot:'weapon',rarity:'ep'}},
+ {id:'unlock_raven',title:'밤을 보는 눈',desc:'13스테이지를 클리어하세요.',stat:'maxStage',target:14,character:'raven',reward:750,gearReward:{slot:'core',rarity:'ep'}}
 );

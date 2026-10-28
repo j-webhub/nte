@@ -1,3 +1,4 @@
+import {stageBackgroundKey,stageBackgroundPath} from './arena.js';
 // Keep decoded images alive across lobby screens and successive runs.
 export const spriteCache=new Map();
 const pending=new Map();
@@ -20,9 +21,10 @@ export function loadSprite(key,src){
   request.then(()=>pending.delete(key),()=>pending.delete(key));
   return request;
 }
-export function prepareBattleSprites(character,onProgress=()=>{}){
+export function prepareBattleSprites(character,onProgress=()=>{},stageId=null){
   const assets=MONSTER_SPRITES.map(name=>['monster-'+name,`./sprites/monsters/${name}.png`]);
   if(character){for(const key of [character+'-actions',character+(character==='hotori'?'-directions-v2':'-directions')])assets.push([key,`./sprites/${key}.png`]);}
+  if(Number.isInteger(stageId)&&stageId>=1&&stageId<=15)assets.push([stageBackgroundKey(stageId),stageBackgroundPath(stageId)]);
   let ready=0;onProgress(ready,assets.length);
   return Promise.all(assets.map(([key,src])=>loadSprite(key,src).then(img=>{onProgress(++ready,assets.length);return img;})));
 }

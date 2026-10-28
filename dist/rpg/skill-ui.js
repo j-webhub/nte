@@ -1,6 +1,6 @@
-import {skillPower,physicalScale,magicScale,physicalRate,ATTACK_SKILLS,MAGIC_SKILLS,PHYSICAL_COEFFICIENTS as P,MAGIC_COEFFICIENTS as M} from './skill-balance.js?v=1.7.18';
-import {SKILLS,CHARACTERS,byId} from './data.js?v=1.7.18';
-import {calculateStats,applyUnitStats,equippedItems,projectileScale,projectileBonus} from './equipment.js?v=1.7.18';
+import {skillPower,physicalScale,magicScale,physicalRate,ATTACK_SKILLS,MAGIC_SKILLS,PHYSICAL_COEFFICIENTS as P,MAGIC_COEFFICIENTS as M} from './skill-balance.js?v=1.7.19';
+import {SKILLS,CHARACTERS,byId} from './data.js?v=1.7.19';
+import {calculateStats,applyUnitStats,equippedItems,projectileScale,projectileBonus} from './equipment.js?v=1.7.19';
 export function skillDetails(save,id,l=1,owned={},units={}){
  const stats=applyUnitStats(calculateStats(save,byId(CHARACTERS,save.character),owned),units),p=skillPower(save,stats,id),m=magicScale(stats),rate=physicalRate(stats),c=stats.cooldown,physical=physicalScale(stats);
  const size=projectileScale(save),mult=1+projectileBonus(save);

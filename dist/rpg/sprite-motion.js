@@ -1,4 +1,4 @@
-import {SPRITE_FRAMES} from './sprite-frames.js?v=1.7.18';
+import {SPRITE_FRAMES} from './sprite-frames.js?v=1.7.19';
 
 // Four complete poses, evenly spaced: left step, passing, right step, passing.
 export const WALK_FRAME_SECONDS=.18;

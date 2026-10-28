@@ -1,9 +1,11 @@
-import {mountBgm} from '../bgm.js?v=1.7.18';
+import {ensureHubHost,navigate} from '../navigation.js?v=1.7.19';
+await ensureHubHost('lobby');
+import {mountBgm} from '../bgm.js?v=1.7.19';
 mountBgm('lobby');
-import {walkFrame,characterSpriteScale} from '../sprite-motion.js?v=1.7.18';
-import {SPRITE_FRAMES} from '../sprite-frames.js?v=1.7.18';
-import {CHARACTERS} from '../data.js?v=1.7.18';
-import {loadSave} from '../store.js?v=1.7.18';
+import {walkFrame,characterSpriteScale} from '../sprite-motion.js?v=1.7.19';
+import {SPRITE_FRAMES} from '../sprite-frames.js?v=1.7.19';
+import {CHARACTERS} from '../data.js?v=1.7.19';
+import {loadSave} from '../store.js?v=1.7.19';
 const canvas=document.querySelector('#room'),ctx=canvas.getContext('2d'),selector=document.querySelector('#character');
 const chars=[['mint','민트'],['zero','제로'],['hotori','호토리'],['nanari','나나리'],['shinku','신쿠'],['lacrimosa','라크리모사'],['iloy','일로이'],['zanhong','잔홍'],['akane','아카네'],['raven','레이븐']];
 const stations=[{id:'shinku',x:255,y:353,size:125},{id:'zero',x:1025,y:316,size:125},{id:'iloy',x:1390,y:405,size:146},{id:'lacrimosa',x:1382,y:283,size:70,sleep:true},{id:'raven',x:397,y:695,size:125},{id:'hotori',x:1515,y:726,size:135}];
@@ -52,4 +54,4 @@ for(const n of waiting){if(n.id===selected)continue;ambient(n.id,n.x,n.y,t,122);
 sprite(selected,player.x,player.y,t,{walking:moving,dir:player.dir,size:130});tag(selected,player.x,player.y-140);ctx.fillStyle='#a8f5e7';ctx.beginPath();ctx.moveTo(player.x-7,player.y-128);ctx.lineTo(player.x+7,player.y-81);ctx.lineTo(player.x,player.y-119);ctx.fill();requestAnimationFrame(tick);}
 requestAnimationFrame(tick);
 
-canvas.style.cursor='pointer';canvas.addEventListener('click',e=>{const rect=canvas.getBoundingClientRect(),x=(e.clientX-rect.left)*1672/rect.width,y=(e.clientY-rect.top)*941/rect.height;let view=null;if(x<560&&y<400)view='inventory';else if(x>560&&x<1160&&y<340){location.href='./hub/world-map-preview.html';return;}else if(x>1160&&y<450)view='research';else if(x<570&&y>420)view='codex';else if(x>1180&&y>450)view='quests';else if(y>670)view='characters';if(view)location.href='./?view='+view;});
+canvas.style.cursor='pointer';canvas.addEventListener('click',e=>{const rect=canvas.getBoundingClientRect(),x=(e.clientX-rect.left)*1672/rect.width,y=(e.clientY-rect.top)*941/rect.height;let view=null;if(x<560&&y<400)view='inventory';else if(x>560&&x<1160&&y<340){navigate('./hub/world-map-preview.html');return;}else if(x>1160&&y<450)view='research';else if(x<570&&y>420)view='codex';else if(x>1180&&y>450)view='quests';else if(y>670)view='characters';if(view)navigate('./?view='+view);});

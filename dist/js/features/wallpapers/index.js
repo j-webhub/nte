@@ -1,5 +1,5 @@
-import { state } from "../../core/state.js?v=20261102-wallpapers";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261102-wallpapers";
+import { state } from "../../core/state.js?v=20261102-wallpaper-dates";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261102-wallpaper-dates";
 
 export function wallpaperFileName(item) {
   return String(item.imageUrl || "")

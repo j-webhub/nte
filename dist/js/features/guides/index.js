@@ -1,9 +1,9 @@
-import { state } from "../../core/state.js?v=20261102-wallpapers";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261102-wallpapers";
-import { repository } from "./repository.js?v=20261102-wallpapers";
-import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES } from "./config.js?v=20261102-wallpapers";
-import { createId, bytesOf, safeVideoLinks, sanitizeHtml } from "./content.js?v=20261102-wallpapers";
-import { exportBackup, importBackup } from "./backup.js?v=20261102-wallpapers";
+import { state } from "../../core/state.js?v=20261102-wallpaper-dates";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261102-wallpaper-dates";
+import { repository } from "./repository.js?v=20261102-wallpaper-dates";
+import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES } from "./config.js?v=20261102-wallpaper-dates";
+import { createId, bytesOf, safeVideoLinks, sanitizeHtml } from "./content.js?v=20261102-wallpaper-dates";
+import { exportBackup, importBackup } from "./backup.js?v=20261102-wallpaper-dates";
 
 let currentPostId = null;
 let currentPost = null;

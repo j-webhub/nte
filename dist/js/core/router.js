@@ -1,8 +1,8 @@
-import { state } from "./state.js?v=20261102-wallpapers";
-import { $, esc, fmt } from "./dom.js?v=20261102-wallpapers";
-import { loadDatabase } from "./data.js?v=20261102-wallpapers";
-import { pagePath, readRoute, isPlainClick } from "./urls.js?v=20261102-wallpapers";
-import { updatePageMetadata } from "./metadata.js?v=20261102-wallpapers";
+import { state } from "./state.js?v=20261102-wallpaper-dates";
+import { $, esc, fmt } from "./dom.js?v=20261102-wallpaper-dates";
+import { loadDatabase } from "./data.js?v=20261102-wallpaper-dates";
+import { pagePath, readRoute, isPlainClick } from "./urls.js?v=20261102-wallpaper-dates";
+import { updatePageMetadata } from "./metadata.js?v=20261102-wallpaper-dates";
 
 const VALID_VIEWS = new Set([
   "home",

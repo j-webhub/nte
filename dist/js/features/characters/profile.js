@@ -1,10 +1,10 @@
-import { state } from "../../core/state.js?v=20261102-wallpapers";
-import { $, esc, fmt, siteFooter } from "../../core/dom.js?v=20261102-wallpapers";
-import { elem, assetUrl, elementIconUrl, arcTypeIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261102-wallpapers";
-import { getProfile } from "./model.js?v=20261102-wallpapers";
-import { renderTab } from "./tabs/index.js?v=20261102-wallpapers";
-import { pagePath, isPlainClick } from "../../core/urls.js?v=20261102-wallpapers";
-import { updatePageMetadata } from "../../core/metadata.js?v=20261102-wallpapers";
+import { state } from "../../core/state.js?v=20261102-wallpaper-dates";
+import { $, esc, fmt, siteFooter } from "../../core/dom.js?v=20261102-wallpaper-dates";
+import { elem, assetUrl, elementIconUrl, arcTypeIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261102-wallpaper-dates";
+import { getProfile } from "./model.js?v=20261102-wallpaper-dates";
+import { renderTab } from "./tabs/index.js?v=20261102-wallpaper-dates";
+import { pagePath, isPlainClick } from "../../core/urls.js?v=20261102-wallpaper-dates";
+import { updatePageMetadata } from "../../core/metadata.js?v=20261102-wallpaper-dates";
 
 export function bindCharacterIllustration() {
   const visual = $("#main-content .hero-visual");

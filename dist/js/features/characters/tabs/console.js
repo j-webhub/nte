@@ -1,7 +1,7 @@
-import { formatCharacterText } from "../text.js?v=20261102-wallpapers";
-import { state } from "../../../core/state.js?v=20261102-wallpapers";
-import { esc } from "../../../core/dom.js?v=20261102-wallpapers";
-import { sourceLinks } from "../sources.js?v=20261102-wallpapers";
+import { formatCharacterText } from "../text.js?v=20261102-wallpaper-dates";
+import { state } from "../../../core/state.js?v=20261102-wallpaper-dates";
+import { esc } from "../../../core/dom.js?v=20261102-wallpaper-dates";
+import { sourceLinks } from "../sources.js?v=20261102-wallpaper-dates";
 
 export function renderConsole(p) {
   const build = p.console;

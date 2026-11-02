@@ -1,7 +1,7 @@
-import { formatCharacterText } from "../text.js?v=20261102-wallpapers";
+import { formatCharacterText } from "../text.js?v=20261102-wallpaper-dates";
 
-import { esc } from "../../../core/dom.js?v=20261102-wallpapers";
-import { sourceLinks } from "../sources.js?v=20261102-wallpapers";
+import { esc } from "../../../core/dom.js?v=20261102-wallpaper-dates";
+import { sourceLinks } from "../sources.js?v=20261102-wallpaper-dates";
 
 export function renderOverview(p, options = {}) {
   const {

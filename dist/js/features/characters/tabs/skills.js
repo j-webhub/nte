@@ -1,9 +1,9 @@
-import { formatCharacterText } from "../text.js?v=20261102-wallpapers";
-import { state } from "../../../core/state.js?v=20261102-wallpapers";
-import { $, esc, fmt } from "../../../core/dom.js?v=20261102-wallpapers";
-import { SKILLS } from "../catalog.js?v=20261102-wallpapers";
-import { getProfile } from "../model.js?v=20261102-wallpapers";
-import { sourceLinks, coefficientSourceLinks } from "../sources.js?v=20261102-wallpapers";
+import { formatCharacterText } from "../text.js?v=20261102-wallpaper-dates";
+import { state } from "../../../core/state.js?v=20261102-wallpaper-dates";
+import { $, esc, fmt } from "../../../core/dom.js?v=20261102-wallpaper-dates";
+import { SKILLS } from "../catalog.js?v=20261102-wallpaper-dates";
+import { getProfile } from "../model.js?v=20261102-wallpaper-dates";
+import { sourceLinks, coefficientSourceLinks } from "../sources.js?v=20261102-wallpaper-dates";
 
 export function formatPercent(value) {
   const percent = Math.round(Number(value) * 1000) / 10;

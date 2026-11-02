@@ -1,5 +1,5 @@
-import { state } from "../../../core/state.js?v=20261102-wallpapers";
-import { esc, fmt } from "../../../core/dom.js?v=20261102-wallpapers";
+import { state } from "../../../core/state.js?v=20261102-wallpaper-dates";
+import { esc, fmt } from "../../../core/dom.js?v=20261102-wallpaper-dates";
 
 export function renderSkillGrowth(p) {
   const data = state.db.growth.skillUpgrades;

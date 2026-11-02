@@ -45,7 +45,7 @@ export const QUESTS = [
   {id:'survivor',title:'밤을 넘어',desc:'첫 번째 스테이지를 클리어하세요.',stat:'clears',target:1,reward:200},
 ];
 export const byId = (list,id) => list.find(v=>v.id===id);
-export const upgradeCost = (u,level) => Math.round(u.base * Math.pow(1.65,level));
+export const upgradeCost = (u,level) => 10 * Math.round(u.base * Math.pow(1.65,level));
 
 SKILLS.push(
  {id:'lance',name:'공간 창',en:'SPACE LANCE',icon:'➶',color:'#79e8d4',type:'공격',desc:'공간을 꿰뚫는 빠른 관통 창을 발사합니다.',detail:'기본 주기 1.4초. 공격력 기반 피해, 레벨마다 피해 +28%, 관통 5.',weight:9},
@@ -132,3 +132,19 @@ QUESTS.push(
  {id:'unlock_akane',title:'울려 퍼지는 선율',desc:'11스테이지를 클리어하세요.',stat:'maxStage',target:12,character:'akane',reward:650,gearReward:{slot:'weapon',rarity:'ep'}},
  {id:'unlock_raven',title:'밤을 보는 눈',desc:'13스테이지를 클리어하세요.',stat:'maxStage',target:14,character:'raven',reward:750,gearReward:{slot:'core',rarity:'ep'}}
 );
+
+// Starting powers keep the existing character IDs and save unlocks.
+for(const [id,skill,name,desc] of [
+ ['ember','time','시간 정지','시간을 멈추며 전장을 누빕니다.'],
+ ['zero','lightning','연쇄 번개','번개로 적 무리를 공격합니다.'],
+ ['frostwalker','haste','신경 가속','빠른 움직임으로 적을 압박합니다.'],
+ ['storm','gravity','중력 붕괴','중력장으로 적을 끌어당깁니다.'],
+ ['guardian','orbit','위성 파편','몸 주위를 회전하는 파편으로 적을 밀어냅니다.'],
+ ['riftwalker','fire','홍련의 구','폭발하는 화염구로 적을 공격합니다.'],
+ ['raven','frost','절대 영도','차가운 파동으로 적을 늦춥니다.']
+]){const c=byId(CHARACTERS,id);c.skill=skill;c.desc=desc;c.stats=`${name} Lv.1 보유 · ${c.stats.split(' · ').slice(1).join(' · ')}`;}
+
+// Quest supplies replace character unlocks; IDs and claimed records remain stable.
+const questSupplies=[[1000,5000,1],[1500,8000,1],[1500,8000,2],[2000,10000,2],[2500,15000,3],[3500,20000,3],[4500,30000,4],[5500,40000,4],[6500,50000,5],[7500,60000,5]];
+QUESTS.forEach((q,i)=>{[q.reward,q.fonsReward,q.ticketReward]=questSupplies[i];q.ticketReward*=10;delete q.character;});
+CHARACTERS.forEach(c=>delete c.quest);

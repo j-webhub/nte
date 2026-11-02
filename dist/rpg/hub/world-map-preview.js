@@ -1,9 +1,9 @@
-import {ensureHubHost,navigate} from '../navigation.js?v=1.7.19';
+import {ensureHubHost,navigate} from '../navigation.js?v=1.7.39';
 await ensureHubHost('map');
 import {mountBgm} from '../bgm.js?v=1.7.19';
 mountBgm('lobby');
-import {STAGES} from '../data.js?v=1.7.19';
-import {loadSave} from '../store.js?v=1.7.24';
+import {STAGES} from '../data.js?v=1.7.39';
+import {loadSave} from '../store.js?v=1.7.39';
 import {MAP_STAGE_IDS,regionAccess,unlockedStage} from '../stage-access.js?v=1.7.19';
 let save=loadSave();
 const data=await (await fetch('./hub/map-regions.json')).json();

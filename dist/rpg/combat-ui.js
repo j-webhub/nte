@@ -1,5 +1,5 @@
-import {AWAKENER_SKILLS} from './awakener-skills.js';
-import {SKILLS,byId} from './data.js?v=1.7.19';
+import {AWAKENER_SKILLS} from './awakener-skills.js?v=1.7.37';
+import {SKILLS,byId} from './data.js?v=1.7.39';
 const number=n=>Math.round(n).toLocaleString('ko-KR');
 const extra={basic:{name:'기본 공격',icon:'↗',color:'#c4eb93'},gear_revive:{name:'장비 화염',icon:'♨',color:'#ffac73'}};
 const heroSources=Object.fromEntries(Object.entries(AWAKENER_SKILLS).flatMap(([character,kit])=>Object.entries(kit).map(([key,s])=>['hero_'+character+'_'+key,{name:key.toUpperCase()+' · '+s.name,icon:key.toUpperCase(),color:'#a5dfe9'}])));

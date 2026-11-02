@@ -1,4 +1,4 @@
-const VIEWS=['lobby','map','mission','inventory','research','codex','characters','quests'];
+const VIEWS=['lobby','map','mission','inventory','research','codex','characters','quests','market'];
 export function resolveRoute(href,base){
   const root=new URL('./',base),url=new URL(href,base);if(url.origin!==root.origin)return null;
   let view;

@@ -1,8 +1,9 @@
+import {normalizeMarket} from './market.js?v=1.7.38';
 import {hasClearedStage} from './stage-access.js?v=1.7.19';
-import {SKILLS,STAGES,CHARACTERS,UPGRADES,QUESTS,byId,upgradeCost} from './data.js?v=1.7.19';
-import {initializeGear,normalizeGear,GRADE_IDS,createGear} from './equipment.js?v=1.7.24';
+import {SKILLS,STAGES,CHARACTERS,UPGRADES,QUESTS,byId,upgradeCost} from './data.js?v=1.7.39';
+import {initializeGear,normalizeGear,GRADE_IDS,createGear} from './equipment.js?v=1.7.39';
 const KEY='nightfall.save.v1';
-export function freshSave(){const s={version:4,credits:0,fons:0,autoSellGrade:null,character:'jin',maxStage:1,clearedStages:[],upgrades:{},research:{},discovered:[],unlocked:['jin','seo'],claimed:[],questGearClaimed:[],stats:{kills:0,bosses:0,clears:0,runs:0,bestTime:0},history:[],sound:true};initializeGear(s);return s;}
+export function freshSave(){const s={version:4,credits:0,fons:0,autoSellGrade:null,character:'jin',maxStage:1,clearedStages:[],upgrades:{},research:{},discovered:[],unlocked:['jin','seo'],claimed:[],questGearClaimed:[],stats:{kills:0,bosses:0,clears:0,runs:0,bestTime:0},history:[],sound:true};initializeGear(s);normalizeMarket(s);return s;}
 export function loadSave(storage=globalThis.localStorage){
   try{
     const raw=JSON.parse(storage.getItem(KEY));
@@ -25,15 +26,16 @@ export function loadSave(storage=globalThis.localStorage){
     if(raw.version===1)initializeGear(s);else normalizeGear(s);
     s.questGearClaimed=[...new Set(s.questGearClaimed.filter(id=>s.claimed.includes(id)&&byId(QUESTS,id)?.gearReward))];
     for(const q of QUESTS)if(s.claimed.includes(q.id))grantQuestGear(s,q);
+    normalizeMarket(s);
     return s;
   }catch{return freshSave();}
 }
 export function persist(s,storage=globalThis.localStorage){try{storage.setItem(KEY,JSON.stringify(s));return true;}catch{return false;}}
-export function buyUpgrade(s,id){const u=byId(UPGRADES,id);if(!u)return false;const level=s.upgrades[id]||0,cost=upgradeCost(u,level);if(level>=u.max||s.credits<cost||(u.requires&&(s.upgrades[u.requires]||0)<2))return false;s.credits-=cost;s.upgrades[id]=level+1;return true;}
+export function buyUpgrade(s,id){const u=byId(UPGRADES,id);if(!u)return false;const level=s.upgrades[id]||0,cost=upgradeCost(u,level);if(level>=u.max||s.fons<cost||(u.requires&&(s.upgrades[u.requires]||0)<2))return false;s.fons-=cost;s.upgrades[id]=level+1;return true;}
 export function buyResearch(s,id,kind){if(!s.discovered.includes(id)||!['weight','power'].includes(kind)||(kind==='power'&&['time','chronos'].includes(id))||(kind==='weight'&&byId(SKILLS,id)?.fusion))return false;const r=s.research[id]||(s.research[id]={weight:0,power:0}),level=r[kind]||0,cost=60+level*70;if(level>=5||s.credits<cost)return false;s.credits-=cost;r[kind]=level+1;return true;}
 export function questProgress(s,q){return q.stat==='discovered'?s.discovered.length:q.stat==='maxStage'?s.maxStage:s.stats[q.stat]||0;}
 function grantQuestGear(s,q){if(!q.gearReward||s.questGearClaimed.includes(q.id))return;const {slot,rarity}=q.gearReward;const item=createGear(`gear-${s.nextGearId++}`,slot,rarity);s.gear.push(item);s.questGearClaimed.push(q.id);}
-export function claimQuest(s,id){const q=byId(QUESTS,id);if(!q||s.claimed.includes(id)||questProgress(s,q)<q.target)return false;s.claimed.push(id);s.credits+=q.reward;if(q.character&&!s.unlocked.includes(q.character))s.unlocked.push(q.character);grantQuestGear(s,q);return true;}
+export function claimQuest(s,id){const q=byId(QUESTS,id);if(!q||s.claimed.includes(id)||questProgress(s,q)<q.target)return false;s.claimed.push(id);s.credits+=q.reward;s.fons+=q.fonsReward;s.market.tickets+=q.ticketReward;grantQuestGear(s,q);return true;}
 export function settleRun(s,run){if(run.settled)return null;run.settled=true;const fons=Math.floor((run.fons||0)+(run.drops||[]).filter(d=>d.type==='fons'&&d.life>0).reduce((sum,d)=>sum+d.value,0));s.fons=(s.fons||0)+fons;const bonus=run.result==='clear'?run.stage.reward:0;const earned=Math.floor(run.credits)+bonus;s.credits+=earned;s.stats.runs++;s.stats.kills+=run.kills;s.stats.bosses+=run.bossKills;s.stats.bestTime=Math.max(s.stats.bestTime,Math.floor(run.time));if(run.result==='clear'){s.clearedStages=[...new Set([...(s.clearedStages||[]),run.stage.id])];s.stats.clears++;s.maxStage=Math.max(s.maxStage,Math.min(STAGES.length,run.stage.id+1));}for(const id of Object.keys(run.skills))if(!s.discovered.includes(id))s.discovered.push(id);const entry={date:Date.now(),stage:run.stage.id,mode:run.mode||'normal',result:run.result,time:Math.floor(run.time),kills:run.kills,earned,fons};s.history.unshift(entry);s.history=s.history.slice(0,12);return {...entry,bonus};}
 
 export const researchRefund=level=>Array.from({length:Math.min(5,Math.max(0,Math.floor(Number(level)||0)))},(_,i)=>60+i*70).reduce((a,b)=>a+b,0);

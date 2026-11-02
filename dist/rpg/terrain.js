@@ -2,26 +2,8 @@ import {ARENA_WIDTH,ARENA_HEIGHT} from './arena.js';
 
 // Coordinates follow the full 16:9 background, in percentages. The arena
 // displays a centered cover crop, so apply the same transform as Renderer.
-const rect=(x,y,w,h)=>[[x,y],[x+w,y],[x+w,y+h],[x,y+h]];
-const ellipse=(x,y,rx,ry)=>Array.from({length:16},(_,i)=>[x+rx*Math.cos(i*Math.PI/8),y+ry*Math.sin(i*Math.PI/8)]);
-const P=(...v)=>Array.from({length:v.length/2},(_,i)=>[v[i*2],v[i*2+1]]);
-const source={
-  1:[rect(0,0,23,15),rect(29,0,16,13),rect(50,0,10,30),rect(62,0,11,25),rect(76,0,19,52),rect(33,40,7,60),rect(57,77,14,23),P(69,63,76,69,80,82,75,91,67,78),ellipse(51,57,4,7)],
-  2:[rect(0,0,38,21),rect(41,0,22,29),rect(65,0,23,24),rect(69,25,9,19),rect(6,73,35,27),rect(60,78,33,22)],
-  3:[rect(41,0,25,39),rect(71,0,14,39),rect(35,53,5,12),rect(67,53,6,12),rect(33,81,7,13),rect(67,81,7,13),rect(47,48,5,13),rect(55,48,5,13),rect(47,66,5,13),rect(55,66,5,13),ellipse(53,62,2,3)],
-  4:[rect(29,0,41,15),P(44,32,49,30,53,31,58,34,56,39,47,39),ellipse(50,68,9,17),rect(68,35,4,11)],
-  5:[rect(20,0,38,45),rect(67,0,25,28),rect(67,35,27,44),rect(17,46,12,33),ellipse(45,64,4,7)],
-  6:[rect(0,0,20,55),rect(32,0,25,22),rect(56,0,10,12),rect(69,0,9,17),rect(31,40,18,19),rect(55,32,25,26),rect(31,68,50,32)],
-  7:[P(0,0,30,0,37,37,31,52,0,45),P(38,0,78,0,70,22,56,37,44,29),P(77,18,100,9,100,74,86,74,69,57),P(0,79,22,100,0,100),P(35,100,50,72,62,100)],
-  8:[ellipse(52,40,16,34),rect(74,25,17,64),rect(0,83,31,17)],
-  9:[ellipse(43,48,14,29),P(20,15,32,5,40,0,68,0,69,7,50,12,35,20,25,34),P(20,55,29,79,42,91,66,86,71,80,65,95,30,100,17,72)],
-  10:[rect(0,0,44,48),rect(59,0,30,48),rect(22,64,24,25),rect(56,65,19,24),ellipse(55,18,3,5)],
-  11:[P(37,0,69,0,69,24,64,34,57,38,44,38,36,30),P(7,23,18,25,23,39,33,49,45,54,45,56,23,53,5,42),P(57,54,67,49,77,39,81,26,90,23,95,42,78,53,57,56)],
-  12:[rect(0,0,100,13),rect(0,15,16,38),rect(28,22,21,23),rect(28,49,13,20),rect(18,75,31,5),rect(55,23,32,4),rect(58,36,13,17),rect(56,59,18,19),rect(56,82,17,5)],
-  13:[rect(50,43,18,12),rect(57,24,7,6),rect(47,29,6,6),rect(68,27,7,7),rect(70,55,7,7),rect(67,73,7,7),rect(51,76,8,8),rect(32,48,7,7),rect(42,36,5,6),rect(15,58,9,19)],
-  14:[ellipse(45,36,3,5),ellipse(10,45,2,6),ellipse(72,56,3,4),ellipse(31,47,2,4)],
-  15:[P(0,0,43,0,47,20,41,27,0,23),rect(22,29,24,11),rect(65,11,35,28),rect(11,44,31,12),rect(47,43,53,13),rect(55,53,27,21),rect(0,72,41,22),rect(50,78,50,18)]
-};
+import {source} from './terrain-layout.js?v=1.7.22';
+
 const IMAGE_W=6400,OFFSET_X=(IMAGE_W-ARENA_WIDTH)/2;
 const layouts=Object.fromEntries(Object.entries(source).map(([id,polys])=>[id,polys.map(poly=>poly.map(([x,y])=>[x*IMAGE_W/100-OFFSET_X,y*ARENA_HEIGHT/100]))]));
 for(const polys of Object.values(layouts))for(const poly of polys){poly.bounds=[Math.min(...poly.map(p=>p[0])),Math.min(...poly.map(p=>p[1])),Math.max(...poly.map(p=>p[0])),Math.max(...poly.map(p=>p[1]))];}

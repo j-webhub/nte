@@ -1,4 +1,4 @@
-import {blocked,nearestOpen,moveWithTerrain,buildTerrainFlow,terrainWaypoint,reachableOpen} from './terrain.js';
+import {blocked,nearestOpen,moveWithTerrain,buildTerrainFlow,terrainWaypoint,reachableOpen} from './terrain.js?v=1.7.22';
 import {ARENA_WIDTH,ARENA_HEIGHT} from './arena.js';
 import {DamageLedger} from './damage-ledger.js?v=1.7.19';
 import {queueEnemyImpact,advanceEnemyImpact} from './enemy-impact.js?v=1.7.19';

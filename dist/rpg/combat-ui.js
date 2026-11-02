@@ -1,9 +1,11 @@
+import {AWAKENER_SKILLS} from './awakener-skills.js';
 import {SKILLS,byId} from './data.js?v=1.7.19';
 const number=n=>Math.round(n).toLocaleString('ko-KR');
 const extra={basic:{name:'기본 공격',icon:'↗',color:'#c4eb93'},gear_revive:{name:'장비 화염',icon:'♨',color:'#ffac73'}};
-export const damageSource=id=>byId(SKILLS,id)||extra[id]||{name:'기타 피해',icon:'·',color:'#b7d4bc'};
+const heroSources=Object.fromEntries(Object.entries(AWAKENER_SKILLS).flatMap(([character,kit])=>Object.entries(kit).map(([key,s])=>['hero_'+character+'_'+key,{name:key.toUpperCase()+' · '+s.name,icon:key.toUpperCase(),color:'#a5dfe9'}])));
+export const damageSource=id=>byId(SKILLS,id)||extra[id]||heroSources[id]||{name:'기타 피해',icon:'·',color:'#b7d4bc'};
 export function liveDamageMarkup(game){
-  const ids=[...new Set(['basic',...Object.keys(game.skills),...(game.damageLedger.rows.has('gear_revive')?['gear_revive']:[])])];
+  const ids=[...new Set(['basic',...Object.keys(game.skills),...['e','q'].map(key=>'hero_'+game.character.sprite+'_'+key),...(game.damageLedger.rows.has('gear_revive')?['gear_revive']:[])])];
   return ids.map(id=>({id,dps:game.damageLedger.recent(id,game.elapsed)})).sort((a,b)=>b.dps-a.dps).map(({id,dps})=>{
     const s=damageSource(id);return `<div class="dps-row"><span style="color:${s.color}">${s.icon}</span><span>${s.name}</span><b>${number(dps)}</b></div>`;
   }).join('');

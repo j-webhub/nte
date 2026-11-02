@@ -12,7 +12,37 @@ function inside(x,y,poly){let hit=false;for(let i=0,j=poly.length-1;i<poly.lengt
 function edgeDistanceSq(x,y,ax,ay,bx,by){const dx=bx-ax,dy=by-ay,l=dx*dx+dy*dy,t=l?Math.max(0,Math.min(1,((x-ax)*dx+(y-ay)*dy)/l)):0;return (x-ax-t*dx)**2+(y-ay-t*dy)**2;}
 export function blocked(stage,x,y,r=0){if(x<r||y<r||x>ARENA_WIDTH-r||y>ARENA_HEIGHT-r)return true;for(const poly of terrainForStage(stage)){const [x1,y1,x2,y2]=poly.bounds;if(x<x1-r||x>x2+r||y<y1-r||y>y2+r)continue;if(inside(x,y,poly))return true;if(r>0)for(let i=0;i<poly.length;i++){const a=poly[i],b=poly[(i+1)%poly.length];if(edgeDistanceSq(x,y,...a,...b)<r*r)return true;}}return false;}
 export function nearestOpen(stage,x,y,r=14){x=Math.max(r,Math.min(ARENA_WIDTH-r,x));y=Math.max(r,Math.min(ARENA_HEIGHT-r,y));if(!blocked(stage,x,y,r))return {x,y};for(let d=40;d<=Math.max(ARENA_WIDTH,ARENA_HEIGHT);d+=40)for(let i=0;i<32;i++){const a=i*Math.PI/16,nx=x+Math.cos(a)*d,ny=y+Math.sin(a)*d;if(!blocked(stage,nx,ny,r))return {x:nx,y:ny};}return {x:ARENA_WIDTH/2,y:ARENA_HEIGHT/2};}
-export function moveWithTerrain(stage,entity,dx,dy,r=14){const steps=Math.max(1,Math.ceil(Math.max(Math.abs(dx),Math.abs(dy))/12));for(let i=0;i<steps;i++){const sx=dx/steps,sy=dy/steps;if(!blocked(stage,entity.x+sx,entity.y+sy,r)){entity.x+=sx;entity.y+=sy;}else{if(!blocked(stage,entity.x+sx,entity.y,r))entity.x+=sx;if(!blocked(stage,entity.x,entity.y+sy,r))entity.y+=sy;}}}
+// At contact, remove only movement into the surface. Keeping its tangent
+// avoids the horizontal/vertical staircase produced by axis-only sliding.
+function contactNormals(stage,x,y,r){
+  const normals=[],margin=.1;
+  if(x-r<margin)normals.push([1,0]);if(ARENA_WIDTH-r-x<margin)normals.push([-1,0]);
+  if(y-r<margin)normals.push([0,1]);if(ARENA_HEIGHT-r-y<margin)normals.push([0,-1]);
+  for(const poly of terrainForStage(stage)){
+    const [x1,y1,x2,y2]=poly.bounds;if(x<x1-r-margin||x>x2+r+margin||y<y1-r-margin||y>y2+r+margin)continue;
+    for(let i=0;i<poly.length;i++){
+      const [ax,ay]=poly[i],[bx,by]=poly[(i+1)%poly.length],ex=bx-ax,ey=by-ay,len=ex*ex+ey*ey;
+      if(!len)continue;const t=Math.max(0,Math.min(1,((x-ax)*ex+(y-ay)*ey)/len)),nx=x-ax-t*ex,ny=y-ay-t*ey,d=Math.hypot(nx,ny);
+      if(d>1e-8&&d<=r+margin)normals.push([nx/d,ny/d]);
+    }
+  }
+  return normals;
+}
+export function moveWithTerrain(stage,entity,dx,dy,r=14){
+  const steps=Math.max(1,Math.ceil(Math.hypot(dx,dy)/Math.min(12,Math.max(1,r*.5))));
+  for(let i=0;i<steps;i++){
+    let sx=dx/steps,sy=dy/steps;
+    // Several contacts allow a slide to reach another wall without crossing it.
+    for(let contact=0;contact<4&&Math.hypot(sx,sy)>1e-7;contact++){
+      const x=entity.x,y=entity.y;
+      if(!blocked(stage,x+sx,y+sy,r)){entity.x+=sx;entity.y+=sy;break;}
+      let low=0,high=1;for(let j=0;j<16;j++){const mid=(low+high)/2;if(blocked(stage,x+sx*mid,y+sy*mid,r))high=mid;else low=mid;}
+      entity.x=x+sx*low;entity.y=y+sy*low;sx*=1-low;sy*=1-low;
+      const normals=contactNormals(stage,entity.x,entity.y,r);if(!normals.length)break;
+      for(let pass=0;pass<3;pass++)for(const [nx,ny] of normals){const inward=sx*nx+sy*ny;if(inward<0){sx-=inward*nx;sy-=inward*ny;}}
+    }
+  }
+}
 const CELL=100,COLS=ARENA_WIDTH/CELL,ROWS=ARENA_HEIGHT/CELL;
 const gridCache=new Map();
 function walkGrid(stage){if(gridCache.has(stage))return gridCache.get(stage);const grid=new Uint8Array(COLS*ROWS);for(let y=0;y<ROWS;y++)for(let x=0;x<COLS;x++)grid[y*COLS+x]=!blocked(stage,(x+.5)*CELL,(y+.5)*CELL,25);gridCache.set(stage,grid);return grid;}

@@ -16,9 +16,12 @@ export const AWAKENER_SKILLS={
  raven:{e:skill('장송의 깃털',14,130,1,280,'12초 표식. 기본 공격 적중 시 2초 간격으로 최대 5회 실낙조 협동 공격.'),q:skill('모든 영혼에 안식을 / 불꽃들을 하나로',55,50,7,380,'15초 마녀 변신: 이동 +25%, 초당 추가 공격. Q 재입력으로 변신 종료와 종결 공격.')}
 };
 export const heroLoadout=game=>AWAKENER_SKILLS[game.character.sprite]||AWAKENER_SKILLS.mint;
+export const heroAreaScale=g=>1.25*(g.stats.area||1);
+export const heroRadius=(g,radius)=>radius*heroAreaScale(g);
 export const heroScale=game=>Math.max(0,game.stats.magic)*Math.max(0,game.stats.ability);
 function job(g,delay,fn){g.heroJobs.push({delay,fn});}
 function area(g,source,point,radius,damage,color,hits=1,interval=.14,extra={}){
+ radius=heroRadius(g,radius);
  for(let n=0;n<hits;n++)job(g,n*interval,()=>{g.effects.push({type:'ring',x:point.x,y:point.y,r:radius,color,life:.25,max:.25});for(const e of [...g.enemies])if(!e.dead&&Math.hypot(e.x-point.x,e.y-point.y)<=radius+e.r)g.hit(e,damage*(extra.nightmare&&e.nightmareUntil>g.elapsed?1.5:1),source);if(extra.heal)g.player.hp=Math.min(g.stats.hp,g.player.hp+extra.heal);if(extra.pull)for(const e of g.enemies)if(!e.dead&&Math.hypot(e.x-point.x,e.y-point.y)<radius)moveWithTerrain(g.stage.id,e,(point.x-e.x)*.1,(point.y-e.y)*.1,e.r);});
 }
 export function initializeHero(g){g.heroCooldowns={e:0,q:0};g.heroJobs=[];g.heroState={};}
@@ -28,7 +31,7 @@ export function castHero(g,key){
  const finish=key==='q'&&((id==='akane'&&state.soloUntil>now&&now>=state.soloStart+4)||(id==='raven'&&state.witchUntil>now)||(id==='zanhong'&&state.zanhongRecastUntil>now));
  if(key==='q'&&id==='akane'&&state.soloUntil>now&&!finish)return false;
  if(!finish&&g.heroCooldowns[key]>0)return false;
- if(finish){state.soloUntil=state.witchUntil=0;g.attackAnimation=now;g.emit('hero',{key,name:config.name});g.effects.push(makeAwakenerEffect(id,key,p,g.player.dir,true));if(id==='zanhong'){state.zanhongRecastUntil=0;area(g,source,p,config.radius,config.coefficient*scale*(state.zanhongPhantom?1.4:1),color,4);state.zanhongPhantom=false;state.phantom=false;}else area(g,source,center,config.radius,240*scale,color);return true;}
+ if(finish){state.soloUntil=state.witchUntil=0;g.attackAnimation=now;g.emit('hero',{key,name:config.name});g.effects.push({...makeAwakenerEffect(id,key,p,g.player.dir,true),r:230*heroAreaScale(g)});if(id==='zanhong'){state.zanhongRecastUntil=0;area(g,source,p,config.radius,config.coefficient*scale*(state.zanhongPhantom?1.4:1),color,4);state.zanhongPhantom=false;state.phantom=false;}else area(g,source,center,config.radius,240*scale,color);return true;}
  g.heroCooldowns[key]=config.cd;g.attackAnimation=now;g.emit('hero',{key,name:config.name});
  let point=key==='e'&&['zero','lacrimosa','raven','akane'].includes(id)?center:p;
  if(key==='e'&&['mint','shinku','zanhong'].includes(id)){
@@ -36,18 +39,18 @@ export function castHero(g,key){
    moveWithTerrain(g.stage.id,g.player,dx,dy,35);point={x:(p.x+g.player.x)/2,y:(p.y+g.player.y)/2};g.effects.push({type:'line',x:p.x,y:p.y,x2:g.player.x,y2:g.player.y,color,life:.3,max:.3});
    if(id==='mint')job(g,.3,()=>moveWithTerrain(g.stage.id,g.player,p.x-g.player.x,p.y-g.player.y,35));
  }
- g.effects.push(makeAwakenerEffect(id,key,{x:g.player.x,y:g.player.y},g.player.dir));
+ g.effects.push({...makeAwakenerEffect(id,key,{x:g.player.x,y:g.player.y},g.player.dir),r:(key==='q'?230:150)*heroAreaScale(g)});
  let coefficient=config.coefficient,hits=id==='iloy'&&key==='q'?1:config.hits;
  if(id==='shinku'&&key==='e'&&state.scarletUntil>now){coefficient=240;hits=1;}
  if(id==='zanhong'&&key==='q'&&state.phantom)coefficient*=1.4;
  if(id==='zanhong'&&key==='q'){hits=3;state.zanhongRecastUntil=now+12;state.zanhongPhantom=!!state.phantom;state.phantom=false;}
  area(g,source,point,config.radius,coefficient*scale,color,hits,.14,{nightmare:id==='lacrimosa'&&key==='q',heal:id==='iloy'?(key==='e'?6:10)*scale:0,pull:id==='iloy'});
  if(id==='mint'&&key==='q'){area(g,source,p,config.radius,160*scale,color);g.heroJobs.at(-1).delay=1.2;}
- if(id==='zero'&&key==='e')job(g,.5,()=>g.shoot(Math.atan2(center.y-g.player.y,center.x-g.player.x),110*scale,{source,color,pierce:8,r:12,speed:700}));
+ if(id==='zero'&&key==='e')job(g,.5,()=>g.shoot(Math.atan2(center.y-g.player.y,center.x-g.player.x),110*scale,{source,color,pierce:8,r:12*heroAreaScale(g),speed:700}));
  if(id==='hotori'){if(key==='e')state.recorded=true;else{g.frozen=Math.max(g.frozen,4);g.bossFrozen=Math.max(g.bossFrozen,2);if(state.recorded){area(g,source,p,300,24*scale,color,7);state.recorded=false;}}}
  if(id==='nanari'){state.companionUntil=now+12;state.companionSource=source;state.companionDamage=30*scale;state.companionPull=key==='q';state.nextCompanion=now+1;}
  if(id==='shinku'&&key==='q'){state.scarletUntil=now+13;state.companionUntil=now+13;state.companionSource=source;state.companionDamage=35*scale;state.nextCompanion=now+1;}
- if(id==='lacrimosa'&&key==='e')for(const e of g.enemies)if(Math.hypot(e.x-point.x,e.y-point.y)<=310)e.nightmareUntil=now+12;
+ if(id==='lacrimosa'&&key==='e')for(const e of g.enemies)if(Math.hypot(e.x-point.x,e.y-point.y)<=heroRadius(g,310))e.nightmareUntil=now+12;
  if(id==='iloy'&&key==='q'){state.dreamUntil=now+10;for(let n=1;n<10;n++){area(g,source,p,420,40*scale,color,1,.14,{heal:10*scale});g.heroJobs.at(-1).delay=n;}}
  if(id==='zanhong'&&key==='e'){state.phantom=!state.phantom;area(g,source,point,260,18*scale,color,6,1);}
  if(id==='akane'){if(key==='e'){state.toneUntil=now+25;state.tone=point;state.toneDamage=32*scale;state.nextTone=0;}else{state.soloStart=now;state.soloUntil=now+20;}}

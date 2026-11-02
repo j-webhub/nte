@@ -10,6 +10,7 @@ export function drawPsiFrame(c,img,x,y,size,frame,{row=0,angle=0,alpha=.65}={}){
 export function drawPsiEffect(c,f,img,alpha){
  if(!img||!f.source)return false;
  const frame=Math.max(0,Math.min(3,Math.floor((1-f.life/f.max)*4)));
+ if(f.source==='vampire'&&frame>=3)return true;
  if(f.type==='psi')return drawPsiFrame(c,img,f.x,f.y-18,200,frame,{alpha:alpha*.65});
  if(f.type==='line'){const angle=Math.atan2(f.y2-f.y,f.x2-f.x);return drawPsiFrame(c,img,(f.x+f.x2)/2,(f.y+f.y2)/2,Math.max(90,Math.hypot(f.x2-f.x,f.y2-f.y)*1.3),frame,{angle,alpha:alpha*.65});}
  if(f.type==='ring')return drawPsiFrame(c,img,f.x,f.y-(centered.has(f.source)?18:0),Math.max(90,f.r*2.4),frame,{alpha:alpha*.65});
@@ -18,5 +19,9 @@ export function drawPsiEffect(c,f,img,alpha){
 export function drawPsiPlayer(c,g,cache,alpha){
  if(alpha<=0)return;const p=g.player,cy=p.y-18,loop=Math.floor(g.elapsed*4)%4;
  if(g.skills.orbit){const img=cache.get('psi-orbit'),count=g.skills.orbit+1,r=80*g.stats.area;for(let i=0;i<count;i++){const a=g.elapsed*2.4+i/count*Math.PI*2;drawPsiFrame(c,img,p.x+Math.cos(a)*r,cy+Math.sin(a)*r,34,1,{angle:a,alpha:alpha*.65});}}
- for(const id of ['shield','satellitebarrier'])if(g.skills[id])drawPsiFrame(c,cache.get('psi-'+id),p.x,cy,id==='shield'?150:280,loop,{alpha:alpha*.49});
+ for(const id of ['shield','satellitebarrier'])if(g.skills[id]){const frame=id==='shield'?Math.min(2,Math.floor(Math.max(0,g.elapsed-(g.skillAcquiredAt?.[id]||0))*4)):loop;drawPsiFrame(c,cache.get('psi-'+id),p.x,cy,id==='shield'?150:280,frame,{alpha:alpha*.49});}
+}
+export function drawPsiField(c,f,img,elapsed,alpha){
+ const frame=f.source==='gravity'?Math.min(2,Math.floor(Math.max(0,(f.max??3)-f.life)*4)):Math.floor(elapsed*4)%4;
+ return drawPsiFrame(c,img,f.x,f.y,f.r*2.6,frame,{row:f.source==='gravityshot'?1:0,alpha:alpha*.65});
 }

@@ -1,5 +1,5 @@
-import {CHARACTERS,STAGES,byId} from './data.js?v=1.7.39';
-import {SLOTS,GRADES,GRADE_IDS,STAT_NAMES,UNIQUE_OPTIONS,REROLL_COST,CRAFT_COST,craftCandidates,extraRange,PERCENT_STATS,gearName,formatOption,optionRange,isEquipped,calculateStats,applyUnitStats,damageReduction,dropRates,drawRates,enhancedBase,ENHANCE_CHANCES} from './equipment.js?v=1.7.39';
+import {CHARACTERS,STAGES,byId} from './data.js?v=1.7.40';
+import {SLOTS,GRADES,GRADE_IDS,STAT_NAMES,UNIQUE_OPTIONS,REROLL_COST,CRAFT_COST,craftCandidates,extraRange,PERCENT_STATS,gearName,formatOption,optionRange,isEquipped,calculateStats,applyUnitStats,damageReduction,dropRates,drawRates,enhancedBase,ENHANCE_CHANCES} from './equipment.js?v=1.7.40';
 import {icon} from './art.js?v=1.7.19';
 
 export const newGearView=()=>({tab:'bag',slot:'all',grade:'all',selected:null,page:0,craftMaterials:[]});

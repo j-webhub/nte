@@ -100,7 +100,7 @@ export function calculateStats(save,character,skills={},items=equippedItems(save
     ability:(1+bonus.ability)*all,
     speed:character.speed*(1+(u.speed||0)*.05)*(1+bonus.speed)*(1+agility*.005)*(1+haste*.07*hastePower)*all,
     rate:(1+bonus.rate)*(1+(u.rate||0)*.05)*(1+agility*.003)*(1+haste*.06*hastePower)*all,
-    area:1+(u.area||0)*.05,xp:1+(u.xp||0)*.05,regen:.25*all*(1+bonus.regen),regenBoost:(1+bonus.regen)*all,cooldown:Math.max(.2,1-(u.cooldown||0)*.04-bonus.cooldown),pickup:95*all*(1+(u.pickup||0)*.15),
+    area:1+(u.area||0)*.05,xp:1+(u.xp||0)*.05,regen:.25*all*(1+bonus.regen),regenBoost:(1+bonus.regen)*all,cooldown:Math.max(.2,1-(u.cooldown||0)*.04-bonus.cooldown),fonsGain:1+(u.fons||0)*.10,pickup:95*all*(1+(u.pickup||0)*.225),
   };
 }
 

@@ -1,5 +1,5 @@
-import {CHARACTERS} from './data.js?v=1.7.39';
-import {SLOTS,createGear} from './equipment.js?v=1.7.39';
+import {CHARACTERS} from './data.js?v=1.7.40';
+import {SLOTS,createGear} from './equipment.js?v=1.7.40';
 
 export const BANNERS=CHARACTERS.filter(c=>!['jin','seo'].includes(c.id));
 export const MARKET_RATES={featured:.03,mint:.01,zero:.01,fons:.45,sp:.45,uq:.05};

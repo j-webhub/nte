@@ -59,7 +59,7 @@ STAGES.push(
  {id:5,name:'에소라마치 상점가',area:'SECTOR 05 · 에소라마치',desc:'상점과 골목이 이어진 거리를 수색합니다.',difficulty:'위험도 V',color:'#e9b8ff',bosses:['월식의 사도','차원의 지배자'],reward:1050}
 );
 UPGRADES.push(
- {id:'pickup',name:'에테르 감응',icon:'◎',desc:'경험치·아이템 획득 범위 +15%',max:8,base:55},
+ {id:'pickup',name:'에테르 감응',icon:'◎',desc:'경험치·아이템 획득 범위 +22.5%',max:8,base:55},
  {id:'speed',name:'기동 신경',icon:'»',desc:'이동 속도 +5%',max:8,base:65},
  {id:'rate',name:'전투 반사',icon:'ϟ',desc:'공격 속도 +5%',max:8,base:80},
  {id:'cooldown',name:'시간 압축',icon:'◷',desc:'초능력 재사용시간 -4% (최대 32%)',max:8,base:95}
@@ -148,3 +148,5 @@ for(const [id,skill,name,desc] of [
 const questSupplies=[[1000,5000,1],[1500,8000,1],[1500,8000,2],[2000,10000,2],[2500,15000,3],[3500,20000,3],[4500,30000,4],[5500,40000,4],[6500,50000,5],[7500,60000,5]];
 QUESTS.forEach((q,i)=>{[q.reward,q.fonsReward,q.ticketReward]=questSupplies[i];q.ticketReward*=10;delete q.character;});
 CHARACTERS.forEach(c=>delete c.quest);
+
+UPGRADES.push({id:'fons',name:'폰즈 수집',icon:'◈',desc:'적 처치 폰즈 획득량 +10%',max:8,base:100});

@@ -1,7 +1,7 @@
-import { state } from "../../core/state.js?v=20261021-akane-level80";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261021-akane-level80";
-import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261021-akane-level80";
-import { renderArcTypeIcon, renderRarityBadge } from "../characters/badges.js?v=20261021-akane-level80";
+import { state } from "../../core/state.js?v=20261102-wallpapers";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261102-wallpapers";
+import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261102-wallpapers";
+import { renderArcTypeIcon, renderRarityBadge } from "../characters/badges.js?v=20261102-wallpapers";
 
 function renderArcEffect(arc) {
   const text = interpolateArcRankEffect(arc, 1) || "자료 없음";

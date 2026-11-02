@@ -1,12 +1,12 @@
-import { state } from "../../core/state.js?v=20261021-akane-level80";
-import { $ } from "../../core/dom.js?v=20261021-akane-level80";
-import { openCharacter } from "../../core/router.js?v=20261021-akane-level80";
-import { ELEMENT_ORDER, elem, elementIconUrl } from "./catalog.js?v=20261021-akane-level80";
-import { renderRoster } from "./roster.js?v=20261021-akane-level80";
-import { renderProfile, refreshActiveTab } from "./profile.js?v=20261021-akane-level80";
-import { refreshSkillLevel } from "./tabs/skills.js?v=20261021-akane-level80";
-import { isPlainClick } from "../../core/urls.js?v=20261021-akane-level80";
-import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261021-akane-level80";
+import { state } from "../../core/state.js?v=20261102-wallpapers";
+import { $ } from "../../core/dom.js?v=20261102-wallpapers";
+import { openCharacter } from "../../core/router.js?v=20261102-wallpapers";
+import { ELEMENT_ORDER, elem, elementIconUrl } from "./catalog.js?v=20261102-wallpapers";
+import { renderRoster } from "./roster.js?v=20261102-wallpapers";
+import { renderProfile, refreshActiveTab } from "./profile.js?v=20261102-wallpapers";
+import { refreshSkillLevel } from "./tabs/skills.js?v=20261102-wallpapers";
+import { isPlainClick } from "../../core/urls.js?v=20261102-wallpapers";
+import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261102-wallpapers";
 
 export { renderRoster, renderProfile };
 

@@ -1,5 +1,5 @@
-import { state } from "../../../core/state.js?v=20261021-akane-level80";
-import { esc, fmt } from "../../../core/dom.js?v=20261021-akane-level80";
+import { state } from "../../../core/state.js?v=20261102-wallpapers";
+import { esc, fmt } from "../../../core/dom.js?v=20261102-wallpapers";
 
 export function renderSkillGrowth(p) {
   const data = state.db.growth.skillUpgrades;

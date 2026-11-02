@@ -1,5 +1,5 @@
-import { state } from "../../core/state.js?v=20261021-akane-level80";
-import { esc } from "../../core/dom.js?v=20261021-akane-level80";
+import { state } from "../../core/state.js?v=20261102-wallpapers";
+import { esc } from "../../core/dom.js?v=20261102-wallpapers";
 
 export function sourceLinks(p, domesticOnly = false) {
   const urls = new Set();

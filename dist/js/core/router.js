@@ -1,8 +1,8 @@
-import { state } from "./state.js?v=20261021-akane-level80";
-import { $, esc, fmt } from "./dom.js?v=20261021-akane-level80";
-import { loadDatabase } from "./data.js?v=20261021-akane-level80";
-import { pagePath, readRoute, isPlainClick } from "./urls.js?v=20261021-akane-level80";
-import { updatePageMetadata } from "./metadata.js?v=20261021-akane-level80";
+import { state } from "./state.js?v=20261102-wallpapers";
+import { $, esc, fmt } from "./dom.js?v=20261102-wallpapers";
+import { loadDatabase } from "./data.js?v=20261102-wallpapers";
+import { pagePath, readRoute, isPlainClick } from "./urls.js?v=20261102-wallpapers";
+import { updatePageMetadata } from "./metadata.js?v=20261102-wallpapers";
 
 const VALID_VIEWS = new Set([
   "home",

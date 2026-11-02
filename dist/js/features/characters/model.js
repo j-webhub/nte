@@ -1,4 +1,4 @@
-import { state } from "../../core/state.js?v=20261021-akane-level80";
+import { state } from "../../core/state.js?v=20261102-wallpapers";
 
 export function getProfile(id) {
   const character = state.db.characters[id];

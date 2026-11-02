@@ -1,6 +1,6 @@
-import { state } from "../../core/state.js?v=20261021-akane-level80";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261021-akane-level80";
-import { pagePath } from "../../core/urls.js?v=20261021-akane-level80";
+import { state } from "../../core/state.js?v=20261102-wallpapers";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261102-wallpapers";
+import { pagePath } from "../../core/urls.js?v=20261102-wallpapers";
 
 let lastWallpaperUrl = "";
 const lastMenuImages = new Map();

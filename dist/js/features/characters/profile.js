@@ -1,10 +1,10 @@
-import { state } from "../../core/state.js?v=20261021-akane-level80";
-import { $, esc, fmt, siteFooter } from "../../core/dom.js?v=20261021-akane-level80";
-import { elem, assetUrl, elementIconUrl, arcTypeIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261021-akane-level80";
-import { getProfile } from "./model.js?v=20261021-akane-level80";
-import { renderTab } from "./tabs/index.js?v=20261021-akane-level80";
-import { pagePath, isPlainClick } from "../../core/urls.js?v=20261021-akane-level80";
-import { updatePageMetadata } from "../../core/metadata.js?v=20261021-akane-level80";
+import { state } from "../../core/state.js?v=20261102-wallpapers";
+import { $, esc, fmt, siteFooter } from "../../core/dom.js?v=20261102-wallpapers";
+import { elem, assetUrl, elementIconUrl, arcTypeIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261102-wallpapers";
+import { getProfile } from "./model.js?v=20261102-wallpapers";
+import { renderTab } from "./tabs/index.js?v=20261102-wallpapers";
+import { pagePath, isPlainClick } from "../../core/urls.js?v=20261102-wallpapers";
+import { updatePageMetadata } from "../../core/metadata.js?v=20261102-wallpapers";
 
 export function bindCharacterIllustration() {
   const visual = $("#main-content .hero-visual");

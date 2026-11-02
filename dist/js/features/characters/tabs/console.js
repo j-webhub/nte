@@ -1,7 +1,7 @@
-import { formatCharacterText } from "../text.js?v=20261021-akane-level80";
-import { state } from "../../../core/state.js?v=20261021-akane-level80";
-import { esc } from "../../../core/dom.js?v=20261021-akane-level80";
-import { sourceLinks } from "../sources.js?v=20261021-akane-level80";
+import { formatCharacterText } from "../text.js?v=20261102-wallpapers";
+import { state } from "../../../core/state.js?v=20261102-wallpapers";
+import { esc } from "../../../core/dom.js?v=20261102-wallpapers";
+import { sourceLinks } from "../sources.js?v=20261102-wallpapers";
 
 export function renderConsole(p) {
   const build = p.console;

@@ -1,5 +1,5 @@
-import { state } from "../../core/state.js?v=20261021-akane-level80";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261021-akane-level80";
+import { state } from "../../core/state.js?v=20261102-wallpapers";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261102-wallpapers";
 
 export function wallpaperFileName(item) {
   return String(item.imageUrl || "")
@@ -10,7 +10,7 @@ export function wallpaperFileName(item) {
 
 export function wallpaperSetKey(item) {
   const match = wallpaperFileName(item).match(
-    /^wallpaper-x-\d{4}-\d{2}-\d{2}-([a-z])(?:-(?:mobile|pc))?\.[^.]+$/i
+    /^wallpaper-x-(?:\d{4}-\d{2}-\d{2}|undated)-([a-z])(?:-(?:mobile|pc))?\.[^.]+$/i
   );
   return match ? match[1].toLowerCase() : wallpaperFileName(item);
 }

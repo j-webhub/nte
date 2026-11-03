@@ -3,7 +3,7 @@ await ensureHubHost('lobby');
 import {mountBgm} from '../bgm.js?v=1.7.19';
 mountBgm('lobby');
 import {walkFrame,characterSpriteScale} from '../sprite-motion.js?v=1.7.19';
-import {SPRITE_FRAMES} from '../sprite-frames.js?v=1.7.19';
+import {SPRITE_FRAMES} from '../sprite-frames.js?v=1.7.41';
 import {CHARACTERS} from '../data.js?v=1.7.40';
 import {loadSave} from '../store.js?v=1.7.40';
 const canvas=document.querySelector('#room'),ctx=canvas.getContext('2d'),selector=document.querySelector('#character');

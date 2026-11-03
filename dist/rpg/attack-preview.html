@@ -9,7 +9,7 @@
 </head>
 <body><main><div class="eyebrow">NIGHTFALL / MOTION PREVIEW</div><h1>캐릭터 공격 모션</h1><p>게임에 적용된 정면 공격 동작을 모아 보여드립니다. 쉽게 살펴볼 수 있도록 느리게 재생합니다.</p><div class="toolbar" role="group" aria-label="재생 속도"><span>재생 속도</span><button type="button" data-speed="slow" aria-pressed="true">느리게</button><button type="button" data-speed="normal" aria-pressed="false">게임 속도</button><button type="button" data-action="pause" aria-pressed="false">일시정지</button></div><div class="grid" id="grid"></div><p class="foot">정면에서 멈춰 공격할 때의 모습입니다. 실제 게임은 상황과 공격 속도에 따라 재생 간격이 달라집니다.</p></main>
 <script type="module">
-import {SPRITE_FRAMES} from './sprite-frames.js?v=1.7.3';
+import {SPRITE_FRAMES} from './sprite-frames.js?v=1.7.41';
 const characters=[['mint','민트'],['zero','이능력자 제로'],['hotori','호토리'],['nanari','나나리'],['shinku','신쿠'],['lacrimosa','라크리모사'],['iloy','일로이'],['zanhong','잔홍'],['akane','아카네'],['raven','레이븐']];
 const grid=document.querySelector('#grid'),cards=characters.map(([id,name])=>{const card=document.createElement('article');card.className='card';card.innerHTML=`<div class="stage"><canvas width="180" height="180" role="img" aria-label="${name} 공격 모션"></canvas></div><div class="caption"><strong>${name}</strong><small>정면 공격</small></div>`;grid.append(card);const image=new Image();image.src=`/sprites/${id}-actions.png`;return {id,image,ctx:card.querySelector('canvas').getContext('2d')};});
 let speed='slow',paused=false,clock=0,last=0;

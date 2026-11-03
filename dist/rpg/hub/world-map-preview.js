@@ -1,11 +1,11 @@
-import {ensureHubHost,navigate} from '../navigation.js?v=1.7.39';
+import {ensureHubHost,navigate} from '../navigation.js?v=1.8.1';
 await ensureHubHost('map');
-import {mountBgm} from '../bgm.js?v=1.7.19';
+import {mountBgm} from '../bgm.js?v=1.8.1';
 mountBgm('lobby');
-import {STAGES} from '../data.js?v=1.7.40';
-import {loadSave} from '../store.js?v=1.7.40';
-import {MAP_STAGE_IDS,regionAccess,unlockedStage} from '../stage-access.js?v=1.7.19';
-let save=loadSave();
+import {STAGES} from '../data.js?v=1.8.1';
+import {loadSave} from '../store.js?v=1.8.1';
+import {MAP_STAGE_IDS,regionAccess,unlockedStage} from '../stage-access.js?v=1.8.1';
+let save=(window.parent!==window&&window.parent.nightfallHost?.getSave?window.parent.nightfallHost.getSave():loadSave());
 const data=await (await fetch('./hub/map-regions.json')).json();
 const svg=document.querySelector('#map'),regionsNode=document.querySelector('#regions'),markersNode=document.querySelector('#markers'),back=document.querySelector('#back'),mapTitle=document.querySelector('#map-title'),help=document.querySelector('#map-help'),popup=document.querySelector('#mission-popup'),popupContent=document.querySelector('#popup-content');
 const ns='http://www.w3.org/2000/svg',el=(name,attrs={})=>{const node=document.createElementNS(ns,name);for(const [key,value]of Object.entries(attrs))node.setAttribute(key,String(value));return node;};
@@ -41,4 +41,4 @@ function showDirectory(){mapTitle.textContent='전체 지도';help.textContent='
 function selectRegion(i){const r=data[i];if(!r||regionAccess(r.name,save.maxStage)!=='open')return;if(current===i)return;current=i;chosen=null;mapTitle.textContent=r.name;help.textContent='임무 표식을 선택하면 정보를 확인할 수 있습니다';back.hidden=false;drawRegions();drawMarkers();animateView(zoomBounds(r));}
 popup.addEventListener('cancel',e=>{e.preventDefault();popup.close();});popup.addEventListener('keydown',e=>{if(e.key==='Escape')e.stopPropagation();});popup.addEventListener('click',e=>{if(e.target!==popup)return;const box=popup.getBoundingClientRect();if(e.clientX<box.left||e.clientX>box.right||e.clientY<box.top||e.clientY>box.bottom)popup.close();});popup.addEventListener('close',()=>{const was=chosen;chosen=null;document.querySelectorAll('.marker').forEach(n=>n.setAttribute('aria-pressed','false'));if(was!==null)document.querySelectorAll('.marker')[was]?.focus();});function returnToWorld(){if(popup.open)popup.close();current=null;chosen=null;drawRegions();drawMarkers();showDirectory();animateView(original);}
 back.addEventListener('click',returnToWorld);
-document.querySelector('.map-wrap').addEventListener('click',event=>{if(current===null||popup.open||event.target.closest('.marker'))return;const matrix=svg.getScreenCTM();if(!matrix)return;const point=new DOMPoint(event.clientX,event.clientY).matrixTransform(matrix.inverse());if(!inside([point.x,point.y],data[current].polygon))returnToWorld();});window.addEventListener('pageshow',()=>{const next=loadSave();if(next.maxStage!==save.maxStage){save=next;if(current!==null&&regionAccess(data[current].name,save.maxStage)==='open')selectRegion(current);else{current=null;chosen=null;drawRegions();drawMarkers();showDirectory();setView(original);}}});window.addEventListener('keydown',e=>{if(e.key==='Escape'&&!popup.open&&!e.defaultPrevented&&current!==null)back.click();});drawRegions();showDirectory();
+document.querySelector('.map-wrap').addEventListener('click',event=>{if(current===null||popup.open||event.target.closest('.marker'))return;const matrix=svg.getScreenCTM();if(!matrix)return;const point=new DOMPoint(event.clientX,event.clientY).matrixTransform(matrix.inverse());if(!inside([point.x,point.y],data[current].polygon))returnToWorld();});window.addEventListener('pageshow',()=>{const next=(window.parent!==window&&window.parent.nightfallHost?.getSave?window.parent.nightfallHost.getSave():loadSave());if(next.maxStage!==save.maxStage){save=next;if(current!==null&&regionAccess(data[current].name,save.maxStage)==='open')selectRegion(current);else{current=null;chosen=null;drawRegions();drawMarkers();showDirectory();setView(original);}}});window.addEventListener('keydown',e=>{if(e.key==='Escape'&&!popup.open&&!e.defaultPrevented&&current!==null)back.click();});drawRegions();showDirectory();

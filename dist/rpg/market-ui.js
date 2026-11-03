@@ -1,7 +1,7 @@
-import {BANNERS,ticketQuote,buyMarketTickets,drawMarket} from './market.js?v=1.7.38';
-import {CHARACTERS,byId} from './data.js?v=1.7.40';
-import {SPRITE_FRAMES} from './sprite-frames.js?v=1.7.41';
-import {gearName,GRADES} from './equipment.js?v=1.7.40';
+import {BANNERS,ticketQuote,buyMarketTickets,drawMarket} from './market.js?v=1.8.1';
+import {CHARACTERS,byId} from './data.js?v=1.8.1';
+import {SPRITE_FRAMES} from './sprite-frames.js?v=1.8.1';
+import {gearName,GRADES} from './equipment.js?v=1.8.1';
 const fmt=n=>n.toLocaleString('ko-KR');
 export function marketShell(){return '<div id="character-market"></div>';}
 export function mountMarket(root,save,{commit,onChange=()=>{}}){

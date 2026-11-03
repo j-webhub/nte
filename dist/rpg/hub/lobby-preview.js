@@ -1,11 +1,11 @@
-import {ensureHubHost,navigate} from '../navigation.js?v=1.7.39';
+import {ensureHubHost,navigate} from '../navigation.js?v=1.8.1';
 await ensureHubHost('lobby');
-import {mountBgm} from '../bgm.js?v=1.7.19';
+import {mountBgm} from '../bgm.js?v=1.8.1';
 mountBgm('lobby');
-import {walkFrame,characterSpriteScale} from '../sprite-motion.js?v=1.7.19';
-import {SPRITE_FRAMES} from '../sprite-frames.js?v=1.7.41';
-import {CHARACTERS} from '../data.js?v=1.7.40';
-import {loadSave} from '../store.js?v=1.7.40';
+import {walkFrame,characterSpriteScale} from '../sprite-motion.js?v=1.8.1';
+import {SPRITE_FRAMES} from '../sprite-frames.js?v=1.8.1';
+import {CHARACTERS} from '../data.js?v=1.8.1';
+import {loadSave} from '../store.js?v=1.8.1';
 const canvas=document.querySelector('#room'),ctx=canvas.getContext('2d'),selector=document.querySelector('#character');
 const chars=[['mint','민트'],['zero','제로'],['hotori','호토리'],['nanari','나나리'],['shinku','신쿠'],['lacrimosa','라크리모사'],['iloy','일로이'],['zanhong','잔홍'],['akane','아카네'],['raven','레이븐']];
 const stations=[{id:'shinku',x:255,y:353,size:125},{id:'zero',x:1025,y:316,size:125},{id:'iloy',x:1390,y:405,size:146},{id:'lacrimosa',x:1382,y:283,size:70,sleep:true},{id:'raven',x:397,y:695,size:125},{id:'hotori',x:1515,y:726,size:135}];
@@ -27,7 +27,7 @@ const ambientSheets=new Map(await Promise.all(['facility','lounge','hotori-side'
 const background=await load('./hub/lobby-urban-background-v3.png');
 await Promise.all(chars.flatMap(([id])=>['actions',id==='hotori'?'directions-v2':'directions'].map(async suffix=>{const key=id+'-'+suffix;images.set(key,await load('./sprites/'+key+'.png'));})));
 selector.innerHTML=chars.map(([id,name])=>`<option value="${id}">${name}</option>`).join('');
-const current=CHARACTERS.find(c=>c.id===loadSave().character)?.sprite;selector.value=chars.some(([id])=>id===current)?current:'mint';
+const current=CHARACTERS.find(c=>c.id===(window.parent!==window&&window.parent.nightfallHost?.getSave?window.parent.nightfallHost.getSave():loadSave()).character)?.sprite;selector.value=chars.some(([id])=>id===current)?current:'mint';
 const names=Object.fromEntries(chars),player={x:835,y:530,dir:0};const keys=new Set();let last=0,walkTime=0;
 selector.addEventListener('change',()=>canvas.focus());document.querySelector('#reset').onclick=()=>{player.x=835;player.y=530;canvas.focus();};
 window.addEventListener('keydown',e=>{if(e.target.closest('#audio-controls')||['SELECT','BUTTON','INPUT'].includes(e.target.tagName))return;if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','KeyW','KeyA','KeyS','KeyD'].includes(e.code)){keys.add(e.code);e.preventDefault();}});

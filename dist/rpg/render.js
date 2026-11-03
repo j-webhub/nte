@@ -1,11 +1,11 @@
-import {drawPsiFrame,drawPsiField,drawPsiEffect,drawPsiPlayer,PSI_PROJECTILES} from './psi-effects.js?v=1.7.40';
-import {effectAlpha} from './settings.js?v=1.7.19';
-import {drawAwakenerEffect,drawAwakenerSprite} from './awakener-effects.js?v=1.7.36';
-import {spriteCache,awakenerEffectAtlasKey} from './sprite-assets.js?v=1.7.36';
-import {SPRITE_FRAMES} from './sprite-frames.js?v=1.7.41';
-import {walkFrame,characterSpriteScale} from './sprite-motion.js?v=1.7.19';
-import {TRANSFORM_WALK_FRAMES} from './transformed-walk-frames.js?v=1.7.36';
-import {TRANSFORM_ATTACK_FRAMES} from './transformed-attack-frames.js?v=1.7.36';
+import {drawPsiFrame,drawPsiField,drawPsiEffect,drawPsiPlayer,PSI_PROJECTILES} from './psi-effects.js?v=1.8.1';
+import {effectAlpha} from './settings.js?v=1.8.1';
+import {drawAwakenerEffect,drawAwakenerSprite} from './awakener-effects.js?v=1.8.1';
+import {spriteCache,awakenerEffectAtlasKey} from './sprite-assets.js?v=1.8.1';
+import {SPRITE_FRAMES} from './sprite-frames.js?v=1.8.1';
+import {walkFrame,characterSpriteScale} from './sprite-motion.js?v=1.8.1';
+import {TRANSFORM_WALK_FRAMES} from './transformed-walk-frames.js?v=1.8.1';
+import {TRANSFORM_ATTACK_FRAMES} from './transformed-attack-frames.js?v=1.8.1';
 import {ARENA_WIDTH,ARENA_HEIGHT,stageBackgroundKey} from './arena.js';
 const TAU=Math.PI*2;
 export function monsterSpriteName(e,stage=1){

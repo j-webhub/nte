@@ -1,13 +1,13 @@
-import {initializeHero,castHero,tickHero,heroBasicHit,heroSpeed} from './awakener-skills.js?v=1.7.40';
-import {blocked,nearestOpen,moveWithTerrain,buildTerrainFlow,terrainWaypoint,reachableOpen} from './terrain.js?v=1.7.23';
+import {initializeHero,castHero,tickHero,heroBasicHit,heroSpeed} from './awakener-skills.js?v=1.8.1';
+import {blocked,nearestOpen,moveWithTerrain,buildTerrainFlow,terrainWaypoint,reachableOpen} from './terrain.js?v=1.8.1';
 import {ARENA_WIDTH,ARENA_HEIGHT} from './arena.js';
-import {DamageLedger} from './damage-ledger.js?v=1.7.19';
-import {queueEnemyImpact,advanceEnemyImpact} from './enemy-impact.js?v=1.7.19';
-import {EnemyGrid} from './enemy-grid.js?v=1.7.19';
-import {bossAttackDamage} from './enemy-balance.js?v=1.7.19';
-import {skillPower,physicalScale,magicScale,physicalRate,PHYSICAL_COEFFICIENTS as P,MAGIC_COEFFICIENTS as M} from './skill-balance.js?v=1.7.19';
-import {MODES,SKILLS,UNIT_SKILLS,RECIPES,CHARACTERS,STAGES,byId} from './data.js?v=1.7.40';
-import {calculateStats,applyUnitStats,equippedItems,damageReduction,receiveGear,equipGear,unequipGear} from './equipment.js?v=1.7.40';
+import {DamageLedger} from './damage-ledger.js?v=1.8.1';
+import {queueEnemyImpact,advanceEnemyImpact} from './enemy-impact.js?v=1.8.1';
+import {EnemyGrid} from './enemy-grid.js?v=1.8.1';
+import {bossAttackDamage} from './enemy-balance.js?v=1.8.1';
+import {skillPower,physicalScale,magicScale,physicalRate,PHYSICAL_COEFFICIENTS as P,MAGIC_COEFFICIENTS as M} from './skill-balance.js?v=1.8.1';
+import {MODES,SKILLS,UNIT_SKILLS,RECIPES,CHARACTERS,STAGES,byId} from './data.js?v=1.8.1';
+import {calculateStats,applyUnitStats,equippedItems,damageReduction,receiveGear,equipGear,unequipGear} from './equipment.js?v=1.8.1';
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 const distance=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
 export class Game {

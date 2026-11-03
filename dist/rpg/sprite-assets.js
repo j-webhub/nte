@@ -1,4 +1,4 @@
-import {PSI_IDS} from './psi-effects.js?v=1.7.40';
+import {PSI_IDS} from './psi-effects.js?v=1.8.1';
 import {stageBackgroundKey,stageBackgroundPath} from './arena.js';
 // Keep decoded images alive across lobby screens and successive runs.
 export const spriteCache=new Map();

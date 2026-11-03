@@ -1,5 +1,5 @@
-import {moveWithTerrain} from './terrain.js?v=1.7.23';
-import {makeAwakenerEffect} from './awakener-effects.js?v=1.7.36';
+import {moveWithTerrain} from './terrain.js?v=1.8.1';
+import {makeAwakenerEffect} from './awakener-effects.js?v=1.8.1';
 // NTE character descriptions, adapted to this single-character survivor game.
 // Coefficients and fixed cooldowns below are RPG balance values, not NTE stats.
 const skill=(name,cd,coefficient,hits,radius,description)=>({name,cd,coefficient,hits,radius,description});

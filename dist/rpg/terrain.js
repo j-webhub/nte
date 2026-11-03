@@ -2,7 +2,7 @@ import {ARENA_WIDTH,ARENA_HEIGHT} from './arena.js';
 
 // Coordinates follow the full 16:9 background, in percentages. The arena
 // displays a centered cover crop, so apply the same transform as Renderer.
-import {source} from './terrain-layout.js?v=1.7.22';
+import {source} from './terrain-layout.js?v=1.8.1';
 
 const IMAGE_W=6400,OFFSET_X=(IMAGE_W-ARENA_WIDTH)/2;
 const layouts=Object.fromEntries(Object.entries(source).map(([id,polys])=>[id,polys.map(poly=>poly.map(([x,y])=>[x*IMAGE_W/100-OFFSET_X,y*ARENA_HEIGHT/100]))]));

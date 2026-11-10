@@ -1,8 +1,8 @@
-import { state } from "../../core/state.js?v=20261102-wallpaper-dates";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261102-wallpaper-dates";
-import { ELEMENT_ORDER, elem, elementIconUrl, assetUrl } from "./catalog.js?v=20261102-wallpaper-dates";
-import { renderElementIcon, renderArcTypeIcon, renderRarityBadge } from "./badges.js?v=20261102-wallpaper-dates";
-import { pagePath } from "../../core/urls.js?v=20261102-wallpaper-dates";
+import { state } from "../../core/state.js?v=20261110-elyms";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261110-elyms";
+import { ELEMENT_ORDER, elem, elementIconUrl, assetUrl } from "./catalog.js?v=20261110-elyms";
+import { renderElementIcon, renderArcTypeIcon, renderRarityBadge } from "./badges.js?v=20261110-elyms";
+import { pagePath } from "../../core/urls.js?v=20261110-elyms";
 
 function galleryCharacters() {
   const term = state.characterGalleryQuery.trim().toLocaleLowerCase("ko");

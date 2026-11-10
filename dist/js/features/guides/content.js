@@ -1,4 +1,4 @@
-import { ALLOWED_TAGS, BLOCKED_TAGS, FONT_FAMILIES, FONT_SIZES } from "./config.js?v=20261102-wallpaper-dates";
+import { ALLOWED_TAGS, BLOCKED_TAGS, FONT_FAMILIES, FONT_SIZES } from "./config.js?v=20261110-elyms";
 
 export function createId() {
   return crypto.randomUUID?.() || (Date.now().toString(36) + Math.random().toString(36).slice(2));

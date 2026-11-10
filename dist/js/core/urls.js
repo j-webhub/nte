@@ -1,4 +1,4 @@
-import { SITE_URL } from "../config/site.js?v=20261102-wallpaper-dates";
+import { SITE_URL } from "../config/site.js?v=20261110-elyms";
 
 export const SITE_PATH = new URL(SITE_URL).pathname;
 export const CHARACTER_TABS = new Set(["overview", "skills", "awakening", "arcs", "console", "growth"]);

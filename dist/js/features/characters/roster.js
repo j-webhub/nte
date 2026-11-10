@@ -1,7 +1,7 @@
-import { state } from "../../core/state.js?v=20261102-wallpaper-dates";
-import { $, esc } from "../../core/dom.js?v=20261102-wallpaper-dates";
-import { elem, elementIconUrl } from "./catalog.js?v=20261102-wallpaper-dates";
-import { pagePath } from "../../core/urls.js?v=20261102-wallpaper-dates";
+import { state } from "../../core/state.js?v=20261110-elyms";
+import { $, esc } from "../../core/dom.js?v=20261110-elyms";
+import { elem, elementIconUrl } from "./catalog.js?v=20261110-elyms";
+import { pagePath } from "../../core/urls.js?v=20261110-elyms";
 
 export function renderRoster() {
   const CHARACTER_DISPLAY_ORDER = state.db.index.displayCharacterIds || state.db.index.releasedCharacterIds;

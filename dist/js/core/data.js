@@ -1,5 +1,5 @@
-import { DATA_FILES, OPTIONAL_PORTAL_DATA } from "../config/data-files.js?v=20261102-wallpaper-dates";
-import { ASSET_VERSION } from "../config/site.js?v=20261102-wallpaper-dates";
+import { DATA_FILES, OPTIONAL_PORTAL_DATA } from "../config/data-files.js?v=20261110-elyms";
+import { ASSET_VERSION } from "../config/site.js?v=20261110-elyms";
 
 export async function loadDatabase() {
   const pairs = await Promise.all(

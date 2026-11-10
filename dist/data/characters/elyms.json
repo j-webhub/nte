@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "elyms",
+  "roster": {
+    "id": "elyms",
+    "names": {
+      "ko": "엘림",
+      "en": "Elyms",
+      "zhHans": "曳尔沐",
+      "ja": "イェルム"
+    },
+    "rarity": "S",
+    "element": "Cosmos",
+    "arcType": "Solid",
+    "releaseStatusAsOfSnapshot": "upcoming_globally",
+    "released": false,
+    "plannedGlobalAvailability": "2026-11-11",
+    "debutVersion": "1.5",
+    "source": "https://nte.perfectworld.com/kr/article/news/gamenews/20261109/264952.html",
+    "officialSource": "https://nte.perfectworld.com/kr/article/news/gamenews/20261109/264952.html",
+    "englishProfile": "https://www.prydwen.gg/neverness-to-everness/characters/elyms",
+    "detailsSourceStatus": "Global release schedule from the official Korean notice. Combat and progression descriptions summarize mainland launch data.",
+    "communityRoleKo": "아군 피해 지원 · 서브 딜러",
+    "portraitFile": "엘림.webp"
+  },
+  "setting": {
+    "summary": "이상 관리국 E.T.D 6팀의 부대장. 전자 세계를 넘나들며, 동료들과 연락을 주고받는 것을 좋아한다.",
+    "birthday": "9월 3일",
+    "faction": "이상 관리국 E.T.D 6팀",
+    "ability": ""
+  },
+  "introduction": {
+    "sourceUrl": "https://x.com/NTE_KO/status/2118523765336195557"
+  },
+  "detail": {
+    "id": "elyms",
+    "globalStatus": "upcoming",
+    "voiceActors": {
+      "ko": "손선영",
+      "ja": "아마미야 소라",
+      "zhHans": "陈章",
+      "en": "Crystal Lee"
+    },
+    "voiceActorsSource": "https://www.ntestation.com/%E6%9B%B3%E5%B0%94%E6%B2%90",
+    "skillNamesKo": {
+      "basic": "즉시 오류",
+      "skill": "전자 꿈에 잠기다",
+      "ultimate": "어제와 같은 풍경",
+      "support": "나 여기 있어"
+    },
+    "skillDescriptionsKo": {
+      "basic": "약한 신호에서는 최대 5단, 중간·강한 신호에서는 최대 3단의 빛속성 이능력 피해를 준다. 마지막 공격을 마치면 현재 신호에 맞는 강화 바이레일 스킬을 사용할 수 있다.",
+      "skill": "기본 스킬로 범위 내 적에게 빛속성 이능력 피해를 주고 사이클 게이지를 채운다. 강화 스킬로 신호를 약함에서 중간으로 높이면 「착시」를 얻는다. 중간 신호에서 다음 강화 스킬을 쓰면 「착시」를 소모해 피해를 높이고 강한 신호가 된다.",
+      "ultimate": "현재 신호에 따라 빛속성 이능력 피해의 배율과 공격 형태가 달라진다. 파티의 공격력과 추가 공격 피해를 높이고, 엘림이 대기 상태일 때 협동 공격을 발동한다. 사용 후 신호는 약함으로 돌아간다.",
+      "support": "교대 등장 시 빛속성 이능력 피해를 준다. 약한 신호에서 발동하면 중간 신호로 올라가고 「착시」를 얻는다. 주변 적 수를 감지해 울티메이트의 단일·범위 형태를 결정한다."
+    },
+    "source": "https://ntegame.net/ko/guides/elyms-build-guide/",
+    "comparisonSources": [
+      "https://www.ntestation.com/%E6%9B%B3%E5%B0%94%E6%B2%90",
+      "https://x.com/NTE_KO/status/2118523765336195557"
+    ],
+    "releaseInfoKo": {
+      "schedule": "2026년 11월 11일 1.5 업데이트 점검 후부터 12월 2일 06:59(KST)까지 한정 보드 「디지털 드림」에서 획득할 수 있습니다.",
+      "pending": "스킬·각성·도시 스킬 명칭과 설명은 중국 서버 출시 자료를 바탕으로 정리한 임시 번역입니다. 글로벌판에서 표기나 수치가 달라질 수 있습니다.",
+      "arc": "「연결음이 흐르는 동안」은 엘림과 같은 기간에 등장하는 한정 S급 고체 아크입니다."
+    }
+  },
+  "mechanics": {
+    "id": "elyms",
+    "nameKo": "엘림",
+    "level80BaseStats": null,
+    "awakeningEffectsKo": [
+      "A1: 울티메이트 사용 전 소모한 착시 1중첩당 파티의 치명 피해가 10% 증가한다. 20초 지속.",
+      "A2: 울티메이트의 피해 배율이 30% 증가한다. 강화 스킬은 착시 1중첩을 소모할 때마다 목표의 방어력을 5% 무시한다.",
+      "A3: 중간 신호에서 강한 신호가 되면 착시 3중첩을 얻는다. 착시 최대 4중첩.",
+      "A4: 엘림이 파티에 있고 생존한 동안 파티의 치명 피해가 20% 증가한다.",
+      "A5: 기본 바이레일 스킬의 피해 배율이 100% 증가한다. 전투 진입 시 사이클 게이지가 가득 차며, 전투당 1회 적용된다.",
+      "A6: 울티메이트 사용 전 소모한 착시 1중첩당 엘림의 추가 공격 피해가 25% 증가한다. 20초 지속."
+    ],
+    "awakeningNamesKo": {
+      "A1": "404 외딴섬을 바라보다",
+      "A2": "200 서로 연결된 노드",
+      "A3": "504 응답 시간 초과",
+      "A4": "302 소원의 방향을 바꾸다",
+      "A5": "304 예전과 같은 오늘",
+      "A6": "301 주소가 영구 이동했습니다"
+    },
+    "resonanceKo": {
+      "3": "오랜 친구에게: 일반 공격·바이레일 스킬·울티메이트가 1레벨 상승한다. 약한 신호에서 서포트 스킬 또는 첫 번째 강화 바이레일 스킬을 쓰면 바로 강한 신호가 되고 두 번째 강화 스킬을 사용할 수 있다.",
+      "6": "새 친구와의 작별: 엘림이 파티에 있고 생존한 동안 파티가 적의 모든 속성 저항을 12% 무시한다. 착시를 소모한 두 번째 강화 스킬의 마지막 타격이 명중하면 빛속성 이능력 피해를 추가로 준다."
+    },
+    "sourceUrl": "https://www.ntestation.com/%E6%9B%B3%E5%B0%94%E6%B2%90"
+  },
+  "fieldSkills": {
+    "passives": [
+      {
+        "nameKo": "충전·레모라 강화",
+        "unlock": "",
+        "effectKo": "필드 캐릭터가 울티메이트 에너지를 얻으면 파티의 빛속성 피해가 30초간 3.75% 증가한다. 최대 8중첩. 파티원이 레모라를 부여하면 7.5초 뒤 같은 목표에 레모라를 한 번 더 부여한다. 이 효과는 7초에 최대 1회 발동한다."
+      },
+      {
+        "nameKo": "치명 피해 증가",
+        "unlock": "",
+        "effectKo": "엘림의 치명 피해가 10% 증가한다."
+      },
+      {
+        "nameKo": "거기 있어?",
+        "unlock": "",
+        "effectKo": "엘림이 대기 중일 때 가끔 먼저 말을 걸고 작은 선물을 준다. 선물은 하루에 하나 받을 수 있다."
+      }
+    ],
+    "citySkills": [
+      {
+        "nameKo": "소셜 네트워크",
+        "categoryKo": "물류",
+        "maxLevel": 5,
+        "effectKo": {
+          "Lv.1": "엘림을 물류 보조로 배치하면 기사 배송 주문 만족도가 5P 증가한다.",
+          "Lv.2": "협력 기사 상한이 1명 늘어난다.",
+          "Lv.3": "기사 배송 주문 만족도가 5P 증가한다.",
+          "Lv.4": "협력 기사 상한이 1명 늘어난다.",
+          "Lv.5": "동시에 파견할 수 있는 기사가 1명 늘어난다."
+        }
+      },
+      {
+        "nameKo": "인맥",
+        "categoryKo": "도시 활동",
+        "maxLevel": 2,
+        "effectKo": {
+          "Lv.1": "경매 콘텐츠에서 소장품으로 가구를 교환할 때, 교환 주기당 첫 1회에 필요한 소장품이 1개 줄어든다.",
+          "Lv.2": "교환 주기당 첫 2회에 적용된다."
+        }
+      }
+    ],
+    "sourceUrl": "https://www.ntestation.com/%E6%9B%B3%E5%B0%94%E6%B2%90"
+  },
+  "console": {
+    "characterId": "elyms",
+    "console": {
+      "preferredModuleShape": "III",
+      "perDriveBonusKo": "III형 드라이브 1개당 치명 확률 +8%",
+      "layoutNoteKo": "중국 서버 출시 자료의 콘솔 특화 효과입니다."
+    },
+    "cartridge": {
+      "recommendedSetId": "speedy-hedgehog",
+      "alternativeSetIds": [
+        "lost-radiance"
+      ]
+    },
+    "mainStatPriorityKo": [
+      "공격력%",
+      "빛속성 피해",
+      "치명 확률·치명 피해"
+    ],
+    "substatPriorityKo": [
+      "공격력% 또는 사이클 강도",
+      "치명 확률·치명 피해"
+    ],
+    "buildNoteKo": "아군 지원을 우선할 때는 음속 블루 고슴도치, 엘림의 피해를 높일 때는 잃어버린 빛을 참고하세요.",
+    "sourceUrls": [
+      "https://www.ntestation.com/%E6%9B%B3%E5%B0%94%E6%B2%90",
+      "https://ntegame.net/ko/guides/elyms-build-guide/"
+    ]
+  },
+  "coefficients": {
+    "url": "",
+    "tables": []
+  }
+}

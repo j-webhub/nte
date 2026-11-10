@@ -1,8 +1,8 @@
-import { formatCharacterText } from "../text.js?v=20261102-wallpaper-dates";
-import { state } from "../../../core/state.js?v=20261102-wallpaper-dates";
-import { esc } from "../../../core/dom.js?v=20261102-wallpaper-dates";
-import { sourceLinks } from "../sources.js?v=20261102-wallpaper-dates";
-import { interpolateArcRankEffect } from "../../../shared/arc-ranks.js?v=20261102-wallpaper-dates";
+import { formatCharacterText } from "../text.js?v=20261110-elyms";
+import { state } from "../../../core/state.js?v=20261110-elyms";
+import { esc } from "../../../core/dom.js?v=20261110-elyms";
+import { sourceLinks } from "../sources.js?v=20261110-elyms";
+import { interpolateArcRankEffect } from "../../../shared/arc-ranks.js?v=20261110-elyms";
 
 export function renderArcs(p) {
   const character = state.db.arcs.characters.find(

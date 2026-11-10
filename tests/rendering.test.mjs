@@ -33,7 +33,7 @@ test("전체 캐릭터의 모든 탭과 기술 레벨 경계를 렌더링한다"
     renderProfile();
     const html = node("#main-content").innerHTML;
     assert(html.includes(encodeURIComponent(character.roster.portraitFile)), `${character.id} 이미지 경로`);
-    assert(html.includes('data-tab="overview">패시브</button>'));
+    assert(html.includes('data-tab="overview">패시브</a>'));
   }
 });
 test("패시브 설명의 HTML 문자는 텍스트로 표시한다", async t => {

@@ -1,4 +1,4 @@
-import { MAX_FILE_BYTES, MAX_BACKUP_BYTES, MAX_MANIFEST_BYTES } from "./config.js?v=20261102-wallpaper-dates";
+import { MAX_FILE_BYTES, MAX_BACKUP_BYTES, MAX_MANIFEST_BYTES } from "./config.js?v=20261110-elyms";
 const encoder = new TextEncoder();
 const decoder = new TextDecoder();
 

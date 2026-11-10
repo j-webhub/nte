@@ -1,10 +1,10 @@
-import { state } from "../../core/state.js?v=20261102-wallpaper-dates";
-import { $, esc, fmt, siteFooter } from "../../core/dom.js?v=20261102-wallpaper-dates";
-import { elem, assetUrl, elementIconUrl, arcTypeIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261102-wallpaper-dates";
-import { getProfile } from "./model.js?v=20261102-wallpaper-dates";
-import { renderTab } from "./tabs/index.js?v=20261102-wallpaper-dates";
-import { pagePath, isPlainClick } from "../../core/urls.js?v=20261102-wallpaper-dates";
-import { updatePageMetadata } from "../../core/metadata.js?v=20261102-wallpaper-dates";
+import { state } from "../../core/state.js?v=20261110-elyms";
+import { $, esc, fmt, siteFooter } from "../../core/dom.js?v=20261110-elyms";
+import { elem, assetUrl, elementIconUrl, arcTypeIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261110-elyms";
+import { getProfile } from "./model.js?v=20261110-elyms";
+import { renderTab } from "./tabs/index.js?v=20261110-elyms";
+import { pagePath, isPlainClick } from "../../core/urls.js?v=20261110-elyms";
+import { updatePageMetadata } from "../../core/metadata.js?v=20261110-elyms";
 
 export function bindCharacterIllustration() {
   const visual = $("#main-content .hero-visual");
@@ -162,7 +162,7 @@ export function renderProfile() {
     esc(p.roster.names.ko) +
     "</span><span>" +
     (isUpcoming
-      ? "공식 발표 기준 · 글로벌 1.4 · " + releaseDate + " 출시 예정"
+      ? "공식 발표 기준 · " + (p.roster.debutVersion ? "글로벌 " + esc(p.roster.debutVersion) + " · " : "") + releaseDate + " 출시 예정"
       : "수집 기준 · 글로벌 1.4 · 2026.10.02") +
     "</span></div>" +
     '<section class="profile-hero" style="--element-color:' +
@@ -195,9 +195,9 @@ export function renderProfile() {
     renderCharacterIntroDetails(p.setting, p.detail?.voiceActors, isUpcoming) +
     "</div></div>" +
     '<div class="hero-visual" aria-hidden="true"><div class="hero-index">' +
-    (isUpcoming ? "♫" : order) +
+    order +
     "<small>" +
-    (isUpcoming ? "LIVEHOUSE STARSIGN" : "현장 기록") +
+    (isUpcoming ? "출시 예정" : "현장 기록") +
     "</small></div>" +
     imageMarkup +
     "</div></section>" +
@@ -224,7 +224,9 @@ export function renderUpcomingProfile(p) {
   const info = p.detail?.releaseInfoKo || {};
   const cards = [
     ["글로벌 출시 일정", info.schedule || date + " (KST) 출시 예정입니다."],
-    ["공식 보상 안내", info.reward]
+    ["공식 보상 안내", info.reward],
+    ["전용 아크", info.arc],
+    ["자료 확인 범위", info.pending]
   ].filter(([, text]) => text);
   return '<div class="panel-grid upcoming-character-grid">' +
     cards.map(([title, text]) => '<article class="content-card"><h3>' +

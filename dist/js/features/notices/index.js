@@ -1,7 +1,7 @@
-import { state } from "../../core/state.js?v=20261102-wallpaper-dates";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261102-wallpaper-dates";
-import { pagePath } from "../../core/urls.js?v=20261102-wallpaper-dates";
-import { NOTICE_PAGE_SIZE } from "../../config/site.js?v=20261102-wallpaper-dates";
+import { state } from "../../core/state.js?v=20261110-elyms";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261110-elyms";
+import { pagePath } from "../../core/urls.js?v=20261110-elyms";
+import { NOTICE_PAGE_SIZE } from "../../config/site.js?v=20261110-elyms";
 
 export function renderNoticeCard(item) {
   return (

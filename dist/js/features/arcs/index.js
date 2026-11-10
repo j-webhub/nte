@@ -1,7 +1,7 @@
-import { state } from "../../core/state.js?v=20261102-wallpaper-dates";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261102-wallpaper-dates";
-import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261102-wallpaper-dates";
-import { renderArcTypeIcon, renderRarityBadge } from "../characters/badges.js?v=20261102-wallpaper-dates";
+import { state } from "../../core/state.js?v=20261110-elyms";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261110-elyms";
+import { interpolateArcRankEffect } from "../../shared/arc-ranks.js?v=20261110-elyms";
+import { renderArcTypeIcon, renderRarityBadge } from "../characters/badges.js?v=20261110-elyms";
 
 function renderArcEffect(arc) {
   const text = interpolateArcRankEffect(arc, 1) || "자료 없음";

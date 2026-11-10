@@ -1,9 +1,9 @@
-import { formatCharacterText } from "../text.js?v=20261110-elyms";
-import { state } from "../../../core/state.js?v=20261110-elyms";
-import { $, esc, fmt } from "../../../core/dom.js?v=20261110-elyms";
-import { SKILLS } from "../catalog.js?v=20261110-elyms";
-import { getProfile } from "../model.js?v=20261110-elyms";
-import { sourceLinks, coefficientSourceLinks } from "../sources.js?v=20261110-elyms";
+import { formatCharacterText } from "../text.js?v=20261110-version-15-notice";
+import { state } from "../../../core/state.js?v=20261110-version-15-notice";
+import { $, esc, fmt } from "../../../core/dom.js?v=20261110-version-15-notice";
+import { SKILLS } from "../catalog.js?v=20261110-version-15-notice";
+import { getProfile } from "../model.js?v=20261110-version-15-notice";
+import { sourceLinks, coefficientSourceLinks } from "../sources.js?v=20261110-version-15-notice";
 
 export function formatPercent(value) {
   const percent = Math.round(Number(value) * 1000) / 10;

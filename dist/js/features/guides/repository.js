@@ -1,4 +1,4 @@
-import { DATABASE_NAME, DATABASE_VERSION, STORE_NAME } from "./config.js?v=20261110-elyms";
+import { DATABASE_NAME, DATABASE_VERSION, STORE_NAME } from "./config.js?v=20261110-version-15-notice";
 
 class IndexedDbGuideRepository {
   constructor() {

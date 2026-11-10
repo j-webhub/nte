@@ -1,7 +1,7 @@
-import { formatCharacterText } from "../text.js?v=20261110-elyms";
+import { formatCharacterText } from "../text.js?v=20261110-version-15-notice";
 
-import { esc } from "../../../core/dom.js?v=20261110-elyms";
-import { sourceLinks } from "../sources.js?v=20261110-elyms";
+import { esc } from "../../../core/dom.js?v=20261110-version-15-notice";
+import { sourceLinks } from "../sources.js?v=20261110-version-15-notice";
 
 export function renderAwakening(p, includeSources = true) {
   const m = p.mechanics;

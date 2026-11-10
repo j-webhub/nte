@@ -1,5 +1,5 @@
-import { state } from "../../core/state.js?v=20261110-elyms";
-import { esc } from "../../core/dom.js?v=20261110-elyms";
+import { state } from "../../core/state.js?v=20261110-version-15-notice";
+import { esc } from "../../core/dom.js?v=20261110-version-15-notice";
 
 export function sourceLinks(p, domesticOnly = false) {
   const urls = new Set();

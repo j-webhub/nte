@@ -1,4 +1,4 @@
-import { state } from "../../core/state.js?v=20261110-elyms";
+import { state } from "../../core/state.js?v=20261110-version-15-notice";
 
 export function getProfile(id) {
   const character = state.db.characters[id];

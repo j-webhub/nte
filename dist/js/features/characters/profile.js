@@ -1,10 +1,10 @@
-import { state } from "../../core/state.js?v=20261110-elyms";
-import { $, esc, fmt, siteFooter } from "../../core/dom.js?v=20261110-elyms";
-import { elem, assetUrl, elementIconUrl, arcTypeIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261110-elyms";
-import { getProfile } from "./model.js?v=20261110-elyms";
-import { renderTab } from "./tabs/index.js?v=20261110-elyms";
-import { pagePath, isPlainClick } from "../../core/urls.js?v=20261110-elyms";
-import { updatePageMetadata } from "../../core/metadata.js?v=20261110-elyms";
+import { state } from "../../core/state.js?v=20261110-version-15-notice";
+import { $, esc, fmt, siteFooter } from "../../core/dom.js?v=20261110-version-15-notice";
+import { elem, assetUrl, elementIconUrl, arcTypeIconUrl, ARC_TYPES, TABS } from "./catalog.js?v=20261110-version-15-notice";
+import { getProfile } from "./model.js?v=20261110-version-15-notice";
+import { renderTab } from "./tabs/index.js?v=20261110-version-15-notice";
+import { pagePath, isPlainClick } from "../../core/urls.js?v=20261110-version-15-notice";
+import { updatePageMetadata } from "../../core/metadata.js?v=20261110-version-15-notice";
 
 export function bindCharacterIllustration() {
   const visual = $("#main-content .hero-visual");

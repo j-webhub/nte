@@ -1,8 +1,8 @@
-import { $ } from "../../core/dom.js?v=20261110-elyms";
-import { repository } from "./repository.js?v=20261110-elyms";
-import { createId, sanitizeHtml, safeVideoLinks } from "./content.js?v=20261110-elyms";
-import { createZip, readZip, safeArchivePath } from "./archive.js?v=20261110-elyms";
-import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES, MAX_BACKUP_BYTES, MAX_MANIFEST_BYTES } from "./config.js?v=20261110-elyms";
+import { $ } from "../../core/dom.js?v=20261110-version-15-notice";
+import { repository } from "./repository.js?v=20261110-version-15-notice";
+import { createId, sanitizeHtml, safeVideoLinks } from "./content.js?v=20261110-version-15-notice";
+import { createZip, readZip, safeArchivePath } from "./archive.js?v=20261110-version-15-notice";
+import { MAX_FILE_BYTES, MAX_POST_MEDIA_BYTES, MAX_BACKUP_BYTES, MAX_MANIFEST_BYTES } from "./config.js?v=20261110-version-15-notice";
 const encoder = new TextEncoder();
 
 export async function exportBackup({ setStatus }) {

@@ -1,5 +1,5 @@
-import { esc } from "../../core/dom.js?v=20261110-elyms";
-import { elem } from "./catalog.js?v=20261110-elyms";
+import { esc } from "../../core/dom.js?v=20261110-version-15-notice";
+import { elem } from "./catalog.js?v=20261110-version-15-notice";
 
 // Match source text before escaping so user-entered descriptions stay plain text.
 export function formatCharacterText(value, element) {

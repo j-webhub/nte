@@ -35,3 +35,6 @@ jobs:
           path: ./dist
       - id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # Allow Pages file synchronization to finish before canceling the deployment.
+          timeout: 1200000

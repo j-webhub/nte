@@ -1,11 +1,11 @@
 {
   "dataset": "Neverness to Everness character signature Arc data",
-  "snapshotDate": "2026-10-02",
-  "gameVersion": "1.4 Global",
+  "snapshotDate": "2026-11-11",
+  "gameVersion": "1.5",
   "scope": {
-    "releasedCharacters": 24,
-    "charactersWithConfirmedSignatureArc": 23,
-    "signatureArcRecords": 24,
+    "releasedCharacters": 25,
+    "charactersWithConfirmedSignatureArc": 24,
+    "signatureArcRecords": 25,
     "definition": "A signature Arc is one explicitly linked to a character by a motif/signature guide or character-specific source. General best-in-slot/recommended Arcs are not treated as signatures without that link.",
     "zeroRule": "Zero is one character and has two distinct signature Arc records.",
     "excluded": "Mint's possible recommendations are not included as confirmed signatures because the reviewed sources disagree and do not establish a dedicated Arc link.",
@@ -190,6 +190,13 @@
       "status": "confirmed",
       "signatureArcIds": [
         "far-side-of-the-moon"
+      ]
+    },
+    {
+      "characterId": "elyms",
+      "status": "confirmed",
+      "signatureArcIds": [
+        "echoes-on-hold"
       ]
     }
   ],
@@ -1094,6 +1101,36 @@
         "koreanGuide": "https://ccf1007overmen.tistory.com/1951?category=1587992"
       },
       "imageFile": "far-side-of-the-moon.webp"
+    },
+    {
+      "id": "echoes-on-hold",
+      "nameEn": "Echoes on Hold",
+      "nameKo": "연결음이 흐르는 동안",
+      "characterId": "elyms",
+      "arcType": "Solid",
+      "rarity": "S",
+      "level80": {
+        "attack": 570,
+        "secondaryStat": "치명 확률",
+        "secondaryValue": "24%"
+      },
+      "rankEffects": {
+        "R1": "착용자의 공격력이 15% 증가한다. 울티메이트 발동 후 추가 공격 피해를 3회 주면 파티 전체가 방어력을 12% 무시하고, 착용자는 방어력을 추가로 10% 무시한다(20초). 바이레일 스킬 발동 시 파티 전체가 빛속성 저항을 8% 무시한다(20초). 두 효과는 전투 진입 즉시 적용되며, 재발동 시 지속 시간이 갱신되고 파티 내 중복 적용되지 않는다.",
+        "R2": "착용자의 공격력이 18.75% 증가한다. 울티메이트 발동 후 추가 공격 피해를 3회 주면 파티 전체가 방어력을 14% 무시하고, 착용자는 방어력을 추가로 12.5% 무시한다(20초). 바이레일 스킬 발동 시 파티 전체가 빛속성 저항을 11% 무시한다(20초). 두 효과는 전투 진입 즉시 적용되며, 재발동 시 지속 시간이 갱신되고 파티 내 중복 적용되지 않는다.",
+        "R3": "착용자의 공격력이 22.5% 증가한다. 울티메이트 발동 후 추가 공격 피해를 3회 주면 파티 전체가 방어력을 16% 무시하고, 착용자는 방어력을 추가로 15% 무시한다(20초). 바이레일 스킬 발동 시 파티 전체가 빛속성 저항을 14% 무시한다(20초). 두 효과는 전투 진입 즉시 적용되며, 재발동 시 지속 시간이 갱신되고 파티 내 중복 적용되지 않는다.",
+        "R4": "착용자의 공격력이 26.25% 증가한다. 울티메이트 발동 후 추가 공격 피해를 3회 주면 파티 전체가 방어력을 18% 무시하고, 착용자는 방어력을 추가로 17.5% 무시한다(20초). 바이레일 스킬 발동 시 파티 전체가 빛속성 저항을 17% 무시한다(20초). 두 효과는 전투 진입 즉시 적용되며, 재발동 시 지속 시간이 갱신되고 파티 내 중복 적용되지 않는다.",
+        "R5": "착용자의 공격력이 30% 증가한다. 울티메이트 발동 후 추가 공격 피해를 3회 주면 파티 전체가 방어력을 20% 무시하고, 착용자는 방어력을 추가로 20% 무시한다(20초). 바이레일 스킬 발동 시 파티 전체가 빛속성 저항을 20% 무시한다(20초). 두 효과는 전투 진입 즉시 적용되며, 재발동 시 지속 시간이 갱신되고 파티 내 중복 적용되지 않는다."
+      },
+      "verification": {
+        "status": "community_release",
+        "note": "공식 1.5 공지의 아크 명칭과 출시판 공개 데이터의 R1~R5 수치를 적용했습니다."
+      },
+      "sources": {
+        "arcDb": "https://www.neverness.app/arcs/echoes-on-hold",
+        "mapping": "https://gigle.kr/nte/character/elyms",
+        "official": "https://nte.perfectworld.com/kr/article/news/gamenews/20261109/264952.html"
+      },
+      "imageFile": "echoes-on-hold.webp"
     }
   ]
 }

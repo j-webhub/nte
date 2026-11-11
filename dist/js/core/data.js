@@ -1,5 +1,5 @@
-import { DATA_FILES, OPTIONAL_PORTAL_DATA } from "../config/data-files.js?v=20261110-version-15-notice";
-import { ASSET_VERSION } from "../config/site.js?v=20261110-version-15-notice";
+import { DATA_FILES, OPTIONAL_PORTAL_DATA } from "../config/data-files.js?v=20261111-elyms-release";
+import { ASSET_VERSION } from "../config/site.js?v=20261111-elyms-release";
 
 export async function loadDatabase() {
   const pairs = await Promise.all(

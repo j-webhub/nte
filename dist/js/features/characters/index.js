@@ -1,12 +1,12 @@
-import { state } from "../../core/state.js?v=20261110-version-15-notice";
-import { $ } from "../../core/dom.js?v=20261110-version-15-notice";
-import { openCharacter } from "../../core/router.js?v=20261110-version-15-notice";
-import { ELEMENT_ORDER, elem, elementIconUrl } from "./catalog.js?v=20261110-version-15-notice";
-import { renderRoster } from "./roster.js?v=20261110-version-15-notice";
-import { renderProfile, refreshActiveTab } from "./profile.js?v=20261110-version-15-notice";
-import { refreshSkillLevel } from "./tabs/skills.js?v=20261110-version-15-notice";
-import { isPlainClick } from "../../core/urls.js?v=20261110-version-15-notice";
-import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261110-version-15-notice";
+import { state } from "../../core/state.js?v=20261111-elyms-release";
+import { $ } from "../../core/dom.js?v=20261111-elyms-release";
+import { openCharacter } from "../../core/router.js?v=20261111-elyms-release";
+import { ELEMENT_ORDER, elem, elementIconUrl } from "./catalog.js?v=20261111-elyms-release";
+import { renderRoster } from "./roster.js?v=20261111-elyms-release";
+import { renderProfile, refreshActiveTab } from "./profile.js?v=20261111-elyms-release";
+import { refreshSkillLevel } from "./tabs/skills.js?v=20261111-elyms-release";
+import { isPlainClick } from "../../core/urls.js?v=20261111-elyms-release";
+import { renderCharacterGallery, refreshCharacterGallery } from "./gallery.js?v=20261111-elyms-release";
 
 export { renderRoster, renderProfile };
 

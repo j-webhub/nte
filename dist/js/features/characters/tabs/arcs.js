@@ -1,8 +1,8 @@
-import { formatCharacterText } from "../text.js?v=20261110-version-15-notice";
-import { state } from "../../../core/state.js?v=20261110-version-15-notice";
-import { esc } from "../../../core/dom.js?v=20261110-version-15-notice";
-import { sourceLinks } from "../sources.js?v=20261110-version-15-notice";
-import { interpolateArcRankEffect } from "../../../shared/arc-ranks.js?v=20261110-version-15-notice";
+import { formatCharacterText } from "../text.js?v=20261111-elyms-release";
+import { state } from "../../../core/state.js?v=20261111-elyms-release";
+import { esc } from "../../../core/dom.js?v=20261111-elyms-release";
+import { sourceLinks } from "../sources.js?v=20261111-elyms-release";
+import { interpolateArcRankEffect } from "../../../shared/arc-ranks.js?v=20261111-elyms-release";
 
 export function renderArcs(p) {
   const character = state.db.arcs.characters.find(

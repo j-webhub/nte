@@ -193,13 +193,21 @@
       "unique": "charging-knight-spark-plug",
       "slug": "akane",
       "sourceUrl": "https://www.kaiden.gg/nte/characters/akane/"
+    },
+    "elyms": {
+      "family": "silhouettes",
+      "unique": "tear-of-the-sea",
+      "slug": "elyms",
+      "sourceUrl": "https://www.neverness.app/characters/elyms"
     }
   },
   "sources": [
     "https://neverness.app/characters/",
     "https://gigle.kr/nte/materials",
     "https://www.ntebuild.com/planner?add=jiuyuan",
-    "https://alkapa.gg/en/neverness-to-everness/characters/cang"
+    "https://alkapa.gg/en/neverness-to-everness/characters/cang",
+    "https://www.ntestation.com/%E6%9B%B3%E5%B0%94%E6%B2%90",
+    "https://www.neverness.app/characters/elyms"
   ],
   "skillUpgrades": {
     "snapshot": "2026-10-20",
@@ -409,6 +417,10 @@
       "material_huianlveying": {
         "nameKo": "어두운 실루엣",
         "nameEn": "Chaos Silhouette"
+      },
+      "weeklycloneboss_a04_01": {
+        "nameKo": "Hollowflower Seeds",
+        "nameEn": "Hollowflower Seeds"
       }
     },
     "characters": {
@@ -811,6 +823,23 @@
         "weeklyMaterial": "mofeikesi_yinzhang",
         "sourceUrls": [
           "https://www.kaiden.gg/nte/characters/akane/"
+        ]
+      },
+      "elyms": {
+        "bookMaterials": [
+          "characterskill_01_lv1_x100",
+          "characterskill_01_lv2_x100",
+          "characterskill_01_lv3_x100"
+        ],
+        "fieldMaterials": [
+          "material_tuiselveying",
+          "material_shijiaolveying",
+          "material_huianlveying"
+        ],
+        "weeklyMaterial": "weeklycloneboss_a04_01",
+        "sourceUrls": [
+          "https://www.neverness.app/characters/elyms",
+          "https://gigle.kr/nte/character/elyms"
         ]
       }
     },

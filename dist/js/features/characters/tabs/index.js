@@ -1,10 +1,10 @@
-import { state } from "../../../core/state.js?v=20261110-version-15-notice";
-import { renderOverview } from "./passives.js?v=20261110-version-15-notice";
-import { renderSkills } from "./skills.js?v=20261110-version-15-notice";
-import { renderAwakening } from "./awakening.js?v=20261110-version-15-notice";
-import { renderArcs } from "./arcs.js?v=20261110-version-15-notice";
-import { renderConsole } from "./console.js?v=20261110-version-15-notice";
-import { renderGrowth } from "./growth.js?v=20261110-version-15-notice";
+import { state } from "../../../core/state.js?v=20261111-elyms-release";
+import { renderOverview } from "./passives.js?v=20261111-elyms-release";
+import { renderSkills } from "./skills.js?v=20261111-elyms-release";
+import { renderAwakening } from "./awakening.js?v=20261111-elyms-release";
+import { renderArcs } from "./arcs.js?v=20261111-elyms-release";
+import { renderConsole } from "./console.js?v=20261111-elyms-release";
+import { renderGrowth } from "./growth.js?v=20261111-elyms-release";
 
 export function renderTab(p) {
   if (state.activeTab === "skills") return renderSkills(p);

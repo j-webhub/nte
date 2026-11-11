@@ -1,7 +1,7 @@
-import { state } from "../../core/state.js?v=20261110-version-15-notice";
-import { $, esc } from "../../core/dom.js?v=20261110-version-15-notice";
-import { elem, elementIconUrl } from "./catalog.js?v=20261110-version-15-notice";
-import { pagePath } from "../../core/urls.js?v=20261110-version-15-notice";
+import { state } from "../../core/state.js?v=20261111-elyms-release";
+import { $, esc } from "../../core/dom.js?v=20261111-elyms-release";
+import { elem, elementIconUrl } from "./catalog.js?v=20261111-elyms-release";
+import { pagePath } from "../../core/urls.js?v=20261111-elyms-release";
 
 export function renderRoster() {
   const CHARACTER_DISPLAY_ORDER = state.db.index.displayCharacterIds || state.db.index.releasedCharacterIds;

@@ -1,6 +1,6 @@
-import { state } from "../../core/state.js?v=20261110-version-15-notice";
-import { $, esc, siteFooter } from "../../core/dom.js?v=20261110-version-15-notice";
-import { pagePath } from "../../core/urls.js?v=20261110-version-15-notice";
+import { state } from "../../core/state.js?v=20261111-elyms-release";
+import { $, esc, siteFooter } from "../../core/dom.js?v=20261111-elyms-release";
+import { pagePath } from "../../core/urls.js?v=20261111-elyms-release";
 
 let lastWallpaperUrl = "";
 const lastMenuImages = new Map();
@@ -128,7 +128,7 @@ export function renderHome() {
     '</section>' +
     '<section class="portal-section"><div class="section-head"><div><h2>아카이브 ' +
     '메뉴</h2><p>확인할 정보를 선택하세요.</p></div><span class="portal-version">GLOBAL · ' +
-    '1.4</span></div><div class="portal-grid">' +
+    esc(state.db.index.rosterMetadata.gameVersion) + '</span></div><div class="portal-grid">' +
     cards +
     "</div></section>" +
     '<section class="portal-latest"><div><p class="eyebrow">OFFICIAL ' +

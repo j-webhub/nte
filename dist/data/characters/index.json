@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "rosterMetadata": {
     "dataset": "Neverness to Everness character roster",
-    "snapshotDate": "2026-11-10",
-    "gameVersion": "1.4",
+    "snapshotDate": "2026-11-11",
+    "gameVersion": "1.5",
     "scope": "Unique playable characters released by the snapshot date; gender-selectable Esper Zero is one character record.",
     "coverage": {
-      "releasedUniqueCharacters": 24,
-      "confirmedUpcomingCharacters": 1,
+      "releasedUniqueCharacters": 25,
+      "confirmedUpcomingCharacters": 0,
       "plannedUniqueCharactersInGlobalVersion14": 24,
       "deepSkillAndGrowthData": "Individual character files contain Korean-source-verified skill names, combat summaries, awakenings 1-6, and awakening 3/6 bonuses, plus restored per-level coefficient tables with attributed source links. Coefficient values are not claimed as Korean-verified. Character city skills are stage-based; categoryKo marks an applicable field and is separate from a city-activity catalog. Unknown effects remain blank. Breakthrough-stage stat tables and materials remain unverified.",
       "acquisitionDetails": "not included; availability varies by server, event, and version"
@@ -87,6 +87,7 @@
     "chiz",
     "daffodill",
     "edgar",
+    "elyms",
     "fadia",
     "haniel",
     "hathor",
@@ -103,9 +104,7 @@
     "zankou",
     "zero"
   ],
-  "upcomingCharacterIds": [
-    "elyms"
-  ],
+  "upcomingCharacterIds": [],
   "watchlist": [
     {
       "id": "taygedo",
@@ -118,6 +117,7 @@
     }
   ],
   "displayCharacterIds": [
+    "elyms",
     "akane-rin",
     "blackbird",
     "linko",

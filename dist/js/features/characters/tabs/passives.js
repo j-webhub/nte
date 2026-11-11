@@ -1,7 +1,7 @@
-import { formatCharacterText } from "../text.js?v=20261110-version-15-notice";
+import { formatCharacterText } from "../text.js?v=20261111-elyms-release";
 
-import { esc } from "../../../core/dom.js?v=20261110-version-15-notice";
-import { sourceLinks } from "../sources.js?v=20261110-version-15-notice";
+import { esc } from "../../../core/dom.js?v=20261111-elyms-release";
+import { sourceLinks } from "../sources.js?v=20261111-elyms-release";
 
 export function renderOverview(p, options = {}) {
   const {

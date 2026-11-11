@@ -1,6 +1,6 @@
-import { state } from "../../../core/state.js?v=20261110-version-15-notice";
-import { esc, fmt } from "../../../core/dom.js?v=20261110-version-15-notice";
-import { renderSkillGrowth } from "./skill-growth.js?v=20261110-version-15-notice";
+import { state } from "../../../core/state.js?v=20261111-elyms-release";
+import { esc, fmt } from "../../../core/dom.js?v=20261111-elyms-release";
+import { renderSkillGrowth } from "./skill-growth.js?v=20261111-elyms-release";
 
 export function renderGrowth(p) {
   const data = state.db.growth;

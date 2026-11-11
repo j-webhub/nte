@@ -1,4 +1,4 @@
-import { SITE_URL } from "../config/site.js?v=20261110-version-15-notice";
+import { SITE_URL } from "../config/site.js?v=20261111-elyms-release";
 
 export const SITE_PATH = new URL(SITE_URL).pathname;
 export const CHARACTER_TABS = new Set(["overview", "skills", "awakening", "arcs", "console", "growth"]);

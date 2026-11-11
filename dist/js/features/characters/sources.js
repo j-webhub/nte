@@ -1,5 +1,5 @@
-import { state } from "../../core/state.js?v=20261110-version-15-notice";
-import { esc } from "../../core/dom.js?v=20261110-version-15-notice";
+import { state } from "../../core/state.js?v=20261111-elyms-release";
+import { esc } from "../../core/dom.js?v=20261111-elyms-release";
 
 export function sourceLinks(p, domesticOnly = false) {
   const urls = new Set();
@@ -56,7 +56,7 @@ export function sourceLinks(p, domesticOnly = false) {
 export function coefficientSourceLinks(p) {
   const sources = new Map();
   if (p.coefficients?.url)
-    sources.set(p.coefficients.url, "레벨별 계수 원자료 · NTE Station");
+    sources.set(p.coefficients.url, "레벨별 계수 원자료 · " + (p.coefficients.sourceName || "NTE Station"));
   if (p.r3?.sourceUrl) sources.set(p.r3.sourceUrl, "R3 계수 · NTE Station");
   if (p.crosscheck?.sourceUrl)
     sources.set(p.crosscheck.sourceUrl, "레벨별 교차 대조");

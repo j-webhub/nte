@@ -1,8 +1,8 @@
-import { state } from "./state.js?v=20261110-version-15-notice";
-import { $, esc, fmt } from "./dom.js?v=20261110-version-15-notice";
-import { loadDatabase } from "./data.js?v=20261110-version-15-notice";
-import { pagePath, readRoute, isPlainClick } from "./urls.js?v=20261110-version-15-notice";
-import { updatePageMetadata } from "./metadata.js?v=20261110-version-15-notice";
+import { state } from "./state.js?v=20261111-elyms-release";
+import { $, esc, fmt } from "./dom.js?v=20261111-elyms-release";
+import { loadDatabase } from "./data.js?v=20261111-elyms-release";
+import { pagePath, readRoute, isPlainClick } from "./urls.js?v=20261111-elyms-release";
+import { updatePageMetadata } from "./metadata.js?v=20261111-elyms-release";
 
 const VALID_VIEWS = new Set([
   "home",
